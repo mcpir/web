@@ -582,20 +582,23 @@ fbq('track', 'PageView');
 src="https://www.facebook.com/tr?id=1284043626602031&ev=PageView&noscript=1"
 /></noscript>
 <!-- End Meta Pixel Code -->
- <!-- Yandex.Metrika counter -->
-<script type="text/javascript">
-    (function(m,e,t,r,i,k,a){
-        m[i]=m[i]function(){(m[i].a=m[i].a[]).push(arguments)};
-        m[i].l=1*new Date();
-        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
-        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
-    })(window, document,'script','https://mc.yandex.ru/metrika/tag.js', 'ym');
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript" >
+   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+   m[i].l=1*new Date();
+   for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+   k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
 
-    ym(43620344, 'init', {webvisor:true, clickmap:true, referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+   ym(43620344, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true,
+        webvisor:true
+   });
 </script>
 <noscript><div><img src="https://mc.yandex.ru/watch/43620344" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
 <!-- /Yandex.Metrika counter -->
-
 </head>
 <body>
 
@@ -816,6 +819,11 @@ src="https://www.facebook.com/tr?id=1284043626602031&ev=PageView&noscript=1"
           </div>
           <button type="submit" class="btn btn-primary btn-block">Получить доступ бесплатно</button>
           <div class="form-note">Нажимая кнопку, ты соглашаешься с <a href="#" id="open-policy">политикой конфиденциальности</a></div>
+          <input type="hidden" name="utm_source" id="utm_source" value="">
+          <input type="hidden" name="utm_medium" id="utm_medium" value="">
+          <input type="hidden" name="utm_campaign" id="utm_campaign" value="">
+          <input type="hidden" name="utm_content" id="utm_content" value="">
+          <input type="hidden" name="utm_term" id="utm_term" value="">
         </form>
       </div>
     </div>
@@ -956,6 +964,19 @@ src="https://www.facebook.com/tr?id=1284043626602031&ev=PageView&noscript=1"
   document.getElementById('close-policy').addEventListener('click', () => modal.classList.remove('show'));
   modal.addEventListener('click', (e) => { if (e.target === modal) modal.classList.remove('show'); });
 </script>
+document.addEventListener("DOMContentLoaded", function() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const utmParams = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'];
+
+    utmParams.forEach(function(param) {
+        if (urlParams.has(param)) {
+            const input = document.getElementById(param);
+            if (input) {
+                input.value = urlParams.get(param);
+            }
+        }
+    });
+});
 
 </body>
 </html>
