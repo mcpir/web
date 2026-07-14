@@ -1,6 +1,13 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
+  <script>
+  // Проверяем, что мы находимся в папке /web, но забыли поставить закрывающий слэш
+  if (window.location.pathname === '/web') {
+    // Мягко перенаправляем на адрес со слэшем, принудительно сохраняя все UTM-метки
+    window.location.replace(window.location.protocol + '//' + window.location.host + '/web/' + window.location.search + window.location.hash);
+  }
+</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Где брать силы — бесплатный онлайн мастер-класс с Петром Кузнецовым</title>
