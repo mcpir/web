@@ -971,58 +971,7 @@ src="https://www.facebook.com/tr?id=1284043626602031&ev=PageView&noscript=1"
   document.getElementById('close-policy').addEventListener('click', () => modal.classList.remove('show'));
   modal.addEventListener('click', (e) => { if (e.target === modal) modal.classList.remove('show'); });
 </script>
-document.addEventListener("DOMContentLoaded", function() {
-    const urlParams = new URLSearchParams(window.location.search);
-    const utmParams = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'];
 
-    utmParams.forEach(function(param) {
-        if (urlParams.has(param)) {
-            const input = document.getElementById(param);
-            if (input) {
-                input.value = urlParams.get(param);
-            }
-        }
-    });
-});
-document.addEventListener("DOMContentLoaded", function() {
-    // 1. Парсим UTM-метки из URL страницы
-    const urlParams = new URLSearchParams(window.location.search);
-    const utmParams = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'];
-    const foundUtms = {};
-
-    utmParams.forEach(function(param) {
-        if (urlParams.has(param)) {
-            foundUtms[param] = urlParams.get(param);
-        }
-    });
-
-    // 2. Ищем ВСЕ формы на странице
-    const forms = document.querySelectorAll('form');
-    
-    forms.forEach(function(form) {
-        // Убеждаемся, что внутри формы физически созданы скрытые инпуты с атрибутом NAME
-        utmParams.forEach(function(param) {
-            if (foundUtms[param]) {
-                let input = form.querySelector(`input[name="${param}"]`);
-                if (!input) {
-                    // Если инпута нет, создаем его динамически, чтобы не править HTML вручную
-                    input = document.createElement('input');
-                    input.type = 'hidden';
-                    input.name = param;
-                    form.appendChild(input);
-                }
-                input.value = foundUtms[param];
-            }
-        });
-
-        // 3. ПЕРЕХВАТ отправки формы (на случай, если ваш обработчик отправляет JSON)
-        form.addEventListener('submit', function(e) {
-            // Если форма отправляется через стандартный FormData, новые инпуты уже там.
-            // Но если данные собираются в JSON объект, подмешаем их принудительно:
-            window.currentUtmData = foundUtms; // Сохраняем в глобальную видимость для кастомных AJAX скриптов
-        }, { capture: true });
-    });
-});
 
 </body>
 </html>
