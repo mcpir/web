@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Я – БРЕНД — тренинг по голосу, речи и личному бренду в Минске."
+    />
+    <title>Я – БРЕНД — тренинг по голосу и речи</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              ink: '#07141C',
+              inkSoft: '#102730',
+              cream: '#F4F0E8',
+              aqua: '#18D8D0',
+              aquaSoft: '#A9EFEB',
+              copper: '#BE7551',
+            },
+            fontFamily: {
+              sans: ['Manrope', 'Arial', 'sans-serif'],
+            },
+            boxShadow: {
+              aqua: '0 22px 60px rgba(24, 216, 208, .25)',
+            },
+          },
+        },
+      };
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      html { scroll-behavior: smooth; }
+      body { overflow-x: hidden; }
+      ::selection { background: #18D8D0; color: #07141C; }
+      .noise {
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='.22'/%3E%3C/svg%3E");
+      }
+      .grid-lines {
+        background-image: linear-gradient(rgba(169,239,235,.06) 1px, transparent 1px), linear-gradient(90deg, rgba(169,239,235,.06) 1px, transparent 1px);
+        background-size: 44px 44px;
+      }
+      .pulse-ring { animation: pulse-ring 3.8s ease-out infinite; }
+      .float-photo { animation: float-photo 7s ease-in-out infinite; }
+      @keyframes pulse-ring { 0% { transform: scale(.8); opacity: .65; } 100% { transform: scale(1.18); opacity: 0; } }
+      @keyframes float-photo { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-12px); } }
+      @media (prefers-reduced-motion: reduce) {
+        *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; }
+      }
+    </style>
+  </head>
+
+  <body class="bg-ink font-sans text-cream antialiased">
+    <main>
+      <!-- Hero -->
+      <section class="relative isolate min-h-screen overflow-hidden bg-ink">
+        <div class="noise pointer-events-none absolute inset-0 opacity-[.06]"></div>
+        <div class="grid-lines pointer-events-none absolute inset-0 opacity-50"></div>
+        <div class="pointer-events-none absolute -right-44 top-12 h-[32rem] w-[32rem] rounded-full border border-aqua/20 sm:h-[48rem] sm:w-[48rem]"></div>
+        <div class="pulse-ring pointer-events-none absolute right-[4%] top-[22%] h-48 w-48 rounded-full border border-aqua/30 sm:h-80 sm:w-80"></div>
+        <div class="pointer-events-none absolute -bottom-64 -left-64 h-[34rem] w-[34rem] rounded-full bg-aqua/15 blur-[110px]"></div>
+
+        <header class="relative z-20 mx-auto flex max-w-7xl items-center justify-between px-5 py-5 sm:px-8 lg:px-12 lg:py-8">
+          <a href="#top" class="group flex items-center gap-3" aria-label="МЦПиР — на главную">
+            <span class="grid h-10 w-10 place-items-center border border-aqua/80 text-[10px] font-extrabold leading-none text-aqua transition group-hover:bg-aqua group-hover:text-ink">МЦПиР</span>
+            <span class="hidden text-xs font-bold uppercase tracking-[.18em] text-cream/70 sm:block">Тренинг по голосу и речи</span>
+          </a>
+
+          <nav class="hidden items-center gap-7 text-sm font-semibold text-cream/70 lg:flex" aria-label="Навигация">
+            <a class="transition hover:text-aqua" href="#results">Результаты</a>
+            <a class="transition hover:text-aqua" href="#program">Программа</a>
+            <a class="transition hover:text-aqua" href="#trainer">Ведущая</a>
+          </nav>
+
+          <a href="#registration" class="inline-flex items-center gap-2 border border-aqua/70 px-3 py-2 text-[11px] font-extrabold uppercase tracking-[.1em] text-aqua transition hover:-translate-y-0.5 hover:bg-aqua hover:text-ink sm:px-4 sm:text-xs">
+            Оставить заявку <span aria-hidden="true">↗</span>
+          </a>
+        </header>
+
+        <div id="top" class="relative z-10 mx-auto grid max-w-7xl items-center gap-8 px-5 pb-12 pt-5 sm:px-8 lg:min-h-[calc(100vh-104px)] lg:grid-cols-[1.04fr_.96fr] lg:gap-2 lg:px-12 lg:pb-16 lg:pt-0">
+          <div class="order-2 max-w-2xl lg:order-1">
+            <p class="mb-5 flex items-center gap-3 text-sm font-extrabold uppercase tracking-[.23em] text-aqua">
+              <span class="h-px w-10 bg-aqua"></span> Тренинг
+            </p>
+
+            <h1 class="text-[clamp(3.75rem,10vw,9rem)] font-extrabold leading-[.79] tracking-[-.08em] text-cream">
+              Я <span class="text-aqua">–</span><br />БРЕНД
+            </h1>
+
+            <p class="mt-8 max-w-xl text-xl font-bold leading-snug text-cream sm:text-2xl lg:text-[1.72rem]">
+              Научитесь управлять своим голосом и речью так, чтобы вас слушали на одном дыхании!
+            </p>
+
+            <div class="mt-8 flex flex-wrap gap-3">
+              <div class="flex items-center gap-3 border border-cream/15 bg-white/[.04] px-4 py-3 backdrop-blur-md transition hover:-translate-y-1 hover:border-aqua/65 hover:bg-aqua/10">
+                <svg class="h-5 w-5 text-aqua" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></svg>
+                <span class="font-bold">Минск</span>
+              </div>
+              <div class="flex items-center gap-3 border border-cream/15 bg-white/[.04] px-4 py-3 backdrop-blur-md transition hover:-translate-y-1 hover:border-aqua/65 hover:bg-aqua/10">
+                <svg class="h-5 w-5 text-aqua" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg>
+                <span class="font-bold">25–27 сентября</span>
+              </div>
+            </div>
+
+            <a href="#registration" class="group mt-8 inline-flex items-center gap-4 bg-aqua px-6 py-4 text-xs font-extrabold uppercase tracking-[.1em] text-ink shadow-aqua transition duration-300 hover:-translate-y-1 hover:bg-cream hover:shadow-[0_26px_70px_rgba(24,216,208,.32)]">
+              Зарегистрируйтесь на тренинг прямо сейчас
+              <span class="text-xl leading-none transition-transform group-hover:translate-x-1" aria-hidden="true">↗</span>
+            </a>
+          </div>
+
+          <div class="relative order-1 min-h-[390px] overflow-hidden border border-cream/10 bg-inkSoft sm:min-h-[560px] lg:order-2 lg:min-h-[680px]">
+            <div class="absolute inset-0 z-10 bg-gradient-to-t from-ink via-ink/5 to-transparent"></div>
+            <div class="absolute inset-0 z-10 bg-gradient-to-r from-ink/60 via-transparent to-transparent"></div>
+            <img src="assets/valeria-hero.jpg" alt="Валерия Крянева" class="h-full w-full object-cover object-[56%_center] transition duration-700 hover:scale-105" />
+            <div class="absolute bottom-0 left-0 z-20 w-full border-t border-cream/15 bg-ink/65 px-5 py-4 backdrop-blur-md sm:px-7">
+              <p class="text-xs font-bold uppercase tracking-[.17em] text-aqua">Валерия Крянева</p>
+              <p class="mt-1 text-sm text-cream/75">Бизнес-тренер речевой коммуникации</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Credibility band -->
+      <section class="border-y border-ink/10 bg-cream text-ink">
+        <div class="mx-auto grid max-w-7xl divide-y divide-ink/10 px-5 sm:grid-cols-3 sm:divide-x sm:divide-y-0 sm:px-8 lg:px-12">
+          <div class="py-6 sm:px-7"><p class="text-3xl font-extrabold tracking-[-.06em]">2,5 дня</p><p class="mt-1 text-sm font-semibold text-ink/60">интересного и эффективного обучения</p></div>
+          <div class="py-6 sm:px-7"><p class="text-3xl font-extrabold tracking-[-.06em]">4 модуля</p><p class="mt-1 text-sm font-semibold text-ink/60">голос, речь, история и самопрезентация</p></div>
+          <div class="py-6 sm:px-7"><p class="text-3xl font-extrabold tracking-[-.06em]">25+ лет</p><p class="mt-1 text-sm font-semibold text-ink/60">опыта ведущей в речевой коммуникации</p></div>
+        </div>
+      </section>
+
+      <!-- Value proposition -->
+      <section id="results" class="bg-cream py-20 text-ink sm:py-28">
+        <div class="mx-auto max-w-7xl px-5 sm:px-8 lg:px-12">
+          <div class="grid gap-12 lg:grid-cols-[.82fr_1.18fr] lg:gap-20">
+            <div>
+              <p class="text-xs font-extrabold uppercase tracking-[.2em] text-copper">Ваш голос — это инструмент</p>
+              <h2 class="mt-4 text-4xl font-extrabold leading-[.94] tracking-[-.055em] sm:text-5xl">Когда вас слушают — вас выбирают.</h2>
+              <p class="mt-6 max-w-md text-base leading-relaxed text-ink/70">Грамотно выстроенная и поданная речь, созданная продающая история-бренд — основа успешного выступления, переговоров, прямой трансляции, презентации проекта и нативных продаж.</p>
+            </div>
+
+            <div class="grid gap-3 sm:grid-cols-2">
+              <article class="group border border-ink/10 bg-white p-6 transition duration-300 hover:-translate-y-1 hover:border-aqua hover:shadow-xl">
+                <span class="text-sm font-extrabold text-aqua">01</span><h3 class="mt-9 text-xl font-extrabold tracking-[-.03em]">В бизнесе и продажах</h3><p class="mt-3 text-sm leading-relaxed text-ink/65">Продавать дороже за счёт личного бренда и доверия к вам. Профессионально выступать и импровизировать.</p>
+              </article>
+              <article class="group border border-ink/10 bg-ink p-6 text-cream transition duration-300 hover:-translate-y-1 hover:border-aqua hover:shadow-xl">
+                <span class="text-sm font-extrabold text-aqua">02</span><h3 class="mt-9 text-xl font-extrabold tracking-[-.03em]">В профессии</h3><p class="mt-3 text-sm leading-relaxed text-cream/65">Быстро и легко вливаться в коллектив, продвигаться по карьерной лестнице, быть на особом счету у руководства.</p>
+              </article>
+              <article class="group border border-ink/10 bg-aqua p-6 text-ink transition duration-300 hover:-translate-y-1 hover:shadow-xl sm:col-span-2">
+                <span class="text-sm font-extrabold">03</span><h3 class="mt-5 text-2xl font-extrabold tracking-[-.04em]">В повседневной жизни</h3><p class="mt-2 max-w-xl text-sm font-medium leading-relaxed text-ink/70">Красочно рассказывать истории, быть в центре внимания, гасить конфликты, быть более выразительным и не мямлить.</p>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Transformation -->
+      <section class="relative overflow-hidden bg-ink py-20 sm:py-28">
+        <div class="noise pointer-events-none absolute inset-0 opacity-[.05]"></div>
+        <div class="mx-auto max-w-7xl px-5 sm:px-8 lg:px-12">
+          <div class="max-w-2xl"><p class="text-xs font-extrabold uppercase tracking-[.2em] text-aqua">Главный результат тренинга</p><h2 class="mt-4 text-4xl font-extrabold leading-[.94] tracking-[-.055em] sm:text-5xl">Не просто говорить.<br />Доносить смысл и оставаться в памяти.</h2></div>
+          <div class="mt-12 grid gap-px overflow-hidden border border-cream/15 bg-cream/15 md:grid-cols-3">
+            <article class="bg-ink p-7 transition hover:bg-inkSoft"><p class="text-sm font-extrabold text-aqua">01</p><p class="mt-10 text-lg font-bold leading-snug">Научитесь создавать и озвучивать истории, которые будут достигать нужного вам результата.</p></article>
+            <article class="bg-ink p-7 transition hover:bg-inkSoft"><p class="text-sm font-extrabold text-aqua">02</p><p class="mt-10 text-lg font-bold leading-snug">Научитесь использовать свой голос для придания большей значимости вашим словам.</p></article>
+            <article class="bg-ink p-7 transition hover:bg-inkSoft"><p class="text-sm font-extrabold text-aqua">03</p><p class="mt-10 text-lg font-bold leading-snug">Получите чёткую модель построения личного бренда и создания нужного имиджа.</p></article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Program -->
+      <section id="program" class="bg-[#E7E2D8] py-20 text-ink sm:py-28">
+        <div class="mx-auto max-w-7xl px-5 sm:px-8 lg:px-12">
+          <div class="flex flex-col justify-between gap-6 md:flex-row md:items-end"><div class="max-w-2xl"><p class="text-xs font-extrabold uppercase tracking-[.2em] text-copper">Программа</p><h2 class="mt-4 text-4xl font-extrabold leading-[.94] tracking-[-.055em] sm:text-5xl">Не теория о харизме. Тренировка голоса, речи и влияния.</h2></div><p class="max-w-sm text-sm font-semibold leading-relaxed text-ink/65">Вас ждёт 2,5 дня интересного и эффективного обучения — с упражнениями, обратной связью и работой над собственной подачей.</p></div>
+
+          <div class="mt-14 grid gap-4 lg:grid-cols-[.7fr_1.3fr]">
+            <article class="border border-ink/10 bg-ink p-7 text-cream sm:p-9"><p class="text-sm font-extrabold text-aqua">Часть 1</p><h3 class="mt-8 text-3xl font-extrabold leading-none tracking-[-.05em]">Личный бренд<br />и публичность</h3><ul class="mt-9 space-y-4 text-sm leading-relaxed text-cream/70"><li>Как собрать аудиторию на эфир.</li><li>Как увеличить приток подписчиков.</li><li>Как продвигать себя в социальных сетях и привлекать поток клиентов через личный бренд в онлайн.</li><li>Как создать и внедрить SMM-стратегию.</li></ul></article>
+            <div class="grid gap-4 sm:grid-cols-2">
+              <article class="group border border-ink/10 bg-cream p-6 transition hover:-translate-y-1 hover:border-aqua"><p class="text-sm font-extrabold text-copper">01 / МОДУЛЬ</p><h3 class="mt-7 text-xl font-extrabold">Техника голоса — личностный ресурс</h3><p class="mt-4 text-sm leading-relaxed text-ink/65">Как изменить голос и повлиять на ценность контента. Интонационные модели и речевой имидж.</p></article>
+              <article class="group border border-ink/10 bg-cream p-6 transition hover:-translate-y-1 hover:border-aqua"><p class="text-sm font-extrabold text-copper">02 / МОДУЛЬ</p><h3 class="mt-7 text-xl font-extrabold">Стиль поведения</h3><p class="mt-4 text-sm leading-relaxed text-ink/65">Темпо-ритм, акценты, эмоционально-энергетический обмен с аудиторией.</p></article>
+              <article class="group border border-ink/10 bg-cream p-6 transition hover:-translate-y-1 hover:border-aqua"><p class="text-sm font-extrabold text-copper">03 / МОДУЛЬ</p><h3 class="mt-7 text-xl font-extrabold">Работа над сторителлингом</h3><p class="mt-4 text-sm leading-relaxed text-ink/65">Структура истории, собственный сценарий, переживания, ценности и абсолютная идея.</p></article>
+              <article class="group border border-ink/10 bg-aqua p-6 transition hover:-translate-y-1 hover:shadow-aqua"><p class="text-sm font-extrabold text-ink/70">04 / МОДУЛЬ</p><h3 class="mt-7 text-xl font-extrabold">Самопрезентация и лидерская риторика</h3><p class="mt-4 text-sm leading-relaxed text-ink/70">Как удерживать внимание, строить эмоционально окрашенную речь и занимать активную позицию.</p></article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Format -->
+      <section class="bg-cream py-20 text-ink sm:py-28">
+        <div class="mx-auto max-w-7xl px-5 sm:px-8 lg:px-12">
+          <div class="grid gap-12 lg:grid-cols-2 lg:gap-20"><div><p class="text-xs font-extrabold uppercase tracking-[.2em] text-copper">Как проходит обучение</p><h2 class="mt-4 text-4xl font-extrabold leading-[.94] tracking-[-.055em] sm:text-5xl">Знания сразу переходят в навык.</h2></div><div class="space-y-5"><div class="flex gap-5 border-t border-ink/15 pt-5"><span class="text-3xl font-extrabold text-aqua">01</span><div><h3 class="font-extrabold">Голосовая разминка и речевые техники</h3><p class="mt-1 text-sm leading-relaxed text-ink/65">Развитие голоса, артикуляции, интонации и выразительности речи.</p></div></div><div class="flex gap-5 border-t border-ink/15 pt-5"><span class="text-3xl font-extrabold text-aqua">02</span><div><h3 class="font-extrabold">Практика на собственных задачах</h3><p class="mt-1 text-sm leading-relaxed text-ink/65">Самопрезентации, истории, выступления и ситуации, которые важны именно вам.</p></div></div><div class="flex gap-5 border-t border-ink/15 pt-5"><span class="text-3xl font-extrabold text-aqua">03</span><div><h3 class="font-extrabold">Обратная связь и закрепление результата</h3><p class="mt-1 text-sm leading-relaxed text-ink/65">Понимание своих сильных сторон и инструменты для самостоятельной практики.</p></div></div></div></div>
+        </div>
+      </section>
+
+      <!-- Trainer -->
+      <section id="trainer" class="relative overflow-hidden bg-ink py-20 sm:py-28">
+        <div class="pointer-events-none absolute right-0 top-0 h-full w-1/2 bg-aqua/5"></div>
+        <div class="mx-auto grid max-w-7xl gap-12 px-5 sm:px-8 lg:grid-cols-[.85fr_1.15fr] lg:items-center lg:gap-20 lg:px-12">
+          <div class="relative mx-auto w-full max-w-md">
+            <div class="absolute inset-x-0 bottom-0 h-4/5 bg-aqua/20 blur-[90px]"></div>
+            <img src="assets/valeria-cutout.png" alt="Валерия Крянева" class="float-photo relative z-10 mx-auto max-h-[610px] w-auto object-contain" />
+            <div class="absolute bottom-6 left-0 z-20 border border-cream/15 bg-ink/85 px-5 py-4 backdrop-blur"><p class="text-xs font-extrabold uppercase tracking-[.18em] text-aqua">Ведущая тренинга</p><p class="mt-1 font-extrabold">Валерия Крянева</p></div>
+          </div>
+          <div><p class="text-xs font-extrabold uppercase tracking-[.2em] text-aqua">О ведущей</p><h2 class="mt-4 max-w-xl text-4xl font-extrabold leading-[.94] tracking-[-.055em] sm:text-5xl">Голос можно тренировать — и направлять его силу на достижение жизненных целей.</h2><p class="mt-7 max-w-xl text-base leading-relaxed text-cream/70">Валерия Крянева — бизнес-тренер речевой коммуникации международного уровня, педагог по сценической речи, актриса и режиссёр. Более 25 лет работает с людьми из самых разных сфер деятельности — от студентов до бизнесменов и политиков.</p><div class="mt-8 grid max-w-xl grid-cols-2 gap-px border border-cream/15 bg-cream/15"><div class="bg-ink p-5"><p class="text-2xl font-extrabold text-aqua">25+</p><p class="mt-1 text-sm text-cream/65">лет тренерской практики</p></div><div class="bg-ink p-5"><p class="text-2xl font-extrabold text-aqua">4</p><p class="mt-1 text-sm text-cream/65">практических модуля</p></div></div></div>
+        </div>
+      </section>
+
+      <!-- Final CTA -->
+      <section id="registration" class="relative overflow-hidden bg-aqua py-20 text-ink sm:py-28">
+        <div class="pointer-events-none absolute -right-28 -top-32 h-80 w-80 rounded-full border border-ink/20"></div>
+        <div class="pointer-events-none absolute -right-8 -top-16 h-52 w-52 rounded-full border border-ink/20"></div>
+        <div class="mx-auto grid max-w-7xl gap-12 px-5 sm:px-8 lg:grid-cols-[1.1fr_.9fr] lg:items-end lg:px-12">
+          <div><p class="text-xs font-extrabold uppercase tracking-[.2em] text-ink/65">25–27 сентября · Минск</p><h2 class="mt-4 max-w-3xl text-5xl font-extrabold leading-[.88] tracking-[-.065em] sm:text-6xl">Начните создавать свой личный бренд.</h2><p class="mt-6 max-w-2xl text-lg font-semibold leading-relaxed text-ink/70">Оставьте заявку на тренинг «Я – БРЕНД». Мы свяжемся с вами и расскажем об условиях участия.</p></div>
+          <form id="lead-form" class="bg-ink p-6 text-cream shadow-2xl sm:p-8" action="https://www.rmes.ru/request/tilda-webhook/" method="post" target="webhook-response">
+            <input type="hidden" name="event" value="Голос2минск" />
+            <input type="hidden" name="city_id" value="22" />
+            <input id="cookies" type="hidden" name="cookies" value="" />
+            <label class="block text-xs font-extrabold uppercase tracking-[.15em] text-aqua" for="name">Ваше имя</label><input id="name" name="name" required type="text" class="mt-2 w-full border-b border-cream/25 bg-transparent py-3 text-lg outline-none placeholder:text-cream/35 focus:border-aqua" placeholder="Имя" />
+            <label class="mt-6 block text-xs font-extrabold uppercase tracking-[.15em] text-aqua" for="phone">Телефон</label><input id="phone" name="phone" required type="tel" class="mt-2 w-full border-b border-cream/25 bg-transparent py-3 text-lg outline-none placeholder:text-cream/35 focus:border-aqua" placeholder="+375" />
+            <button type="submit" class="mt-7 inline-flex w-full items-center justify-between bg-aqua px-5 py-4 text-xs font-extrabold uppercase tracking-[.1em] text-ink transition hover:bg-cream">Оставить заявку <span class="text-xl" aria-hidden="true">↗</span></button>
+            <p class="mt-4 text-xs leading-relaxed text-cream/45">Нажимая кнопку, вы соглашаетесь на обработку персональных данных.</p>
+            <p id="form-success" class="mt-4 hidden text-sm font-bold text-aqua" role="status">Спасибо! Заявка отправлена.</p>
+          </form>
+          <iframe name="webhook-response" title="Отправка заявки" class="hidden"></iframe>
+        </div>
+      </section>
+    </main>
+
+    <footer class="bg-ink px-5 py-7 text-cream/55 sm:px-8 lg:px-12"><div class="mx-auto flex max-w-7xl flex-col justify-between gap-2 text-xs font-semibold sm:flex-row"><span>МЦПиР</span><span>Тренинг «Я – БРЕНД»</span></div></footer>
+
+    <script>
+      const leadForm = document.getElementById('lead-form');
+      const cookiesField = document.getElementById('cookies');
+      const successMessage = document.getElementById('form-success');
+
+      leadForm.addEventListener('submit', () => {
+        // Передаём cookies текущего сайта отдельным полем вместе с заявкой.
+        cookiesField.value = document.cookie;
+        successMessage.classList.remove('hidden');
+      });
+    </script>
+  </body>
+</html>
