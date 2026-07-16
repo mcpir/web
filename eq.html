@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Живой мастер-класс по эмоциональному флирту для мужчин в Минске.">
+  <title>Эмоциональный флирт | Мастер-класс в Минске</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root { --ink:#0b0c0f; --surface:#111318; --paper:#f2f0ea; --muted:#989b9f; --line:rgba(255,255,255,.15); --blue:#43a9ff; --blue-deep:#1373c3; --gold:#d9c49a; --serif:"Playfair Display", Georgia, serif; --sans:Manrope, Arial, sans-serif; --mono:"DM Mono", monospace; }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; background:var(--ink); color:var(--paper); font-family:var(--sans); -webkit-font-smoothing:antialiased; }
+    button { font:inherit; }
+    .wrap { width:min(1160px, calc(100% - 40px)); margin:auto; }
+    .eyebrow, .kicker { margin:0; font:500 .8rem/1.35 var(--mono); letter-spacing:.1em; text-transform:uppercase; }
+    .eyebrow { color:var(--gold); }
+    .kicker { color:var(--blue); }
+    .button { display:inline-flex; align-items:center; justify-content:center; gap:.8rem; min-height:58px; padding:0 1.5rem; border:1px solid transparent; border-radius:2px; background:var(--blue); color:#06101b; cursor:pointer; font-weight:800; font-size:.95rem; letter-spacing:.02em; text-decoration:none; transition:transform .25s ease, background .25s ease, box-shadow .25s ease; }
+    .button::after { content:"↗"; font-size:1.2em; transition:transform .25s ease; }
+    .button:hover { background:#75c4ff; box-shadow:0 12px 30px rgba(67,169,255,.22); transform:translateY(-3px); }
+    .button:hover::after { transform:translate(3px,-3px); }
+    .button:focus-visible { outline:3px solid white; outline-offset:4px; }
+    .hero { position:relative; min-height:790px; overflow:hidden; background:#101114; isolation:isolate; }
+    .hero::before { content:""; position:absolute; inset:0; z-index:-2; background:linear-gradient(90deg, #08090c 3%, rgba(8,9,12,.89) 35%, rgba(8,9,12,.22) 73%, #08090c 100%), url("https://images.unsplash.com/photo-1496346236646-50e985b31ea4?auto=format&fit=crop&w=2000&q=90") center/cover; }
+    .hero::after { content:""; position:absolute; z-index:-1; width:62vw; height:62vw; right:-23vw; bottom:-36vw; border-radius:50%; background:rgba(27,126,218,.25); filter:blur(80px); }
+    .hero-content { display:flex; flex-direction:column; justify-content:flex-start; min-height:790px; padding:68px 0 55px; }
+    .hero h1 { max-width:700px; margin:17px 0 20px; font:600 clamp(3.25rem, 9vw, 7.7rem)/.84 var(--serif); letter-spacing:-.065em; text-transform:uppercase; }
+    .hero h1 span { color:var(--blue); }
+    .hero-copy { max-width:480px; margin:0; color:#dedede; font-size:clamp(1rem, 2vw, 1.16rem); line-height:1.65; }
+    .hero-date-line { margin:46px 0 0; }
+    .offer { display:grid; grid-template-columns:auto 1fr; gap:10px 18px; align-items:center; width:min(100%, 400px); margin-top:34px; padding-top:22px; border-top:1px solid var(--line); }
+    .price-old { color:#92969c; font:500 1.55rem/1 var(--serif); letter-spacing:-.04em; text-decoration:line-through; }
+    .price-new { font:700 2.25rem/1 var(--serif); letter-spacing:-.06em; }
+    .offer small { grid-column:2; color:var(--gold); font-size:.8rem; line-height:1.45; }
+    .hero .button { width:min(100%, 300px); margin-top:24px; }
+    section { padding:105px 0; }
+    h2 { max-width:760px; margin:16px 0 0; font:600 clamp(2.4rem, 6.4vw, 5.2rem)/.94 var(--serif); letter-spacing:-.06em; text-wrap:balance; }
+    .learn { background:var(--paper); color:var(--ink); }
+    .learn .kicker { color:var(--blue-deep); }
+    .lessons { display:grid; grid-template-columns:repeat(2, 1fr); gap:0; margin-top:55px; border-top:1px solid #c4c1b9; }
+    .lesson { display:grid; grid-template-columns:42px 1fr; gap:14px; padding:25px 0; border-bottom:1px solid #c4c1b9; font-size:clamp(1rem, 1.8vw, 1.1rem); line-height:1.6; }
+    .lesson:nth-child(odd) { padding-right:28px; border-right:1px solid #c4c1b9; }
+    .lesson:nth-child(even) { padding-left:28px; }
+    .lesson-num { color:var(--blue-deep); font:500 .8rem var(--mono); padding-top:.27em; }
+    .insight { position:relative; overflow:hidden; background:#0e1115; }
+    .insight::after { content:"01"; position:absolute; right:-.05em; bottom:-.24em; color:rgba(255,255,255,.035); font:700 clamp(17rem, 42vw, 38rem)/1 var(--serif); }
+    .insight-grid { display:grid; grid-template-columns:.9fr 1.1fr; gap:8vw; align-items:end; }
+    .insight h2 { color:var(--gold); }
+    .insight-text { margin:0; color:#c2c3c5; font-size:clamp(1.1rem, 2vw, 1.42rem); line-height:1.55; }
+    .insight-text strong { color:white; font-weight:600; }
+    .reviews { background:#171a20; }
+    .reviews-head { display:flex; justify-content:space-between; align-items:end; gap:20px; }
+    .reviews h2 { max-width:500px; }
+    .review-note { color:var(--muted); font-size:.9rem; }
+    .quotes { display:grid; grid-template-columns:repeat(3, 1fr); gap:16px; margin-top:52px; }
+    blockquote { display:flex; flex-direction:column; min-height:260px; margin:0; padding:27px; border:1px solid var(--line); background:rgba(255,255,255,.02); transition:background .25s ease, transform .25s ease; }
+    blockquote:hover { background:rgba(67,169,255,.08); transform:translateY(-5px); }
+    blockquote p { margin:0; font:500 1.05rem/1.55 var(--serif); }
+    blockquote footer { margin-top:auto; padding-top:22px; color:var(--gold); font:500 .78rem var(--mono); letter-spacing:.08em; text-transform:uppercase; }
+    .format { background:var(--paper); color:var(--ink); }
+    .format h2 { max-width:800px; font-size:clamp(2.4rem, 4.5vw, 4.1rem); }
+    .format-grid { display:grid; grid-template-columns:minmax(0, 1.3fr) minmax(330px, .7fr); gap:6vw; align-items:start; }
+    .format-list { margin-top:50px; border-top:1px solid #bebbb4; }
+    .format-item { padding:25px 0; border-bottom:1px solid #bebbb4; }
+    .format-item strong { display:block; font-size:1.08rem; }
+    .format-item p { margin:7px 0 0; color:#575a5e; font-size:1rem; line-height:1.6; }
+    .venue { margin-top:30px; font:500 .82rem/1.55 var(--mono); letter-spacing:.03em; }
+    .video { position:relative; aspect-ratio:9/16; max-height:620px; overflow:hidden; background:#111; }
+    .hero-mobile-image { display:none; }
+    .video iframe { width:100%; height:100%; border:0; }
+    .cta { position:relative; overflow:hidden; padding:120px 0; text-align:center; background:linear-gradient(rgba(5,7,10,.82), rgba(5,7,10,.96)), url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=2000&q=85") center/cover; }
+    .cta h2 { max-width:1100px; margin-left:auto; margin-right:auto; font-size:clamp(2.6rem, 5vw, 4.6rem); }
+    .cta .eyebrow { margin-top:18px; color:var(--gold); }
+    .cta-offer { display:flex; align-items:center; justify-content:center; gap:16px; margin:32px 0 20px; }
+    .cta-offer .price-new { color:var(--blue); }
+    .cta .button { width:min(100%, 310px); }
+    .cta-venue { margin:0; color:#c8c8c8; font-size:.95rem; }
+    footer.site-footer { display:flex; justify-content:space-between; gap:20px; padding:22px 0; color:#8c9095; font:400 .75rem var(--mono); letter-spacing:.07em; text-transform:uppercase; }
+    #amoforms_action_btn { display:none !important; }
+    .reveal { animation:rise .7s both; }
+    .reveal:nth-child(2) { animation-delay:.1s; } .reveal:nth-child(3) { animation-delay:.2s; }
+    @keyframes rise { from { opacity:0; transform:translateY(22px); } to { opacity:1; transform:none; } }
+    @media (max-width:700px) { .wrap { width:min(100% - 32px, 560px); } .hero { min-height:0; } .hero::before { background:#08090c; } .hero-content { justify-content:flex-start; min-height:0; padding:42px 0 54px; } .hero h1 { margin:14px 0 18px; font-size:clamp(2.05rem, 10.7vw, 3.1rem); line-height:.9; letter-spacing:-.08em; } .hero-copy { max-width:100%; font-size:1rem; line-height:1.55; } .hero-mobile-image { display:block; width:100vw; height:clamp(215px, 67vw, 330px); margin:25px calc(50% - 50vw) 0; background:url("https://images.unsplash.com/photo-1496346236646-50e985b31ea4?auto=format&fit=crop&w=1000&q=85") center 38%/cover no-repeat; } .hero .eyebrow { margin-top:24px !important; } .offer { margin-top:22px; } section { padding:78px 0; } .lessons { grid-template-columns:1fr; } .lesson:nth-child(odd), .lesson:nth-child(even) { padding-left:0; padding-right:0; border-right:0; } .insight-grid, .format-grid { grid-template-columns:1fr; gap:38px; } .format-list { margin-top:32px; } #insight-title { max-width:330px; font-size:clamp(2.1rem, 11vw, 3rem); line-height:.98; } .quotes { grid-template-columns:1fr; margin-top:35px; } blockquote { min-height:210px; } .reviews-head { display:block; } .review-note { margin-top:14px; } .video { width:min(100%, 380px); } .cta { padding:85px 0; } .cta h2 { font-size:clamp(2.45rem, 11.5vw, 3.8rem); } footer.site-footer { display:block; line-height:2; } }
+    @media (prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } *,*::before,*::after { animation-duration:.01ms !important; transition-duration:.01ms !important; } }
+  </style>
+</head>
+<body>
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="wrap"><div class="hero-content">
+        <p class="eyebrow reveal">Живой мастер-класс для мужчин</p>
+        <h1 id="hero-title" class="reveal">Эмоциональный<br><span>флирт</span></h1>
+        <p class="hero-copy reveal">Секретный язык, который создает влечение без банальных подкатов. Научись превращать обычное общение в интересное знакомство.</p>
+        <div class="hero-mobile-image" aria-hidden="true"></div>
+        <p class="eyebrow hero-date-line reveal"><span data-event-date></span> • 19:00 • Минск</p>
+        <div class="offer reveal"><span class="price-old">60 руб.</span><span class="price-new">10 руб.</span><small>Мест ограниченное количество</small></div>
+        <button class="button reveal js-form" type="button">Оставить заявку</button>
+      </div>
+    </div>
+  </section>
+
+  <main>
+    <section class="learn" aria-labelledby="learn-title"><div class="wrap"><p class="kicker">За 2 часа ты узнаешь</p><h2 id="learn-title">Как быть тем, кого хочется узнать ближе</h2><div class="lessons">
+      <div class="lesson"><span class="lesson-num">01</span><span>Почему одни мужчины вызывают интерес с первых минут, а другие остаются просто «хорошими парнями».</span></div>
+      <div class="lesson"><span class="lesson-num">02</span><span>Как создавать эмоциональное притяжение без шаблонных фраз и неестественного поведения.</span></div>
+      <div class="lesson"><span class="lesson-num">03</span><span>Как за несколько минут заинтересовать девушку и выделиться среди других мужчин.</span></div>
+      <div class="lesson"><span class="lesson-num">04</span><span>Как понимать эмоции и сигналы женщины во время общения.</span></div>
+      <div class="lesson"><span class="lesson-num">05</span><span>Как превратить обычный разговор в легкий, живой и увлекательный флирт.</span></div>
+      <div class="lesson"><span class="lesson-num">06</span><span>Как создавать искру и сексуальное напряжение естественно, без пошлости и давления.</span></div>
+    </div></div></section>
+
+    <section class="insight" aria-labelledby="insight-title"><div class="wrap insight-grid"><div><p class="kicker">Почему это работает</p><h2 id="insight-title">Запоминаются не фразы.<br>А ощущения.</h2></div><p class="insight-text">Большинство мужчин пытаются впечатлить женщину словами. На самом деле она запоминает <strong>эмоции, которые испытывает рядом с мужчиной.</strong><br><br>Эмоциональный флирт помогает создать интерес, легкость и притяжение без игр, манипуляций и заученных техник.</p></div></section>
+
+    <section class="format" aria-labelledby="format-title"><div class="wrap"><div class="format-grid"><div class="format-content"><p class="kicker">Формат встречи</p><h2 id="format-title">Никакой теории ради теории</h2><div class="format-list">
+      <article class="format-item"><strong>Живое участие</strong><p>Практическая работа в группе с обратной связью.</p></article>
+      <article class="format-item"><strong>2 часа контента и практики</strong><p>Без воды. Только то, что можно применять сразу после мастер-класса.</p></article>
+      <article class="format-item"><strong>Ответы на вопросы</strong><p>Разбор реальных ситуаций участников.</p></article>
+      <p class="venue">Минск, ул. Кульман, 9</p>
+    </div></div><div class="video"><iframe src="https://kinescope.io/embed/bQyjqABhYkaM9PLisZQPTH" title="Как проходит мастер-класс" allow="autoplay; fullscreen; picture-in-picture; encrypted-media" allowfullscreen></iframe></div></div></div></section>
+
+    <section class="reviews" aria-labelledby="reviews-title"><div class="wrap"><div class="reviews-head"><div><p class="kicker">После мастер-класса</p><h2 id="reviews-title">Что говорят участники</h2></div><p class="review-note">Имена изменены по просьбе участников</p></div><div class="quotes">
+      <blockquote><p>«Впервые понял, что не нужно искать идеальную фразу. Стало проще начать разговор и не теряться в нем».</p><footer>Алексей, 29</footer></blockquote>
+      <blockquote><p>«Это не про маски и роли. После занятия появилось спокойствие: я знаю, как проявлять интерес по-настоящему».</p><footer>Денис, 34</footer></blockquote>
+      <blockquote><p>«Больше всего зашла практика. Уже на следующий день применил подход на свидании, и общение было совсем другим».</p><footer>Максим, 27</footer></blockquote>
+    </div></div></section>
+
+    <section class="cta" aria-labelledby="cta-title"><div class="wrap"><p class="kicker">Ближайшая встреча</p><h2 id="cta-title">Начни вызывать интерес, а не бороться за внимание</h2><p class="eyebrow"><span data-event-date></span> • 19:00 • Минск</p><div class="cta-offer"><span class="price-old">60 руб.</span><span class="price-new">10 руб.</span></div><p class="cta-venue">Специальная цена для новых участников • ул. Кульман, 9</p><button class="button js-form" type="button" style="margin-top:28px">Оставить заявку</button></div></section>
+  </main>
+  <footer class="site-footer wrap"><span>Эмоциональный флирт</span><span>Минск • <span data-event-date></span> • 19:00</span></footer>
+
+  <script>
+    (() => {
+      const getMinskTime = () => {
+        const parts = new Intl.DateTimeFormat('en-CA', { timeZone: 'Europe/Minsk', year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', hourCycle: 'h23' }).formatToParts(new Date());
+        return Object.fromEntries(parts.filter(({ type }) => type !== 'literal').map(({ type, value }) => [type, Number(value)]));
+      };
+      const minsk = getMinskTime();
+      const eventDate = new Date(Date.UTC(minsk.year, minsk.month - 1, minsk.day));
+      const daysUntilWednesday = (3 - eventDate.getUTCDay() + 7) % 7;
+      eventDate.setUTCDate(eventDate.getUTCDate() + (daysUntilWednesday === 0 && minsk.hour >= 9 ? 7 : daysUntilWednesday));
+      const label = new Intl.DateTimeFormat('ru-RU', { timeZone: 'UTC', day: 'numeric', month: 'long' }).format(eventDate).toUpperCase();
+      document.querySelectorAll('[data-event-date]').forEach((element) => { element.textContent = label; });
+      const openAmoForm = (attempt = 0) => {
+        const amoButton = document.getElementById('amoforms_action_btn');
+        if (amoButton) { amoButton.click(); return; }
+        if (attempt < 50) setTimeout(() => openAmoForm(attempt + 1), 100);
+      };
+      document.querySelectorAll('.js-form').forEach((button) => button.addEventListener('click', openAmoForm));
+    })();
+  </script>
+  <script>!function(a,m,o,c,r,m){a[o+c]=a[o+c]||{setMeta:function(p){this.params=(this.params||[]).concat([p])}},a[o+r]=a[o+r]||function(f){a[o+r].f=(a[o+r].f||[]).concat([f])},a[o+r]({id:"1730770",hash:"e5f41bec4dfcdc949a099449bd10e24e",locale:"ru"}),a[o+m]=a[o+m]||function(f,k){a[o+m].f=(a[o+m].f||[]).concat([[f,k]])}}(window,0,"amo_forms_","params","load","loaded");</script>
+  <script id="amoforms_script_1730770" async charset="utf-8" src="https://forms.amocrm.ru/forms/assets/js/amoforms.js?1783956175"></script>
+</body>
+</html>
