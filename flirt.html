@@ -8,6 +8,24 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1284043626602031');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1284043626602031&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
 <style>
   :root{
     --black:#0a0a0b;
@@ -329,23 +347,6 @@
     html{scroll-behavior:auto;}
   }
 </style>
-  <!-- Meta Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '1284043626602031');
-fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=1284043626602031&ev=PageView&noscript=1"
-/></noscript>
-<!-- End Meta Pixel Code -->
 </head>
 <body>
 
@@ -439,7 +440,7 @@ src="https://www.facebook.com/tr?id=1284043626602031&ev=PageView&noscript=1"
       </div>
       <div class="program-card reveal">
         <div class="program-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h7l-1 8 11-14h-8l1-6z"/></svg></div>
-        <p>Как создавать искру и притяжение - без пошлости</p>
+        <p>Как создавать искру и сексуальное напряжение — без пошлости</p>
       </div>
     </div>
   </div>
@@ -579,6 +580,21 @@ src="https://www.facebook.com/tr?id=1284043626602031&ev=PageView&noscript=1"
   document.querySelectorAll('.js-open-form').forEach(function(btn){
     btn.addEventListener('click', function(){ openAmoForm(); });
   });
+
+  // fire a Facebook Pixel "Lead" event the moment the amoCRM form is actually
+  // submitted. The widget injects a real <form id="amoforms_form"> into the page
+  // (not a cross-origin iframe), so we can listen for its native submit event —
+  // this fires even though the widget itself also intercepts the event to show
+  // its own "thank you" message, since intercepting (preventDefault) doesn't stop
+  // other listeners from seeing the same event.
+  document.addEventListener('submit', function(e){
+    var form = e.target;
+    if (form && form.id === 'amoforms_form') {
+      if (typeof fbq === 'function') {
+        fbq('track', 'Lead');
+      }
+    }
+  }, true);
 
   // sessions run every Wednesday at 19:00.
   // from Wednesday 9:00 onward, the site should already point to *next* Wednesday.
