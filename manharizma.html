@@ -1,828 +1,529 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ru">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ОТНОШЕНИЯ БЕЗ ВЫНОСА МОЗГА — бесплатный живой вебинар</title>
-<meta name="description" content="Узнай, какие ошибки совершают 95% мужчин в отношениях. Живой эфир 13 августа, 20:00 МСК. Записи не будет.">
-<meta property="og:title" content="ОТНОШЕНИЯ БЕЗ ВЫНОСА МОЗГА — бесплатный живой вебинар">
-<meta property="og:description" content="Живой эфир 13 августа, 20:00 МСК. Записи не будет.">
-<meta property="og:image" content="https://static.tildacdn.com/tild6462-6566-4133-b036-313865313535/___2.jpg">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;600;700;800;900&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
-<style>
-  :root{
-    --ink:#121110;
-    --ink-2:#1b1815;
-    --ink-3:#242019;
-    --paper:#f3eee2;
-    --paper-dim:#c9c2b0;
-    --gold:#c6a15b;
-    --gold-bright:#e6c684;
-    --brick:#b23b2e;
-    --brick-bright:#d1493a;
-    --stone:#8f8878;
-    --line: rgba(243,238,226,0.14);
-    --line-strong: rgba(243,238,226,0.26);
-    --font-display:'Unbounded', sans-serif;
-    --font-body:'Inter', sans-serif;
-    --font-mono:'JetBrains Mono', monospace;
-    --container: 1180px;
-    --r-sm: 4px;
-    --r-md: 8px;
-    --r-lg: 14px;
-  }
-  *{box-sizing:border-box; margin:0; padding:0;}
-  html{scroll-behavior:smooth;}
-  body{
-    background:var(--ink);
-    color:var(--paper);
-    font-family:var(--font-body);
-    font-size:18px;
-    line-height:1.6;
-    -webkit-font-smoothing:antialiased;
-    overflow-x:hidden;
-    position:relative;
-  }
-  body::before{
-    content:"";
-    position:fixed; inset:0;
-    background-image:url('https://static.tildacdn.com/tild3566-6437-4432-a233-336532346236/freepik__background_.png');
-    background-size:cover;
-    background-position:center;
-    opacity:.05;
-    mix-blend-mode:screen;
-    pointer-events:none;
-    z-index:0;
-  }
-  img{max-width:100%; display:block;}
-  a{color:inherit; text-decoration:none;}
-  .wrap{max-width:var(--container); margin:0 auto; padding:0 24px; position:relative; z-index:1;}
-  section{position:relative; z-index:1;}
-  ::selection{background:var(--gold); color:var(--ink);}
-
-  h1,h2,h3{font-family:var(--font-display); font-weight:800; line-height:1.05; letter-spacing:-0.01em;}
-  .eyebrow{
-    font-family:var(--font-mono);
-    font-size:13px;
-    letter-spacing:.14em;
-    text-transform:uppercase;
-    color:var(--gold);
-    display:flex; align-items:center; gap:10px;
-  }
-  .eyebrow::before{content:""; width:22px; height:1px; background:var(--gold);}
-
-  .btn{
-    display:inline-flex; align-items:center; justify-content:center; gap:10px;
-    font-family:var(--font-display); font-weight:700; font-size:16px;
-    letter-spacing:.02em;
-    padding:18px 32px;
-    border-radius:var(--r-sm);
-    border:1px solid transparent;
-    cursor:pointer;
-    transition:transform .15s ease, box-shadow .15s ease, background .2s ease;
-  }
-  .btn::after{content:"\2192"; font-weight:600; transition:transform .2s ease;}
-  .btn-primary{
-    background:linear-gradient(180deg, var(--gold-bright), var(--gold));
-    color:var(--ink);
-    box-shadow:0 10px 30px -8px rgba(198,161,91,.55);
-  }
-  .btn-primary:hover{transform:translateY(-2px); box-shadow:0 16px 34px -8px rgba(198,161,91,.7);}
-  .btn-primary:hover::after{transform:translateX(3px);}
-  .btn-primary:active{transform:translateY(0);}
-  .btn-ghost{
-    background:transparent; color:var(--paper); border-color:var(--line-strong);
-  }
-  .btn-ghost:hover{border-color:var(--gold); color:var(--gold);}
-  .btn-block{width:100%;}
-
-  /* ---------- FILE STRIP ---------- */
-  .file-strip{
-    position:fixed; top:0; left:0; right:0; z-index:101;
-    background:var(--ink); border-bottom:1px solid var(--line);
-    font-family:var(--font-mono); font-size:11px; letter-spacing:.09em; text-transform:uppercase; color:var(--stone);
-  }
-  .file-strip-inner{display:flex; align-items:center; justify-content:space-between; padding:8px 24px; max-width:var(--container); margin:0 auto;}
-  .file-strip-inner .fs-live{display:flex; align-items:center; gap:8px; color:#e2a297;}
-  .fs-dot{width:5px; height:5px; border-radius:50%; background:var(--brick-bright); animation:pulse 1.6s infinite;}
-  .fs-hide-tablet{display:inline;}
-
-  /* ---------- NAV ---------- */
-  header{
-    position:fixed; top:34px; left:0; right:0; z-index:100;
-    backdrop-filter:blur(14px);
-    background:rgba(18,17,16,.72);
-    border-bottom:1px solid var(--line);
-  }
-  .nav{display:flex; align-items:center; justify-content:space-between; padding:16px 24px; max-width:var(--container); margin:0 auto;}
-  section[id]{scroll-margin-top:100px;}
-  .logo{font-family:var(--font-display); font-weight:800; font-size:18px; letter-spacing:.02em; display:flex; align-items:center; gap:8px;}
-  .logo span{color:var(--gold);}
-  .nav-links{display:flex; gap:32px; font-family:var(--font-mono); font-size:13px; letter-spacing:.06em; text-transform:uppercase;}
-  .nav-links a{opacity:.8; transition:opacity .2s, color .2s;}
-  .nav-links a:hover{opacity:1; color:var(--gold);}
-  .nav .btn{padding:12px 22px; font-size:14px;}
-  .nav-cta-wrap{display:flex; align-items:center; gap:24px;}
-
-  /* ---------- HERO ---------- */
-  .hero{padding:174px 0 90px; position:relative; overflow:hidden;}
-  .hero-grid{display:grid; grid-template-columns:1.1fr .9fr; gap:60px; align-items:center;}
-  .status-stamp{
-    display:inline-flex; align-items:center; gap:10px;
-    font-family:var(--font-mono); font-size:13px; letter-spacing:.08em; text-transform:uppercase;
-    padding:9px 16px 9px 12px;
-    border:1px solid rgba(178,59,46,.5);
-    background:rgba(178,59,46,.12);
-    border-radius:100px;
-    color:#f0b9ae;
-    margin-bottom:26px;
-  }
-  .live-dot{width:8px; height:8px; border-radius:50%; background:var(--brick-bright); box-shadow:0 0 0 0 rgba(209,73,58,.7); animation:pulse 1.6s infinite;}
-  @keyframes pulse{
-    0%{box-shadow:0 0 0 0 rgba(209,73,58,.55);}
-    70%{box-shadow:0 0 0 9px rgba(209,73,58,0);}
-    100%{box-shadow:0 0 0 0 rgba(209,73,58,0);}
-  }
-  .hero h1{font-size:clamp(40px, 5.4vw, 72px); margin:18px 0 22px;}
-  .hero h1 em{font-style:normal; color:var(--gold);}
-  .hero-sub{font-size:clamp(17px, 1.6vw, 20px); color:var(--paper-dim); max-width:540px; margin-bottom:34px;}
-  .hero-cta-row{display:flex; align-items:center; gap:22px; flex-wrap:wrap; margin-bottom:38px;}
-  .hero-note{font-family:var(--font-mono); font-size:13px; color:var(--stone);}
-  .trust-row{display:flex; gap:34px; flex-wrap:wrap; padding-top:26px; border-top:1px solid var(--line);}
-  .trust-item{font-family:var(--font-mono); font-size:13px; color:var(--paper-dim);}
-  .trust-item b{display:block; font-family:var(--font-display); font-size:24px; color:var(--paper); font-weight:700;}
-
-  .hero-visual{position:relative;}
-  .hero-mobile-photo{display:none;}
-  .hero-panel{
-    position:relative; border:1px solid var(--line-strong); border-radius:var(--r-lg);
-    background:var(--ink-2); overflow:hidden;
-    box-shadow:0 40px 90px -30px rgba(0,0,0,.7);
-  }
-  .hero-panel-img{
-    position:relative; height:460px; overflow:hidden;
-  }
-  .hero-panel-img img{
-    width:100%; height:100%; object-fit:cover; object-position:center 18%;
-  }
-  .hero-panel-img::after{
-    content:""; position:absolute; inset:0;
-    background:linear-gradient(180deg, rgba(18,17,16,0) 60%, rgba(18,17,16,.5) 100%);
-    pointer-events:none;
-  }
-  .hero-panel-foot{
-    display:flex; align-items:center; justify-content:space-between; gap:14px;
-    padding:18px 28px; border-top:1px dashed var(--line-strong);
-    font-family:var(--font-mono);
-  }
-  .hero-panel-foot .foot-label{font-size:11px; text-transform:uppercase; letter-spacing:.1em; color:var(--stone);}
-  .hero-panel-foot .foot-value{font-family:var(--font-display); font-size:17px; font-weight:700; color:var(--paper); margin-top:3px;}
-  .hero-panel-foot .foot-live{display:flex; align-items:center; gap:8px; font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:#e2a297;}
-
-  .countdown{
-    display:flex; align-items:center; gap:10px; margin:34px 0 0;
-  }
-  .cbox{
-    background:var(--ink-2); border:1px solid var(--line); border-radius:var(--r-md);
-    padding:14px 10px; text-align:center; min-width:64px;
-  }
-  .cbox .n{font-family:var(--font-display); font-size:26px; font-weight:800; color:var(--gold-bright); font-variant-numeric:tabular-nums;}
-  .cbox .l{font-family:var(--font-mono); font-size:10px; text-transform:uppercase; letter-spacing:.08em; color:var(--stone); margin-top:2px;}
-  .cd-sep{font-family:var(--font-display); font-weight:800; font-size:22px; color:var(--gold); opacity:.45;}
-
-  /* ---------- SECTION HEAD ---------- */
-  .section-head{max-width:720px; margin-bottom:56px; position:relative;}
-  .section-head h2{font-size:clamp(30px, 3.6vw, 46px); margin-top:16px;}
-  .section-head[data-ghost]::before{
-    content:attr(data-ghost);
-    position:absolute; top:-54px; right:0;
-    font-family:var(--font-display); font-weight:900; font-size:150px; line-height:1;
-    color:transparent; -webkit-text-stroke:1px var(--line-strong);
-    z-index:-1; pointer-events:none; user-select:none;
-  }
-  .section-pad{padding:110px 0;}
-  .border-top{border-top:1px solid var(--line);}
-
-  /* ---------- FOR WHO ---------- */
-  .for-who-list{display:grid; grid-template-columns:1fr 1fr; gap:1px; background:var(--line); border:1px solid var(--line); border-radius:var(--r-md); overflow:hidden;}
-  .fw-item{background:var(--ink-2); padding:30px 32px; display:flex; gap:18px; align-items:flex-start;}
-  .fw-mark{font-family:var(--font-mono); color:var(--gold); font-size:15px; flex:none; padding-top:3px;}
-  .fw-item p{font-size:18px; line-height:1.5;}
-
-  /* ---------- PROGRAM / DOSSIER CARDS ---------- */
-  .program-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:20px;}
-  .dossier-card{
-    position:relative; background:var(--ink-2); border:1px solid var(--line); border-radius:var(--r-md);
-    padding:30px 26px 30px; overflow:hidden; min-height:210px;
-    transition:border-color .25s ease, transform .25s ease;
-  }
-  .dossier-card:hover{border-color:var(--line-strong); transform:translateY(-3px);}
-  .dossier-card::after{
-    content:""; position:absolute; top:0; right:0; width:0; height:0;
-    border-style:solid; border-width:0 24px 24px 0; border-color:transparent var(--ink) transparent transparent;
-    z-index:3;
-  }
-  .dossier-card .num{font-family:var(--font-mono); color:var(--gold); font-size:13px; letter-spacing:.08em;}
-  .dossier-card h3{font-family:var(--font-body); font-weight:700; font-size:19px; margin-top:14px; line-height:1.4; color:var(--paper);}
-  .redact-bar{
-    position:absolute; left:0; top:0; bottom:0; width:100%;
-    background:linear-gradient(120deg, var(--gold), var(--gold-bright));
-    transform-origin:left; transition:transform 1s cubic-bezier(.65,0,.15,1);
-    z-index:2;
-  }
-  .dossier-card.revealed .redact-bar{transform:scaleX(0);}
-  .dossier-card .stamp-txt{
-    position:absolute; right:16px; bottom:14px; font-family:var(--font-mono); font-size:10px;
-    letter-spacing:.1em; color:var(--stone); text-transform:uppercase; opacity:.6;
-  }
-
-  /* ---------- FORMAT ---------- */
-  .format-row{display:grid; grid-template-columns:repeat(3,1fr); gap:20px;}
-  .format-card{
-    border:1px solid var(--line); border-radius:var(--r-md); padding:36px 28px; text-align:center;
-    background:var(--ink-2);
-  }
-  .format-card .big{font-family:var(--font-display); font-size:44px; font-weight:800; color:var(--gold-bright);}
-  .format-card .lbl{font-family:var(--font-mono); font-size:13px; text-transform:uppercase; letter-spacing:.08em; color:var(--paper-dim); margin-top:10px;}
-
-  /* ---------- MID BANNER ---------- */
-  .mid-banner{position:relative; padding:130px 0; overflow:hidden;}
-  .mid-banner img.bg{position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:top; filter:grayscale(.3);}
-  .mid-banner::before{content:""; position:absolute; inset:0; background:linear-gradient(180deg, rgba(18,17,16,.55), rgba(18,17,16,.94) 60%, var(--ink)); z-index:1;}
-  .mid-banner .wrap{z-index:2;}
-  .mid-banner .eyebrow{justify-content:center;}
-  .mid-banner .eyebrow::before{display:none;}
-  .mid-banner h2{text-align:center; font-size:clamp(26px,3.2vw,40px); max-width:820px; margin:20px auto 56px;}
-  .quote-feature{max-width:740px; margin:0 auto; text-align:center; position:relative; padding-top:24px;}
-  .quote-feature .mark{
-    position:absolute; top:-18px; left:50%; transform:translateX(-50%);
-    font-family:var(--font-display); font-size:90px; font-weight:800; color:var(--gold); opacity:.3; line-height:1;
-  }
-  .quote-feature p{font-family:var(--font-display); font-weight:600; font-size:clamp(20px,2.3vw,28px); line-height:1.5; position:relative;}
-  .quote-feature cite{display:block; margin-top:22px; font-family:var(--font-mono); font-style:normal; font-size:13px; color:var(--gold);}
-
-  /* ---------- TRAINER (single feature) ---------- */
-  .trainer-feature{
-    display:grid; grid-template-columns:.86fr 1.14fr; gap:0; align-items:stretch;
-    border:1px solid var(--line); border-radius:var(--r-lg); overflow:hidden; background:var(--ink-2);
-  }
-  .trainer-feature-photo{position:relative; min-height:480px;}
-  .trainer-feature-photo img{width:100%; height:100%; object-fit:cover; filter:grayscale(.3) contrast(1.05);}
-  .file-tab{position:absolute; top:18px; left:18px; background:rgba(18,17,16,.82); border:1px solid var(--gold); color:var(--gold); font-family:var(--font-mono); font-size:11px; letter-spacing:.1em; text-transform:uppercase; padding:6px 12px; border-radius:100px;}
-  .trainer-feature-body{padding:44px 44px 44px 40px; display:flex; flex-direction:column; justify-content:center;}
-  .trainer-feature-body h3{font-family:var(--font-display); font-size:28px; font-weight:800;}
-  .trainer-role{font-family:var(--font-mono); font-size:13px; color:var(--gold); text-transform:uppercase; letter-spacing:.06em; margin:8px 0 22px;}
-  .trainer-stats{display:flex; flex-wrap:wrap; gap:10px; margin-bottom:22px;}
-  .trainer-stat-chip{
-    font-family:var(--font-mono); font-size:12px; letter-spacing:.04em; color:var(--paper-dim);
-    border:1px solid var(--line-strong); border-radius:100px; padding:7px 14px;
-  }
-  .trainer-feature-body p{font-size:16.5px; color:var(--paper-dim); margin-bottom:12px;}
-  .trainer-feature-body p:last-child{margin-bottom:0;}
-  .trainer-feature-body b{color:var(--paper);}
-
-  /* ---------- STATS ---------- */
-  .stats-row{display:grid; grid-template-columns:repeat(4,1fr); gap:22px; text-align:center;}
-  .stat{padding:20px 10px; border-left:1px solid var(--line);}
-  .stat:first-child{border-left:none;}
-  .stat .n{font-family:var(--font-display); font-size:clamp(30px,3vw,42px); font-weight:800; color:var(--gold-bright);}
-  .stat .l{font-family:var(--font-mono); font-size:13px; color:var(--paper-dim); margin-top:8px;}
-
-  /* ---------- FINAL CTA ---------- */
-  .final-cta{
-    position:relative; text-align:center; padding:130px 0; overflow:hidden;
-    background:radial-gradient(ellipse at 50% 0%, rgba(198,161,91,.14), transparent 60%);
-    border-top:1px solid var(--line); border-bottom:1px solid var(--line);
-  }
-  .final-cta h2{font-size:clamp(32px,4.4vw,58px); max-width:820px; margin:20px auto 20px;}
-  .final-cta .hero-sub{margin:0 auto 36px;}
-  .final-cta .countdown{justify-content:center; margin:0 0 38px;}
-  .final-cta .status-stamp{margin-left:auto; margin-right:auto;}
-
-  /* ---------- FOOTER ---------- */
-  footer{padding:60px 0 40px; border-top:1px solid var(--line);}
-  .footer-row{display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:18px;}
-  .footer-links{display:flex; gap:26px; font-family:var(--font-mono); font-size:13px; color:var(--stone);}
-  .footer-links a:hover{color:var(--gold);}
-  .footer-sub{margin-top:26px; font-family:var(--font-mono); font-size:12px; color:var(--stone); line-height:1.7; max-width:760px;}
-
-  /* ---------- MODAL / FORM ---------- */
-  .modal-overlay{
-    position:fixed; inset:0; background:rgba(10,9,8,.82); backdrop-filter:blur(4px);
-    display:none; align-items:center; justify-content:center; z-index:1000; padding:20px;
-  }
-  .modal-overlay.open{display:flex;}
-  .modal{
-    background:var(--ink-2); border:1px solid var(--line-strong); border-radius:12px;
-    width:100%; max-width:460px; padding:38px 34px 34px; position:relative;
-    max-height:92vh; overflow-y:auto;
-  }
-  .modal.modal-wide{max-width:760px;}
-  .modal-close{position:absolute; top:18px; right:18px; width:36px; height:36px; border-radius:50%; border:1px solid var(--line-strong); background:transparent; color:var(--paper); font-size:18px; cursor:pointer; display:flex; align-items:center; justify-content:center;}
-  .modal-close:hover{border-color:var(--gold); color:var(--gold);}
-  .modal h3{font-family:var(--font-display); font-size:26px; font-weight:800; margin-bottom:8px;}
-  .modal .modal-sub{color:var(--paper-dim); font-size:15px; margin-bottom:26px;}
-  .field{margin-bottom:16px;}
-  .field label{display:block; font-family:var(--font-mono); font-size:12px; text-transform:uppercase; letter-spacing:.06em; color:var(--stone); margin-bottom:8px;}
-  .field input{
-    width:100%; background:var(--ink); border:1px solid var(--line-strong); border-radius:8px;
-    padding:15px 16px; color:var(--paper); font-family:var(--font-body); font-size:16px;
-    transition:border-color .2s;
-  }
-  .field input:focus{outline:none; border-color:var(--gold);}
-  .field.error input{border-color:var(--brick-bright);}
-  .field .err-msg{display:none; font-family:var(--font-mono); font-size:12px; color:var(--brick-bright); margin-top:6px;}
-  .field.error .err-msg{display:block;}
-  .consent{display:flex; gap:10px; align-items:flex-start; margin:20px 0 22px;}
-  .consent input{margin-top:4px;}
-  .consent label{font-size:13px; color:var(--stone); line-height:1.5;}
-  .consent a{color:var(--gold); text-decoration:underline;}
-  .form-status{font-family:var(--font-mono); font-size:13px; color:var(--gold); margin-top:14px; text-align:center; display:none;}
-  .policy-body{font-size:14px; color:var(--paper-dim); line-height:1.75;}
-  .policy-body h4{font-family:var(--font-display); color:var(--paper); margin:22px 0 8px; font-size:16px;}
-  .policy-body p{margin-bottom:12px;}
-
-  /* ---------- REVEAL ---------- */
-  .reveal{opacity:0; transform:translateY(24px); transition:opacity .7s ease, transform .7s ease;}
-  .reveal.in{opacity:1; transform:translateY(0);}
-
-  /* ---------- RESPONSIVE ---------- */
-  @media (max-width: 980px){
-    .hero-grid{grid-template-columns:1fr;}
-    .hero-visual{display:none;}
-    .hero-mobile-photo{
-      display:block; margin:20px 0 28px; border-radius:var(--r-lg); overflow:hidden;
-      border:1px solid var(--line-strong); box-shadow:0 30px 60px -24px rgba(0,0,0,.6);
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#111210">
+  <meta name="description" content="Бесплатный живой эфир о зрелых отношениях — 13 августа в 20:00 МСК.">
+  <title>Отношения по твоим правилам — живой эфир</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Unbounded:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #111210;
+      --paper: #f5f3ee;
+      --lime: #d8ff4d;
+      --lilac: #d7ccff;
+      --coral: #ff7a5c;
+      --muted: #a8aaa1;
+      --line: rgba(245, 243, 238, .18);
+      --max: 1240px;
     }
-    .hero-mobile-photo img{width:100%; aspect-ratio:4/5; height:auto; object-fit:cover; object-position:center 6%; display:block;}
-    .hero-panel-img{height:420px;}
-    .for-who-list{grid-template-columns:1fr;}
-    .program-grid{grid-template-columns:1fr 1fr;}
-    .format-row{grid-template-columns:1fr;}
-    .trainer-feature{grid-template-columns:1fr;}
-    .trainer-feature-photo{min-height:320px;}
-    .trainer-feature-body{padding:36px 32px;}
-    .stats-row{grid-template-columns:1fr 1fr;}
-    .stat{border-left:none; border-top:1px solid var(--line);}
-    .stat:nth-child(1),.stat:nth-child(2){border-top:none;}
-    .nav-links{display:none;}
-    .section-head[data-ghost]::before{font-size:110px; top:-40px;}
-  }
-  @media (max-width: 640px){
-    body{font-size:16.5px;}
-    .section-pad{padding:64px 0;}
-    .file-strip{display:none;}
-    header{display:none;}
-    .hero{padding:36px 0 56px;}
-    .hero-panel-img{height:380px;}
-    .hero-panel-foot{padding:14px 18px; flex-wrap:wrap; gap:8px;}
-    .program-grid{grid-template-columns:1fr;}
-    .countdown{gap:6px;}
-    .cbox{min-width:48px; padding:9px 4px;}
-    .cbox .n{font-size:18px;}
-    .cd-sep{font-size:16px;}
-    .trust-row{gap:20px; padding-top:20px;}
-    .trust-item b{font-size:20px;}
-    .trainer-feature-body{padding:28px 22px;}
-    .trainer-feature-body h3{font-size:23px;}
-    .modal{padding:30px 22px 26px;}
-    .btn{width:100%;}
-    .hero-cta-row{flex-direction:column; align-items:stretch;}
-    .hero-cta-row .btn{width:100%;}
-    .nav{padding:13px 16px;}
-    .nav .btn{width:auto; padding:10px 16px; font-size:13px;}
-    .logo{font-size:14px; letter-spacing:0;}
-    .footer-row .logo{font-size:15px;}
-    .footer-links{flex-direction:column; gap:10px;}
-    .footer-row{align-items:flex-start;}
-    .section-head[data-ghost]::before{display:none;}
-    .quote-feature .mark{font-size:64px; top:-8px;}
-  }
-</style>
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      min-width: 320px;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: "Manrope", Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+    body.modal-open { overflow: hidden; }
+    a { color: inherit; text-decoration: none; }
+    button, input { font: inherit; }
+    button { cursor: pointer; }
+    .wrap { width: min(calc(100% - 48px), var(--max)); margin: 0 auto; }
+    .eyebrow { display: flex; align-items: center; gap: 10px; font-size: 11px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
+    .eyebrow::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: currentColor; }
+    .display { margin: 0; font-family: "Unbounded", "Manrope", sans-serif; font-weight: 600; letter-spacing: -.065em; line-height: .98; }
+    .button {
+      display: inline-flex; align-items: center; justify-content: center; gap: 14px;
+      min-height: 62px; padding: 0 27px; border: 1px solid transparent; border-radius: 2px;
+      font-size: 14px; font-weight: 800; letter-spacing: .035em; text-transform: uppercase;
+      transition: transform .25s ease, background .25s ease, color .25s ease, border-color .25s ease;
+    }
+    .button:hover { transform: translateY(-3px); }
+    .button:focus-visible, input:focus-visible, .close:focus-visible { outline: 3px solid var(--lime); outline-offset: 3px; }
+    .button--lime { color: var(--ink); background: var(--lime); }
+    .button--dark { color: var(--paper); background: var(--ink); }
+    .button--outline { color: var(--paper); border-color: var(--line); background: transparent; }
+    .button__arrow { font-size: 22px; line-height: .8; transform: translateY(-1px); }
+    .hero { position: relative; overflow: hidden; min-height: 850px; color: var(--paper); background: var(--ink); isolation: isolate; }
+    .hero::before { content: ""; position: absolute; z-index: -2; width: 58vw; aspect-ratio: 1; left: -17vw; top: -29vw; border-radius: 50%; background: var(--lime); filter: blur(68px); opacity: .34; animation: drift 12s ease-in-out infinite alternate; }
+    .hero::after { content: ""; position: absolute; z-index: -2; width: 35vw; aspect-ratio: 1; right: -31vw; bottom: -34vw; border-radius: 50%; background: var(--lilac); filter: blur(110px); opacity: .13; animation: drift 14s ease-in-out -4s infinite alternate-reverse; }
+    .hero-grid { position: relative; min-height: 850px; display: grid; grid-template-columns: minmax(0, .95fr) minmax(440px, 1.05fr); align-items: stretch; }
+    .hero-copy { position: relative; z-index: 2; display: flex; flex-direction: column; justify-content: center; padding: 86px 0 78px; }
+    .hero-copy--mobile, .hero-mobile-offer { display: none; }
+    .hero-copy .eyebrow { color: var(--lime); margin-bottom: 28px; }
+    .hero h1 { max-width: 720px; font-size: clamp(42px, 5.4vw, 80px); }
+    .hero h1 .title-line { display: block; width: max-content; max-width: 100%; }
+    .hero h1 .title-line--1 { font-size: 1em; }
+    .hero h1 .title-line--2 { font-size: 1.085em; }
+    .hero h1 .title-line--3 { font-size: 1.115em; }
+    .hero h1 .outline { color: var(--paper); -webkit-text-stroke: 0; }
+    .hero-lead { max-width: 515px; margin: 30px 0 27px; font-size: clamp(18px, 1.65vw, 23px); line-height: 1.45; color: rgba(245,243,238,.85); }
+    .hero-date { display: flex; align-items: center; gap: 10px; margin: 0 0 28px; font-size: 12px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: var(--lime); }
+    .hero-date i { display: block; width: 8px; height: 8px; flex: 0 0 auto; border-radius: 50%; background: var(--lime); box-shadow: 0 0 0 5px rgba(216,255,77,.13); }
+    .hero-actions { display: flex; align-items: center; gap: 24px; }
+    .micro-note { max-width: 170px; font-size: 11px; line-height: 1.4; color: rgba(245,243,238,.58); }
+    .hero-image { position: relative; overflow: hidden; min-height: 600px; margin: 74px 0 0; }
+    .hero-image::before { content: ""; position: absolute; inset: 0; z-index: 1; background: linear-gradient(90deg, var(--ink) 0%, rgba(17,18,16,.12) 28%, rgba(17,18,16,.05) 62%, var(--ink) 100%), linear-gradient(0deg, rgba(17,18,16,.62), transparent 34%); }
+    .hero-image img { width: 100%; height: 100%; object-fit: cover; object-position: 54% 35%; filter: saturate(.82) contrast(1.08); transform: scale(1.03); animation: image-in 1.3s cubic-bezier(.2,.65,.2,1) both; }
+    .image-tag { position: absolute; z-index: 2; right: 30px; bottom: 36px; width: 172px; padding: 17px 18px; background: var(--lime); color: var(--ink); font-size: 11px; font-weight: 800; line-height: 1.35; letter-spacing: .055em; text-transform: uppercase; transform: rotate(-4deg); }
+    .hero-scroll { position: absolute; z-index: 3; bottom: 27px; left: 0; display: flex; align-items: center; gap: 11px; font-size: 10px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; color: rgba(245,243,238,.54); }
+    .hero-scroll::after { content: "↓"; color: var(--lime); font-size: 22px; line-height: .5; }
+    .ticker { overflow: hidden; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); background: #171916; color: var(--paper); }
+    .ticker__inner { display: flex; width: max-content; align-items: center; gap: 42px; padding: 15px 0; font-family: "Unbounded", sans-serif; font-size: 12px; letter-spacing: -.04em; white-space: nowrap; animation: ticker 26s linear infinite; }
+    .ticker b { color: var(--lime); font-size: 19px; }
+    .intro { display: grid; grid-template-columns: 1.08fr .92fr; gap: 60px; padding: 124px 0 128px; }
+    .intro-copy { align-self: start; }
+    .section-label { color: #73766e; }
+    .intro h2 { max-width: 730px; margin-top: 26px; font-size: clamp(34px, 4.1vw, 62px); }
+    .intro h2 em { color: #6b6e65; font-style: normal; }
+    .intro-side { align-self: end; padding: 12px 0 0 28px; border-left: 2px solid var(--lime); }
+    .intro-side p { margin: 0; font-size: 18px; line-height: 1.5; }
+    .intro-side strong { color: #4d503f; }
+    .program { padding: 0 0 128px; }
+    .program-top { display: flex; justify-content: space-between; align-items: end; gap: 30px; padding-bottom: 31px; border-bottom: 1px solid #d8d7d0; }
+    .program h2 { font-size: clamp(32px, 3.7vw, 54px); }
+    .program-top p { max-width: 310px; margin: 0; font-size: 14px; line-height: 1.5; color: #64675f; }
+    .topic-grid { display: grid; grid-template-columns: repeat(3, 1fr); border-left: 1px solid #d8d7d0; }
+    .topic { min-height: 276px; display: flex; flex-direction: column; justify-content: space-between; padding: 28px; border-right: 1px solid #d8d7d0; border-bottom: 1px solid #d8d7d0; transition: background .25s ease, transform .25s ease; }
+    .topic:hover { background: #edebe5; transform: translateY(-4px); }
+    .topic-number { color: #8d9086; font-family: "Unbounded", sans-serif; font-size: 13px; letter-spacing: -.04em; }
+    .topic h3 { max-width: 300px; margin: 0; font-size: clamp(19px, 1.75vw, 25px); line-height: 1.25; letter-spacing: -.035em; }
+    .topic:nth-child(2n) .topic-number { color: #9c89ff; }
+    .topic:nth-child(3n) .topic-number { color: #e66853; }
+    .for-whom { position: relative; overflow: hidden; background: #dde0d3; }
+    .for-whom::after { content: ""; position: absolute; right: -12%; bottom: -42%; width: 67vw; aspect-ratio: 1; border-radius: 50%; background: var(--lime); filter: blur(70px); opacity: .36; }
+    .for-whom-grid { position: relative; z-index: 1; display: grid; grid-template-columns: .92fr 1.08fr; gap: 88px; padding: 120px 0; }
+    .for-whom h2 { margin-top: 24px; font-size: clamp(35px, 4.2vw, 64px); }
+    .for-whom h2 span { color: #61655a; }
+    .people-list { margin: 0; padding: 0; list-style: none; border-top: 1px solid rgba(17,18,16,.22); }
+    .people-list li { display: grid; grid-template-columns: 56px 1fr; gap: 19px; padding: 22px 0; border-bottom: 1px solid rgba(17,18,16,.22); font-size: clamp(18px, 1.55vw, 22px); font-weight: 600; line-height: 1.3; }
+    .people-list span { color: #74776d; font-family: "Unbounded", sans-serif; font-size: 12px; }
+    .format { padding: 126px 0 110px; background: var(--ink); color: var(--paper); }
+    .format-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: end; }
+    .format .section-label { color: rgba(245,243,238,.53); }
+    .format h2 { max-width: 580px; margin-top: 24px; font-size: clamp(35px, 4.2vw, 62px); }
+    .format h2 i { color: var(--lime); font-style: normal; }
+    .format-note { max-width: 490px; font-size: 18px; line-height: 1.5; color: rgba(245,243,238,.72); }
+    .format-list { grid-column: 1 / -1; display: grid; grid-template-columns: repeat(3, 1fr); margin-top: 22px; border-top: 1px solid var(--line); }
+    .format-item { padding: 26px 26px 0 0; border-right: 1px solid var(--line); }
+    .format-item + .format-item { padding-left: 26px; }
+    .format-item:last-child { border-right: 0; }
+    .format-item b { display: block; margin-bottom: 13px; color: var(--lime); font-family: "Unbounded", sans-serif; font-size: clamp(30px, 3.8vw, 50px); letter-spacing: -.08em; }
+    .format-item span { display: block; max-width: 220px; font-size: 13px; font-weight: 700; line-height: 1.35; letter-spacing: .02em; text-transform: uppercase; }
+    .speaker { overflow: hidden; background: #272924; color: var(--paper); }
+    .speaker-grid { display: grid; grid-template-columns: minmax(310px, .92fr) 1.08fr; min-height: 750px; }
+    .speaker-image { position: relative; min-height: 560px; }
+    .speaker-image::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(39,41,36,.05), #272924 100%), linear-gradient(0deg, rgba(39,41,36,.36), transparent 40%); }
+    .speaker-image img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 43%; filter: saturate(.7) contrast(1.1); }
+    .speaker-badge { position: absolute; z-index: 1; left: 28px; bottom: 26px; padding: 15px 17px; color: var(--ink); background: var(--lilac); font-size: 11px; font-weight: 800; letter-spacing: .055em; text-transform: uppercase; transform: rotate(3deg); }
+    .speaker-copy { display: flex; flex-direction: column; justify-content: center; padding: 85px clamp(32px, 7vw, 110px); }
+    .speaker-copy .eyebrow { color: var(--lime); }
+    .speaker h2 { margin-top: 24px; font-size: clamp(40px, 4.8vw, 72px); }
+    .speaker-role { margin: 14px 0 30px; font-size: 16px; color: var(--lime); }
+    .speaker-bio { max-width: 530px; margin: 0; font-size: clamp(17px, 1.6vw, 21px); line-height: 1.48; color: rgba(245,243,238,.77); }
+    .speaker-facts { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 31px; }
+    .speaker-facts span { padding: 8px 10px; border: 1px solid rgba(245,243,238,.2); font-size: 11px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; }
+    .register { position: relative; overflow: hidden; padding: 122px 0 137px; }
+    .register::before { content: ""; position: absolute; width: 46vw; aspect-ratio: 1; border-radius: 50%; top: -30vw; right: -9vw; background: var(--coral); opacity: .18; filter: blur(64px); }
+    .register-grid { position: relative; display: grid; grid-template-columns: 1fr minmax(390px, .83fr); gap: 80px; align-items: start; }
+    .register h2 { max-width: 690px; margin-top: 26px; font-size: clamp(37px, 4.6vw, 68px); }
+    .register h2 span { color: #72756d; }
+    .register-copy { max-width: 510px; margin: 28px 0 0; font-size: 18px; line-height: 1.5; color: #565950; }
+    .form-card { position: relative; padding: 36px; background: var(--ink); color: var(--paper); box-shadow: 15px 15px 0 var(--lime); }
+    .form-kicker { margin: 0 0 8px; color: var(--lime); font-size: 11px; font-weight: 800; letter-spacing: .11em; text-transform: uppercase; }
+    .form-title { margin: 0 0 27px; font-size: 22px; letter-spacing: -.04em; line-height: 1.25; }
+    .field { margin-bottom: 15px; }
+    .field label { display: block; margin: 0 0 7px; font-size: 11px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: rgba(245,243,238,.62); }
+    .field input { width: 100%; height: 55px; padding: 0 15px; color: var(--paper); border: 1px solid rgba(245,243,238,.27); border-radius: 0; outline: 0; background: rgba(255,255,255,.05); font-size: 16px; transition: border-color .2s, background .2s; }
+    .field input::placeholder { color: rgba(245,243,238,.34); }
+    .field input:focus { border-color: var(--lime); background: rgba(255,255,255,.09); }
+    .form-card .button { width: 100%; margin-top: 7px; }
+    .form-legal { margin: 16px 0 0; font-size: 11px; line-height: 1.45; color: rgba(245,243,238,.55); }
+    .form-legal a { color: var(--paper); text-decoration: underline; text-underline-offset: 3px; }
+    .form-status { min-height: 18px; margin: 12px 0 0; font-size: 12px; font-weight: 700; color: var(--lime); }
+    .form-status.error { color: #ff9a85; }
+    /* ---------- Footer ---------- */
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 48px 0 32px;
+      background: var(--ink);
+      color: var(--paper);
+    }
+    .foot-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr;
+      gap: 32px;
+      font-size: 13.5px;
+      color: rgba(245,243,238,.62);
+    }
+    .foot-grid b {
+      color: var(--paper);
+      display: block;
+      margin-bottom: 8px;
+      font-family: "Unbounded", sans-serif;
+      font-weight: 700;
+      font-size: 12px;
+      letter-spacing: .02em;
+      text-transform: uppercase;
+    }
+    .foot-grid p { margin: 0 0 7px; line-height: 1.5; }
+    .foot-grid a { color: inherit; text-decoration: none; }
+    .foot-grid a:hover { color: var(--paper); text-decoration: underline; text-underline-offset: 3px; }
+    .foot-bottom {
+      margin-top: 36px;
+      padding-top: 20px;
+      border-top: 1px solid var(--line);
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+      font-size: 12.5px;
+      color: rgba(245,243,238,.42);
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+    }
+    .foot-bottom a { color: inherit; text-decoration: underline; cursor: pointer; text-underline-offset: 3px; }
+    .mobile-cta { display: none; }
+    .modal { position: fixed; z-index: 10; inset: 0; display: grid; place-items: center; padding: 18px; visibility: hidden; opacity: 0; background: rgba(17,18,16,.64); backdrop-filter: blur(9px); transition: opacity .2s, visibility .2s; }
+    .modal.is-open { visibility: visible; opacity: 1; }
+    .modal-panel { position: relative; width: min(520px, 100%); max-height: min(690px, calc(100vh - 36px)); overflow: auto; transform: translateY(16px); transition: transform .24s ease; }
+    .modal.is-open .modal-panel { transform: translateY(0); }
+    .modal .form-card { box-shadow: 10px 10px 0 var(--lime); }
+    .close { position: absolute; z-index: 2; top: 16px; right: 16px; width: 34px; height: 34px; padding: 0; border: 1px solid rgba(245,243,238,.25); color: var(--paper); background: transparent; font-size: 25px; line-height: 1; }
+    .policy-panel { width: min(630px, 100%); padding: 42px; background: var(--paper); color: var(--ink); }
+    .policy-panel h2 { margin: 0 0 15px; font-family: "Unbounded", sans-serif; font-size: 21px; letter-spacing: -.06em; }
+    .policy-panel h3 { margin: 24px 0 9px; font-family: "Unbounded", sans-serif; font-size: 15px; letter-spacing: -.035em; }
+    .policy-panel p { margin: 0 0 14px; font-size: 14px; line-height: 1.55; }
+    .policy-panel .close { color: var(--ink); border-color: rgba(17,18,16,.2); }
+    @keyframes drift { to { transform: translate(8vw, 8vw) scale(1.08); } }
+    @keyframes image-in { from { transform: scale(1.12); filter: saturate(.5) contrast(1.2); } to { transform: scale(1.03); } }
+    @keyframes ticker { to { transform: translateX(-50%); } }
+    @media (min-width: 1289px) {
+      .hero-image { width: calc(100% + 50vw - 620px); }
+    }
+    @media (max-width: 900px) {
+      .hero, .hero-grid { min-height: auto; }
+      .hero-grid { grid-template-columns: 1fr; }
+      .hero-copy { min-height: 670px; padding-top: 140px; padding-bottom: 86px; }
+      .hero-image { position: absolute; z-index: -1; inset: 0; margin: 0; min-height: 0; opacity: .55; }
+      .hero-image::before { background: linear-gradient(90deg, var(--ink) 0%, rgba(17,18,16,.7) 54%, rgba(17,18,16,.32)), linear-gradient(0deg, var(--ink), transparent 45%); }
+      .hero-image img { object-position: 55% 30%; }
+      .image-tag { right: 26px; bottom: 26px; }
+      .intro, .for-whom-grid, .format-grid, .register-grid { grid-template-columns: 1fr; gap: 38px; }
+      .intro-side { padding-left: 22px; }
+      .for-whom-grid, .format, .register { padding-top: 92px; padding-bottom: 98px; }
+      .format-list { margin-top: 2px; }
+      .speaker-grid { grid-template-columns: .84fr 1.16fr; min-height: 0; }
+      .speaker-copy { padding: 64px 42px; }
+      .register-grid { gap: 52px; }
+    }
+    @media (max-width: 640px) {
+      .wrap { width: min(calc(100% - 32px), var(--max)); }
+      .hero-date { font-size: 10px; letter-spacing: .04em; margin-bottom: 23px; }
+      .hero-date i { width: 6px; height: 6px; }
+      .hero { min-height: 0; }
+      .hero-grid { display: block; min-height: 0; }
+      .hero-copy--desktop { display: none; }
+      .hero-copy--mobile { display: block; min-height: 0; padding: 64px 0 29px; }
+      .hero-copy .eyebrow { margin-bottom: 21px; font-size: 10px; }
+      .hero h1 { font-size: clamp(36px, 10.6vw, 52px); letter-spacing: -.078em; }
+      .hero h1 .title-line--1 { font-size: 1em; }
+      .hero h1 .title-line--2 { font-size: 1.075em; }
+      .hero h1 .title-line--3 { font-size: 1.105em; }
+      .hero h1 .outline { -webkit-text-stroke: 0; }
+      .hero-image { position: relative; z-index: 0; inset: auto; width: calc(100% + 32px); height: 414px; min-height: 0; margin: 0 -16px; opacity: 1; }
+      .hero-image::before { background: linear-gradient(180deg, rgba(17,18,16,.04) 0%, rgba(17,18,16,.09) 42%, var(--ink) 100%); }
+      .hero-image img { object-position: 50% top; filter: saturate(.88) contrast(1.05); transform: scale(1); }
+      .image-tag { display: none; }
+      .hero-mobile-offer { position: relative; z-index: 2; display: block; margin-top: -58px; padding: 0 0 76px; }
+      .hero-mobile-offer .hero-lead { max-width: 350px; margin: 0 0 28px; font-size: 18px; line-height: 1.43; }
+      .hero-actions { align-items: flex-start; flex-direction: column; gap: 12px; }
+      .hero-actions .button { width: 100%; }
+      .micro-note { max-width: none; padding-left: 2px; }
+      .hero-scroll { display: none; }
+      .image-tag { right: 16px; bottom: 17px; width: 143px; padding: 12px; font-size: 10px; }
+      .ticker__inner { gap: 24px; padding: 12px 0; font-size: 10px; }
+      .ticker b { font-size: 14px; }
+      .intro, .program { padding-top: 75px; padding-bottom: 76px; }
+      .intro h2, .program h2, .for-whom h2, .format h2, .speaker h2, .register h2 { font-size: clamp(31px, 9vw, 43px); letter-spacing: -.075em; }
+      .intro h2 { margin-top: 19px; }
+      .intro-side p, .format-note, .register-copy { font-size: 16px; }
+      .program-top { align-items: flex-start; flex-direction: column; gap: 18px; }
+      .topic-grid { grid-template-columns: 1fr; }
+      .topic { min-height: 184px; padding: 22px 5px 22px 18px; }
+      .topic h3 { font-size: 20px; }
+      .for-whom-grid, .format, .register { padding-top: 77px; padding-bottom: 78px; }
+      .for-whom-grid { gap: 33px; }
+      .people-list li { grid-template-columns: 40px 1fr; gap: 11px; padding: 19px 0; font-size: 17px; }
+      .format-grid { gap: 28px; }
+      .format-list { grid-template-columns: 1fr; margin-top: 5px; }
+      .format-item, .format-item + .format-item { padding: 20px 0; border-right: 0; border-bottom: 1px solid var(--line); }
+      .format-item:last-child { border-bottom: 0; }
+      .format-item b { margin-bottom: 7px; font-size: 36px; }
+      .speaker-grid { grid-template-columns: 1fr; }
+      .speaker-image { min-height: 432px; }
+      .speaker-image::after { display: none; }
+      .speaker-image img { object-position: 50% 36%; }
+      .speaker-copy { padding: 62px 16px 73px; }
+      .speaker-bio { font-size: 16px; }
+      .speaker-badge { left: 17px; bottom: 17px; font-size: 10px; }
+      .register-grid { gap: 34px; }
+      .form-card { padding: 27px 20px; box-shadow: 8px 8px 0 var(--lime); }
+      .form-title { font-size: 20px; }
+      .foot-grid { grid-template-columns: 1fr; gap: 24px; }
+      .foot-bottom { margin-top: 28px; }
+      footer { padding-bottom: 88px; }
+      .mobile-cta { position: fixed; z-index: 7; left: 12px; right: 12px; bottom: 12px; display: block; pointer-events: none; transform: translateY(140%); transition: transform .35s cubic-bezier(.2,.8,.2,1); }
+      .mobile-cta.is-visible { pointer-events: auto; transform: translateY(0); }
+      .mobile-cta .button { width: 100%; min-height: 56px; box-shadow: 0 7px 25px rgba(0,0,0,.27); }
+      .policy-panel { padding: 35px 24px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+    }
+  </style>
 </head>
 <body>
-
-<div class="file-strip">
-  <div class="wrap file-strip-inner">
-    <span>Досье № 08-2026 · Доступ ограничен</span>
-    <span class="fs-live"><span class="fs-dot"></span>Эфир 13.08 · 20:00 МСК</span>
-  </div>
-</div>
-
-<header>
-  <div class="nav">
-    <a href="#top" class="logo">МЦПиР <span>•</span> МУЖСКОЙ ЦЕНТР</a>
-    <nav class="nav-links">
-      <a href="#for-who">Кому подойдёт</a>
-      <a href="#program">Программа</a>
-      <a href="#trainers">Тренер</a>
-    </nav>
-    <div class="nav-cta-wrap">
-      <a href="#" class="btn btn-primary" data-open-modal="subscribe">Записаться бесплатно</a>
-    </div>
-  </div>
-</header>
-
-<main id="top">
-
-  <!-- HERO -->
-  <section class="hero">
-    <div class="wrap hero-grid">
-      <div>
-        <div class="status-stamp"><span class="live-dot"></span>ЖИВОЙ ЭФИР БЕСПЛАТНО. ЗАПИСИ НЕ БУДЕТ</div>
-        <div class="eyebrow">Бесплатный вебинар МЦПиР</div>
-        <h1>ОТНОШЕНИЯ<br>БЕЗ <em>ВЫНОСА МОЗГА</em></h1>
-        <p class="hero-sub">95% мужчин совершают одни и те же ошибки — и теряют уважение, интерес и саму женщину. Разберём эти ошибки за один живой эфир и покажем, как строить отношения на своих условиях.</p>
-        <div class="hero-mobile-photo">
-          <img src="https://static.tildacdn.com/tild6561-3034-4739-b663-363361656539/__1_3.png" alt="Вебинар МЦПиР — отношения без выноса мозга" loading="lazy">
-          <div class="hero-panel-foot">
-            <div>
-              <div class="foot-label">Старт эфира</div>
-              <div class="foot-value">13 августа · 20:00 МСК</div>
-            </div>
-            <div class="foot-live"><span class="live-dot"></span>Прямой эфир</div>
+  <main>
+    <section class="hero" id="top" aria-label="Отношения по твоим правилам">
+      <div class="wrap hero-grid">
+        <div class="hero-copy hero-copy--desktop">
+          <div class="eyebrow">Открытый вебинар с Денисом Шальновым</div>
+          <h1 class="display" id="hero-title"><span class="title-line title-line--1">Отношения</span><span class="title-line title-line--2 outline">по твоим</span><span class="title-line title-line--3">правилам</span></h1>
+          <p class="hero-lead">Как выстраивать близость без игр, догадок и постоянной борьбы за своё место в паре.</p>
+          <div class="hero-date"><i></i>13 августа · 20:00 МСК</div>
+          <div class="hero-actions">
+            <a class="button button--lime" href="#register">Забронировать место <span class="button__arrow">↘</span></a>
+            <span class="micro-note">ЖИВОЙ ЭФИР БЕСПЛАТНО. ЗАПИСИ НЕ БУДЕТ</span>
           </div>
+          <div class="hero-scroll">Листайте, чтобы узнать программу</div>
         </div>
-        <div class="hero-cta-row">
-          <a href="#" class="btn btn-primary" data-open-modal="subscribe">Занять место в эфире</a>
-          <span class="hero-note">Записи и повтора не будет. Только прямой эфир.</span>
+        <div class="hero-copy hero-copy--mobile">
+          <div class="eyebrow">Открытый вебинар с Денисом Шальновым</div>
+          <h1 class="display"><span class="title-line title-line--1">Отношения</span><span class="title-line title-line--2 outline">по твоим</span><span class="title-line title-line--3">правилам</span></h1>
         </div>
-        <div class="countdown" id="countdown">
-          <div class="cbox"><div class="n" id="cd-days">00</div><div class="l">дней</div></div>
-          <span class="cd-sep">:</span>
-          <div class="cbox"><div class="n" id="cd-hours">00</div><div class="l">часов</div></div>
-          <span class="cd-sep">:</span>
-          <div class="cbox"><div class="n" id="cd-min">00</div><div class="l">минут</div></div>
-          <span class="cd-sep">:</span>
-          <div class="cbox"><div class="n" id="cd-sec">00</div><div class="l">секунд</div></div>
+        <div class="hero-image" aria-hidden="true">
+          <img src="https://static.tildacdn.com/tild6561-3034-4739-b663-363361656539/__1_3.png" alt="">
+          <div class="image-tag">Отношения — это не угадайка. Это ясность.</div>
         </div>
-        <div class="trust-row">
-          <div class="trust-item"><b>200 000+</b>выпускников</div>
-          <div class="trust-item"><b>20+ лет</b>в теме отношений</div>
-          <div class="trust-item"><b>150+</b>тренингов в год</div>
-        </div>
-      </div>
-      <div class="hero-visual">
-        <div class="hero-panel">
-          <div class="hero-panel-img">
-            <img src="https://static.tildacdn.com/tild6561-3034-4739-b663-363361656539/__1_3.png" alt="Вебинар МЦПиР — отношения без выноса мозга">
-          </div>
-          <div class="hero-panel-foot">
-            <div>
-              <div class="foot-label">Старт эфира</div>
-              <div class="foot-value">13 августа · 20:00 МСК</div>
-            </div>
-            <div class="foot-live"><span class="live-dot"></span>Прямой эфир</div>
+        <div class="hero-mobile-offer">
+          <p class="hero-lead">Как выстраивать близость без игр, догадок и постоянной борьбы за своё место в паре.</p>
+          <div class="hero-date"><i></i>13 августа · 20:00 МСК</div>
+          <div class="hero-actions">
+            <a class="button button--lime" href="#register">Забронировать место <span class="button__arrow">↘</span></a>
+            <span class="micro-note">ЖИВОЙ ЭФИР БЕСПЛАТНО. ЗАПИСИ НЕ БУДЕТ</span>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- FOR WHO -->
-  <section class="section-pad border-top" id="for-who">
-    <div class="wrap">
-      <div class="section-head reveal" data-ghost="01">
-        <div class="eyebrow">Кому подойдёт</div>
-        <h2>Этот эфир для тебя, если</h2>
-      </div>
-      <div class="for-who-list reveal">
-        <div class="fw-item"><span class="fw-mark">01</span><p>Хочешь сам выбирать формат отношений и управлять им, а не подстраиваться</p></div>
-        <div class="fw-item"><span class="fw-mark">02</span><p>Хочешь получать от отношений реальное удовольствие, а не терпеть и уступать</p></div>
-        <div class="fw-item"><span class="fw-mark">03</span><p>Не готов быть «удобным» и встречаться так, как удобно только ей</p></div>
-        <div class="fw-item"><span class="fw-mark">04</span><p>Уже обжёгся в прошлых отношениях и не хочешь повторения той же истории</p></div>
-        <div class="fw-item"><span class="fw-mark">05</span><p>Хочешь наладить то, что есть сейчас — пока не стало слишком поздно</p></div>
-        <div class="fw-item"><span class="fw-mark">06</span><p>Хочешь сам решать: классические отношения, без обязательств или свой формат</p></div>
+    <div class="ticker" aria-label="Ключевые параметры эфира">
+      <div class="ticker__inner">
+        <span>13 августа, 20:00 МСК</span><b>✦</b><span>2 часа полезного контента</span><b>✦</b><span>живой разбор вопросов</span><b>✦</b><span>участие бесплатно</span><b>✦</b>
+        <span>13 августа, 20:00 МСК</span><b>✦</b><span>2 часа полезного контента</span><b>✦</b><span>живой разбор вопросов</span><b>✦</b><span>участие бесплатно</span><b>✦</b>
       </div>
     </div>
-  </section>
 
-  <!-- PROGRAM -->
-  <section class="section-pad border-top" id="program">
-    <div class="wrap">
-      <div class="section-head reveal" data-ghost="02">
-        <div class="eyebrow">Досье · 6 тем эфира</div>
-        <h2>Что разберём за один вечер</h2>
+    <section class="wrap intro" aria-labelledby="intro-title">
+      <div class="intro-copy">
+        <div class="eyebrow section-label">Почему стоит прийти</div>
+        <h2 class="display" id="intro-title">Хватит <em>подстраиваться</em> под правила, которых тебе никто не объяснил.</h2>
       </div>
-      <div class="program-grid">
-        <div class="dossier-card reveal"><div class="redact-bar"></div><span class="num">01 / 06</span><h3>Почему женщина начинает «выносить мозг» — и как погасить это до того, как началось</h3><span class="stamp-txt">рассекречено</span></div>
-        <div class="dossier-card reveal"><div class="redact-bar"></div><span class="num">02 / 06</span><h3>Какую роль ждёт от тебя женщина — и как закрывать её без напряга</h3><span class="stamp-txt">рассекречено</span></div>
-        <div class="dossier-card reveal"><div class="redact-bar"></div><span class="num">03 / 06</span><h3>Как получать от отношений то, что нужно именно тебе</h3><span class="stamp-txt">рассекречено</span></div>
-        <div class="dossier-card reveal"><div class="redact-bar"></div><span class="num">04 / 06</span><h3>Страсть → влюблённость → любовь: как управлять этой цепочкой</h3><span class="stamp-txt">рассекречено</span></div>
-        <div class="dossier-card reveal"><div class="redact-bar"></div><span class="num">05 / 06</span><h3>Как гасить претензии и конфликты до того, как они стали скандалом</h3><span class="stamp-txt">рассекречено</span></div>
-        <div class="dossier-card reveal"><div class="redact-bar"></div><span class="num">06 / 06</span><h3>Альфа- и бета-модели поведения: что работает в долгую</h3><span class="stamp-txt">рассекречено</span></div>
+      <div class="intro-side">
+        <p>На эфире разберём, как видеть суть конфликта, говорить о своих потребностях и строить отношения, в которых есть <strong>уважение, влечение и свобода.</strong></p>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- FORMAT -->
-  <section class="section-pad border-top">
-    <div class="wrap">
-      <div class="section-head reveal">
-        <div class="eyebrow">Формат</div>
-        <h2>3 часа живого эфира. Без воды</h2>
+    <section class="wrap program" aria-labelledby="program-title">
+      <div class="program-top">
+        <div>
+          <div class="eyebrow section-label">Программа эфира</div>
+          <h2 class="display" id="program-title">6 точек, где обычно всё ломается</h2>
+        </div>
+        <p>Не общие рассуждения, а понятная карта: что происходит и что делать в реальной жизни.</p>
       </div>
-      <div class="format-row reveal">
-        <div class="format-card"><div class="big">2 часа</div><div class="lbl">Контент по делу</div></div>
-        <div class="format-card"><div class="big">1 час</div><div class="lbl">Живые ответы на вопросы</div></div>
-        <div class="format-card"><div class="big">3 часа</div><div class="lbl">Общая длительность</div></div>
+      <div class="topic-grid">
+        <article class="topic"><span class="topic-number">01</span><h3>Почему появляется напряжение — и как не доводить разговор до взаимных претензий</h3></article>
+        <article class="topic"><span class="topic-number">02</span><h3>Что партнёрша ждёт от отношений на самом деле — без стереотипов и угадываний</h3></article>
+        <article class="topic"><span class="topic-number">03</span><h3>Как говорить о своём «хочу», чтобы тебя слышали, а не защищались</h3></article>
+        <article class="topic"><span class="topic-number">04</span><h3>Страсть, влюблённость, любовь: как не путать состояния и не терять контакт</h3></article>
+        <article class="topic"><span class="topic-number">05</span><h3>Как выбирать реакцию вместо того, чтобы снова попадать в знакомый конфликт</h3></article>
+        <article class="topic"><span class="topic-number">06</span><h3>Как сохранить лидерство в паре без давления, игр и обесценивания</h3></article>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- MID BANNER / QUOTES -->
-  <section class="mid-banner">
-    <img class="bg" src="https://static.tildacdn.com/tild3530-3739-4635-a231-663862383233/_24.jpg" alt="">
-    <div class="wrap">
-      <div class="eyebrow">Как стать лучшим для девушки</div>
-      <h2>Узнай критические женские потребности, которые нужно закрывать — и какие ошибки чаще всего совершают мужчины</h2>
-      <div class="quote-feature">
-        <span class="mark">"</span>
-        <p>Чтобы встречаться с классными девушками без напряга и конфликтов — дай ей то, что сделает тебя в её глазах самым лучшим</p>
-        <cite>© Денис Шальнов</cite>
+    <section class="for-whom" aria-labelledby="whom-title">
+      <div class="wrap for-whom-grid">
+        <div>
+          <div class="eyebrow section-label">Кому подойдёт</div>
+          <h2 class="display" id="whom-title">Тебе не нужно быть <span>идеальным.</span> Достаточно быть готовым к ясности.</h2>
+        </div>
+        <ul class="people-list">
+          <li><span>01</span>Ты хочешь выбирать отношения осознанно, а не жить по сценарию другого человека.</li>
+          <li><span>02</span>Устал от повторяющихся конфликтов, молчания и ощущения, что тебя не слышат.</li>
+          <li><span>03</span>Хочешь больше близости и притяжения — без попыток заслужить любовь.</li>
+          <li><span>04</span>У тебя был непростой опыт, и ты не хочешь переносить его в новые отношения.</li>
+        </ul>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- TRAINERS -->
-  <section class="section-pad" id="trainers">
-    <div class="wrap">
-      <div class="section-head reveal" data-ghost="03">
-        <div class="eyebrow">Автор и ведущий</div>
-        <h2>Кто проведёт эфир</h2>
+    <section class="format" aria-labelledby="format-title">
+      <div class="wrap format-grid">
+        <div>
+          <div class="eyebrow section-label">Как пройдёт эфир</div>
+          <h2 class="display" id="format-title">Без воды.<br><i>С живыми</i> примерами.</h2>
+        </div>
+        <p class="format-note">Денис проведёт тебя от причин типичных проблем к понятным действиям. В конце можно будет задать свой вопрос в прямом эфире.</p>
+        <div class="format-list">
+          <div class="format-item"><b>2 ч</b><span>Практический разбор ключевых тем</span></div>
+          <div class="format-item"><b>+ Q&amp;A</b><span>Ответы на вопросы участников</span></div>
+          <div class="format-item"><b>LIVE</b><span>Живой формат, без записи</span></div>
+        </div>
       </div>
-      <div class="trainer-feature reveal">
-        <div class="trainer-feature-photo">
+    </section>
+
+    <section class="speaker" aria-labelledby="speaker-title">
+      <div class="speaker-grid">
+        <div class="speaker-image">
           <img src="https://static.tildacdn.com/tild6234-3064-4764-b865-303330323530/denis_shalnov_mcpirr.jpg" alt="Денис Шальнов">
-          <span class="file-tab">Досье · 01</span>
+          <div class="speaker-badge">Ведущий эфира</div>
         </div>
-        <div class="trainer-feature-body">
-          <h3>Денис Шальнов</h3>
-          <div class="trainer-role">Главный тренер МЦПиР</div>
-          <div class="trainer-stats">
-            <span class="trainer-stat-chip">Тренер с 2002 года</span>
-            <span class="trainer-stat-chip">35 000+ мужчин обучил</span>
-            <span class="trainer-stat-chip">МГУ, психфак</span>
-          </div>
-          <p><b>Высшее психологическое образование</b> (МГУ), тренерский стаж с 2002 года — обучил более 35 000 мужчин.</p>
-          <p>Автор тренингов по знакомствам, отношениям, харизме, лидерству и эффективной коммуникации. Автор мастер-классов «Статусные девушки», «Модель Приза», «Роль женщины в успехе мужчины».</p>
-          <p>Постоянный приглашённый эксперт по отношениям на ТВ и радио, спикер всероссийских конференций по отношениям и личностному росту.</p>
+        <div class="speaker-copy">
+          <div class="eyebrow">Тренер и автор</div>
+          <h2 class="display" id="speaker-title">Денис<br>Шальнов</h2>
+          <p class="speaker-role">Психолог, тренер по отношениям и коммуникации</p>
+          <p class="speaker-bio">Денис помогает мужчинам лучше понимать себя и выстраивать отношения, в которых есть уважение, интерес и честный диалог. Его подход — практичный, прямой и без шаблонных советов.</p>
+          <div class="speaker-facts"><span>Психологическое образование · МГУ</span><span>Тренерский стаж с 2002 года</span><span>35 000+ участников программ</span></div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- STATS -->
-  <section class="section-pad border-top">
+    <section class="register" id="register" aria-labelledby="register-title">
+      <div class="wrap register-grid">
+        <div>
+          <div class="eyebrow section-label">Зарегистрироваться</div>
+          <h2 class="display" id="register-title">Приходи, если хочешь <span>перестать гадать</span> и начать понимать.</h2>
+          <p class="register-copy">Оставь контакты — мы пришлём ссылку на эфир и напомним о старте. Участие бесплатное.</p>
+        </div>
+        <form class="form-card" data-lead-form novalidate>
+          <p class="form-kicker">Место на эфире</p>
+          <h3 class="form-title">13 августа · 20:00 МСК<br>Займёт меньше минуты</h3>
+          <input type="hidden" name="event" value="вебинар постуха 26 1">
+          <div class="field"><label for="name-main">Имя</label><input id="name-main" name="name" type="text" autocomplete="name" placeholder="Как к тебе обращаться" required></div>
+          <div class="field"><label for="email-main">Email</label><input id="email-main" name="email" type="email" autocomplete="email" placeholder="you@example.com" required></div>
+          <div class="field"><label for="phone-main">Телефон</label><input id="phone-main" name="phone" type="tel" autocomplete="tel" inputmode="tel" placeholder="+7 (999) 000-00-00" required></div>
+          <button class="button button--lime" type="submit">Забронировать место <span class="button__arrow">↗</span></button>
+          <p class="form-legal">Нажимая на кнопку, ты соглашаешься с <a href="#policy" data-policy>политикой обработки данных</a>.</p>
+          <p class="form-status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
     <div class="wrap">
-      <div class="stats-row reveal">
-        <div class="stat"><div class="n">200 000+</div><div class="l">довольных выпускников</div></div>
-        <div class="stat"><div class="n">150+</div><div class="l">тренингов и вебинаров в год</div></div>
-        <div class="stat"><div class="n">20+</div><div class="l">лет в сфере отношений</div></div>
-        <div class="stat"><div class="n">33 / 18</div><div class="l">онлайн-курсов / живых тренингов</div></div>
+      <div class="foot-grid">
+        <div>
+          <b>Мужской центр психологии и развития</b>
+          <p>Москва, Суворовская площадь, 1/52 к2, Деловой центр G&amp;G</p>
+          <p>ООО «МЦПиР» · ИНН 7718985163 · ОГРН 1147746690354</p>
+        </div>
+        <div>
+          <b>Контакты</b>
+          <p><a href="https://telegram.me/Mcpir3000" target="_blank" rel="noopener noreferrer">Telegram</a></p>
+          <p><a href="mailto:support-online@mcpir.ru">support-online@mcpir.ru</a></p>
+        </div>
+        <div>
+          <b>Участие</b>
+          <p>Только в прямом эфире</p>
+        </div>
+      </div>
+      <div class="foot-bottom">
+        <span>© 2026 rmes-online.ru</span>
+        <a href="#policy" data-policy>Политика конфиденциальности</a>
       </div>
     </div>
-  </section>
+  </footer>
 
-  <!-- FINAL CTA -->
-  <section class="final-cta">
-    <div class="wrap">
-      <div class="status-stamp"><span class="live-dot"></span>ЖИВОЙ ЭФИР БЕСПЛАТНО. ЗАПИСИ НЕ БУДЕТ</div>
-      <h2>Эфир начнётся 13 августа в 20:00 МСК. Второго шанса посмотреть не будет</h2>
-      <p class="hero-sub">Занимай место сейчас — после эфира запись не публикуется и не рассылается.</p>
-      <div class="countdown" id="countdown-2">
-        <div class="cbox"><div class="n" id="cd2-days">00</div><div class="l">дней</div></div>
-        <span class="cd-sep">:</span>
-        <div class="cbox"><div class="n" id="cd2-hours">00</div><div class="l">часов</div></div>
-        <span class="cd-sep">:</span>
-        <div class="cbox"><div class="n" id="cd2-min">00</div><div class="l">минут</div></div>
-        <span class="cd-sep">:</span>
-        <div class="cbox"><div class="n" id="cd2-sec">00</div><div class="l">секунд</div></div>
-      </div>
-      <a href="#" class="btn btn-primary" data-open-modal="subscribe">Записаться бесплатно</a>
-    </div>
-  </section>
+  <div class="mobile-cta"><a class="button button--lime" href="#register">Записаться бесплатно <span class="button__arrow">↗</span></a></div>
 
-</main>
-
-<footer>
-  <div class="wrap">
-    <div class="footer-row">
-      <div class="logo">МУЖСКОЙ ЦЕНТР ПСИХОЛОГИИ И РАЗВИТИЯ</div>
-      <div class="footer-links">
-        <a href="#" data-open-modal="policy">Политика конфиденциальности</a>
-        <a href="https://rmes-online.ru" target="_blank" rel="noopener">rmes-online.ru</a>
-      </div>
-    </div>
-    <p class="footer-sub">Проект №1 по построению отношений на русскоговорящем пространстве. Мы работаем уже 20 лет — поэтому точно знаем толк в обучении. © 2026 rmes-online.ru</p>
-  </div>
-</footer>
-
-<!-- SUBSCRIBE MODAL -->
-<div class="modal-overlay" id="modal-subscribe">
-  <div class="modal">
-    <button class="modal-close" data-close-modal>&times;</button>
-    <h3>Регистрация на эфир</h3>
-    <p class="modal-sub">13 августа, 20:00 МСК · живой эфир, записи не будет</p>
-    <form id="lead-form" novalidate>
-      <div class="field" data-field="name">
-        <label for="f-name">Имя</label>
-        <input type="text" id="f-name" name="name" placeholder="Как к тебе обращаться" autocomplete="name">
-        <div class="err-msg">Введи своё имя</div>
-      </div>
-      <div class="field" data-field="email">
-        <label for="f-email">E-mail</label>
-        <input type="email" id="f-email" name="email" placeholder="you@example.com" autocomplete="email">
-        <div class="err-msg">Введи корректный e-mail</div>
-      </div>
-      <div class="field" data-field="phone">
-        <label for="f-phone">Телефон</label>
-        <input type="tel" id="f-phone" name="phone" placeholder="+7 900 000-00-00" autocomplete="tel">
-        <div class="err-msg">Введи корректный номер телефона</div>
-      </div>
-      <div class="consent">
-        <input type="checkbox" id="f-consent" checked>
-        <label for="f-consent">Согласен с <a href="#" data-open-modal="policy">политикой конфиденциальности</a> и обработкой персональных данных</label>
-      </div>
-      <button type="submit" class="btn btn-primary btn-block" id="submit-btn">Записаться на эфир</button>
-      <div class="form-status" id="form-status">Отправляем заявку…</div>
-    </form>
-  </div>
-</div>
-
-<!-- POLICY MODAL -->
-<div class="modal-overlay" id="modal-policy">
-  <div class="modal modal-wide">
-    <button class="modal-close" data-close-modal>&times;</button>
-    <h3>Политика конфиденциальности</h3>
-    <div class="policy-body">
-      <p>Тренинг-центр «МЦПиР» (далее — Тренинг-центр) серьёзно относится к защите персональных данных. Сбор данных на сайте происходит только в объёме, необходимом для технической обработки заявки. Продажа собранных данных или их передача третьим лицам исключена.</p>
-      <h4>Персональные данные</h4>
-      <p>Персональными данными является информация, которую вы указали о себе: имя, e-mail, телефон. Данные требуются только при регистрации на вебинар или подписке на рассылку и хранятся на серверах Тренинг-центра и партнёров, обеспечивающих его работу.</p>
-      <h4>Передача третьим лицам</h4>
-      <p>Мы используем ваши данные только в рамках регистрации на вебинар и последующей коммуникации. Без вашего явного согласия данные третьим лицам не передаются, за исключением случаев, предусмотренных законом.</p>
-      <h4>Файлы cookie</h4>
-      <p>Cookie используются для идентификации пользователей, удобства работы с сайтом и повышения безопасности. Cookie не наносят вреда устройству и не содержат вирусов.</p>
-      <h4>Дети и подростки</h4>
-      <p>Лицам младше 18 лет не рекомендуется посещать данную страницу и передавать личные данные без согласия родителей или опекунов.</p>
+  <div class="modal" id="policy" role="dialog" aria-modal="true" aria-labelledby="policy-title">
+    <div class="modal-panel policy-panel">
+      <button class="close" type="button" aria-label="Закрыть">×</button>
+      <h2 id="policy-title">Политика конфиденциальности</h2><h3>Персональные данные</h3><p>Персональными данными является информация, которую вы указали о себе: имя, e-mail, телефон. Данные требуются только при регистрации на вебинар или подписке на рассылку и хранятся на серверах Тренинг-центра и партнёров, обеспечивающих его работу.</p><h3>Передача третьим лицам</h3><p>Мы используем ваши данные только в рамках регистрации на вебинар и последующей коммуникации. Без вашего явного согласия данные третьим лицам не передаются, за исключением случаев, предусмотренных законом.</p><h3>Файлы cookie</h3><p>Cookie используются для идентификации пользователей, удобства работы с сайтом и повышения безопасности. Cookie не наносят вреда устройству и не содержат вирусов.</p><h3>Дети и подростки</h3><p>Лицам младше 18 лет не рекомендуется посещать данную страницу и передавать личные данные без согласия родителей или опекунов.</p>
     </div>
   </div>
-</div>
 
-<script>
-(function(){
-  // ---------- Countdown ----------
-  var target = new Date("2026-08-13T20:00:00+03:00").getTime();
-  function pad(n){ return String(n).padStart(2,'0'); }
-  function tick(){
-    var now = Date.now();
-    var diff = Math.max(0, target - now);
-    var d = Math.floor(diff/86400000);
-    var h = Math.floor((diff%86400000)/3600000);
-    var m = Math.floor((diff%3600000)/60000);
-    var s = Math.floor((diff%60000)/1000);
-    [['cd-days','cd2-days',d],['cd-hours','cd2-hours',h],['cd-min','cd2-min',m],['cd-sec','cd2-sec',s]].forEach(function(row){
-      var a=document.getElementById(row[0]), b=document.getElementById(row[1]);
-      if(a) a.textContent = pad(row[2]);
-      if(b) b.textContent = pad(row[2]);
-    });
-  }
-  tick(); setInterval(tick, 1000);
+  <script>
+    (() => {
+      const WEBHOOK_URL = 'https://www.rmes.ru/request/webhook/';
+      const SUCCESS_URL = 'https://webinar.rmes-online.ru/datingtobedsuccess?utm=7';
+      const form = document.querySelector('[data-lead-form]');
+      const status = form.querySelector('.form-status');
+      const submit = form.querySelector('button[type="submit"]');
+      const mobileCta = document.querySelector('.mobile-cta');
+      const register = document.querySelector('#register');
+      const policy = document.querySelector('#policy');
 
-  // ---------- Modals ----------
-  document.querySelectorAll('[data-open-modal]').forEach(function(el){
-    el.addEventListener('click', function(e){
-      e.preventDefault();
-      var id = 'modal-' + el.getAttribute('data-open-modal');
-      var m = document.getElementById(id);
-      if(m) m.classList.add('open');
-      document.body.style.overflow = 'hidden';
-    });
-  });
-  document.querySelectorAll('[data-close-modal]').forEach(function(el){
-    el.addEventListener('click', function(){
-      el.closest('.modal-overlay').classList.remove('open');
-      document.body.style.overflow = '';
-    });
-  });
-  document.querySelectorAll('.modal-overlay').forEach(function(ov){
-    ov.addEventListener('click', function(e){
-      if(e.target === ov){ ov.classList.remove('open'); document.body.style.overflow=''; }
-    });
-  });
-  document.addEventListener('keydown', function(e){
-    if(e.key === 'Escape'){
-      document.querySelectorAll('.modal-overlay.open').forEach(function(ov){
-        ov.classList.remove('open');
-      });
-      document.body.style.overflow = '';
-    }
-  });
-
-  // ---------- Reveal on scroll (dossier declassify effect) ----------
-  var io = new IntersectionObserver(function(entries){
-    entries.forEach(function(entry, i){
-      if(entry.isIntersecting){
-        setTimeout(function(){ entry.target.classList.add('in'); }, i*40);
-        if(entry.target.classList.contains('dossier-card')){
-          setTimeout(function(){ entry.target.classList.add('revealed'); }, 250 + i*120);
-        }
-        io.unobserve(entry.target);
+      function setModal(open) {
+        policy.classList.toggle('is-open', open);
+        document.body.classList.toggle('modal-open', open);
       }
-    });
-  }, {threshold:.2});
-  document.querySelectorAll('.reveal, .dossier-card').forEach(function(el){ io.observe(el); });
 
-  // ---------- Form ----------
-  var form = document.getElementById('lead-form');
-  var statusEl = document.getElementById('form-status');
-  var submitBtn = document.getElementById('submit-btn');
+      document.querySelectorAll('[data-policy]').forEach(link => link.addEventListener('click', event => {
+        event.preventDefault();
+        setModal(true);
+      }));
+      policy.querySelector('.close').addEventListener('click', () => setModal(false));
+      policy.addEventListener('click', event => { if (event.target === policy) setModal(false); });
+      document.addEventListener('keydown', event => { if (event.key === 'Escape') setModal(false); });
 
-  function setError(fieldName, hasError){
-    var field = form.querySelector('[data-field="'+fieldName+'"]');
-    if(field) field.classList.toggle('error', hasError);
-  }
+      let registerIsVisible = false;
+      function updateMobileCta() {
+        mobileCta.classList.toggle('is-visible', !registerIsVisible && window.scrollY > 340);
+      }
+      const observer = new IntersectionObserver(([entry]) => {
+        registerIsVisible = entry.isIntersecting;
+        updateMobileCta();
+      }, { threshold: 0.12 });
+      observer.observe(register);
+      window.addEventListener('scroll', updateMobileCta, { passive: true });
 
-  function validate(){
-    var name = form.elements['name'].value.trim();
-    var email = form.elements['email'].value.trim();
-    var phone = form.elements['phone'].value.trim();
-    var emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-    var phoneDigits = phone.replace(/\D/g,'');
-    var phoneOk = phoneDigits.length >= 10;
-    var nameOk = name.length >= 2;
-
-    setError('name', !nameOk);
-    setError('email', !emailOk);
-    setError('phone', !phoneOk);
-
-    return nameOk && emailOk && phoneOk;
-  }
-
-  form.addEventListener('submit', function(e){
-    e.preventDefault();
-    if(form.dataset.submitting === '1') return; // guard against double-submit
-    if(!validate()) return;
-
-    var WEBHOOK_URL = 'https://www.rmes.ru/request/webhook/';
-    var SUCCESS_URL = 'https://t.me/MenTerMinsk_bot?start=s=3769630';
-
-    var fields = {
-      name: form.elements['name'].value.trim(),
-      email: form.elements['email'].value.trim(),
-      phone: form.elements['phone'].value.trim(),
-      event: 'вебинар постуха 26 1',
-      api_method: 'off',
-      cookies: document.cookie,
-      page_url: window.location.href,
-      referrer: document.referrer
-    };
-
-    // Sent as application/x-www-form-urlencoded, not raw JSON/text-plain:
-    // most PHP/CRM webhook receivers only auto-populate $_POST for
-    // form-urlencoded or multipart bodies, so a JSON string with a
-    // text/plain content type is silently dropped server-side.
-    var params = new URLSearchParams();
-    Object.keys(fields).forEach(function(key){ params.append(key, fields[key]); });
-
-    form.dataset.submitting = '1';
-    submitBtn.disabled = true;
-    submitBtn.textContent = 'Отправляем…';
-    statusEl.style.display = 'block';
-
-    function goToSuccess(){
-      window.location.href = SUCCESS_URL;
-    }
-
-    // Single delivery channel — sendBeacon is purpose-built for "fire this
-    // request and keep sending it even though we're about to navigate
-    // away", so it's the primary method. Sending it AND a parallel fetch
-    // was what caused each submission to reach the webhook twice.
-    var queued = false;
-    if(navigator.sendBeacon){
-      try{
-        var blob = new Blob([params.toString()], {type:'application/x-www-form-urlencoded;charset=UTF-8'});
-        queued = navigator.sendBeacon(WEBHOOK_URL, blob);
-      }catch(err){ console.error('sendBeacon error:', err); }
-    }
-
-    if(queued){
-      goToSuccess();
-    } else {
-      // Fallback only for browsers without sendBeacon support, or if it
-      // failed to queue — a single fetch attempt, nothing sent in parallel.
-      var safetyTimer = setTimeout(goToSuccess, 4000);
-      fetch(WEBHOOK_URL, { method: 'POST', mode: 'no-cors', body: params, keepalive: true })
-        .catch(function(err){ console.error('Webhook error:', err); })
-        .finally(function(){
-          clearTimeout(safetyTimer);
-          goToSuccess();
-        });
-    }
-  });
-})();
-</script>
+      form.addEventListener('submit', async event => {
+        event.preventDefault();
+        if (!form.checkValidity()) { form.reportValidity(); return; }
+        const data = new URLSearchParams(new FormData(form));
+        submit.disabled = true;
+        submit.style.opacity = '.72';
+        status.classList.remove('error');
+        status.textContent = 'Оформляем регистрацию…';
+        try {
+          // credentials: 'omit' intentionally disables cookie forwarding.
+          // no-cors lets the lead be sent even when the webhook does not expose CORS headers.
+          await fetch(WEBHOOK_URL, {
+            method: 'POST',
+            mode: 'no-cors',
+            credentials: 'omit',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8' },
+            body: data.toString(),
+            keepalive: true
+          });
+          status.textContent = 'Готово! Перенаправляем на страницу эфира…';
+          window.setTimeout(() => window.location.assign(SUCCESS_URL), 350);
+        } catch (error) {
+          status.classList.add('error');
+          status.textContent = 'Не удалось отправить заявку. Проверь интернет и попробуй ещё раз.';
+          submit.disabled = false;
+          submit.style.opacity = '1';
+        }
+      });
+    })();
+  </script>
 </body>
 </html>
