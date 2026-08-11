@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Крутой любовник 2.0 — продвинутый курс</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0a0908;
+    --bg-soft:#131110;
+    --bg-soft2:#1a1714;
+    --card:#181513;
+    --card-line: rgba(239,233,223,.09);
+    --ink:#efe9df;
+    --ink-dim:#a89e8f;
+    --ink-faint:#6f6659;
+    --gold:#d7b247;
+    --gold-light:#f3e2a8;
+    --gold-deep:#8a6a1c;
+    --cta-from:#eef8fb;
+    --cta-to:#b9e1ee;
+    --cta-ink:#0b2530;
+    --radius-lg:22px;
+    --radius-md:14px;
+    --maxw:1180px;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    *{animation-duration:.001ms !important; animation-iteration-count:1 !important; transition-duration:.001ms !important;}
+  }
+  body{
+    background:var(--bg);
+    color:var(--ink);
+    font-family:'Inter', sans-serif;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  img,svg{display:block; max-width:100%;}
+  a{color:inherit; text-decoration:none;}
+
+  /* film grain / noise overlay */
+  .grain{
+    position:fixed; inset:0; pointer-events:none; z-index:2; opacity:.05; mix-blend-mode:overlay;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  .wrap{max-width:var(--maxw); margin:0 auto; padding:0 28px;}
+  @media (max-width:640px){ .wrap{padding:0 20px;} }
+
+  .eyebrow{
+    font-family:'JetBrains Mono', monospace;
+    font-size:12px; letter-spacing:.14em; text-transform:uppercase;
+    color:var(--gold-light);
+  }
+
+  /* ===== HERO ===== */
+  .hero{
+    position:relative;
+    min-height:100vh;
+    padding:120px 0 90px;
+    display:flex; flex-direction:column; justify-content:center;
+    background:
+      radial-gradient(ellipse 900px 600px at 78% 18%, rgba(215,178,71,.10), transparent 60%),
+      radial-gradient(ellipse 700px 500px at 10% 90%, rgba(215,178,71,.05), transparent 60%),
+      linear-gradient(180deg, #0d0b09 0%, #0a0908 55%, #080706 100%);
+    overflow:hidden;
+  }
+
+  /* hero photo — bleeds off the right edge, blends into the dark ground */
+  .hero-photo{
+    position:absolute; top:0; right:0; bottom:0; width:54%;
+    z-index:0;
+  }
+  .hero-photo img{
+    width:100%; height:100%;
+    object-fit:cover; object-position:50% 18%;
+    filter:grayscale(.1) contrast(1.06) brightness(.92) saturate(.92);
+  }
+  .hero-photo::before{
+    content:"";
+    position:absolute; inset:0;
+    background:linear-gradient(90deg,
+      var(--bg) 0%, rgba(10,9,8,.92) 10%, rgba(10,9,8,.55) 26%,
+      rgba(10,9,8,.12) 46%, transparent 62%);
+  }
+  .hero-photo::after{
+    content:"";
+    position:absolute; inset:0;
+    background:
+      linear-gradient(180deg, rgba(10,9,8,.15) 0%, transparent 30%, transparent 62%, var(--bg) 100%),
+      radial-gradient(ellipse 480px 380px at 82% 12%, rgba(215,178,71,.16), transparent 60%);
+  }
+  @media (max-width:900px){
+    .hero{ flex-direction:column; justify-content:flex-start; padding:96px 0 70px; }
+    .hero-photo{
+      position:relative; width:100%; top:auto; right:auto; bottom:auto;
+      aspect-ratio:4/5; border-radius:var(--radius-lg); overflow:hidden;
+      margin:0 20px 36px; width:calc(100% - 40px);
+    }
+    .hero-photo img{ object-position:50% 14%; }
+    .hero-photo::before{ background:linear-gradient(180deg, transparent 55%, rgba(10,9,8,.75) 100%); }
+    .hero-photo::after{ background:radial-gradient(ellipse 320px 260px at 80% 10%, rgba(215,178,71,.18), transparent 60%); }
+  }
+  .hero::before{
+    content:"";
+    position:absolute; inset:0;
+    background-image:
+      linear-gradient(rgba(239,233,223,.035) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(239,233,223,.035) 1px, transparent 1px);
+    background-size:64px 64px;
+    -webkit-mask-image:radial-gradient(ellipse 900px 700px at 50% 30%, black, transparent 75%);
+    mask-image:radial-gradient(ellipse 900px 700px at 50% 30%, black, transparent 75%);
+    pointer-events:none;
+  }
+
+  /* signature: breathing gold aura rings */
+  .aura{
+    position:absolute; top:30%; left:-10%; width:460px; height:460px;
+    transform:translate(0,-45%);
+    pointer-events:none; z-index:0;
+    opacity:.6;
+  }
+  .aura svg{width:100%; height:100%;}
+  .aura circle{
+    fill:none; stroke:var(--gold); stroke-opacity:.28;
+    transform-origin:center;
+    animation:pulse 5.5s ease-in-out infinite;
+  }
+  .aura circle:nth-child(2){ animation-delay:-1.3s; stroke-opacity:.18; }
+  .aura circle:nth-child(3){ animation-delay:-2.7s; stroke-opacity:.11; }
+  @keyframes pulse{
+    0%,100%{ transform:scale(.86); opacity:.55; }
+    50%{ transform:scale(1.04); opacity:1; }
+  }
+
+  .hero-text{ position:relative; z-index:1; max-width:600px; }
+  @media (max-width:900px){ .hero-text{ max-width:none; } }
+
+  .badges{display:flex; gap:12px; flex-wrap:wrap; margin-bottom:34px; position:relative; z-index:1;}
+  .badge{
+    display:inline-flex; align-items:center; gap:8px;
+    padding:11px 20px; border-radius:100px;
+    border:1px solid rgba(215,178,71,.35);
+    background:rgba(215,178,71,.05);
+    font-family:'JetBrains Mono', monospace;
+    font-size:13px; letter-spacing:.02em; color:var(--ink);
+  }
+  .badge b{color:var(--gold-light); font-weight:600;}
+  .badge .star{color:var(--gold);}
+
+  .h1{
+    position:relative; z-index:1;
+    font-family:'Bebas Neue', sans-serif;
+    font-weight:400;
+    font-size:clamp(48px, 6.4vw, 84px);
+    line-height:.94;
+    letter-spacing:.01em;
+    text-transform:uppercase;
+    background:linear-gradient(115deg, #fff 0%, #cfd3d6 22%, #efe9df 45%, #d7b247 68%, #f3e2a8 85%, #d7b247 100%);
+    -webkit-background-clip:text; background-clip:text; color:transparent;
+    margin-bottom:26px;
+  }
+  @media (max-width:900px){ .h1{ font-size:clamp(52px, 11vw, 92px); } }
+
+  .sub{
+    position:relative; z-index:1;
+    font-family:'Oswald', sans-serif;
+    font-weight:500;
+    font-size:clamp(18px, 2vw, 23px);
+    line-height:1.38;
+    letter-spacing:.01em;
+    text-transform:uppercase;
+    color:var(--ink);
+    margin-bottom:44px;
+  }
+  .sub em{
+    font-style:normal;
+    color:var(--gold-light);
+    background:rgba(215,178,71,.09);
+    padding:0 6px;
+    border-radius:4px;
+  }
+
+  .cta{
+    position:relative; z-index:1;
+    display:inline-flex; align-items:center; justify-content:center;
+    gap:10px;
+    padding:20px 46px;
+    border-radius:100px;
+    border:none; cursor:pointer;
+    background:linear-gradient(135deg, var(--cta-from), var(--cta-to));
+    color:var(--cta-ink);
+    font-family:'Oswald', sans-serif;
+    font-weight:600;
+    font-size:17px;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    box-shadow:0 0 0 1px rgba(255,255,255,.5) inset, 0 18px 44px -12px rgba(191,225,238,.35);
+    transition:transform .25s ease, box-shadow .25s ease;
+  }
+  .cta:hover{ transform:translateY(-2px); box-shadow:0 0 0 1px rgba(255,255,255,.6) inset, 0 22px 54px -10px rgba(191,225,238,.5); }
+  .cta:active{ transform:translateY(0); }
+  .cta:focus-visible{ outline:2px solid var(--gold); outline-offset:3px; }
+  .cta svg{ width:16px; height:16px; }
+
+  .hero-cta-row{ position:relative; z-index:1; display:flex; align-items:center; gap:22px; flex-wrap:wrap; }
+  .hero-note{
+    font-family:'JetBrains Mono', monospace;
+    font-size:12.5px; color:var(--ink-faint); letter-spacing:.03em;
+    max-width:220px; line-height:1.5;
+  }
+
+  /* ===== SECTION GENERIC ===== */
+  section{ position:relative; padding:110px 0; }
+  @media (max-width:720px){ section{ padding:76px 0; } }
+
+  .section-head{ max-width:720px; margin-bottom:56px; }
+  .section-head .eyebrow{ margin-bottom:16px; display:block; }
+  .section-title{
+    font-family:'Oswald', sans-serif;
+    font-weight:700;
+    font-size:clamp(30px, 4.4vw, 48px);
+    line-height:1.12;
+    text-transform:uppercase;
+    letter-spacing:.005em;
+  }
+  .section-title .accent{ color:var(--gold-light); }
+
+  .divider{
+    height:1px; width:100%;
+    background:linear-gradient(90deg, transparent, var(--card-line) 20%, var(--card-line) 80%, transparent);
+  }
+
+  /* ===== INTRO STATEMENT ===== */
+  .intro{ background:var(--bg-soft); border-top:1px solid var(--card-line); border-bottom:1px solid var(--card-line); }
+  .intro-text{
+    font-family:'Oswald', sans-serif;
+    font-weight:500;
+    font-size:clamp(22px, 3.4vw, 34px);
+    line-height:1.42;
+    max-width:920px;
+    color:var(--ink);
+  }
+  .intro-text b{ color:var(--gold-light); font-weight:600; }
+
+  .meta-row{
+    display:flex; gap:40px; flex-wrap:wrap;
+    margin-top:48px;
+    padding-top:34px;
+    border-top:1px solid var(--card-line);
+  }
+  .meta-item .k{ font-family:'JetBrains Mono', monospace; font-size:12px; letter-spacing:.1em; text-transform:uppercase; color:var(--ink-faint); margin-bottom:8px; }
+  .meta-item .v{ font-family:'Oswald', sans-serif; font-size:19px; font-weight:500; color:var(--ink); }
+  .meta-item .v span{ color:var(--gold-light); }
+
+  /* ===== PAIN GRID ===== */
+  .pain-grid{
+    display:grid; grid-template-columns:repeat(2, 1fr); gap:1px;
+    background:var(--card-line);
+    border:1px solid var(--card-line);
+    border-radius:var(--radius-lg);
+    overflow:hidden;
+  }
+  @media (max-width:820px){ .pain-grid{ grid-template-columns:1fr; } }
+  .pain-card{
+    background:var(--card);
+    padding:38px 36px;
+    opacity:0; transform:translateY(18px);
+    transition:opacity .7s ease, transform .7s ease;
+  }
+  .pain-card.in{ opacity:1; transform:none; }
+  .pain-num{
+    font-family:'JetBrains Mono', monospace;
+    font-size:12px; color:var(--gold); letter-spacing:.1em; margin-bottom:16px; display:block;
+  }
+  .pain-title{
+    font-family:'Oswald', sans-serif; font-weight:600; font-size:19px;
+    text-transform:uppercase; letter-spacing:.01em;
+    margin-bottom:12px; color:var(--ink);
+  }
+  .pain-body{ font-size:15.5px; line-height:1.65; color:var(--ink-dim); }
+
+  /* ===== TRANSFORMATION ===== */
+  .transform-section{ background:linear-gradient(180deg, var(--bg) 0%, #0d0b09 100%); }
+  .t-list{ display:flex; flex-direction:column; gap:1px; background:var(--card-line); border:1px solid var(--card-line); border-radius:var(--radius-lg); overflow:hidden; }
+  .t-row{
+    display:grid; grid-template-columns:88px 1fr; gap:28px;
+    padding:36px 40px;
+    background:var(--card);
+    align-items:start;
+    opacity:0; transform:translateY(18px);
+    transition:opacity .7s ease, transform .7s ease;
+  }
+  .t-row.in{ opacity:1; transform:none; }
+  @media (max-width:640px){ .t-row{ grid-template-columns:52px 1fr; padding:28px 22px; gap:18px; } }
+  .t-icon{
+    width:56px; height:56px; border-radius:16px;
+    display:flex; align-items:center; justify-content:center;
+    font-size:26px;
+    background:radial-gradient(circle at 30% 25%, rgba(215,178,71,.22), rgba(215,178,71,.04));
+    border:1px solid rgba(215,178,71,.25);
+  }
+  @media (max-width:640px){ .t-icon{ width:44px; height:44px; font-size:20px; border-radius:12px; } }
+  .t-title{
+    font-family:'Oswald', sans-serif; font-weight:600; font-size:19px;
+    text-transform:uppercase; color:var(--gold-light); margin-bottom:10px; letter-spacing:.01em;
+  }
+  .t-body{ font-size:15.5px; line-height:1.7; color:var(--ink-dim); max-width:640px; }
+
+  /* ===== PROGRAM ===== */
+  .program-section{ background:var(--bg-soft); border-top:1px solid var(--card-line); }
+  .module{
+    display:grid; grid-template-columns:200px 1fr; gap:40px;
+    padding:44px 0;
+    border-top:1px solid var(--card-line);
+    opacity:0; transform:translateY(18px);
+    transition:opacity .7s ease, transform .7s ease;
+  }
+  .module.in{ opacity:1; transform:none; }
+  .module:last-child{ border-bottom:1px solid var(--card-line); }
+  @media (max-width:760px){ .module{ grid-template-columns:1fr; gap:16px; padding:34px 0; } }
+
+  .module-meta{ display:flex; flex-direction:column; gap:10px; }
+  .module-num{
+    font-family:'Bebas Neue', sans-serif; font-size:44px; color:var(--gold);
+    line-height:1; letter-spacing:.02em;
+  }
+  .module-date{
+    font-family:'JetBrains Mono', monospace; font-size:12.5px; color:var(--ink-faint); letter-spacing:.04em;
+  }
+  .module-title{
+    font-family:'Oswald', sans-serif; font-weight:600; font-size:22px;
+    text-transform:uppercase; margin-bottom:16px; color:var(--ink); letter-spacing:.005em;
+  }
+  .module-tags{ display:flex; flex-wrap:wrap; gap:8px; margin-bottom:18px; }
+  .tag{
+    font-family:'JetBrains Mono', monospace; font-size:12px; color:var(--gold-light);
+    border:1px solid rgba(215,178,71,.3); padding:6px 12px; border-radius:100px;
+    background:rgba(215,178,71,.04);
+  }
+  .module-body{ font-size:15.5px; line-height:1.72; color:var(--ink-dim); max-width:700px; }
+
+  .format-strip{
+    margin-top:56px;
+    display:flex; gap:40px; flex-wrap:wrap;
+    padding:30px 34px;
+    border:1px solid var(--card-line);
+    border-radius:var(--radius-md);
+    background:var(--card);
+  }
+  .format-item{ display:flex; align-items:center; gap:12px; font-family:'Oswald', sans-serif; font-size:15.5px; color:var(--ink-dim); }
+  .format-item b{ color:var(--ink); font-weight:600; }
+  .format-item .dot{ width:6px; height:6px; border-radius:50%; background:var(--gold); flex:none; }
+
+  /* ===== FINAL CTA ===== */
+  .final{
+    position:relative;
+    padding:130px 0 120px;
+    background:
+      radial-gradient(ellipse 700px 500px at 50% 0%, rgba(215,178,71,.08), transparent 65%),
+      linear-gradient(180deg, #0a0908 0%, #070605 100%);
+    border-top:1px solid var(--card-line);
+    text-align:center;
+  }
+  .final-text{
+    font-family:'Oswald', sans-serif;
+    font-weight:500;
+    font-size:clamp(19px, 2.6vw, 25px);
+    line-height:1.65;
+    color:var(--ink-dim);
+    max-width:760px;
+    margin:0 auto 20px;
+  }
+  .final-text b{ color:var(--ink); font-weight:600; }
+  .final-text.choice{
+    color:var(--gold-light);
+    font-weight:600;
+    font-size:clamp(21px, 3vw, 28px);
+    margin-top:36px; margin-bottom:48px;
+  }
+  .final .cta{ margin:0 auto; }
+
+  footer{
+    padding:36px 0;
+    border-top:1px solid var(--card-line);
+    display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px;
+  }
+  footer .fname{ font-family:'JetBrains Mono', monospace; font-size:12.5px; color:var(--ink-faint); letter-spacing:.03em; }
+
+  /* ===== STICKY MOBILE CTA ===== */
+  .sticky-cta{
+    position:fixed; left:0; right:0; bottom:0; z-index:40;
+    padding:14px 20px calc(14px + env(safe-area-inset-bottom));
+    background:linear-gradient(180deg, rgba(10,9,8,0) 0%, rgba(10,9,8,.96) 30%);
+    display:none;
+  }
+  .sticky-cta .cta{ width:100%; padding:17px 20px; font-size:15px; }
+  @media (max-width:760px){ .sticky-cta{ display:block; } body{ padding-bottom:78px; } }
+
+  ::selection{ background:rgba(215,178,71,.35); color:#fff; }
+
+  .fade-up{ opacity:0; transform:translateY(16px); transition:opacity .7s ease, transform .7s ease; }
+  .fade-up.in{ opacity:1; transform:none; }
+</style>
+</head>
+<body>
+
+<div class="grain"></div>
+
+<!-- ===== HERO ===== -->
+<header class="hero">
+  <div class="hero-photo" aria-hidden="true">
+    <img src="https://static.tildacdn.com/tild6566-3133-4833-b862-303533386133/photo.png" alt="">
+  </div>
+  <div class="aura" aria-hidden="true">
+    <svg viewBox="0 0 560 560">
+      <circle cx="280" cy="280" r="120"/>
+      <circle cx="280" cy="280" r="190"/>
+      <circle cx="280" cy="280" r="260"/>
+    </svg>
+  </div>
+  <div class="wrap">
+    <div class="hero-text">
+      <div class="badges">
+        <span class="badge"><span class="star">★</span> Продвинутый курс</span>
+        <span class="badge">Старт <b>13 августа</b></span>
+      </div>
+      <h1 class="h1">Крутой любовник 2.0</h1>
+      <p class="sub">Превратись из «очередного классного парня» в мужчину, рядом с которым она чувствует <em>настоящую, неподдельную страсть</em></p>
+      <div class="hero-cta-row">
+        <button class="cta" data-open-modal>
+          Оставить заявку
+          <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <span class="hero-note">Получи железный контроль над собой и стань мастером её удовольствия</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ===== INTRO ===== -->
+<section class="intro">
+  <div class="wrap">
+    <p class="intro-text fade-up">
+      Это курс не про «как правильно держать руку». Это курс про <b>мастерство близости</b>: управление своей сексуальной энергией, глубокое понимание её тела и уверенное лидерство в постели — по обоюдному желанию и с полным доверием.
+    </p>
+    <div class="meta-row fade-up">
+      <div class="meta-item">
+        <div class="k">Формат</div>
+        <div class="v">4 недели, <span>4 модуля</span></div>
+      </div>
+      <div class="meta-item">
+        <div class="k">Домашние задания</div>
+        <div class="v">После каждого модуля</div>
+      </div>
+      <div class="meta-item">
+        <div class="k">Поддержка</div>
+        <div class="v">Общение в закрытом <span>чате</span></div>
+      </div>
+      <div class="meta-item">
+        <div class="k">Старт</div>
+        <div class="v"><span>13 августа</span>, 19:00</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PAIN ===== -->
+<section>
+  <div class="wrap">
+    <div class="section-head fade-up">
+      <span class="eyebrow">Узнаёшь себя?</span>
+      <h2 class="section-title">С чем ты живёшь <span class="accent">прямо сейчас</span></h2>
+    </div>
+    <div class="pain-grid">
+      <div class="pain-card">
+        <span class="pain-num">01</span>
+        <div class="pain-title">Страх «сделать что-то не то»</div>
+        <p class="pain-body">Ты хочешь довериться своим желаниям — быть жёстче, увереннее, попробовать ролевые игры — но боишься, что партнёрша тебя не поймёт и отдалится.</p>
+      </div>
+      <div class="pain-card">
+        <span class="pain-num">02</span>
+        <div class="pain-title">«Стеклянный потолок» в постели</div>
+        <p class="pain-body">Ты делаешь всё, что читал в статьях, но чувствуешь: настоящего взрыва эмоций так и нет. Будто она просто подыгрывает, чтобы ты быстрее закончил.</p>
+      </div>
+      <div class="pain-card">
+        <span class="pain-num">03</span>
+        <div class="pain-title">Быстрая «разрядка»</div>
+        <p class="pain-body">Точка невозврата наступает раньше, чем хочется. Ты мечтаешь тянуть часами, а тело предательски сдаётся через 10 минут — или раньше.</p>
+      </div>
+      <div class="pain-card">
+        <span class="pain-num">04</span>
+        <div class="pain-title">Фантазия, которая остаётся фантазией</div>
+        <p class="pain-body">Ты думаешь о сексе втроём (ЖМЖ), но понятия не имеешь, как завести этот разговор, не устроив скандал и не разрушив отношения.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TRANSFORMATION ===== -->
+<section class="transform-section">
+  <div class="wrap">
+    <div class="section-head fade-up">
+      <span class="eyebrow">После курса</span>
+      <h2 class="section-title">Твоя новая <span class="accent">реальность</span></h2>
+    </div>
+    <div class="t-list">
+      <div class="t-row">
+        <div class="t-icon">🧠</div>
+        <div>
+          <div class="t-title">Она сама будет инициатором</div>
+          <p class="t-body">Ты научишься создавать атмосферу и распознавать её триггеры притяжения. Секс с тобой станет для неё эталоном — а обычный, предсказуемый секс начнёт казаться пресным.</p>
+        </div>
+      </div>
+      <div class="t-row">
+        <div class="t-icon">⏳</div>
+        <div>
+          <div class="t-title">Ты забудешь, что такое «быстро»</div>
+          <p class="t-body">Даосские и тантрические техники дадут тебе стальной контроль над телом. Ты сможешь заниматься сексом 2 часа, оставаясь в тонусе и получая кайф от процесса, а не только от финиша.</p>
+        </div>
+      </div>
+      <div class="t-row">
+        <div class="t-icon">🌪</div>
+        <div>
+          <div class="t-title">Женский экстаз до дрожи</div>
+          <p class="t-body">Трансовые и мультиоргазмы. Ты узнаешь, как через касание, ритм и присутствие доводить партнёршу до состояния настоящего, а не наигранного удовольствия.</p>
+        </div>
+      </div>
+      <div class="t-row">
+        <div class="t-icon">👑</div>
+        <div>
+          <div class="t-title">Уверенное лидерство в постели</div>
+          <p class="t-body">Ты перестанешь стесняться своих желаний и освоишь безопасные BDSM-техники — так, чтобы вести за собой и чтобы ей самой хотелось довериться тебе полностью. Ваша близость станет площадкой для экшена, от которого перехватывает дыхание.</p>
+        </div>
+      </div>
+      <div class="t-row">
+        <div class="t-icon">🏆</div>
+        <div>
+          <div class="t-title">Реализация фантазии ЖМЖ</div>
+          <p class="t-body">Пошаговый алгоритм: как поднять тему, подготовить партнёршу, снять её страхи и ревность — и по обоюдному желанию воплотить главную мужскую фантазию безопасно и красиво.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PROGRAM ===== -->
+<section class="program-section">
+  <div class="wrap">
+    <div class="section-head fade-up">
+      <span class="eyebrow">Программа курса</span>
+      <h2 class="section-title">4 модуля, <span class="accent">4 недели</span></h2>
+    </div>
+
+    <div class="module">
+      <div class="module-meta">
+        <div class="module-num">01</div>
+        <div class="module-date">13 августа, 19:00</div>
+      </div>
+      <div>
+        <div class="module-title">Фундамент продвинутого секса</div>
+        <div class="module-tags">
+          <span class="tag">Раскрепощение и доверие</span>
+          <span class="tag">Женская психология</span>
+          <span class="tag">Энергия и выносливость</span>
+        </div>
+        <p class="module-body">Психология раскрепощения: как помочь партнёрше снять внутренние блоки и комплексы. Разбираем триггеры желания — слова и действия, которые помогают ей раскрыться и захотеть тебя без стеснения. Даосские и тантрические техники управления сексуальной энергией и точкой невозврата — заниматься сексом часами, оставаясь в ресурсе, без потери эрекции.</p>
+      </div>
+    </div>
+
+    <div class="module">
+      <div class="module-meta">
+        <div class="module-num">02</div>
+        <div class="module-date">20 августа, 19:00</div>
+      </div>
+      <div>
+        <div class="module-title">Анатомия женского экстаза</div>
+        <div class="module-tags">
+          <span class="tag">Трансовый оргазм</span>
+          <span class="tag">Мультиоргазмы</span>
+        </div>
+        <p class="module-body">Как довести партнёршу до трансового оргазма — научить её кончать от одного твоего присутствия и прикосновений. Разбираем разницу между сквиртом и глубоким маточным оргазмом. Даосские и тантрические техники для мультиоргазмов, усиления и продления удовольствия — у неё и у тебя.</p>
+      </div>
+    </div>
+
+    <div class="module">
+      <div class="module-meta">
+        <div class="module-num">03</div>
+        <div class="module-date">27 августа, 19:00</div>
+      </div>
+      <div>
+        <div class="module-title">Искусство доминирования и подчинения</div>
+        <div class="module-tags">
+          <span class="tag">Роль Доминанта</span>
+          <span class="tag">Безопасный BDSM</span>
+          <span class="tag">Сценарии</span>
+        </div>
+        <p class="module-body">Как войти в роль Доминанта, если всю жизнь был «хорошим парнем». Безопасный и эффектный BDSM: микрокоманды, игрушки, связывание, шлепки, сенсорная депривация — и как заранее договориться о границах и стоп-словах. Готовые сценарии для ролевых игр — дома и вне дома.</p>
+      </div>
+    </div>
+
+    <div class="module">
+      <div class="module-meta">
+        <div class="module-num">04</div>
+        <div class="module-date">3 сентября, 19:00</div>
+      </div>
+      <div>
+        <div class="module-title">Секреты ЖМЖ: от табу до реализации</div>
+        <div class="module-tags">
+          <span class="tag">Психология</span>
+          <span class="tag">Сценарии</span>
+          <span class="tag">Организация</span>
+        </div>
+        <p class="module-body">Психология, сценарии и организация секса втроём. Как правильно подать идею, выбрать вторую участницу, синхронизировать действия и снять ревность — по обоюдному согласию всех сторон, с тобой в центре этого женского урагана.</p>
+      </div>
+    </div>
+
+    <div class="format-strip fade-up">
+      <div class="format-item"><span class="dot"></span><b>4 недели</b></div>
+      <div class="format-item"><span class="dot"></span><b>Домашние задания</b> после каждого модуля</div>
+      <div class="format-item"><span class="dot"></span>Общение и поддержка в <b>закрытом чате</b></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FINAL CTA ===== -->
+<section class="final">
+  <div class="wrap">
+    <p class="final-text fade-up">
+      Можешь вернуться к своему привычному, предсказуемому сексу. К её дежурным стонам. К нереализованным фантазиям, которые так и останутся в твоей голове.
+    </p>
+    <p class="final-text fade-up">
+      А можешь нажать на кнопку — и уже через месяц узнать, что такое <b>настоящая, страстная близость</b>.
+    </p>
+    <p class="final-text choice fade-up">Выбор за тобой.</p>
+    <button class="cta" data-open-modal>
+      Оставить заявку
+      <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+</section>
+
+<footer class="wrap">
+  <span class="fname">Крутой любовник 2.0 — продвинутый курс</span>
+  <span class="fname">© 2026</span>
+</footer>
+
+<!-- sticky mobile cta -->
+<div class="sticky-cta">
+  <button class="cta" data-open-modal>Оставить заявку</button>
+</div>
+
+<!-- ===== amoCRM FORM (self-managed popup) ===== -->
+<!--
+  Скрипт amoCRM сам рендерит кнопку и сам открывает свой попап с полями формы.
+  Мы прячем его собственную кнопку (визуально, но не display:none — чтобы клик работал)
+  и «прокидываем» клики с наших дизайнерских кнопок «Оставить заявку» на неё.
+  Так открывается ровно один попап — с реальными полями формы, которая льёт лиды в CRM.
+-->
+<div id="amo-trigger-wrapper" style="position:absolute; width:1px; height:1px; overflow:hidden; opacity:0; pointer-events:none;">
+  <script>
+    !function(a,m,o,c,r,m){a[o+c]=a[o+c]||{setMeta:function(p){this.params=(this.params||[]).concat([p])}},a[o+r]=a[o+r]||function(f){a[o+r].f=(a[o+r].f||[]).concat([f])},a[o+r]({id:"1730770",hash:"e5f41bec4dfcdc949a099449bd10e24e",locale:"ru"}),a[o+m]=a[o+m]||function(f,k){a[o+m].f=(a[o+m].f||[]).concat([[f,k]])}}(window,0,"amo_forms_","params","load","loaded");
+  </script>
+  <script id="amoforms_script_1730770" async charset="utf-8" src="https://forms.amocrm.ru/forms/assets/js/amoforms.js?1783956175"></script>
+</div>
+
+<script>
+  // proxy click: наши кнопки кликают по настоящей кнопке amoCRM, когда та появится в DOM
+  const amoWrapper = document.getElementById('amo-trigger-wrapper');
+  const openers = document.querySelectorAll('[data-open-modal]');
+
+  function clickAmoTrigger(attempts){
+    attempts = attempts || 0;
+    const trigger = amoWrapper.querySelector('a, button');
+    if(trigger){ trigger.click(); return; }
+    if(attempts < 50){ setTimeout(function(){ clickAmoTrigger(attempts + 1); }, 100); }
+  }
+  openers.forEach(function(btn){
+    btn.addEventListener('click', function(){ clickAmoTrigger(); });
+  });
+
+  // scroll reveal
+  const revealEls = document.querySelectorAll('.fade-up, .pain-card, .t-row, .module');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        entry.target.classList.add('in');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+  revealEls.forEach(el => io.observe(el));
+</script>
+
+</body>
+</html>
