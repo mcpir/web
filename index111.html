@@ -192,6 +192,7 @@
     document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});
     const WORKER_ENDPOINT='https://mute-limit-6032.ravenby.workers.dev/submit';
     const SITE_ID='mcpir-web';
+    const PRODUCT_NAME='Психология профессиональных отношений';
     const ATTRIBUTION_KEY='mcpir_lead_attribution_v1';
     const UTM_KEYS=['utm_source','utm_medium','utm_campaign','utm_content','utm_term','gclid','yclid'];
     const readAttribution=()=>{
@@ -214,7 +215,7 @@
       const formData=new FormData(form);
       const data=Object.fromEntries(formData.entries());
       const attribution=readAttribution();
-      const payload={...data,site_id:SITE_ID,form_name:formName,...attribution,page_url:window.location.href};
+      const payload={...data,site_id:SITE_ID,product_name:PRODUCT_NAME,form_name:formName,...attribution,page_url:window.location.href};
       try{
         const response=await fetch(WORKER_ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)});
         const result=await response.json().catch(()=>({}));
