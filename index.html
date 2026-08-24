@@ -184,9 +184,6 @@ header .btn{padding:12px 22px; font-size:14px;}
   background:radial-gradient(circle, var(--accent-dim) 0%, transparent 70%);
   top:-10%; right:-15%; z-index:-1; pointer-events:none;
 }
-.hero-line-svg{position:absolute; inset:0; width:100%; height:100%; opacity:.5; pointer-events:none;}
-.hero-line-svg path{fill:none; stroke:var(--accent); stroke-width:2; stroke-linecap:round;}
-
 @media (max-width:860px){
   .hero-grid{grid-template-columns:minmax(0,1fr); gap:36px;}
   .hero-visual{order:-1;}
@@ -194,6 +191,27 @@ header .btn{padding:12px 22px; font-size:14px;}
   .hero-cta-row{width:100%;}
   .hero-cta-row .btn{width:100%;}
   .hero-note{max-width:none;}
+}
+
+/* ============ POSITIONING NOTE ============ */
+.positioning-note{
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+  padding:30px 0 34px;
+}
+.positioning-note-inner{
+  max-width:900px;
+}
+.positioning-note p{
+  margin:0;
+  font-size:clamp(18px,2.2vw,24px);
+  line-height:1.45;
+  color:var(--text);
+}
+.positioning-note p strong{font-weight:700;}
+@media (max-width:600px){
+  .positioning-note{padding:24px 0 26px;}
+  .positioning-note p{font-size:17px; line-height:1.5;}
 }
 
 /* ============ PAINS ============ */
@@ -477,12 +495,16 @@ a:focus-visible, button:focus-visible, input:focus-visible, .btn:focus-visible{
         <div class="hero-visual-glow"></div>
         <div class="hero-visual-inner">
           <img src="assets/hero_duotone.jpg" alt="Наставники вебинара «Ты стоишь больше»">
-          <svg class="hero-line-svg" viewBox="0 0 400 500" preserveAspectRatio="none" id="heroLineSvg">
-            <path id="heroLinePath" d="M0,420 C60,400 90,340 140,320 C190,300 210,250 260,220 C310,190 340,120 400,60" />
-          </svg>
           <div class="hero-visual-tag">Ведущие эфира</div>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- ============ POSITIONING NOTE ============ -->
+  <section class="positioning-note">
+    <div class="wrap positioning-note-inner">
+      <p><strong>Это не вебинар про быстрые деньги.</strong> Здесь не будет MLM, криптосхем и обещаний «пассивного дохода». Разберём мышление, которое влияет на твой заработок, и выстроим понятный личный путь к системному росту дохода.</p>
     </div>
   </section>
 
@@ -566,7 +588,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, .btn:focus-visible{
     <div class="wrap section">
       <div class="reveal">
         <div class="eyebrow">Международный центр психологии и развития</div>
-        <h2 style="font-size:clamp(28px,3.6vw,40px); max-width:26ch; line-height:1.12; text-transform:uppercase;">Проект №1 по личностному росту в РФ. 20 лет в деле</h2>
+        <h2 style="font-size:clamp(28px,3.6vw,40px); max-width:26ch; line-height:1.12; text-transform:uppercase;">Проект №1 по личностному росту мужчин — 20 лет в деле</h2>
       </div>
       <div class="about-stats reveal">
         <div class="about-stat"><span class="num">200 000+</span><span class="lbl">довольных выпускников</span></div>
@@ -696,27 +718,6 @@ a:focus-visible, button:focus-visible, input:focus-visible, .btn:focus-visible{
     revealEls.forEach(function(el){ io.observe(el); });
     // safety net: reveal everything after 2.5s no matter what
     setTimeout(function(){ revealEls.forEach(function(el){ el.classList.add('in'); }); }, 2500);
-  }
-
-  /* ---------- hero line draw ---------- */
-  var path = document.getElementById('heroLinePath');
-  if(path && !reduceMotion){
-    try{
-      var len = path.getTotalLength();
-      path.style.strokeDasharray = len;
-      path.style.strokeDashoffset = len;
-      requestAnimationFrame(function(){
-        var start = null, duration = 1600;
-        function step(ts){
-          if(!start) start = ts;
-          var p = Math.min(1, (ts - start) / duration);
-          var eased = 1 - Math.pow(1 - p, 3);
-          path.style.strokeDashoffset = len * (1 - eased);
-          if(p < 1) requestAnimationFrame(step);
-        }
-        requestAnimationFrame(step);
-      });
-    }catch(e){}
   }
 
   /* ---------- countdown ---------- */
