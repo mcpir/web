@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Практический тренинг «Психология профессиональных отношений» с Александром Кулицким.">
+  <meta name="theme-color" content="#151517">
+  <title>Психология профессиональных отношений — МЦПИР</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,700&display=swap" rel="stylesheet">
+  <style>
+    :root { --ink:#171719; --paper:#f4f1ec; --soft:#e7e0d7; --wine:#a11c39; --wine-dark:#761027; --lime:#d7f27e; --line:rgba(23,23,25,.16); --white:#fffdf9; }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; background:var(--paper); color:var(--ink); font-family:Manrope,Arial,sans-serif; -webkit-font-smoothing:antialiased; }
+    body.modal-open { overflow:hidden; }
+    a { color:inherit; text-decoration:none; }
+    button, input { font:inherit; }
+    .wrap { width:min(1240px, calc(100% - 48px)); margin:auto; }
+    .eyebrow { display:flex; align-items:center; gap:10px; font-size:11px; font-weight:800; letter-spacing:.12em; text-transform:uppercase; }
+    .eyebrow::before { content:""; display:block; width:24px; height:2px; background:currentColor; }
+    .display { margin:0; letter-spacing:-.065em; font-size:clamp(44px,7vw,104px); font-weight:800; line-height:.89; }
+    .display em { font-family:"Playfair Display",serif; font-weight:700; }
+    .lead { font-size:clamp(17px,1.7vw,22px); line-height:1.45; }
+    .button { display:inline-flex; align-items:center; justify-content:center; gap:17px; min-height:60px; padding:14px 23px; border:0; border-radius:0; cursor:pointer; background:var(--wine); color:white; font-weight:800; transition:transform .25s ease, background .25s ease; }
+    .button:hover { transform:translateY(-3px); background:var(--wine-dark); }
+    .button .arrow { font-size:25px; font-weight:400; line-height:.5; }
+    .button--light { background:var(--lime); color:var(--ink); }
+    .button--light:hover { background:#e9ff9f; }
+    .header { position:absolute; z-index:5; width:100%; color:white; padding:24px 0; }
+    .header-in { display:flex; justify-content:space-between; align-items:center; gap:22px; }
+    .brand { display:flex; gap:10px; align-items:center; font-size:11px; line-height:1.18; font-weight:800; letter-spacing:.06em; text-transform:uppercase; }
+    .brand-mark { width:35px; height:35px; border:1px solid rgba(255,255,255,.7); display:grid; place-items:center; font:700 20px/1 "Playfair Display",serif; }
+    .nav { display:flex; align-items:center; gap:25px; font-size:12px; font-weight:700; }
+    .nav a { opacity:.75; transition:opacity .2s; }
+    .nav a:hover { opacity:1; }
+    .nav .phone { opacity:1; color:var(--lime); }
+    .hero { min-height:770px; position:relative; overflow:hidden; color:white; background:var(--ink); isolation:isolate; }
+    .hero::before { content:""; position:absolute; inset:0; z-index:-1; background:linear-gradient(90deg, rgba(8,8,10,.94) 0%, rgba(8,8,10,.80) 43%, rgba(8,8,10,.16) 82%), linear-gradient(0deg, rgba(8,8,10,.55), transparent 42%), url('assets/trainer-stage.webp') 62% center/cover no-repeat; }
+    .hero::after { content:""; position:absolute; width:62vw; height:62vw; max-width:950px; max-height:950px; border:1px solid rgba(215,242,126,.27); border-radius:50%; right:-23vw; bottom:-39vw; z-index:-1; animation:breathe 8s ease-in-out infinite; }
+    @keyframes breathe { 50% { transform:scale(1.05); opacity:.6; } }
+    .hero-in { min-height:770px; padding:158px 0 47px; display:flex; flex-direction:column; justify-content:space-between; }
+    .hero-copy { max-width:800px; }
+    .hero .eyebrow { color:var(--lime); margin-bottom:27px; }
+    .hero .display { max-width:770px; }
+    .hero .display .accent { color:var(--lime); }
+    .hero-subtitle { max-width:590px; margin:31px 0 30px; font-size:18px; line-height:1.55; color:rgba(255,255,255,.83); }
+    .hero-meta { display:grid; grid-template-columns:1fr auto; gap:24px; align-items:end; padding-top:44px; border-top:1px solid rgba(255,255,255,.25); }
+    .hero-quote { max-width:610px; font:italic 21px/1.32 "Playfair Display",serif; }
+    .hero-quote span { display:block; margin-top:7px; color:var(--lime); font:700 10px Manrope,sans-serif; letter-spacing:.1em; text-transform:uppercase; }
+    .hero-scroll { font-size:10px; letter-spacing:.12em; text-transform:uppercase; color:rgba(255,255,255,.74); writing-mode:vertical-rl; }
+    .schedule { position:relative; z-index:2; margin-top:-1px; background:var(--lime); color:var(--ink); }
+    .schedule-in { min-height:155px; display:grid; grid-template-columns:1.5fr repeat(3,1fr) auto; align-items:center; gap:28px; }
+    .schedule-intro strong { display:block; margin-top:8px; font:700 23px/1.05 "Playfair Display",serif; }
+    .schedule-item { border-left:1px solid rgba(23,23,25,.25); padding-left:22px; font-size:13px; }
+    .schedule-item b { display:block; margin-bottom:5px; font-size:15px; }
+    .schedule-book { min-width:178px; background:var(--ink); }
+    section { padding:124px 0; }
+    .section-head { max-width:790px; margin-bottom:55px; }
+    .section-head .eyebrow { color:var(--wine); margin-bottom:20px; }
+    .section-title { margin:0; letter-spacing:-.055em; font-size:clamp(35px,5.1vw,71px); line-height:.96; }
+    .section-title em { font-family:"Playfair Display",serif; font-weight:700; }
+    .section-intro { max-width:620px; margin:24px 0 0; font-size:17px; line-height:1.55; color:rgba(23,23,25,.72); }
+    .program { background:var(--white); }
+    .program-grid { border-top:1px solid var(--line); }
+    .program-card { display:grid; grid-template-columns:84px 1fr auto; gap:21px; padding:26px 0; align-items:center; border-bottom:1px solid var(--line); transition:padding .25s ease, color .25s; }
+    .program-card:hover { padding-left:16px; color:var(--wine); }
+    .program-num { font:700 42px/1 "Playfair Display",serif; color:var(--wine); }
+    .program-card h3 { margin:0; font-size:clamp(18px,2.1vw,26px); letter-spacing:-.035em; line-height:1.15; }
+    .program-card p { margin:8px 0 0; color:rgba(23,23,25,.66); font-size:14px; line-height:1.45; }
+    .program-symbol { font:400 42px/1 "Playfair Display",serif; }
+    .problems { position:relative; overflow:hidden; background:#211b1d; color:white; }
+    .problems::after { content:"отношения"; position:absolute; right:-.04em; bottom:-.42em; font:700 clamp(100px,19vw,290px)/1 "Playfair Display",serif; letter-spacing:-.1em; color:rgba(255,255,255,.035); pointer-events:none; }
+    .problems .eyebrow { color:var(--lime); }
+    .problems .section-intro { color:rgba(255,255,255,.66); }
+    .issues { display:grid; grid-template-columns:repeat(3,1fr); gap:1px; position:relative; z-index:1; background:rgba(255,255,255,.2); border:1px solid rgba(255,255,255,.2); }
+    .issue { min-height:393px; padding:30px; background:#211b1d; display:flex; flex-direction:column; }
+    .issue-no { color:var(--lime); font-size:12px; font-weight:800; letter-spacing:.09em; }
+    .issue h3 { margin:45px 0 20px; max-width:310px; font:700 32px/1.04 "Playfair Display",serif; letter-spacing:-.04em; }
+    .issue ul { padding:0; margin:auto 0 0; list-style:none; color:rgba(255,255,255,.69); font-size:14px; line-height:1.42; }
+    .issue li { padding:9px 0; border-top:1px solid rgba(255,255,255,.15); }
+    .tools { background:var(--soft); }
+    .tools-layout { display:grid; grid-template-columns:1fr 1fr; gap:70px; align-items:start; }
+    .tools-figure { position:sticky; top:25px; min-height:540px; overflow:hidden; background:#0d1112; }
+    .tools-figure img { position:absolute; height:100%; width:100%; object-fit:cover; object-position:52% center; opacity:.9; filter:saturate(.75) contrast(1.08); }
+    .tools-figure::after { content:"ППО"; position:absolute; bottom:16px; left:21px; color:var(--lime); font:800 13px Manrope,sans-serif; letter-spacing:.15em; }
+    .tool-list { border-top:1px solid var(--line); }
+    .tool { padding:27px 0 25px; border-bottom:1px solid var(--line); }
+    .tool b { display:block; font-size:20px; letter-spacing:-.03em; }
+    .tool p { max-width:460px; margin:8px 0 0; color:rgba(23,23,25,.68); font-size:15px; line-height:1.48; }
+    .results { background:var(--wine); color:white; overflow:hidden; }
+    .results-in { display:grid; grid-template-columns:1.1fr .9fr; gap:70px; align-items:center; }
+    .results .eyebrow { color:var(--lime); }
+    .result-big { margin:0; font:700 clamp(44px,5vw,75px)/.98 "Playfair Display",serif; letter-spacing:-.06em; }
+    .results p { color:rgba(255,255,255,.75); font-size:17px; line-height:1.55; }
+    .result-list { display:grid; gap:0; border-top:1px solid rgba(255,255,255,.34); }
+    .result { padding:19px 0; border-bottom:1px solid rgba(255,255,255,.34); display:flex; gap:20px; align-items:baseline; }
+    .result b { width:29px; color:var(--lime); font:700 25px "Playfair Display",serif; }
+    .result span { font-size:17px; line-height:1.4; }
+    .trainer { position:relative; padding:0; overflow:hidden; background:var(--ink); color:white; }
+    .trainer-in { min-height:730px; position:relative; display:flex; align-items:center; }
+    .trainer-photo { position:absolute; inset:0 0 0 46%; background:linear-gradient(90deg, var(--ink) 0%, transparent 22%), url('assets/trainer-portrait.jpg') center 30%/cover no-repeat; }
+    .trainer-copy { position:relative; z-index:1; max-width:620px; padding:130px 0; }
+    .trainer .eyebrow { color:var(--lime); }
+    .trainer h2 { margin:22px 0; font:700 clamp(48px,6vw,83px)/.88 "Playfair Display",serif; letter-spacing:-.07em; }
+    .trainer h2 small { display:block; margin-top:17px; font:800 12px Manrope,sans-serif; letter-spacing:.13em; text-transform:uppercase; color:var(--lime); }
+    .trainer p { font-size:17px; line-height:1.55; color:rgba(255,255,255,.74); }
+    .credentials { margin:31px 0 0; display:grid; grid-template-columns:repeat(2, minmax(0,1fr)); gap:1px; background:rgba(255,255,255,.25); }
+    .credential { min-height:112px; padding:18px; background:rgba(23,23,25,.94); }
+    .credential b { display:block; color:var(--lime); font:700 11px/1.25 Manrope,sans-serif; letter-spacing:.07em; text-transform:uppercase; }
+    .credential span { display:block; margin-top:9px; font-size:13px; line-height:1.35; color:rgba(255,255,255,.7); }
+    .note { margin-top:15px; font-size:12px !important; color:rgba(255,255,255,.48)!important; }
+    .about { background:var(--white); }
+    .about-grid { display:grid; grid-template-columns:1.05fr .95fr; align-items:end; gap:60px; }
+    .stats { display:grid; grid-template-columns:repeat(2,1fr); gap:0; border-top:1px solid var(--line); border-left:1px solid var(--line); }
+    .stat { min-height:168px; padding:22px; display:flex; flex-direction:column; justify-content:space-between; border-right:1px solid var(--line); border-bottom:1px solid var(--line); }
+    .stat b { font:700 clamp(35px,4vw,58px)/.9 "Playfair Display",serif; color:var(--wine); letter-spacing:-.06em; }
+    .stat span { max-width:150px; font-size:13px; line-height:1.28; }
+    .reviews { background:var(--paper); }
+    .review-grid { display:grid; grid-template-columns:1.08fr .92fr; gap:1px; background:var(--line); }
+    .review-feature, .review-stack { background:var(--paper); }
+    .review-feature { padding:44px; min-height:405px; display:flex; flex-direction:column; }
+    .quote-mark { color:var(--wine); font:700 80px/.6 "Playfair Display",serif; }
+    .review-feature blockquote { margin:25px 0 auto; max-width:650px; font:700 clamp(24px,3vw,39px)/1.14 "Playfair Display",serif; letter-spacing:-.04em; }
+    .review-author { margin-top:25px; color:var(--wine); font-size:12px; font-weight:800; letter-spacing:.08em; text-transform:uppercase; }
+    .review-mini { padding:28px; min-height:202px; background:var(--white); border-bottom:1px solid var(--line); }
+    .review-mini p { margin:0; font-size:15px; line-height:1.48; }
+    .review-mini b { display:block; margin-top:19px; color:var(--wine); font-size:12px; text-transform:uppercase; letter-spacing:.08em; }
+    .cta { position:relative; overflow:hidden; background:var(--lime); color:var(--ink); }
+    .cta::after { content:"вместе"; position:absolute; bottom:-.36em; right:-.06em; font:700 clamp(96px,17vw,250px)/1 "Playfair Display",serif; letter-spacing:-.1em; color:rgba(23,23,25,.06); }
+    .cta-in { position:relative; z-index:1; display:grid; grid-template-columns:1.05fr .95fr; gap:70px; align-items:end; }
+    .cta .section-head { margin:0; }
+    .form { padding:28px; background:var(--ink); color:white; }
+    .form h3 { margin:0 0 21px; font:700 30px/1.06 "Playfair Display",serif; }
+    .form label { display:block; margin:15px 0 6px; color:rgba(255,255,255,.66); font-size:12px; }
+    .form input { width:100%; border:0; border-bottom:1px solid rgba(255,255,255,.45); border-radius:0; padding:9px 0; background:transparent; color:white; outline:none; }
+    .form input:focus { border-color:var(--lime); }
+    .form .button { width:100%; margin-top:24px; }
+    .form-note { margin:13px 0 0; color:rgba(255,255,255,.48); font-size:10px; line-height:1.45; }
+    .contacts { padding:0; background:var(--ink); color:white; }
+    .contacts-in { display:grid; grid-template-columns:.9fr 1.1fr; min-height:405px; }
+    .contact-copy { padding:70px 0; padding-right:50px; }
+    .contact-copy h2 { margin:20px 0 32px; font:700 48px/.94 "Playfair Display",serif; letter-spacing:-.06em; }
+    .contact-line { display:block; margin:12px 0; font-size:16px; font-weight:700; }
+    .contact-line small { display:block; margin-bottom:4px; color:var(--lime); font-size:10px; letter-spacing:.12em; text-transform:uppercase; }
+    .map { position:relative; overflow:hidden; display:grid; place-items:center; background:#313032; }
+    .map::before { content:""; position:absolute; width:160%; height:160%; background:repeating-linear-gradient(20deg, transparent 0 47px, rgba(255,255,255,.06) 48px 50px), repeating-linear-gradient(110deg, transparent 0 72px, rgba(215,242,126,.13) 73px 75px); transform:rotate(-12deg); }
+    .map-pin { position:relative; width:96px; height:96px; border:1px solid var(--lime); border-radius:50%; display:grid; place-items:center; background:rgba(23,23,25,.75); color:var(--lime); font:700 30px "Playfair Display",serif; }
+    footer { padding:22px 0; background:#0f0f10; color:rgba(255,255,255,.6); font-size:11px; }
+    .footer-in { display:flex; justify-content:space-between; gap:18px; align-items:center; }
+    .footer-in a { color:white; }
+    .modal { position:fixed; z-index:10; inset:0; display:none; align-items:center; justify-content:center; padding:20px; background:rgba(15,15,16,.72); backdrop-filter:blur(6px); }
+    .modal.open { display:flex; }
+    .modal-card { width:min(490px,100%); position:relative; padding:35px; background:var(--paper); box-shadow:0 24px 70px rgba(0,0,0,.35); }
+    .modal-card h2 { margin:0 0 10px; font:700 39px/.98 "Playfair Display",serif; letter-spacing:-.06em; }
+    .modal-card p { margin:0 0 23px; color:rgba(23,23,25,.7); font-size:14px; line-height:1.45; }
+    .modal-card label { display:block; margin:16px 0 6px; font-size:12px; font-weight:700; }
+    .modal-card input { width:100%; padding:10px 0; border:0; border-bottom:1px solid var(--line); border-radius:0; background:transparent; outline:none; }
+    .modal-card input:focus { border-color:var(--wine); }
+    .modal-card form .button { width:100%; margin-top:25px; }
+    .close { position:absolute; top:14px; right:16px; border:0; background:transparent; cursor:pointer; font-size:28px; line-height:1; }
+    @media (max-width:900px) { .nav a:not(.phone), .hero-scroll { display:none; } .schedule-in { grid-template-columns:1fr 1fr; padding:22px 0; } .schedule-intro { grid-column:span 2; } .schedule-book { justify-self:start; } .issues { grid-template-columns:1fr; } .issue { min-height:285px; } .issue h3 { margin:28px 0 20px; } .tools-layout, .results-in, .about-grid, .cta-in, .contacts-in { grid-template-columns:1fr; gap:38px; } .tools-figure { position:relative; top:auto; min-height:390px; } .trainer-photo { inset:0; opacity:.42; background-position:67% center; } .trainer-copy { max-width:650px; } .trainer-in { min-height:690px; } .contact-copy { padding:62px 0 38px; } .map { min-height:270px; } }
+    @media (max-width:620px) { .wrap { width:min(100% - 32px, 1240px); } .header { padding:17px 0; } .brand { font-size:9px; } .brand-mark { width:30px; height:30px; } .nav { gap:0; } .nav .phone { font-size:11px; } .hero, .hero-in { min-height:725px; } .hero::before { background:linear-gradient(0deg, rgba(8,8,10,.97) 5%, rgba(8,8,10,.8) 47%, rgba(8,8,10,.43)), url('assets/trainer-stage.webp') 57% center/cover no-repeat; } .hero-in { padding:126px 0 31px; } .hero .eyebrow { margin-bottom:18px; } .hero .display { font-size:clamp(43px,13vw,66px); } .hero-subtitle { margin:25px 0; font-size:16px; } .hero-meta { padding-top:24px; } .hero-quote { font-size:17px; } .schedule-in { grid-template-columns:1fr; gap:18px; } .schedule-intro { grid-column:auto; } .schedule-item { padding-left:15px; } .schedule-book { width:100%; } section { padding:76px 0; } .section-head { margin-bottom:38px; } .section-title { font-size:clamp(37px,11vw,54px); } .section-intro { font-size:15px; } .program-card { grid-template-columns:51px 1fr; gap:11px; align-items:start; } .program-num { font-size:30px; } .program-symbol { display:none; } .program-card h3 { font-size:19px; } .problems { padding-bottom:78px; } .issue { min-height:0; padding:25px 20px; } .issue h3 { font-size:29px; } .tools-figure { min-height:320px; } .result-big { font-size:47px; } .trainer-in { min-height:660px; align-items:end; } .trainer-copy { padding:90px 0 47px; } .trainer h2 { font-size:56px; } .credentials { grid-template-columns:1fr; } .credential { min-height:0; } .stats { grid-template-columns:1fr 1fr; } .stat { min-height:138px; padding:16px; } .review-grid { grid-template-columns:1fr; } .review-feature { min-height:330px; padding:29px 22px; } .review-feature blockquote { font-size:26px; } .review-mini { min-height:0; padding:24px 22px; } .form { padding:25px 20px; } .contacts-in { gap:0; } .footer-in { align-items:flex-start; flex-direction:column; } }
+    @media (prefers-reduced-motion:reduce) { *,*::before,*::after { scroll-behavior:auto!important; animation-duration:.01ms!important; transition-duration:.01ms!important; } }
+  </style>
+</head>
+<body>
+  <header class="header"><div class="wrap header-in"><a class="brand" href="#top" aria-label="МЦПИР — на главную"><span class="brand-mark">М</span><span>Международный центр<br>психологии и развития</span></a><nav class="nav"><a href="#program">Программа</a><a href="#trainer">Тренер</a><a href="#reviews">Отзывы</a><a class="phone" href="tel:+375293203060">+375 29 320-30-60</a></nav></div></header>
+  <main id="top">
+    <section class="hero"><div class="wrap hero-in"><div class="hero-copy"><div class="eyebrow">Практический тренинг · Минск</div><h1 class="display">Психология<br><span class="accent">профессиональных</span><br>отношений</h1><p class="hero-subtitle">Научитесь договариваться, объединять людей и превращать сложные рабочие отношения в силу вашей команды.</p><button class="button button--light" data-modal-open>Забронировать место <span class="arrow">↗</span></button></div><div class="hero-meta"><div class="hero-quote">«Большие проекты, сильные команды и новые возможности начинаются с качества отношений».<span>Тренинг для руководителей, предпринимателей и специалистов</span></div><span class="hero-scroll">листайте вниз</span></div></div></section>
+    <aside class="schedule"><div class="wrap schedule-in"><div class="schedule-intro"><div class="eyebrow">Ближайший поток</div><strong>По мере набора группы</strong></div><div class="schedule-item"><b>Пятница</b>19:00 — 22:00</div><div class="schedule-item"><b>Суббота</b>11:00 — 20:00</div><div class="schedule-item"><b>Воскресенье</b>11:00 — 20:00</div><button class="button schedule-book" data-modal-open>Хочу участвовать <span class="arrow">↗</span></button></div></aside>
+    <section class="program" id="program"><div class="wrap"><div class="section-head"><div class="eyebrow">01 · программа</div><h2 class="section-title">Не теория про «коммуникацию». <em>Работа</em> с тем, что мешает вам действовать.</h2><p class="section-intro">За три насыщенных дня вы разберёте свои реальные ситуации и освоите понятные психологические инструменты — чтобы использовать их уже на следующей рабочей встрече.</p></div><div class="program-grid"><article class="program-card"><div class="program-num">01</div><div><h3>Как собирать людей вокруг общей цели</h3><p>От разрозненных задач и личных амбиций — к ясному направлению, которое объединяет команду.</p></div><div class="program-symbol">↗</div></article><article class="program-card"><div class="program-num">02</div><div><h3>Как слышать друг друга и договариваться без давления</h3><p>Узнаете, как создавать контакт с сотрудниками, партнёрами, руководителями и клиентами.</p></div><div class="program-symbol">↗</div></article><article class="program-card"><div class="program-num">03</div><div><h3>Как решать конфликты до того, как они разрушают результат</h3><p>Научитесь видеть причины напряжения, говорить о сложном и возвращать взаимодействие в конструктив.</p></div><div class="program-symbol">↗</div></article><article class="program-card"><div class="program-num">04</div><div><h3>Как перестать упираться в личный и финансовый потолок</h3><p>Исследуете ограничивающие убеждения и найдёте опоры для более смелых профессиональных решений.</p></div><div class="program-symbol">↗</div></article><article class="program-card"><div class="program-num">05</div><div><h3>Как строить доверие, которое выдерживает изменения</h3><p>Соберёте собственную стратегию отношений — в команде, бизнесе и новом окружении.</p></div><div class="program-symbol">↗</div></article></div></div></section>
+    <section class="problems"><div class="wrap"><div class="section-head"><div class="eyebrow">02 · ваши задачи</div><h2 class="section-title">Когда люди рядом — <em>не ресурс,</em> а источник напряжения</h2><p class="section-intro">Тренинг особенно полезен, если узнаёте себя хотя бы в одной из ситуаций.</p></div><div class="issues"><article class="issue"><span class="issue-no">01 / Бизнес</span><h3>Пора расти, но команда и партнёры тормозят движение</h3><ul><li>Возникают разногласия с партнёрами</li><li>Сложно найти «своих» людей в команду</li><li>Непонятно, как выйти на следующий масштаб</li></ul></article><article class="issue"><span class="issue-no">02 / Карьера</span><h3>Работаете много, но не получается укрепить позицию</h3><ul><li>Конфликты с коллегами повторяются</li><li>Неловко отстаивать границы и свои идеи</li><li>Карьера и доход будто остановились</li></ul></article><article class="issue"><span class="issue-no">03 / Окружение</span><h3>Хочется близости и поддержки, а не вечного непонимания</h3><ul><li>Трудно знакомиться и доверять новым людям</li><li>Старое окружение больше не вдохновляет</li><li>Не хватает «своих» — друзей и единомышленников</li></ul></article></div></div></section>
+    <section class="tools"><div class="wrap tools-layout"><div class="tools-figure"><img src="assets/trainer-globe.jpg" alt="Александр Кулицкий с глобусом"></div><div><div class="section-head"><div class="eyebrow">03 · практический результат</div><h2 class="section-title">Отношения — <em>ключ</em> ко всему, что вы строите.</h2><p class="section-intro">Вы уйдёте не с вдохновением «надо что-то поменять», а с инструментами и пониманием, что именно делать.</p></div><div class="tool-list"><div class="tool"><b>Диагностика отношений</b><p>Поймёте, где на самом деле возникает сбой: в коммуникации, ролях, границах или ожиданиях.</p></div><div class="tool"><b>Конструктивный разговор</b><p>Освоите способ поднимать трудные темы без обвинений, молчания и эмоционального взрыва.</p></div><div class="tool"><b>Управление конфликтом</b><p>Научитесь переводить столкновение интересов в решение, которое сохраняет уважение и движение вперёд.</p></div><div class="tool"><b>Объединение вокруг цели</b><p>Сможете связывать общую задачу команды с личной мотивацией каждого её участника.</p></div></div></div></div></section>
+    <section class="results"><div class="wrap results-in"><div><div class="eyebrow">04 · после тренинга</div><h2 class="result-big">Вместо «сложно с людьми» — ясность, контакт и команда, на которую можно опереться.</h2><p>Практика на тренинге помогает быстрее находить общий язык, вовремя решать напряжённые ситуации и строить отношения, в которых хочется создавать большое.</p></div><div class="result-list"><div class="result"><b>01</b><span>Легче находите единомышленников и новых друзей</span></div><div class="result"><b>02</b><span>Создаёте сильную команду для серьёзных результатов</span></div><div class="result"><b>03</b><span>Увереннее действуете в конфликтах с сотрудниками и партнёрами</span></div><div class="result"><b>04</b><span>Выстраиваете профессиональные и личные отношения на доверии</span></div></div></div></section>
+    <section class="trainer" id="trainer"><div class="trainer-photo" role="img" aria-label="Александр Кулицкий"></div><div class="wrap trainer-in"><div class="trainer-copy"><div class="eyebrow">05 · ведущий тренинга</div><h2>Александр<br>Кулицкий<small>Психологический тренер</small></h2><p>Александр проведёт вас через ключевые ситуации, в которых отношения перестают работать. В фокусе — не абстрактные модели, а ваши реальные переговоры, команды, конфликты и точки роста.</p><div class="credentials"><div class="credential"><b>Практический формат</b><span>Упражнения, разборы и работа с вашим запросом в группе</span></div><div class="credential"><b>Психологические инструменты</b><span>Техники, которые можно применять в работе и жизни</span></div><div class="credential"><b>Безопасное пространство</b><span>Внимательное и уважительное взаимодействие с участниками</span></div><div class="credential"><b>Сертификаты тренера</b><span>Будут представлены на лендинге после передачи сканов</span></div></div><p class="note">Блок с сертификатами предусмотрен в дизайне — добавьте изображения документов, когда они будут готовы к публикации.</p></div></div></section>
+    <section class="about"><div class="wrap about-grid"><div class="section-head"><div class="eyebrow">06 · о проекте</div><h2 class="section-title">МЦПИР — пространство, где перемены становятся <em>действием.</em></h2><p class="section-intro">Международный центр психологии и развития объединяет людей, которые выбирают осознанно строить карьеру, отношения, бизнес и жизнь.</p></div><div class="stats"><div class="stat"><b>150 000+</b><span>выпускников программ МЦПИР</span></div><div class="stat"><b>22 года</b><span>в сфере развития и личностного роста</span></div><div class="stat"><b>500+</b><span>тренингов и мероприятий ежегодно</span></div><div class="stat"><b>60</b><span>городов в 7 странах Европы</span></div></div></div></section>
+    <section class="reviews" id="reviews"><div class="wrap"><div class="section-head"><div class="eyebrow">07 · отзывы выпускников</div><h2 class="section-title">Не обещания. <em>Изменения,</em> которые заметны в жизни.</h2></div><div class="review-grid"><article class="review-feature"><span class="quote-mark">“</span><blockquote>«Появился новый взгляд на отношения с подчинёнными, контрагентами и командой. Подход понятный и действительно рабочий».</blockquote><span class="review-author">Николай Волков · выпускник тренинга</span></article><div class="review-stack"><article class="review-mini"><p>«Много полезного для руководителя: делегирование, мотивация, микроклимат в команде. А общение с людьми в перерывах стало отдельной ценностью».</p><b>Михаил Сергеевич</b></article><article class="review-mini"><p>«Три дня дали десятки инструментов — от найма сотрудников до выбора направления бизнеса. Сразу составил план и начал внедрять».</p><b>Сергей Казанцев</b></article></div></div></div></section>
+    <section class="cta"><div class="wrap cta-in"><div class="section-head"><div class="eyebrow">08 · следующий шаг</div><h2 class="section-title">Забронируйте место в группе и начните строить отношения, которые <em>усиливают вас.</em></h2><p class="section-intro">Оставьте контакты — администратор расскажет о ближайшем наборе, формате и условиях участия.</p></div><form class="form" id="lead-form"><h3>Хочу в группу</h3><label for="name">Как вас зовут</label><input id="name" name="name" autocomplete="name" required placeholder="Ваше имя"><label for="phone">Телефон для связи</label><input id="phone" name="phone" autocomplete="tel" required placeholder="+375 (__) ___-__-__"><input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0"><button class="button button--light" type="submit">Оставить заявку <span class="arrow">↗</span></button><p class="form-note">Нажимая кнопку, вы соглашаетесь на обработку персональных данных и с политикой конфиденциальности.</p></form></div></section>
+    <section class="contacts"><div class="wrap contacts-in"><div class="contact-copy"><div class="eyebrow">Контакты</div><h2>Есть вопрос?<br>Поможем.</h2><a class="contact-line" href="tel:+375293203060"><small>Позвонить</small>+375 29 320-30-60</a><a class="contact-line" href="mailto:info@mcpir.ru"><small>Написать</small>info@mcpir.ru</a></div><div class="map" aria-label="Карта"><span class="map-pin">Мн</span></div></div></section>
+  </main>
+  <footer><div class="wrap footer-in"><span>© МЦПИР · Международный центр психологии и развития</span><span>ООО «МЦПиР» · <a href="#">Политика конфиденциальности</a></span></div></footer>
+  <div class="modal" id="modal" aria-hidden="true"><div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modal-title"><button class="close" aria-label="Закрыть" data-modal-close>×</button><h2 id="modal-title">Ваше место в группе</h2><p>Оставьте номер — администратор уточнит формат, дату ближайшего потока и ответит на вопросы.</p><form id="modal-form"><label for="modal-name">Как вас зовут</label><input id="modal-name" name="name" autocomplete="name" required placeholder="Ваше имя"><label for="modal-phone">Телефон для связи</label><input id="modal-phone" name="phone" autocomplete="tel" required placeholder="+375 (__) ___-__-__"><input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0"><button class="button" type="submit">Получить информацию <span class="arrow">↗</span></button></form></div></div>
+  <script>
+    const modal=document.getElementById('modal');
+    const openModal=()=>{modal.classList.add('open');modal.setAttribute('aria-hidden','false');document.body.classList.add('modal-open');setTimeout(()=>document.getElementById('modal-name').focus(),60)};
+    const closeModal=()=>{modal.classList.remove('open');modal.setAttribute('aria-hidden','true');document.body.classList.remove('modal-open')};
+    document.querySelectorAll('[data-modal-open]').forEach(el=>el.addEventListener('click',openModal));
+    document.querySelectorAll('[data-modal-close]').forEach(el=>el.addEventListener('click',closeModal));
+    modal.addEventListener('click',e=>{if(e.target===modal)closeModal()});
+    document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});
+    const WORKER_ENDPOINT='https://mute-limit-6032.ravenby.workers.dev/submit';
+    const SITE_ID='mcpir-web';
+    const ATTRIBUTION_KEY='mcpir_lead_attribution_v1';
+    const UTM_KEYS=['utm_source','utm_medium','utm_campaign','utm_content','utm_term','gclid','yclid'];
+    const readAttribution=()=>{
+      let saved={};
+      try{saved=JSON.parse(localStorage.getItem(ATTRIBUTION_KEY)||'{}')||{}}catch(e){}
+      const params=new URLSearchParams(window.location.search);
+      UTM_KEYS.forEach(key=>{if(!saved[key]&&params.get(key))saved[key]=params.get(key)});
+      if(!saved.landing_page)saved.landing_page=window.location.href;
+      if(!saved.referrer&&document.referrer)saved.referrer=document.referrer;
+      try{localStorage.setItem(ATTRIBUTION_KEY,JSON.stringify(saved))}catch(e){}
+      return saved;
+    };
+    readAttribution();
+    const success=(form)=>{form.innerHTML='<h3>Спасибо!</h3><p>Заявка принята. Мы свяжемся с вами в ближайшее время.</p>';};
+    const submitLead=async(form,formName)=>{
+      const button=form.querySelector('button[type="submit"]');
+      const originalText=button.innerHTML;
+      button.disabled=true;
+      button.innerHTML='Отправляем…';
+      const formData=new FormData(form);
+      const data=Object.fromEntries(formData.entries());
+      const attribution=readAttribution();
+      const payload={...data,site_id:SITE_ID,form_name:formName,...attribution,page_url:window.location.href};
+      try{
+        const response=await fetch(WORKER_ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)});
+        const result=await response.json().catch(()=>({}));
+        if(!response.ok||!result.ok)throw new Error(result.error||'Не удалось отправить заявку');
+        success(form);
+        return true;
+      }catch(error){
+        let message=form.querySelector('.form-error');
+        if(!message){message=document.createElement('p');message.className='form-error';message.style.cssText='margin:12px 0 0;color:#ffb4a9;font-size:12px';form.appendChild(message)}
+        message.textContent='Не удалось отправить заявку. Попробуйте ещё раз или позвоните нам.';
+        button.disabled=false;
+        button.innerHTML=originalText;
+        return false;
+      }
+    };
+    document.getElementById('lead-form').addEventListener('submit',async e=>{e.preventDefault();await submitLead(e.currentTarget,'Основная форма — Хочу в группу')});
+    document.getElementById('modal-form').addEventListener('submit',async e=>{e.preventDefault();if(await submitLead(e.currentTarget,'Попап — Получить информацию'))setTimeout(closeModal,2300)});
+  </script>
+</body>
+</html>
