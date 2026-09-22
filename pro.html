@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Психология влияния — бесплатный вебинар Александра Копытько</title>
+<meta name="description" content="Как за 5 минут разговора понять человека и найти к нему подход. Бесплатный вебинар чемпиона России по переговорам Александра Копытько. 24 сентября, 20:00 МСК.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;900&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0A0A0A;
+    --bg-panel:#131313;
+    --bg-panel-2:#181818;
+    --line:rgba(255,255,255,0.08);
+    --line-strong:rgba(255,255,255,0.16);
+    --text:#F5F4F0;
+    --muted:#A6A49C;
+    --muted-2:#6E6C66;
+    --accent:#E5342E;
+    --accent-2:#FF5A47;
+    --accent-dim:rgba(229,52,46,0.14);
+    --display:'Unbounded', sans-serif;
+    --body:'Inter', sans-serif;
+    --mono:'JetBrains Mono', monospace;
+    --radius:14px;
+    --wrap:1160px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{-webkit-text-size-adjust:100%; scroll-behavior:smooth; scroll-padding-top:88px;}
+  body{
+    background:var(--bg); color:var(--text); font-family:var(--body);
+    font-size:17px; line-height:1.6; -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  img{max-width:100%; display:block;}
+  a{color:inherit; text-decoration:none;}
+  .wrap{max-width:var(--wrap); margin:0 auto; padding:0 24px;}
+  section{position:relative;}
+  h1,h2,h3{font-family:var(--display); font-weight:700; letter-spacing:-0.01em;}
+  ::selection{background:var(--accent); color:#fff;}
+  :focus-visible{outline:2px solid var(--accent-2); outline-offset:3px;}
+
+  /* ---------- Header ---------- */
+  header{
+    position:fixed; top:0; left:0; right:0; z-index:60;
+    padding:16px 0;
+    background:rgba(10,10,10,0.72);
+    backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px);
+    border-bottom:1px solid transparent;
+    transition:border-color .3s ease, background .3s ease;
+  }
+  header.scrolled{border-bottom-color:var(--line); background:rgba(10,10,10,0.92);}
+  header .wrap{display:flex; align-items:center; justify-content:space-between; gap:16px;}
+  .brand{display:flex; flex-direction:column; line-height:1.15;}
+  .brand b{font-family:var(--display); font-size:15px; font-weight:700; letter-spacing:0.01em;}
+  .brand span{font-size:11.5px; color:var(--muted-2); font-family:var(--mono);}
+  .header-meta{display:flex; align-items:center; gap:18px;}
+  .header-date{font-family:var(--mono); font-size:13px; color:var(--muted); display:none;}
+  .btn{
+    display:inline-flex; align-items:center; justify-content:center; gap:8px;
+    font-family:var(--body); font-weight:700; font-size:15px;
+    padding:13px 26px; border-radius:100px; border:none; cursor:pointer;
+    background:var(--accent); color:#fff; white-space:nowrap;
+    transition:transform .18s ease, background .18s ease, box-shadow .18s ease;
+    box-shadow:0 0 0 0 rgba(229,52,46,0.5);
+  }
+  .btn:hover{background:var(--accent-2); transform:translateY(-1px);}
+  .btn:active{transform:translateY(0);}
+  .btn.small{padding:11px 20px; font-size:14px;}
+  .btn.ghost{
+    background:transparent; border:1px solid var(--line-strong); color:var(--text);
+  }
+  .btn.ghost:hover{background:rgba(255,255,255,0.06); border-color:var(--muted);}
+  .btn.block{width:100%;}
+
+  /* ---------- Hero ---------- */
+  .hero{
+    padding:150px 0 80px;
+    background:
+      radial-gradient(ellipse 900px 500px at 78% -10%, rgba(229,52,46,0.16), transparent 60%),
+      radial-gradient(ellipse 700px 500px at -10% 30%, rgba(229,52,46,0.06), transparent 60%);
+  }
+  .hero-grid{
+    display:grid; grid-template-columns:1.15fr 0.85fr; gap:56px; align-items:center;
+  }
+  .kicker{
+    display:inline-flex; align-items:center; gap:10px;
+    font-family:var(--mono); font-size:12.5px; color:var(--accent-2);
+    border:1px solid rgba(229,52,46,0.35); background:var(--accent-dim);
+    padding:7px 14px; border-radius:100px; margin-bottom:26px;
+  }
+  .kicker::before{content:''; width:6px; height:6px; border-radius:50%; background:var(--accent-2); flex:none;}
+  h1.hero-title{
+    font-size:clamp(28px, 3.4vw, 46px); line-height:1.12; font-weight:700;
+    margin-bottom:22px; max-width:15ch;
+  }
+  h1.hero-title em{
+    font-style:normal; color:var(--accent-2);
+  }
+  .hero-lead{
+    font-size:clamp(17px, 1.7vw, 20px); color:var(--muted); max-width:52ch;
+    margin-bottom:34px; line-height:1.55;
+  }
+  .hero-meta{
+    display:flex; flex-wrap:wrap; gap:10px 26px; margin-bottom:34px;
+    font-family:var(--mono); font-size:14px; color:var(--text);
+  }
+  .hero-meta span{display:flex; align-items:center; gap:8px;}
+  .hero-meta span::before{content:''; width:4px; height:4px; background:var(--accent-2); border-radius:50%;}
+  .hero-actions{display:flex; align-items:center; gap:18px; flex-wrap:wrap; margin-bottom:16px;}
+  .hero-note{font-size:14px; color:var(--muted-2);}
+  .hero-media{position:relative;}
+  .hero-media-frame{
+    position:relative; border-radius:20px; overflow:hidden; border:1px solid var(--line-strong);
+    background:linear-gradient(160deg, #1a1a1a, #0d0d0d);
+    aspect-ratio:4/5;
+  }
+  .hero-media-frame img{
+    width:100%; height:100%; object-fit:cover; object-position:50% 12%;
+    filter:grayscale(0.25) contrast(1.05);
+  }
+  .hero-media-frame::after{
+    content:''; position:absolute; inset:0;
+    background:linear-gradient(180deg, transparent 55%, rgba(10,10,10,0.92) 100%);
+  }
+  .hero-media-tag{
+    position:absolute; left:20px; bottom:20px; z-index:2;
+    font-family:var(--mono); font-size:12.5px; color:var(--muted);
+  }
+  .hero-media-tag b{display:block; font-family:var(--display); color:var(--text); font-size:17px; font-weight:700; margin-bottom:2px;}
+  .hero-stats{display:flex; gap:0; margin-top:20px; border:1px solid var(--line); border-radius:14px; overflow:hidden;}
+  .hero-stat{flex:1; padding:16px 14px; text-align:center; border-right:1px solid var(--line);}
+  .hero-stat:last-child{border-right:none;}
+  .hero-stat b{display:block; font-family:var(--display); font-size:20px; color:var(--accent-2);}
+  .hero-stat span{font-size:11.5px; color:var(--muted-2); font-family:var(--mono);}
+
+  /* ---------- Section shell ---------- */
+  .section{padding:96px 0;}
+  .section.tight{padding:72px 0;}
+  .section-head{max-width:640px; margin-bottom:52px;}
+  .eyebrow{
+    font-family:var(--mono); font-size:12.5px; color:var(--accent-2);
+    text-transform:none; margin-bottom:14px; display:block;
+  }
+  h2.section-title{font-size:clamp(28px, 3.4vw, 42px); line-height:1.12; font-weight:700;}
+  .section-sub{color:var(--muted); font-size:16.5px; margin-top:16px; max-width:56ch;}
+  .divider{height:1px; background:var(--line);}
+
+  /* ---------- Pains (curiosity hooks) ---------- */
+  .pains{background:var(--bg-panel); border-top:1px solid var(--line); border-bottom:1px solid var(--line);}
+  .pains-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:1px; background:var(--line); border:1px solid var(--line); border-radius:16px; overflow:hidden;}
+  .pain{background:var(--bg-panel); padding:28px 26px; display:flex; gap:16px; align-items:flex-start;}
+  .pain-mark{
+    flex:none; width:30px; height:30px; border-radius:50%; border:1px solid var(--line-strong);
+    display:flex; align-items:center; justify-content:center; font-family:var(--mono); font-size:14px; color:var(--muted);
+  }
+  .pain p{font-size:16.5px; color:var(--text); line-height:1.5;}
+
+  /* ---------- Program ---------- */
+  .program-list{display:flex; flex-direction:column;}
+  .program-item{
+    display:grid; grid-template-columns:80px 1fr; gap:24px; padding:28px 0;
+    border-top:1px solid var(--line);
+  }
+  .program-item:last-child{border-bottom:1px solid var(--line);}
+  .program-num{font-family:var(--display); font-size:34px; color:var(--muted-2); font-weight:700;}
+  .program-item h3{font-size:19px; font-weight:600; font-family:var(--body); margin-bottom:6px; color:var(--text);}
+  .program-item p{color:var(--muted); font-size:15.5px; max-width:60ch;}
+
+  /* ---------- Break / influence visual ---------- */
+  .break{
+    position:relative; padding:0; overflow:hidden; border-top:1px solid var(--line); border-bottom:1px solid var(--line);
+  }
+  .break-inner{position:relative; display:grid; grid-template-columns:1fr 1fr; min-height:420px;}
+  .break-img{position:relative; overflow:hidden;}
+  .break-img img{width:100%; height:100%; object-fit:cover; object-position:50% 20%; filter:grayscale(0.4) contrast(1.1);}
+  .break-img::after{content:''; position:absolute; inset:0; background:linear-gradient(90deg, transparent 60%, var(--bg) 100%);}
+  .break-text{padding:56px 48px; display:flex; flex-direction:column; justify-content:center; background:var(--bg);}
+  .break-text .eyebrow{margin-bottom:18px;}
+  .break-text h2{font-size:clamp(26px,3vw,36px); line-height:1.18; margin-bottom:16px;}
+  .break-text p{color:var(--muted); font-size:16px; max-width:44ch;}
+
+  /* ---------- Bonus ---------- */
+  .bonus{
+    display:grid; grid-template-columns:0.85fr 1.15fr; gap:0; border:1px solid var(--line-strong);
+    border-radius:20px; overflow:hidden; background:var(--bg-panel);
+  }
+  .bonus-img{position:relative; min-height:260px;}
+  .bonus-img img{width:100%; height:100%; object-fit:cover; object-position:50% 30%;}
+  .bonus-body{padding:44px 44px;}
+  .bonus-body .eyebrow{color:var(--accent-2);}
+  .bonus-body h3{font-size:26px; margin-bottom:14px; line-height:1.2;}
+  .bonus-body p{color:var(--muted); margin-bottom:26px; max-width:48ch;}
+
+  /* ---------- Speaker ---------- */
+  .speaker{display:grid; grid-template-columns:0.9fr 1.1fr; gap:56px; align-items:start;}
+  .speaker-photo{border-radius:20px; overflow:hidden; border:1px solid var(--line-strong); position:sticky; top:100px;}
+  .speaker-photo img{width:100%; object-fit:cover; aspect-ratio:3/3.6; object-position:50% 15%;}
+  .speaker-role{font-family:var(--mono); font-size:13px; color:var(--accent-2); margin-bottom:10px; display:block;}
+  .speaker-name{font-size:clamp(26px,3vw,36px); margin-bottom:20px;}
+  .cred-list{display:flex; flex-direction:column; gap:0; margin-bottom:30px;}
+  .cred-item{
+    display:flex; gap:14px; align-items:flex-start; padding:14px 0; border-top:1px solid var(--line);
+    font-size:16px; color:var(--text);
+  }
+  .cred-item:last-child{border-bottom:1px solid var(--line);}
+  .cred-item .dot{flex:none; width:6px; height:6px; margin-top:9px; border-radius:50%; background:var(--accent-2);}
+  .achv-strip{display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-top:8px;}
+  .achv-card{border-radius:14px; overflow:hidden; border:1px solid var(--line); position:relative; aspect-ratio:4/3;}
+  .achv-card img{width:100%; height:100%; object-fit:cover; filter:grayscale(0.5) contrast(1.05);}
+  .achv-card span{
+    position:absolute; left:12px; bottom:10px; right:12px; font-family:var(--mono); font-size:11.5px; color:#fff;
+    text-shadow:0 1px 6px rgba(0,0,0,0.7);
+  }
+
+  /* ---------- Format ---------- */
+  .format{display:grid; grid-template-columns:1fr 1fr; gap:56px; align-items:center;}
+  .format-visual{border-radius:20px; overflow:hidden; border:1px solid var(--line-strong); aspect-ratio:5/4;}
+  .format-visual img{width:100%; height:100%; object-fit:cover; filter:contrast(1.05);}
+  .format-blocks{display:flex; flex-direction:column; gap:0;}
+  .format-row{display:flex; justify-content:space-between; align-items:baseline; padding:20px 0; border-top:1px solid var(--line);}
+  .format-row:last-child{border-bottom:1px solid var(--line);}
+  .format-row b{font-family:var(--display); font-size:28px; color:var(--accent-2);}
+  .format-row span{font-size:15px; color:var(--muted); text-align:right; max-width:60%;}
+
+  /* ---------- Benefits (curiosity contrast) ---------- */
+  .benefits-list{display:grid; grid-template-columns:1fr 1fr; gap:0 40px;}
+  .benefit{padding:22px 0; border-top:1px solid var(--line); font-size:17px; line-height:1.45;}
+  .benefit:nth-last-child(-n+2){border-bottom:1px solid var(--line);}
+
+  /* ---------- Audience ---------- */
+  .audience-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:1px; background:var(--line); border:1px solid var(--line); border-radius:16px; overflow:hidden;}
+  .audience-card{background:var(--bg); padding:32px 30px;}
+  .audience-card h3{font-size:18px; margin-bottom:10px; font-family:var(--body); font-weight:700;}
+  .audience-card p{color:var(--muted); font-size:15.5px;}
+
+  /* ---------- About company / stats ---------- */
+  .about{position:relative; border-top:1px solid var(--line); border-bottom:1px solid var(--line); overflow:hidden;}
+  .about-bg{position:absolute; inset:0;}
+  .about-bg img{width:100%; height:100%; object-fit:cover; filter:grayscale(1) contrast(1.1) brightness(0.4);}
+  .about-bg::after{content:''; position:absolute; inset:0; background:linear-gradient(180deg, rgba(10,10,10,0.75), rgba(10,10,10,0.95));}
+  .about-inner{position:relative; z-index:1; padding:88px 0;}
+  .about h2{font-size:clamp(26px,3vw,38px); max-width:14ch; margin-bottom:44px;}
+  .stat-row{display:grid; grid-template-columns:repeat(4,1fr); gap:24px;}
+  .stat b{display:block; font-family:var(--display); font-size:clamp(30px,3.4vw,44px); color:var(--accent-2); margin-bottom:6px;}
+  .stat span{font-size:14.5px; color:var(--muted);}
+
+  /* ---------- Countdown + form ---------- */
+  .reg{background:var(--bg-panel); border-top:1px solid var(--line);}
+  .reg-grid{display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:start;}
+  .countdown{display:flex; gap:12px; margin:28px 0 34px;}
+  .cd-box{flex:1; background:var(--bg); border:1px solid var(--line-strong); border-radius:12px; padding:18px 8px; text-align:center;}
+  .cd-box b{display:block; font-family:var(--display); font-size:clamp(24px,2.6vw,34px); color:var(--text);}
+  .cd-box span{font-size:11px; color:var(--muted-2); font-family:var(--mono); text-transform:uppercase;}
+  .reg-points{display:flex; flex-direction:column; gap:12px; margin-top:6px;}
+  .reg-points div{display:flex; gap:10px; align-items:flex-start; font-size:15.5px; color:var(--muted);}
+  .reg-points div::before{content:'—'; color:var(--accent-2); flex:none;}
+
+  .form-card{
+    background:var(--bg); border:1px solid var(--line-strong); border-radius:20px; padding:38px 34px;
+  }
+  .form-card h3{font-size:22px; margin-bottom:6px;}
+  .form-card .form-sub{color:var(--muted); font-size:14.5px; margin-bottom:26px;}
+  .field{margin-bottom:16px;}
+  .field label{display:block; font-size:13px; color:var(--muted-2); font-family:var(--mono); margin-bottom:7px;}
+  .field input{
+    width:100%; padding:15px 16px; border-radius:10px; border:1px solid var(--line-strong);
+    background:var(--bg-panel-2); color:var(--text); font-size:16px; font-family:var(--body);
+    transition:border-color .15s ease;
+  }
+  .field input::placeholder{color:var(--muted-2);}
+  .field input:focus{border-color:var(--accent-2); outline:none;}
+  .field.error input{border-color:var(--accent);}
+  .field .err-msg{display:none; color:var(--accent-2); font-size:12.5px; margin-top:6px;}
+  .field.error .err-msg{display:block;}
+  .form-consent{font-size:12.5px; color:var(--muted-2); margin-top:14px; line-height:1.5;}
+  .form-consent a{text-decoration:underline; cursor:pointer;}
+  .form-status{margin-top:14px; font-size:14px; display:none;}
+  .form-status.show{display:block;}
+  .form-status.ok{color:#5ED18A;}
+  .form-status.fail{color:var(--accent-2);}
+
+  /* ---------- Footer ---------- */
+  footer{border-top:1px solid var(--line); padding:48px 0 32px; background:var(--bg);}
+  .foot-grid{
+    display:grid; grid-template-columns:1.4fr 1fr 1fr; gap:32px;
+    font-size:13.5px; color:var(--muted);
+  }
+  .foot-grid b{color:var(--text); display:block; margin-bottom:8px; font-family:var(--display); font-weight:700; font-size:12px; letter-spacing:0.02em; text-transform:uppercase;}
+  .foot-grid p{margin-bottom:4px;}
+  .foot-grid a{text-decoration:none;}
+  .foot-grid a:hover{text-decoration:underline;}
+  .foot-bottom{
+    margin-top:36px; padding-top:20px; border-top:1px solid var(--line);
+    display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px;
+    font-size:12.5px; color:var(--muted-2); font-family:var(--mono);
+  }
+  .foot-bottom a{text-decoration:underline; cursor:pointer;}
+
+  /* ---------- Policy modal ---------- */
+  .modal-overlay{
+    position:fixed; inset:0; background:rgba(6,7,8,0.8);
+    display:none; align-items:center; justify-content:center; z-index:100; padding:24px;
+  }
+  .modal-overlay.show{display:flex;}
+  .modal{
+    background:var(--bg-panel); border:1px solid var(--line-strong);
+    border-radius:16px; max-width:640px; max-height:80vh; overflow-y:auto; padding:36px;
+  }
+  .modal h3{font-size:22px; margin-bottom:16px; font-family:var(--display);}
+  .modal p{font-size:14px; color:var(--muted); margin-bottom:14px;}
+  .modal-close{margin-top:10px;}
+
+  /* ---------- Responsive ---------- */
+  @media (max-width:920px){
+    .hero-grid{grid-template-columns:1fr; gap:40px;}
+    .hero-media{order:-1; max-width:340px; margin:0 auto;}
+    .pains-grid,.audience-grid{grid-template-columns:1fr;}
+    .break-inner{grid-template-columns:1fr;}
+    .break-img{min-height:240px;}
+    .break-text{padding:40px 26px;}
+    .bonus{grid-template-columns:1fr;}
+    .bonus-img{min-height:200px;}
+    .speaker{grid-template-columns:1fr;}
+    .speaker-photo{position:static; max-width:280px; margin:0 auto 8px;}
+    .format{grid-template-columns:1fr;}
+    .format-visual{order:-1; max-width:360px; margin:0 auto;}
+    .benefits-list{grid-template-columns:1fr;}
+    .benefit:nth-last-child(-n+2){border-bottom:none;}
+    .benefit:last-child{border-bottom:1px solid var(--line);}
+    .stat-row{grid-template-columns:1fr 1fr; row-gap:28px;}
+    .reg-grid{grid-template-columns:1fr; gap:40px;}
+    .achv-strip{grid-template-columns:1fr 1fr;}
+    .header-date{display:none !important;}
+    header{position:static; background:var(--bg-panel); backdrop-filter:none; -webkit-backdrop-filter:none; border-bottom:1px solid var(--line);}
+    .hero{padding-top:56px;}
+  }
+  @media (max-width:600px){
+    body{font-size:16px;}
+    .section{padding:64px 0;}
+    .hero{padding-top:40px;}
+    .foot-grid{grid-template-columns:1fr; gap:26px;}
+    .hero-stats{flex-wrap:wrap;}
+    .hero-stat{min-width:33%; border-bottom:1px solid var(--line);}
+    .countdown{gap:8px;}
+    .form-card{padding:28px 22px;}
+    .stat-row{grid-template-columns:1fr 1fr;}
+  }
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto;}
+    *{transition:none !important; animation:none !important;}
+  }
+</style>
+</head>
+<body>
+
+<header id="site-header">
+  <div class="wrap">
+    <div class="brand">
+      <b>МЦПиР</b>
+      <span>международный центр психологии и развития</span>
+    </div>
+    <div class="header-meta">
+      <span class="header-date">24 сентября · 20:00 МСК</span>
+      <a href="#reg" class="btn small">Записаться</a>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <!-- HERO -->
+  <section class="hero" id="top">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="kicker">Бесплатный вебинар · 24 сентября · 20:00 МСК</span>
+        <h1 class="hero-title">Как за 5 минут разговора понять человека и найти к нему <em>подход</em></h1>
+        <p class="hero-lead">Александр Копытько, чемпион России по управленческой борьбе и профайлер №1 в России и СНГ, покажет рабочую систему: как читать людей, распознавать манипуляции и вести разговор так, чтобы соглашались именно с тобой.</p>
+        <div class="hero-meta">
+          <span>24 сентября</span>
+          <span>20:00 МСК</span>
+          <span>Telegram, прямой эфир</span>
+        </div>
+        <div class="hero-actions">
+          <a href="#reg" class="btn">Записаться бесплатно</a>
+          <span class="hero-note">Доступ придёт в Telegram сразу после регистрации</span>
+        </div>
+        <div class="hero-stats">
+          <div class="hero-stat"><b>№1</b><span>профайлер в РФ и СНГ</span></div>
+          <div class="hero-stat"><b>5×</b><span>победитель чемпионата РФ</span></div>
+          <div class="hero-stat"><b>200 млн ₽</b><span>оборот собственных компаний</span></div>
+        </div>
+      </div>
+      <div class="hero-media">
+        <div class="hero-media-frame">
+          <img src="https://static.tildacdn.com/tild3361-6332-4664-a233-373966633636/__.png" alt="Александр Копытько, эксперт по профайлингу и переговорам">
+          <div class="hero-media-tag"><b>Александр Копытько</b>чемпион России по переговорам</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PAINS -->
+  <section class="pains">
+    <div class="wrap section">
+      <div class="section-head">
+        <span class="eyebrow">Знакомо?</span>
+        <h2 class="section-title">Вопросы, которые снимает один навык</h2>
+      </div>
+      <div class="pains-grid">
+        <div class="pain"><div class="pain-mark">1</div><p>Почему одни люди легко получают то, что хотят от других — а тебе для этого приходится давить или уговаривать?</p></div>
+        <div class="pain"><div class="pain-mark">2</div><p>Почему сотрудники кивают на планёрке — а потом всё равно делают по-своему?</p></div>
+        <div class="pain"><div class="pain-mark">3</div><p>Как понять, что человек говорит неправду, до того как это станет проблемой?</p></div>
+        <div class="pain"><div class="pain-mark">4</div><p>Почему клиент говорит «я подумаю» — и больше не выходит на связь?</p></div>
+        <div class="pain"><div class="pain-mark">5</div><p>Как заметить манипуляцию, пока в неё не втянули тебя самого?</p></div>
+        <div class="pain"><div class="pain-mark">6</div><p>Что на самом деле стоит за словами человека — и как это увидеть за минуту разговора?</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROGRAM -->
+  <section class="section" id="program">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Программа эфира</span>
+        <h2 class="section-title">5 тем, которые разберём на вебинаре</h2>
+        <p class="section-sub">Без теории ради теории — только то, что можно применить в разговоре уже на следующий день.</p>
+      </div>
+      <div class="program-list">
+        <div class="program-item"><div class="program-num">01</div><div><h3>Что такое современный профайлинг</h3><p>Простыми словами и на реальных примерах — где этот навык работает: в переговорах, продажах, найме, отношениях.</p></div></div>
+        <div class="program-item"><div class="program-num">02</div><div><h3>Психотипы за несколько фраз</h3><p>Как распознавать типы поведения людей — и понимать, с кем именно ты разговариваешь, ещё до того, как начнёшь убеждать.</p></div></div>
+        <div class="program-item"><div class="program-num">03</div><div><h3>Манипуляции и защита от них</h3><p>Виды манипуляций, которые встречаются каждый день, и рабочие способы им противостоять и снижать их эффект.</p></div></div>
+        <div class="program-item"><div class="program-num">04</div><div><h3>Правда, ложь и информационные вбросы</h3><p>Как повысить достоверность получаемой информации и не поддаться панике при информационной атаке.</p></div></div>
+        <div class="program-item"><div class="program-num">05</div><div><h3>Тактика разговора под конкретного человека</h3><p>Как выбрать и построить тактику коммуникации, которая приведёт именно к тому результату, который тебе нужен.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BREAK VISUAL -->
+  <section class="break">
+    <div class="break-inner">
+      <div class="break-img"><img src="https://static.tildacdn.com/tild3635-3166-4338-a639-363032303661/_1-2.png" alt="Кто управляет разговором"></div>
+      <div class="break-text">
+        <span class="eyebrow">Психология влияния</span>
+        <h2>Тобой управляют. Или управляешь ты</h2>
+        <p>В любом разговоре кто-то ведёт, а кто-то следует. Профайлинг не про хитрости — про то, чтобы видеть игру целиком и решать, в какой роли быть тебе.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- BONUS -->
+  <section class="section tight">
+    <div class="wrap">
+      <div class="bonus">
+        <div class="bonus-img"><img src="https://static.tildacdn.com/tild3635-6330-4366-b833-663735333131/_____.jpg" alt="Как разбираться в людях — подборка материалов"></div>
+        <div class="bonus-body">
+          <span class="eyebrow">Бонус за регистрацию</span>
+          <h3>Подборка «Как разбираться в людях»</h3>
+          <p>Материалы по теме профайлинга придут на почту сразу после регистрации — можно начать применять уже до эфира.</p>
+          <a href="#reg" class="btn">Получить бесплатно</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SPEAKER -->
+  <section class="section" id="speaker">
+    <div class="wrap speaker">
+      <div class="speaker-photo">
+        <img src="https://static.tildacdn.com/tild6639-6562-4864-b334-376435383563/_2.png" alt="Александр Копытько">
+      </div>
+      <div>
+        <span class="speaker-role">Автор и ведущий вебинара</span>
+        <h2 class="speaker-name">Александр Копытько</h2>
+        <div class="cred-list">
+          <div class="cred-item"><span class="dot"></span>Действующий чемпион России по управленческой борьбе, пятикратный победитель чемпионата (2016–2022)</div>
+          <div class="cred-item"><span class="dot"></span>Профайлер №1 в России и СНГ, сертифицированный эксперт-профайлер</div>
+          <div class="cred-item"><span class="dot"></span>Преподаватель Кубанского государственного университета</div>
+          <div class="cred-item"><span class="dot"></span>Дипломированный психолог, профессиональный переговорщик</div>
+          <div class="cred-item"><span class="dot"></span>Практикующий тренер с международными сертификациями</div>
+          <div class="cred-item"><span class="dot"></span>Бизнесмен: учредитель и руководитель группы компаний с оборотом около 200 млн рублей, в подчинении 250 человек</div>
+        </div>
+        <div class="achv-strip">
+          <div class="achv-card"><img src="https://static.tildacdn.com/tild3738-6432-4332-b465-353664353565/maxresdefault-8.jpg" alt="Чемпионат России по управленческой борьбе"><span>Чемпионат России, финал</span></div>
+          <div class="achv-card"><img src="https://static.tildacdn.com/tild6531-6564-4632-b062-363436373936/2f7cbc9707505213f15a.jpg" alt="Победа в чемпионате"><span>9 из 28 кубков за 2016–2022</span></div>
+          <div class="achv-card"><img src="https://static.tildacdn.com/tild3665-3831-4931-a135-356136656464/2011120.jpg" alt="Тренинг МЦПиР"><span>Живые тренинги МЦПиР</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FORMAT -->
+  <section class="section tight" id="format">
+    <div class="wrap format">
+      <div class="format-visual"><img src="https://static.tildacdn.com/tild3466-3138-4536-b266-396234363732/1.png" alt="Формат вебинара"></div>
+      <div>
+        <span class="eyebrow">Формат</span>
+        <h2 class="section-title" style="margin-bottom:24px;">Живой эфир. Без записи</h2>
+        <div class="format-blocks">
+          <div class="format-row"><b>90 мин</b><span>Контент по делу — программа из пяти тем</span></div>
+          <div class="format-row"><b>60 мин</b><span>Ответы на вопросы в прямом эфире</span></div>
+          <div class="format-row"><b>2,5 ч</b><span>Общая длительность эфира в Telegram</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BENEFITS -->
+  <section class="section" id="benefits">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Зачем тебе профайлинг</span>
+        <h2 class="section-title">Что меняется, когда ты видишь людей насквозь</h2>
+      </div>
+      <div class="benefits-list">
+        <div class="benefit">Почему одни руководители получают преданность команды, а другие — только формальное исполнение?</div>
+        <div class="benefit">Как мотивировать сотрудников и клиентов, когда бюджета на премии нет?</div>
+        <div class="benefit">Что удерживает клиента рядом с тобой, а не у конкурента с ценой ниже?</div>
+        <div class="benefit">Почему в переговорах выигрывает не тот, кто громче, а тот, кто читает собеседника?</div>
+        <div class="benefit">Как отвечать на возражения так, чтобы не спорить, а вести к решению?</div>
+        <div class="benefit">Что делает человека неуязвимым для чужих манипуляций — и как этому научиться?</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AUDIENCE -->
+  <section class="section tight" id="audience">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Кому это полезно</span>
+        <h2 class="section-title">Вебинар будет особенно ценен, если ты</h2>
+      </div>
+      <div class="audience-grid">
+        <div class="audience-card"><h3>Предприниматель или руководитель</h3><p>Если твоя работа — это переговоры, разбираться в людях не роскошь, а рабочий инструмент.</p></div>
+        <div class="audience-card"><h3>Хочешь большего</h3><p>Понимая, что движет партнёром по переговорам, ты быстрее находишь общий язык и ведёшь его к нужному решению.</p></div>
+        <div class="audience-card"><h3>Устал разочаровываться в людях</h3><p>Профайлинг объясняет, почему люди поступают так, а не иначе — и снимает большую часть вопросов.</p></div>
+        <div class="audience-card"><h3>Растёшь как личность</h3><p>Один навык, который усиливает всё сразу: переговоры, отношения, управление командой.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT / STATS -->
+  <section class="about">
+    <div class="about-bg"><img src="https://static.tildacdn.com/tild3665-3831-4931-a135-356136656464/2011120.jpg" alt="Тренинг МЦПиР"></div>
+    <div class="wrap about-inner">
+      <h2>Международный центр психологии и развития — 20 лет в деле</h2>
+      <div class="stat-row">
+        <div class="stat"><b>200 000+</b><span>довольных выпускников</span></div>
+        <div class="stat"><b>150+</b><span>тренингов и вебинаров в год</span></div>
+        <div class="stat"><b>20+</b><span>лет в психологии и развитии</span></div>
+        <div class="stat"><b>33 / 18</b><span>онлайн-курсов и живых тренингов</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REGISTRATION -->
+  <section class="section reg" id="reg">
+    <div class="wrap reg-grid">
+      <div>
+        <span class="eyebrow">До начала эфира</span>
+        <h2 class="section-title">Займи место 24 сентября</h2>
+        <div class="countdown" id="countdown">
+          <div class="cd-box"><b id="cd-days">00</b><span>дней</span></div>
+          <div class="cd-box"><b id="cd-hours">00</b><span>часов</span></div>
+          <div class="cd-box"><b id="cd-min">00</b><span>минут</span></div>
+          <div class="cd-box"><b id="cd-sec">00</b><span>секунд</span></div>
+        </div>
+        <div class="reg-points">
+          <div>Живой эфир, 20:00 МСК — доступ придёт в Telegram</div>
+          <div>Бесплатно, без скрытых условий</div>
+          <div>Только прямое участие — запись не публикуется</div>
+        </div>
+      </div>
+
+      <div class="form-card">
+        <h3>Получить доступ к эфиру</h3>
+        <p class="form-sub">Заполни форму — пришлём ссылку на Telegram-чат с трансляцией.</p>
+        <form id="reg-form" autocomplete="off" novalidate>
+          <div class="field" id="f-name">
+            <label for="in-name">Имя</label>
+            <input id="in-name" name="name" type="text" placeholder="Как к тебе обращаться" required>
+            <div class="err-msg">Введи имя</div>
+          </div>
+          <div class="field" id="f-email">
+            <label for="in-email">Email</label>
+            <input id="in-email" name="email" type="email" placeholder="you@mail.ru" required>
+            <div class="err-msg">Введи корректный e-mail</div>
+          </div>
+          <div class="field" id="f-phone">
+            <label for="in-phone">Телефон</label>
+            <input id="in-phone" name="phone" type="tel" placeholder="+7 900 000-00-00" required>
+            <div class="err-msg">Введи корректный номер телефона</div>
+          </div>
+          <button type="submit" class="btn block" id="submit-btn">Получить доступ бесплатно</button>
+          <div class="form-status" id="form-status"></div>
+          <p class="form-consent">Нажимая кнопку, ты соглашаешься с <a id="open-policy">политикой конфиденциальности</a></p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <b>Мужской центр психологии и развития</b>
+        <p>Москва, Суворовская площадь, 1/52 к2, Деловой центр G&amp;G</p>
+        <p>ООО «МЦПиР» · ИНН 7718985163 · ОГРН 1147746690354</p>
+      </div>
+      <div>
+        <b>Контакты</b>
+        <p><a href="https://telegram.me/Mcpir3000" target="_blank" rel="noopener">Telegram</a></p>
+        <p><a href="mailto:support-online@mcpir.ru">support-online@mcpir.ru</a></p>
+      </div>
+      <div>
+        <b>Участие в эфире</b>
+        <p>Только в прямом эфире, подробности в <a href="https://t.me/MenTerMinsk_bot?start=s=3727562" target="_blank" rel="noopener">Telegram-чате</a></p>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 rmes-online.ru</span>
+      <a id="open-policy-2">Политика конфиденциальности</a>
+    </div>
+  </div>
+</footer>
+
+<div class="modal-overlay" id="policy-modal">
+  <div class="modal">
+    <h3>Политика конфиденциальности</h3>
+    <p>Тренинг-центр «МЦПиР» серьёзно относится к защите ваших персональных данных. Сбор данных на сайтах Тренинг-центра происходит только в объёме, необходимом для регистрации на мероприятие и технической обработки заявки. Продажа собранных данных или их передача третьим лицам без согласия исключена, за исключением случаев, предусмотренных законом.</p>
+    <p>Персональными данными является информация, которую вы указываете о себе: имя, e-mail, номер телефона. Эти данные используются только для того, чтобы прислать доступ к вебинару и материалы по теме, о которой мы рассказываем.</p>
+    <p>На сайте применяются файлы cookie — они помогают корректно обработать заявку и сделать посещение сайта удобнее. Cookie не наносят вреда устройству и не содержат вирусов.</p>
+    <p>Указывая e-mail и телефон, вы соглашаетесь на получение писем, связанных с вебинаром. Отказаться от рассылки можно в любой момент через support-online@mcpir.ru.</p>
+    <p>Лицам младше 18 лет не рекомендуется передавать личные данные без согласия родителей или опекунов.</p>
+    <button class="btn ghost modal-close" id="close-policy">Закрыть</button>
+  </div>
+</div>
+
+<script>
+(function(){
+  // header scroll state
+  var header = document.getElementById('site-header');
+  window.addEventListener('scroll', function(){
+    header.classList.toggle('scrolled', window.scrollY > 8);
+  }, {passive:true});
+
+  // policy modal
+  var modal = document.getElementById('policy-modal');
+  function openModal(e){ if(e) e.preventDefault(); modal.classList.add('show'); }
+  function closeModal(){ modal.classList.remove('show'); }
+  document.getElementById('open-policy').addEventListener('click', openModal);
+  document.getElementById('open-policy-2').addEventListener('click', openModal);
+  document.getElementById('close-policy').addEventListener('click', closeModal);
+  modal.addEventListener('click', function(e){ if(e.target === modal) closeModal(); });
+
+  // countdown to 24 сентября 2026, 20:00 MSK (UTC+3)
+  var target = new Date('2026-09-24T20:00:00+03:00').getTime();
+  function tick(){
+    var now = Date.now();
+    var diff = target - now;
+    if (diff < 0) diff = 0;
+    var d = Math.floor(diff / (1000*60*60*24));
+    var h = Math.floor((diff / (1000*60*60)) % 24);
+    var m = Math.floor((diff / (1000*60)) % 60);
+    var s = Math.floor((diff / 1000) % 60);
+    var pad = function(n){ return String(n).padStart(2,'0'); };
+    document.getElementById('cd-days').textContent = pad(d);
+    document.getElementById('cd-hours').textContent = pad(h);
+    document.getElementById('cd-min').textContent = pad(m);
+    document.getElementById('cd-sec').textContent = pad(s);
+  }
+  tick();
+  setInterval(tick, 1000);
+
+  // form validation + submission
+  var form = document.getElementById('reg-form');
+  var submitBtn = document.getElementById('submit-btn');
+  var statusEl = document.getElementById('form-status');
+  var WEBHOOK_URL = 'https://www.rmes.ru/request/webhook/';
+  var REDIRECT_URL = 'https://t.me/mcpir_bot?start=8uY1P7Vn';
+  var EVENT_NAME = 'вебинар профайлинг 2026 1';
+
+  function validPhone(v){ return v.replace(/\D/g,'').length >= 10; }
+  function validEmail(v){ return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v); }
+
+  function setError(id, on){
+    var field = document.getElementById(id);
+    field.classList.toggle('error', on);
+  }
+
+  function showStatus(msg, ok){
+    statusEl.textContent = msg;
+    statusEl.className = 'form-status show ' + (ok ? 'ok' : 'fail');
+  }
+
+  var submitting = false;
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    if (submitting) return;
+
+    var name = document.getElementById('in-name').value.trim();
+    var email = document.getElementById('in-email').value.trim();
+    var phone = document.getElementById('in-phone').value.trim();
+
+    var nameOk = name.length > 1;
+    var emailOk = validEmail(email);
+    var phoneOk = validPhone(phone);
+
+    setError('f-name', !nameOk);
+    setError('f-email', !emailOk);
+    setError('f-phone', !phoneOk);
+
+    if (!nameOk || !emailOk || !phoneOk) {
+      showStatus('Проверь, пожалуйста, поля формы', false);
+      return;
+    }
+
+    submitting = true;
+    submitBtn.setAttribute('data-submitting', 'true');
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Отправляем...';
+    showStatus('', true);
+
+    var params = new URLSearchParams();
+    params.append('name', name);
+    params.append('email', email);
+    params.append('phone', phone);
+    params.append('event', EVENT_NAME);
+    params.append('cookies', document.cookie);
+
+    var body = params.toString();
+    var sent = false;
+
+    // primary: sendBeacon (fire-and-forget, works through page unload/redirect)
+    try {
+      if (navigator.sendBeacon) {
+        var blob = new Blob([body], {type: 'application/x-www-form-urlencoded'});
+        sent = navigator.sendBeacon(WEBHOOK_URL, blob);
+      }
+    } catch (err) { sent = false; }
+
+    // fallback: fetch, only if sendBeacon unavailable or failed
+    var finish = function(){
+      showStatus('Заявка отправлена! Переходим в Telegram...', true);
+      setTimeout(function(){ window.location.href = REDIRECT_URL; }, 700);
+    };
+
+    if (sent) {
+      finish();
+    } else {
+      fetch(WEBHOOK_URL, {
+        method: 'POST',
+        headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+        credentials: 'include',
+        body: body
+      }).then(function(){
+        finish();
+      }).catch(function(){
+        // even on network error to this cross-origin endpoint, proceed to redirect
+        // since opaque/no-cors style failures are expected for this webhook
+        finish();
+      });
+    }
+  });
+
+  ['in-name','in-email','in-phone'].forEach(function(id){
+    document.getElementById(id).addEventListener('input', function(){
+      var fieldId = 'f-' + id.replace('in-','');
+      setError(fieldId, false);
+    });
+  });
+})();
+</script>
+
+</body>
+</html>
