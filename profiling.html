@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>Психология влияния — бесплатный вебинар Александра Копытько</title>
-<meta name="description" content="Как за 5 минут разговора понять человека и найти к нему подход. Бесплатный вебинар чемпиона России по переговорам Александра Копытько. 8 октября, 20:00 МСК.">
+<title>Психология влияния — бесплатный доступ к эфиру</title>
+<meta name="description" content="Получите бесплатный доступ к эфиру о профайлинге Александра Копытько сразу после регистрации. Доступ приходит в Telegram.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;900&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -28,7 +28,7 @@
     --wrap:1160px;
   }
   *{margin:0;padding:0;box-sizing:border-box;}
-  html{-webkit-text-size-adjust:100%; scroll-behavior:smooth; scroll-padding-top:88px;}
+  html{-webkit-text-size-adjust:100%; scroll-behavior:smooth; scroll-padding-top:24px;}
   body{
     background:var(--bg); color:var(--text); font-family:var(--body);
     font-size:17px; line-height:1.6; -webkit-font-smoothing:antialiased;
@@ -77,7 +77,7 @@
 
   /* ---------- Hero ---------- */
   .hero{
-    padding:150px 0 80px;
+    padding:76px 0 80px;
     background:
       radial-gradient(ellipse 900px 500px at 78% -10%, rgba(229,52,46,0.16), transparent 60%),
       radial-gradient(ellipse 700px 500px at -10% 30%, rgba(229,52,46,0.06), transparent 60%);
@@ -110,7 +110,7 @@
   .hero-meta span{display:flex; align-items:center; gap:8px;}
   .hero-meta span::before{content:''; width:4px; height:4px; background:var(--accent-2); border-radius:50%;}
   .hero-actions{display:flex; align-items:center; gap:18px; flex-wrap:wrap; margin-bottom:16px;}
-  .hero-note{font-size:14px; color:var(--muted-2);}
+  .hero-note{font-size:14px; color:var(--muted); font-weight:600;}
   .hero-media{position:relative;}
   .hero-media-frame{
     position:relative; border-radius:20px; overflow:hidden; border:1px solid var(--line-strong);
@@ -247,13 +247,9 @@
   .stat b{display:block; font-family:var(--display); font-size:clamp(30px,3.4vw,44px); color:var(--accent-2); margin-bottom:6px;}
   .stat span{font-size:14.5px; color:var(--muted);}
 
-  /* ---------- Countdown + form ---------- */
+  /* ---------- Registration form ---------- */
   .reg{background:var(--bg-panel); border-top:1px solid var(--line);}
   .reg-grid{display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:start;}
-  .countdown{display:flex; gap:12px; margin:28px 0 34px;}
-  .cd-box{flex:1; background:var(--bg); border:1px solid var(--line-strong); border-radius:12px; padding:18px 8px; text-align:center;}
-  .cd-box b{display:block; font-family:var(--display); font-size:clamp(24px,2.6vw,34px); color:var(--text);}
-  .cd-box span{font-size:11px; color:var(--muted-2); font-family:var(--mono); text-transform:uppercase;}
   .reg-points{display:flex; flex-direction:column; gap:12px; margin-top:6px;}
   .reg-points div{display:flex; gap:10px; align-items:flex-start; font-size:15.5px; color:var(--muted);}
   .reg-points div::before{content:'—'; color:var(--accent-2); flex:none;}
@@ -333,18 +329,15 @@
     .stat-row{grid-template-columns:1fr 1fr; row-gap:28px;}
     .reg-grid{grid-template-columns:1fr; gap:40px;}
     .achv-strip{grid-template-columns:1fr 1fr;}
-    .header-date{display:none !important;}
-    header{position:static; background:var(--bg-panel); backdrop-filter:none; -webkit-backdrop-filter:none; border-bottom:1px solid var(--line);}
-    .hero{padding-top:56px;}
+    .hero{padding-top:36px;}
   }
   @media (max-width:600px){
     body{font-size:16px;}
     .section{padding:64px 0;}
-    .hero{padding-top:40px;}
+    .hero{padding-top:28px;}
     .foot-grid{grid-template-columns:1fr; gap:26px;}
     .hero-stats{flex-wrap:wrap;}
     .hero-stat{min-width:33%; border-bottom:1px solid var(--line);}
-    .countdown{gap:8px;}
     .form-card{padding:28px 22px;}
     .stat-row{grid-template-columns:1fr 1fr;}
   }
@@ -356,36 +349,18 @@
 </head>
 <body>
 
-<header id="site-header">
-  <div class="wrap">
-    <div class="brand">
-      <b>МЦПиР</b>
-      <span>международный центр психологии и развития</span>
-    </div>
-    <div class="header-meta">
-      <span class="header-date">8 октября · 20:00 МСК</span>
-      <a href="#reg" class="btn small">Записаться</a>
-    </div>
-  </div>
-</header>
-
 <main>
 
   <!-- HERO -->
   <section class="hero" id="top">
     <div class="wrap hero-grid">
       <div>
-        <span class="kicker">Бесплатный вебинар · 8 октября · 20:00 МСК</span>
+        <span class="kicker">Бесплатный вебинар</span>
         <h1 class="hero-title">Как за 5 минут разговора понять человека и найти к нему <em>подход</em></h1>
         <p class="hero-lead">Александр Копытько, чемпион России по управленческой борьбе и профайлер №1 в России, покажет рабочую систему: как читать людей, распознавать манипуляции и вести разговор так, чтобы соглашались именно с тобой.</p>
-        <div class="hero-meta">
-          <span>8 октября</span>
-          <span>20:00 МСК</span>
-          <span>Прямой эфир</span>
-        </div>
         <div class="hero-actions">
-          <a href="#reg" class="btn">Записаться бесплатно</a>
-          <span class="hero-note">Доступ придёт в Telegram сразу после регистрации</span>
+          <a href="#reg" class="btn">Получить доступ бесплатно</a>
+          <span class="hero-note">Доступ сразу после регистрации</span>
         </div>
         <div class="hero-stats">
           <div class="hero-stat"><b>№1</b><span>профайлер в РФ и СНГ</span></div>
@@ -424,7 +399,7 @@
   <section class="section" id="program">
     <div class="wrap">
       <div class="section-head">
-        <span class="eyebrow">Программа эфира</span>
+        <span class="eyebrow">Программа</span>
         <h2 class="section-title">5 тем, которые разберём на вебинаре</h2>
         <p class="section-sub">Без теории ради теории — только то, что можно применить в разговоре уже на следующий день.</p>
       </div>
@@ -458,7 +433,7 @@
         <div class="bonus-body">
           <span class="eyebrow">Бонус за регистрацию</span>
           <h3>Подборка «Как разбираться в людях»</h3>
-          <p>Материалы по теме профайлинга придут на почту сразу после регистрации — можно начать применять уже до эфира.</p>
+          <p>Подборка материалов по профайлингу придёт на почту после регистрации — изучай и применяй советы в общении.</p>
           <a href="#reg" class="btn">Получить бесплатно</a>
         </div>
       </div>
@@ -497,11 +472,11 @@
       <div class="format-visual"><img src="https://static.tildacdn.com/tild3466-3138-4536-b266-396234363732/1.png" alt="Формат вебинара"></div>
       <div>
         <span class="eyebrow">Формат</span>
-        <h2 class="section-title" style="margin-bottom:24px;">Живой эфир. Без записи</h2>
+        <h2 class="section-title" style="margin-bottom:24px;">Доступ к эфиру сразу после регистрации</h2>
         <div class="format-blocks">
-          <div class="format-row"><b>90 мин</b><span>Контент по делу — программа из пяти тем</span></div>
-          <div class="format-row"><b>60 мин</b><span>Ответы на вопросы в прямом эфире</span></div>
-          <div class="format-row"><b>2,5 ч</b><span>Общая длительность эфира в Telegram</span></div>
+          <div class="format-row"><b>90 мин</b><span>Практическая программа из пяти тем</span></div>
+          <div class="format-row"><b>60 мин</b><span>Разбор вопросов и практических ситуаций</span></div>
+          <div class="format-row"><b>2,5 ч</b><span>Весь материал доступен в Telegram</span></div>
         </div>
       </div>
     </div>
@@ -559,24 +534,18 @@
   <section class="section reg" id="reg">
     <div class="wrap reg-grid">
       <div>
-        <span class="eyebrow">До начала эфира</span>
-        <h2 class="section-title">Займи место 8 октября</h2>
-        <div class="countdown" id="countdown">
-          <div class="cd-box"><b id="cd-days">00</b><span>дней</span></div>
-          <div class="cd-box"><b id="cd-hours">00</b><span>часов</span></div>
-          <div class="cd-box"><b id="cd-min">00</b><span>минут</span></div>
-          <div class="cd-box"><b id="cd-sec">00</b><span>секунд</span></div>
-        </div>
+        <span class="eyebrow">Бесплатный доступ</span>
+        <h2 class="section-title">Получи доступ к эфиру сразу</h2>
         <div class="reg-points">
-          <div>Живой эфир, 20:00 МСК — доступ придёт в Telegram</div>
+          <div>Доступ придёт в Telegram</div>
           <div>Бесплатно, без скрытых условий</div>
-          <div>Только прямое участие — запись не публикуется</div>
+          <div>Смотри в удобное время</div>
         </div>
       </div>
 
       <div class="form-card">
         <h3>Получить доступ к эфиру</h3>
-        <p class="form-sub">Заполни форму — пришлём ссылку на Telegram-чат с трансляцией.</p>
+        <p class="form-sub">Заполни форму — бот в Telegram сразу пришлёт доступ к эфиру.</p>
         <form id="reg-form" autocomplete="off" novalidate>
           <div class="field" id="f-name">
             <label for="in-name">Имя</label>
@@ -617,8 +586,8 @@
         <p><a href="mailto:support-online@mcpir.ru">support-online@mcpir.ru</a></p>
       </div>
       <div>
-        <b>Участие в эфире</b>
-        <p>Только в прямом эфире, подробности в <a href="https://t.me/MenTerMinsk_bot?start=s=3727562" target="_blank" rel="noopener">Telegram-чате</a></p>
+        <b>Доступ к эфиру</b>
+        <p>После регистрации доступ придёт в Telegram.</p>
       </div>
     </div>
     <div class="foot-bottom">
@@ -642,12 +611,6 @@
 
 <script>
 (function(){
-  // header scroll state
-  var header = document.getElementById('site-header');
-  window.addEventListener('scroll', function(){
-    header.classList.toggle('scrolled', window.scrollY > 8);
-  }, {passive:true});
-
   // policy modal
   var modal = document.getElementById('policy-modal');
   function openModal(e){ if(e) e.preventDefault(); modal.classList.add('show'); }
@@ -656,25 +619,6 @@
   document.getElementById('open-policy-2').addEventListener('click', openModal);
   document.getElementById('close-policy').addEventListener('click', closeModal);
   modal.addEventListener('click', function(e){ if(e.target === modal) closeModal(); });
-
-  // countdown to 8 октября 2026, 20:00 MSK (UTC+3)
-  var target = new Date('2026-10-08T20:00:00+03:00').getTime();
-  function tick(){
-    var now = Date.now();
-    var diff = target - now;
-    if (diff < 0) diff = 0;
-    var d = Math.floor(diff / (1000*60*60*24));
-    var h = Math.floor((diff / (1000*60*60)) % 24);
-    var m = Math.floor((diff / (1000*60)) % 60);
-    var s = Math.floor((diff / 1000) % 60);
-    var pad = function(n){ return String(n).padStart(2,'0'); };
-    document.getElementById('cd-days').textContent = pad(d);
-    document.getElementById('cd-hours').textContent = pad(h);
-    document.getElementById('cd-min').textContent = pad(m);
-    document.getElementById('cd-sec').textContent = pad(s);
-  }
-  tick();
-  setInterval(tick, 1000);
 
   // UTM attribution: collect parameters on entry and preserve them until form submission.
   // The key is shared with ppo/index.html so attribution survives movement between these pages.
@@ -712,7 +656,7 @@
   var statusEl = document.getElementById('form-status');
   var WEBHOOK_URL = 'https://www.rmes.ru/request/webhook/';
   var REDIRECT_URL = 'https://t.me/mcpir_bot?start=aDxUf2mL';
-  var EVENT_NAME = 'вебинар профайлинг 2025 2';
+  var EVENT_NAME = 'Запись веб профайлинг 26';
 
   function validPhone(v){ return v.replace(/\D/g,'').length >= 10; }
   function validEmail(v){ return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v); }
