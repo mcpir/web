@@ -1,0 +1,489 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Как влюбить её через переписку — бесплатный вебинар</title>
+<meta name="description" content="Бесплатный онлайн-вебинар: правила знакомства через переписку и разбор анкет участников. Старт 22 октября в 20:00 МСК.">
+<meta property="og:title" content="Как влюбить её через переписку — бесплатный вебинар">
+<meta property="og:description" content="Правила знакомства онлайн и разбор анкет участников. 22 октября в 20:00 МСК.">
+<meta property="og:type" content="website">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&family=Unbounded:wght@600;700;800&display=swap">
+
+<!-- Facebook Pixel -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','1284043626602031');
+fbq('track','PageView');
+</script>
+<!-- Остальные счётчики со старой страницы (Яндекс.Метрика 43620344, Top.Mail.Ru 3403085, VK-RTRG-1359437, Facebook 707625750050687) вставьте сюда -->
+
+<style>
+:root{
+  --ink:#121212;
+  --ink-2:#44444a;
+  --muted:#85858d;
+  --line:#e7e5e0;
+  --accent:#e5342e;
+  --accent-deep:#c2221d;
+  --accent-soft:#fdeceb;
+  --radius-lg:24px;
+  --radius-md:16px;
+  --shadow:0 1px 2px rgba(18,18,18,.04),0 16px 40px -16px rgba(18,18,18,.18);
+  --font-display:'Unbounded',system-ui,sans-serif;
+  --font-body:'Inter',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+  --font-mono:'JetBrains Mono',ui-monospace,Menlo,monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:var(--font-body);color:var(--ink);background:#fff;font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+button,input{font:inherit}
+ol{list-style:none}
+.wrap{width:min(1200px,100% - 40px);margin-inline:auto}
+
+/* блоки: одинаковые отступы сверху и снизу, белый фон */
+section{padding:clamp(40px,4vw,56px) 0}
+section[id]{scroll-margin-top:24px}
+.hero{padding-top:clamp(40px,5vw,72px)}
+
+.muted{color:var(--ink-2)}
+.mt-20{margin-top:20px}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:58px;padding:0 30px;border:0;border-radius:999px;background:var(--accent);color:#fff;font-weight:600;font-size:17px;text-decoration:none;cursor:pointer;box-shadow:0 16px 32px -16px rgba(229,52,46,.75);transition:transform .2s ease,background-color .2s ease,box-shadow .2s ease}
+.btn:hover{background:var(--accent-deep);transform:translateY(-1px);box-shadow:0 20px 36px -16px rgba(229,52,46,.8)}
+.btn:focus-visible,.modal-close:focus-visible,.consent a:focus-visible,.foot a:focus-visible{outline:3px solid rgba(229,52,46,.35);outline-offset:3px}
+.btn--block{width:100%}
+
+/* type */
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-family:var(--font-mono);font-size:12.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--accent);background:var(--accent-soft);padding:8px 14px;border-radius:999px}
+.eyebrow::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px rgba(229,52,46,.18)}
+h1,h2{font-family:var(--font-display);font-weight:800;letter-spacing:-.025em;color:var(--ink)}
+h1{font-size:clamp(36px,5.6vw,68px);line-height:1.02;margin:24px 0}
+h1 em{font-style:normal;color:var(--accent)}
+h2{font-size:clamp(28px,3.8vw,46px);line-height:1.1;margin-top:20px}
+.lead{font-size:clamp(17px,1.6vw,20px);color:var(--ink-2);max-width:34em}
+.cta-row{margin-top:32px}
+
+/* stats */
+.stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(10px,2vw,20px);margin-top:44px;max-width:540px}
+.stat{padding-top:16px;border-top:2px solid var(--ink)}
+.stat b{display:block;font-family:var(--font-display);font-weight:700;font-size:clamp(20px,2.4vw,26px);letter-spacing:-.01em;line-height:1.2}
+.stat span{display:block;margin-top:6px;font-size:14px;line-height:1.35;color:var(--muted)}
+
+/* hero */
+.hero-grid{display:grid;grid-template-columns:minmax(0,1.02fr) minmax(0,.98fr);gap:clamp(32px,5vw,80px);align-items:center}
+.hero-cta{display:flex;flex-wrap:wrap;align-items:center;gap:14px 20px;margin-top:36px}
+.hero-note{font-size:14px;color:var(--muted)}
+.hero-visual{position:relative;isolation:isolate;width:100%;max-width:500px;margin-left:auto}
+.hero-visual::before{content:"";position:absolute;left:26%;right:0;top:10%;bottom:0;background:var(--accent-soft);border-radius:36px;z-index:-1}
+.hero-visual img{position:relative;display:block;width:100%;height:auto}
+
+/* program: видео слева, вопросы справа */
+.program{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(32px,5vw,80px);align-items:center}
+.video{position:relative;width:100%;max-width:380px;margin-inline:auto;aspect-ratio:9/16;border-radius:var(--radius-lg);overflow:hidden;background:var(--ink);box-shadow:var(--shadow)}
+.video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.topics{border-top:1px solid var(--line)}
+.topics li{display:grid;grid-template-columns:56px minmax(0,1fr);gap:8px;padding:20px 0;border-bottom:1px solid var(--line);font-size:18px;font-weight:500;line-height:1.4}
+.topics .n{font-family:var(--font-display);font-weight:700;font-size:15px;color:var(--accent);padding-top:3px}
+
+/* review: белый */
+.review{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(32px,5vw,80px);align-items:center}
+.shots{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(12px,2vw,20px);align-items:end}
+.shots img{width:100%;border-radius:20px;box-shadow:var(--shadow)}
+
+/* trainer: одна фотография на белом */
+.trainer{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(32px,5vw,80px);align-items:center}
+.trainer-photo{width:100%;max-width:520px;justify-self:center}
+.quote{margin-top:28px;padding-left:24px;border-left:3px solid var(--accent);font-size:19px;font-weight:500;line-height:1.5}
+.tags{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+.tag{padding:9px 16px;border:1px solid var(--line);border-radius:999px;font-size:14px;font-weight:500;color:var(--ink-2)}
+
+/* objections */
+.objections{text-align:center}
+.chips{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;max-width:900px;margin:36px auto 0}
+.chip{padding:14px 20px;border-radius:999px;background:#fff;border:1px solid var(--line);font-size:16px;font-weight:500;color:var(--ink-2)}
+.objections p{margin-top:36px;font-size:18px;font-weight:600}
+
+/* signup */
+.signup{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(32px,5vw,80px);align-items:start}
+.bonus{display:flex;align-items:center;gap:20px;margin-top:32px;padding:18px;border:1.5px dashed #d9d6cf;border-radius:var(--radius-md)}
+.bonus img{width:92px;flex:0 0 92px;border-radius:10px;box-shadow:var(--shadow)}
+.bonus small{display:block;font-size:13px;color:var(--muted);margin-bottom:6px}
+.bonus b{font-family:var(--font-display);font-weight:700;font-size:16px;line-height:1.3}
+.card-form{background:#fff;border:1px solid var(--line);border-radius:var(--radius-lg);padding:clamp(24px,3vw,40px);box-shadow:var(--shadow)}
+.field{display:grid;gap:8px;margin-bottom:18px}
+.field label{font-size:14px;font-weight:600;color:var(--ink-2)}
+.field input{height:56px;padding:0 18px;border:1.5px solid var(--line);border-radius:14px;background:#fff;font-size:17px;color:var(--ink);transition:border-color .2s ease,box-shadow .2s ease}
+.field input::placeholder{color:#b3b3b9}
+.field input:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 4px var(--accent-soft)}
+.err{display:none;font-size:13px;color:var(--accent-deep)}
+.field.is-invalid input{border-color:var(--accent)}
+.field.is-invalid .err{display:block}
+.consent{margin-top:16px;font-size:13px;line-height:1.5;color:var(--muted);text-align:center}
+.consent a{color:var(--ink-2)}
+
+/* footer */
+.foot{padding:64px 0 36px;border-top:1px solid var(--line);font-size:14px;color:var(--ink-2)}
+.foot-grid{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr) minmax(0,1.2fr);gap:32px}
+.foot-grid p+p{margin-top:6px}
+.foot-brand{display:block;font-family:var(--font-display);font-size:18px;color:var(--ink);margin-bottom:6px}
+.foot a{text-decoration:none}
+.foot a:hover{color:var(--accent)}
+.foot-bottom{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px 24px;margin-top:40px;padding-top:24px;border-top:1px solid var(--line);font-size:13px}
+
+/* policy modal */
+.modal-overlay{position:fixed;inset:0;z-index:100;display:none;align-items:center;justify-content:center;padding:20px;background:rgba(18,18,18,.5)}
+.modal-overlay.is-open{display:flex}
+.modal{position:relative;width:100%;max-width:720px;max-height:86vh;overflow:auto;padding:clamp(24px,4vw,40px);background:#fff;border-radius:var(--radius-lg)}
+.modal h3{font-family:var(--font-display);font-size:22px;line-height:1.2;margin-bottom:12px}
+.modal h4{font-size:15px;margin:22px 0 6px}
+.modal p{font-size:15px;line-height:1.6;color:var(--ink-2)}
+.modal-close{position:absolute;top:14px;right:14px;width:42px;height:42px;border-radius:50%;border:1px solid var(--line);background:#fff;font-size:22px;line-height:1;cursor:pointer}
+
+/* entrance */
+@keyframes rise{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+.rise{animation:rise .8s cubic-bezier(.2,.7,.2,1) both}
+.rise-2{animation-delay:.08s}
+.rise-3{animation-delay:.16s}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+}
+
+/* tablet */
+@media (max-width:920px){
+  .hero-grid,.program,.review,.trainer,.signup{grid-template-columns:minmax(0,1fr)}
+  .review .shots{order:-1}
+  .trainer-photo{max-width:440px}
+  .hero-visual{margin-inline:auto}
+  .foot-grid{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+}
+
+/* phone */
+@media (max-width:560px){
+  body{font-size:16px}
+  section{padding:36px 0}
+  .hero{padding-top:24px}
+  .hero-cta .btn{width:100%}
+  .stats{gap:8px}
+  .stat span{font-size:13px}
+  .video{border-radius:18px;max-width:300px}
+  .topics li{grid-template-columns:44px minmax(0,1fr);font-size:16px}
+  .shots{gap:10px}
+  .shots img{border-radius:16px}
+  .quote{font-size:17px}
+  .bonus{gap:14px}
+  .bonus img{width:76px;flex-basis:76px}
+  .foot-grid{grid-template-columns:minmax(0,1fr)}
+  .card-form{padding:22px}
+}
+</style>
+</head>
+<body>
+
+<main>
+
+  <!-- 1. HERO -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow rise">Бесплатный вебинар · 22 октября · 20:00 МСК</span>
+        <h1 class="rise rise-2">Как влюбить её <em>через переписку</em></h1>
+        <p class="lead rise rise-2">Узнай главные правила знакомства онлайн. Разберём анкеты и переписки участников прямо в эфире.</p>
+        <div class="hero-cta rise rise-3">
+          <a href="#signup" class="btn">Записаться бесплатно</a>
+          <span class="hero-note">Доступ к эфиру придёт в Telegram</span>
+        </div>
+        <div class="stats rise rise-3">
+          <div class="stat"><b>120 мин</b><span>контента по делу</span></div>
+          <div class="stat"><b>30 мин</b><span>ответов на вопросы</span></div>
+          <div class="stat"><b>Live</b><span>прямой эфир онлайн</span></div>
+        </div>
+      </div>
+      <div class="hero-visual rise rise-2">
+        <img src="assets/hero.png" alt="Вебинар «Как влюбить её через переписку»" decoding="async">
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. PROGRAM: видео слева, вопросы справа -->
+  <section id="program">
+    <div class="wrap program">
+      <div class="video">
+        <iframe src="https://kinescope.io/embed/6PEWMywkQeARRdCYe5Kd2t" title="Видео вебинара" allow="autoplay; fullscreen; picture-in-picture; encrypted-media" allowfullscreen loading="lazy" frameborder="0"></iframe>
+      </div>
+      <div>
+        <span class="eyebrow">Программа</span>
+        <h2>Что будет на эфире</h2>
+        <ol class="topics mt-20">
+          <li><span class="n">01</span><span>Почему умение переписываться важнее, чем кажется?</span></li>
+          <li><span class="n">02</span><span>Как начать диалог, на который хочется ответить?</span></li>
+          <li><span class="n">03</span><span>Какие темы работают, а какие гасят интерес?</span></li>
+          <li><span class="n">04</span><span>Как найти свой стиль общения, а не копировать шаблоны?</span></li>
+          <li><span class="n">05</span><span>Какие простые правила заставят её интересоваться сильнее?</span></li>
+          <li><span class="n">06</span><span>Какие стратегические ошибки совершает почти каждый?</span></li>
+        </ol>
+        <div class="cta-row">
+          <a href="#signup" class="btn">Записаться бесплатно</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. РАЗБОР АНКЕТ (белый) -->
+  <section id="review">
+    <div class="wrap review">
+      <div class="shots">
+        <img src="https://static.tildacdn.com/tild6634-3864-4132-b862-333766626161/_.png" alt="Разбор анкеты на телефоне" loading="lazy" decoding="async">
+        <img src="https://static.tildacdn.com/tild3936-6533-4061-a539-303838346538/_.png" alt="Пример анкеты" loading="lazy" decoding="async">
+      </div>
+      <div>
+        <span class="eyebrow">Разбор</span>
+        <h2>Разберём анкеты и переписки участников</h2>
+        <p class="muted mt-20">Покажешь свою анкету или переписку — разберём их вживую. Станет видно, что работает, а что отталкивает.</p>
+        <div class="cta-row">
+          <a href="#signup" class="btn">Получить разбор анкеты</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. ТРЕНЕР: одна фотография на белом -->
+  <section id="trainer">
+    <div class="wrap trainer">
+      <img class="trainer-photo" src="https://static.tildacdn.com/tild3764-6434-4337-b937-306163336636/___.png" alt="Сергей Богданов, тренер МЦПиР" loading="lazy" decoding="async">
+      <div>
+        <span class="eyebrow">Ведущий</span>
+        <h2>Сергей Богданов</h2>
+        <p class="muted mt-20">Ведущий тренер Мужского центра МЦПиР с 2017 года.</p>
+        <div class="stats">
+          <div class="stat"><b>2000+</b><span>учеников в России и СНГ</span></div>
+          <div class="stat"><b>11 лет</b><span>опыта в коучинге</span></div>
+          <div class="stat"><b>5+</b><span>авторских тренингов</span></div>
+        </div>
+        <blockquote class="quote">Переписка в мессенджерах стала неотъемлемой частью общения. Этот навык нужен для эффективных знакомств.</blockquote>
+        <p class="muted mt-20">Когда-то я сам так же интересовался женским вопросом. Потом пришёл в МЦПиР, и жизнь изменилась. Теперь учу тому, что умею и практикую сам.</p>
+        <div class="tags">
+          <span class="tag">Дипломированный психолог</span>
+          <span class="tag">Герой шоу на ТНТ</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. ВОЗРАЖЕНИЯ -->
+  <section class="objections">
+    <div class="wrap">
+      <span class="eyebrow">Ты, наверное, думаешь</span>
+      <h2>Знакомо?</h2>
+      <div class="chips">
+        <span class="chip">«У меня с девушками проблем нет»</span>
+        <span class="chip">«Это для тех, у кого есть проблемы»</span>
+        <span class="chip">«Сейчас не до этого»</span>
+        <span class="chip">«Мне нужно подумать»</span>
+        <span class="chip">«Я читаю книги по психологии»</span>
+        <span class="chip">«Я не знаю, надо мне это или нет»</span>
+        <span class="chip">«У меня другие приоритеты»</span>
+        <span class="chip">«Нормальному мужику это не нужно»</span>
+        <span class="chip">«Я не верю, что тренинги работают»</span>
+      </div>
+      <p>Если хотя бы одна мысль знакома — этот эфир для тебя.</p>
+    </div>
+  </section>
+
+  <!-- 6. РЕГИСТРАЦИЯ -->
+  <section id="signup">
+    <div class="wrap signup">
+      <div>
+        <span class="eyebrow">Регистрация</span>
+        <h2>Куда прислать доступ к эфиру?</h2>
+        <p class="muted mt-20">Старт 22 октября в 20:00 по Москве. Доступ придёт в Telegram сразу после заявки.</p>
+        <div class="bonus">
+          <img src="https://static.tildacdn.com/tild3266-6562-4434-b835-343537393530/______-2.png" alt="Обложка гайда «О чём говорить с девушкой»" loading="lazy" decoding="async">
+          <div>
+            <small>Оставь заявку и получи</small>
+            <b>PDF: о чём говорить с девушкой</b>
+          </div>
+        </div>
+      </div>
+
+      <div class="card-form">
+        <form id="lead-form" novalidate>
+          <input type="hidden" name="event" value="вебинар знакомства онлайн 2026 1">
+
+          <div class="field">
+            <label for="f-name">Имя</label>
+            <input id="f-name" name="name" type="text" autocomplete="given-name" placeholder="Как к тебе обращаться" required>
+            <span class="err">Укажи имя</span>
+          </div>
+
+          <div class="field">
+            <label for="f-email">Email</label>
+            <input id="f-email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required>
+            <span class="err">Проверь email</span>
+          </div>
+
+          <div class="field">
+            <label for="f-phone">Телефон</label>
+            <input id="f-phone" name="phone" type="tel" autocomplete="tel" placeholder="+7" required>
+            <span class="err">Проверь номер телефона</span>
+          </div>
+
+          <button class="btn btn--block" type="submit">Записаться бесплатно</button>
+
+          <p class="consent">Нажимая кнопку, ты соглашаешься с <a href="#policy" data-open-policy>политикой конфиденциальности</a>.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <b class="foot-brand">МЦПиР</b>
+        <p>Международный центр психологии и развития</p>
+      </div>
+      <div>
+        <p><b>Контакты</b></p>
+        <p><a href="tel:+79372363805">+7 (937) 236-38-05</a></p>
+        <p><a href="https://t.me/Rmes3000" target="_blank" rel="noopener">Telegram</a></p>
+      </div>
+      <div>
+        <p><b>Реквизиты</b></p>
+        <p>ООО «МЦПиР»<br>ИНН 7718985163<br>ОГРН 114774669035</p>
+        <p>г. Москва, Суворовская площадь, 1/52 к2, Деловой центр G&amp;G</p>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 МЦПиР</span>
+      <a href="#policy" data-open-policy>Политика конфиденциальности</a>
+    </div>
+  </div>
+</footer>
+
+<!-- POLICY MODAL -->
+<div class="modal-overlay" id="policy" role="dialog" aria-modal="true" aria-labelledby="policy-title">
+  <div class="modal">
+    <button class="modal-close" type="button" aria-label="Закрыть" data-close>×</button>
+    <h3 id="policy-title">Политика конфиденциальности</h3>
+
+    <h4>Персональные данные</h4>
+    <p>Персональными данными считается информация, которую вы указали о себе: например, имя, email, почтовый адрес, номер телефона. Сведения, которые не указывают на личность (ссылки, внутренняя статистика сайта), персональными данными не являются. Данные хранятся на серверах Тренинг-центра и компаний, которые оказывают ему технические услуги. Административный доступ к серверам имеет ограниченный круг лиц.</p>
+
+    <h4>Передача третьим лицам</h4>
+    <p>Личные данные используются только для регистрации на мероприятия и заказа продуктов Тренинг-центра. Без явного согласия они не передаются третьим лицам, за исключением случаев, предусмотренных законом или решением суда. Поставщики услуг обязаны соблюдать эту политику.</p>
+
+    <h4>Файлы cookies</h4>
+    <p>Сайт использует cookies, чтобы сделать посещение удобнее и безопаснее, а также для оптимизации услуг. Cookies — небольшие текстовые файлы, они не причиняют вреда устройству и не содержат вирусов.</p>
+
+    <h4>Рассылки</h4>
+    <p>Подписка на информационные рассылки добровольна. Отписаться можно в любой момент по ссылке «Отказаться от рассылки» в нижней части письма или через службу поддержки.</p>
+
+    <h4>Дети и подростки</h4>
+    <p>Лицам младше 18 лет не рекомендуется пользоваться этой страницей и сообщать личные данные без согласия родителей или опекунов.</p>
+  </div>
+</div>
+
+<script>
+(function () {
+  /* ---------- UTM / рекламные метки: сохраняем в cookies на 30 дней ---------- */
+  var WEBHOOK  = 'https://www.rmes.ru/request/webhook/';
+  var REDIRECT = 'https://t.me/MenTerMinsk_bot?start=s=4067485';
+  var KEYS     = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term', 'fbclid', 'yclid', 'gclid'];
+  var DAYS     = 30;
+
+  function setCookie(name, value) {
+    document.cookie = name + '=' + encodeURIComponent(value) + '; path=/; max-age=' + (DAYS * 86400) + '; SameSite=Lax';
+  }
+  function getCookie(name) {
+    var m = document.cookie.match(new RegExp('(?:^|; )' + name + '=([^;]*)'));
+    return m ? decodeURIComponent(m[1]) : '';
+  }
+
+  var params = new URLSearchParams(window.location.search);
+  KEYS.forEach(function (k) {
+    var v = params.get(k);
+    if (v) setCookie(k, v);
+  });
+
+  /* ---------- Модалка политики ---------- */
+  var overlay = document.getElementById('policy');
+  function openPolicy()  { overlay.classList.add('is-open'); }
+  function closePolicy() { overlay.classList.remove('is-open'); }
+  document.querySelectorAll('[data-open-policy]').forEach(function (a) {
+    a.addEventListener('click', function (e) { e.preventDefault(); openPolicy(); });
+  });
+  overlay.addEventListener('click', function (e) {
+    if (e.target === overlay || e.target.hasAttribute('data-close')) closePolicy();
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') closePolicy();
+  });
+
+  /* ---------- Форма ---------- */
+  var form = document.getElementById('lead-form');
+  if (!form) return;
+
+  var nameInput  = document.getElementById('f-name');
+  var emailInput = document.getElementById('f-email');
+  var phoneInput = document.getElementById('f-phone');
+
+  function mark(input, ok) {
+    input.closest('.field').classList.toggle('is-invalid', !ok);
+    input.setAttribute('aria-invalid', String(!ok));
+    return ok;
+  }
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    if (form.dataset.submitting === '1') return;
+
+    var okName  = mark(nameInput,  nameInput.value.trim().length >= 2);
+    var okMail  = mark(emailInput, /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(emailInput.value.trim()));
+    var okPhone = mark(phoneInput, phoneInput.value.replace(/\D/g, '').length >= 10);
+
+    if (!(okName && okMail && okPhone)) {
+      var bad = form.querySelector('.is-invalid input');
+      if (bad) bad.focus();
+      return;
+    }
+
+    form.dataset.submitting = '1';
+
+    var body = new URLSearchParams();
+    new FormData(form).forEach(function (value, key) {
+      body.append(key, String(value).trim());
+    });
+    KEYS.forEach(function (k) { body.append(k, getCookie(k)); });
+    body.append('page', window.location.href);
+    body.append('referrer', document.referrer);
+    body.append('cookies', document.cookie);
+
+    var go = function () { window.location.href = REDIRECT; };
+
+    /* основной способ — sendBeacon (x-www-form-urlencoded) */
+    var queued = navigator.sendBeacon ? navigator.sendBeacon(WEBHOOK, body) : false;
+    if (queued) { go(); return; }
+
+    /* запасной — fetch, только если beacon не сработал */
+    fetch(WEBHOOK, {
+      method: 'POST',
+      mode: 'no-cors',
+      keepalive: true,
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: body.toString()
+    }).catch(function () {}).then(go);
+  });
+})();
+</script>
+</body>
+</html>
