@@ -306,7 +306,7 @@ footer a:hover{color:var(--text)}
 /* ============ НАСТРОЙКИ — править только здесь ============ */
 var CONFIG = {
   amoEndpoint: 'https://mute-limit-6032.ravenby.workers.dev/submit',
-  siteId: 'gentlemen-mastermind-2026',
+  siteId: 'mcpir-web',
   productName: 'Мастермайнд «Клуб джентльменов»',
   redirectUrl: 'https://t.me/+QYUZw52K9Mk1Yjli',
   meetings: [
@@ -380,11 +380,20 @@ form.addEventListener('submit',function(e){
   var attribution=getAttribution();
   ATTR_KEYS.concat(['landing_page','referrer']).forEach(function(k){if(attribution[k])data[k]=attribution[k]});
   fetch(CONFIG.amoEndpoint,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)})
-  .then(function(response){if(!response.ok)throw new Error('HTTP '+response.status);return response.json()})
-  .then(function(result){if(!result||result.ok!==true)throw new Error('Worker did not confirm success');done()})
-  .catch(function(){
+  .then(function(response){
+    return response.text().then(function(text){
+      var result;
+      try{result=JSON.parse(text)}catch(e){throw new Error('Worker вернул не JSON (HTTP '+response.status+')')}
+      if(!response.ok)throw new Error(result.error||result.message||('HTTP '+response.status));
+      if(!result||result.ok!==true)throw new Error(result&&(result.error||result.message)||'Worker не подтвердил приём заявки');
+      return result;
+    });
+  })
+  .then(done)
+  .catch(function(error){
+    console.error('amoCRM submission failed:',error);
     form.removeAttribute('data-submitting');sendBtn.disabled=false;sendBtn.textContent='Отправить заявку ↗';
-    err.textContent='Не получилось отправить. Попробуй ещё раз или позвони: +375 29 320-30-60';
+    err.textContent=(error&&error.message?error.message+' — ':'')+'Не получилось отправить. Попробуй ещё раз или позвони: +375 29 320-30-60';
   });
 });
 </script>
