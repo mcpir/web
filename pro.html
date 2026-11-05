@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>Психология влияния — бесплатный вебинар Александра Копытько</title>
-<meta name="description" content="Как за 5 минут разговора понять человека и найти к нему подход. Бесплатный вебинар чемпиона России по переговорам Александра Копытько. 8 октября, 20:00 МСК.">
+<title>Профайлинг: Как за 2 минуты читать человека как открытую книгу</title>
+<meta name="description" content="Профайлинг: как за 2 минуты читать человека как открытую книгу. Бесплатный вебинар 5 ноября, 20:00 МСК.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;900&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -42,22 +42,7 @@
   ::selection{background:var(--accent); color:#fff;}
   :focus-visible{outline:2px solid var(--accent-2); outline-offset:3px;}
 
-  /* ---------- Header ---------- */
-  header{
-    position:fixed; top:0; left:0; right:0; z-index:60;
-    padding:16px 0;
-    background:rgba(10,10,10,0.72);
-    backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px);
-    border-bottom:1px solid transparent;
-    transition:border-color .3s ease, background .3s ease;
-  }
-  header.scrolled{border-bottom-color:var(--line); background:rgba(10,10,10,0.92);}
-  header .wrap{display:flex; align-items:center; justify-content:space-between; gap:16px;}
-  .brand{display:flex; flex-direction:column; line-height:1.15;}
-  .brand b{font-family:var(--display); font-size:15px; font-weight:700; letter-spacing:0.01em;}
-  .brand span{font-size:11.5px; color:var(--muted-2); font-family:var(--mono);}
-  .header-meta{display:flex; align-items:center; gap:18px;}
-  .header-date{font-family:var(--mono); font-size:13px; color:var(--muted); display:none;}
+
   .btn{
     display:inline-flex; align-items:center; justify-content:center; gap:8px;
     font-family:var(--body); font-weight:700; font-size:15px;
@@ -74,6 +59,7 @@
   }
   .btn.ghost:hover{background:rgba(255,255,255,0.06); border-color:var(--muted);}
   .btn.block{width:100%;}
+
 
   /* ---------- Hero ---------- */
   .hero{
@@ -109,7 +95,7 @@
   }
   .hero-meta span{display:flex; align-items:center; gap:8px;}
   .hero-meta span::before{content:''; width:4px; height:4px; background:var(--accent-2); border-radius:50%;}
-  .hero-actions{display:flex; align-items:center; gap:18px; flex-wrap:wrap; margin-bottom:16px;}
+  .hero-actions{display:flex; align-items:center; gap:18px; flex-wrap:wrap; margin-bottom:24px;}
   .hero-note{font-size:14px; color:var(--muted-2);}
   .hero-media{position:relative;}
   .hero-media-frame{
@@ -316,7 +302,7 @@
   /* ---------- Responsive ---------- */
   @media (max-width:920px){
     .hero-grid{grid-template-columns:1fr; gap:40px;}
-    .hero-media{order:-1; max-width:340px; margin:0 auto;}
+    .hero-media{order:-1; max-width:300px; margin:0 auto;}
     .pains-grid,.audience-grid{grid-template-columns:1fr;}
     .break-inner{grid-template-columns:1fr;}
     .break-img{min-height:240px;}
@@ -335,12 +321,17 @@
     .achv-strip{grid-template-columns:1fr 1fr;}
     .header-date{display:none !important;}
     header{position:static; background:var(--bg-panel); backdrop-filter:none; -webkit-backdrop-filter:none; border-bottom:1px solid var(--line);}
-    .hero{padding-top:56px;}
+    .hero{padding-top:48px;}
   }
   @media (max-width:600px){
     body{font-size:16px;}
     .section{padding:64px 0;}
-    .hero{padding-top:40px;}
+    .hero{padding-top:32px; padding-bottom:56px;}
+    h1.hero-title{font-size:clamp(29px, 8.2vw, 40px); line-height:1.16; max-width:19ch; margin-bottom:26px;}
+    .hero-grid{gap:28px;}
+    .hero-media{max-width:230px;}
+    .kicker{font-size:10.5px; padding:7px 11px; margin-bottom:20px;}
+    .hero-actions{margin-bottom:20px;}
     .foot-grid{grid-template-columns:1fr; gap:26px;}
     .hero-stats{flex-wrap:wrap;}
     .hero-stat{min-width:33%; border-bottom:1px solid var(--line);}
@@ -356,19 +347,6 @@
 </head>
 <body>
 
-<header id="site-header">
-  <div class="wrap">
-    <div class="brand">
-      <b>МЦПиР</b>
-      <span>международный центр психологии и развития</span>
-    </div>
-    <div class="header-meta">
-      <span class="header-date">5 ноября · 20:00 МСК</span>
-      <a href="#reg" class="btn small">Записаться</a>
-    </div>
-  </div>
-</header>
-
 <main>
 
   <!-- HERO -->
@@ -376,11 +354,9 @@
     <div class="wrap hero-grid">
       <div>
         <span class="kicker">Бесплатный вебинар · 5 ноября · 20:00 МСК</span>
-        <h1 class="hero-title">Как за 5 минут разговора понять человека и найти к нему <em>подход</em></h1>
-        <p class="hero-lead">Александр Копытько, чемпион России по управленческой борьбе и профайлер №1 в России, покажет рабочую систему: как читать людей, распознавать манипуляции и вести разговор так, чтобы соглашались именно с тобой.</p>
+        <h1 class="hero-title">Профайлинг: Как за <em>2 минуты</em> читать человека как открытую книгу</h1>
         <div class="hero-actions">
           <a href="#reg" class="btn">Записаться бесплатно</a>
-          <span class="hero-note">Доступ придёт в Telegram сразу после регистрации</span>
         </div>
         <div class="hero-stats">
           <div class="hero-stat"><b>№1</b><span>профайлер в РФ и СНГ</span></div>
@@ -637,13 +613,7 @@
 
 <script>
 (function(){
-  // header scroll state
-  var header = document.getElementById('site-header');
-  window.addEventListener('scroll', function(){
-    header.classList.toggle('scrolled', window.scrollY > 8);
-  }, {passive:true});
-
-  // policy modal
+// policy modal
   var modal = document.getElementById('policy-modal');
   function openModal(e){ if(e) e.preventDefault(); modal.classList.add('show'); }
   function closeModal(){ modal.classList.remove('show'); }
