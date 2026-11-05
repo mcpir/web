@@ -51,8 +51,6 @@ h2 em{font-style:normal;color:var(--red)}
 #bar{position:fixed;left:0;top:0;height:3px;width:0;background:linear-gradient(90deg,var(--red),var(--red2));z-index:300}
 
 /* ===== header ===== */
-.logo{font-family:var(--fh);font-weight:800;font-size:15px;letter-spacing:.04em}
-.logo span{color:var(--red)}
 
 /* ===== HERO ===== */
 .hero{position:relative;min-height:100svh;display:flex;flex-direction:column;padding:0;overflow:hidden;isolation:isolate;
@@ -61,8 +59,9 @@ h2 em{font-style:normal;color:var(--red)}
     radial-gradient(40% 40% at 6% 6%,rgba(255,255,255,.06),transparent 70%),
     linear-gradient(180deg,#0c0c0e,#0a0a0b)}
 .hero:before{content:"";position:absolute;inset:0;z-index:-1;background-image:linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);background-size:84px 84px;-webkit-mask-image:radial-gradient(70% 75% at 62% 50%,#000,transparent);mask-image:radial-gradient(70% 75% at 62% 50%,#000,transparent)}
-.topbar{position:relative;z-index:5;width:100%;max-width:1500px;margin:0 auto;padding:26px var(--pad) 0}
-.hero-main{flex:1;width:100%;max-width:1500px;margin:0 auto;padding:0 var(--pad);display:grid;grid-template-columns:repeat(12,minmax(0,1fr))}
+.logo{font-family:var(--fh);font-weight:800;font-size:15px;letter-spacing:.04em}
+.logo span{color:var(--red)}
+.hero-main{flex:1;padding-top:clamp(28px,5vh,56px)!important;width:100%;max-width:1500px;margin:0 auto;padding:0 var(--pad);display:grid;grid-template-columns:repeat(12,minmax(0,1fr))}
 .hero-text{grid-column:1 / 8;grid-row:1;align-self:center;position:relative;z-index:3;padding:clamp(28px,6vh,64px) 0 clamp(40px,9vh,100px)}
 .badge{display:inline-flex;flex-wrap:wrap;align-items:center;gap:14px;border:1px solid var(--line);background:rgba(255,255,255,.05);backdrop-filter:blur(10px);border-radius:999px;padding:10px 20px;font-size:15px;color:#dcdce0;margin-bottom:clamp(22px,4vh,38px)}
 .badge b{color:var(--cream);font-weight:600}
@@ -306,7 +305,6 @@ footer{padding:72px 0 40px;border-top:1px solid var(--line)}
 
 <!-- ===== HERO ===== -->
 <section class="hero" id="top" style="padding-bottom:0">
-  <div class="topbar"><a href="#top" class="logo">МЦП<span>иР</span></a></div>
   <div class="hero-main">
     <div class="hero-text">
       <div class="badge rv"><span>Практический курс</span><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13 5l7 7-7 7v-5H4v-4h9V5z"/></svg><b>Старт 17 ноября</b></div>
