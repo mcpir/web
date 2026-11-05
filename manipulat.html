@@ -1,0 +1,713 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Женские манипуляции — практический курс. Старт 17 ноября</title>
+<meta name="description" content="Практический курс: как перестать быть ресурсом и начать играть по своим правилам. Старт 17 ноября.">
+<meta name="theme-color" content="#0a0a0b">
+<link rel="preload" as="image" href="assets/hero-2026-11-05.webp" type="image/webp">
+<link rel="preload" as="font" type="font/woff2" href="assets/fonts/unbounded-cyrillic-wght-normal.woff2" crossorigin>
+<style>
+/* ===== Шрифты (лежат рядом, интернет не нужен) ===== */
+@font-face{font-family:'Unbounded';src:url(assets/fonts/unbounded-cyrillic-wght-normal.woff2) format('woff2');font-weight:200 900;font-display:swap;unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
+@font-face{font-family:'Unbounded';src:url(assets/fonts/unbounded-latin-wght-normal.woff2) format('woff2');font-weight:200 900;font-display:swap;unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Inter';src:url(assets/fonts/inter-cyrillic-wght-normal.woff2) format('woff2');font-weight:100 900;font-display:swap;unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
+@font-face{font-family:'Inter';src:url(assets/fonts/inter-latin-wght-normal.woff2) format('woff2');font-weight:100 900;font-display:swap;unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'JetBrains Mono';src:url(assets/fonts/jetbrains-mono-cyrillic-wght-normal.woff2) format('woff2');font-weight:100 800;font-display:swap;unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
+@font-face{font-family:'JetBrains Mono';src:url(assets/fonts/jetbrains-mono-latin-wght-normal.woff2) format('woff2');font-weight:100 800;font-display:swap;unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Playfair Display';font-style:italic;src:url(assets/fonts/playfair-display-cyrillic-wght-italic.woff2) format('woff2');font-weight:400 900;font-display:swap;unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
+@font-face{font-family:'Playfair Display';font-style:italic;src:url(assets/fonts/playfair-display-latin-wght-italic.woff2) format('woff2');font-weight:400 900;font-display:swap;unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+
+:root{
+  --bg:#0a0a0b; --bg2:#0e0e11; --card:#131317; --line:rgba(255,255,255,.1);
+  --red:#E5342E; --red2:#ff5a4f; --text:#f4f4f5; --muted:#a3a3ad;
+  --cream:#f6e9c8;
+  --r:16px; --pad:clamp(18px,4vw,56px);
+  --fh:'Unbounded',system-ui,sans-serif; --fb:'Inter',system-ui,sans-serif; --fm:'JetBrains Mono',ui-monospace,monospace; --fs:'Playfair Display',Georgia,serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:16px}
+body{background:var(--bg);color:var(--text);font-family:var(--fb);font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;z-index:200;pointer-events:none;opacity:.05;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>")}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer;border:0;background:none;color:inherit;text-align:left}
+.wrap{max-width:1500px;margin:0 auto;padding:0 var(--pad)}
+section{position:relative;padding:clamp(72px,10vw,140px) 0}
+.eyebrow{font-family:var(--fm);font-size:14px;letter-spacing:.14em;text-transform:uppercase;color:var(--red2);display:flex;align-items:center;gap:12px;margin-bottom:20px}
+.eyebrow:before{content:"";width:32px;height:1px;background:var(--red2)}
+h2{font-family:var(--fh);font-weight:800;text-transform:uppercase;line-height:1.05;letter-spacing:-.02em;font-size:clamp(28px,4.8vw,66px);margin-bottom:clamp(28px,4vw,56px)}
+h2 em{font-style:normal;color:var(--red)}
+.btn{position:relative;display:inline-flex;align-items:center;justify-content:center;gap:12px;background:linear-gradient(180deg,#f2483f,#c3201a);color:#fff;font-weight:600;font-size:16px;padding:19px 36px;border-radius:14px;box-shadow:0 12px 44px -10px rgba(229,52,46,.75),inset 0 1px 0 rgba(255,255,255,.28);transition:transform .25s,box-shadow .25s,filter .25s}
+.btn:hover{transform:translateY(-2px);filter:brightness(1.08);box-shadow:0 18px 56px -10px rgba(229,52,46,.9),inset 0 1px 0 rgba(255,255,255,.3)}
+.btn svg{width:18px;height:18px;transition:transform .25s}
+.btn:hover svg{transform:translateX(4px)}
+.btn.ghost{background:rgba(255,255,255,.04);border:1px solid var(--line);box-shadow:none;backdrop-filter:blur(8px)}
+.btn.ghost:hover{border-color:var(--red2);box-shadow:none}
+.rv{opacity:0;transform:translateY(28px);transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1);transition-delay:calc(var(--i,0)*70ms)}
+.rv.in{opacity:1;transform:none}
+.noanim .rv{opacity:1;transform:none}
+#bar{position:fixed;left:0;top:0;height:3px;width:0;background:linear-gradient(90deg,var(--red),var(--red2));z-index:300}
+
+/* ===== header ===== */
+.logo{font-family:var(--fh);font-weight:800;font-size:15px;letter-spacing:.04em}
+.logo span{color:var(--red)}
+
+/* ===== HERO ===== */
+.hero{position:relative;min-height:100svh;display:flex;flex-direction:column;padding:0;overflow:hidden;isolation:isolate;
+  background:
+    radial-gradient(52% 62% at 74% 64%,rgba(229,52,46,.38),transparent 70%),
+    radial-gradient(40% 40% at 6% 6%,rgba(255,255,255,.06),transparent 70%),
+    linear-gradient(180deg,#0c0c0e,#0a0a0b)}
+.hero:before{content:"";position:absolute;inset:0;z-index:-1;background-image:linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);background-size:84px 84px;-webkit-mask-image:radial-gradient(70% 75% at 62% 50%,#000,transparent);mask-image:radial-gradient(70% 75% at 62% 50%,#000,transparent)}
+.topbar{position:relative;z-index:5;width:100%;max-width:1500px;margin:0 auto;padding:26px var(--pad) 0}
+.hero-main{flex:1;width:100%;max-width:1500px;margin:0 auto;padding:0 var(--pad);display:grid;grid-template-columns:repeat(12,minmax(0,1fr))}
+.hero-text{grid-column:1 / 8;grid-row:1;align-self:center;position:relative;z-index:3;padding:clamp(28px,6vh,64px) 0 clamp(40px,9vh,100px)}
+.badge{display:inline-flex;flex-wrap:wrap;align-items:center;gap:14px;border:1px solid var(--line);background:rgba(255,255,255,.05);backdrop-filter:blur(10px);border-radius:999px;padding:10px 20px;font-size:15px;color:#dcdce0;margin-bottom:clamp(22px,4vh,38px)}
+.badge b{color:var(--cream);font-weight:600}
+.badge svg{width:16px;height:16px;color:var(--red2)}
+.hero h1{font-family:var(--fh);font-weight:900;text-transform:uppercase;line-height:.96;letter-spacing:-.03em;font-size:clamp(34px,5.5vw,92px);margin-bottom:clamp(20px,3.4vh,34px)}
+.hero h1 span{display:block;width:max-content;max-width:none;padding-right:.04em}
+.hero h1 .l1{color:#fff}
+.hero h1 .l2{background:linear-gradient(180deg,#fff7e0 10%,#d8bd84);-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 8px 30px rgba(0,0,0,.5))}
+.lead{font-family:var(--fs);font-style:italic;font-weight:500;font-size:clamp(20px,2.1vw,30px);line-height:1.3;color:var(--cream);max-width:560px;margin-bottom:clamp(28px,5vh,46px)}
+.hero-cta{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+.hero-img{grid-column:6 / 13;grid-row:1;align-self:end;justify-self:end;position:relative;z-index:2;display:flex;justify-content:flex-end;width:100%}
+.hero-img:before{content:"";position:absolute;left:8%;right:0;bottom:0;height:70%;background:radial-gradient(closest-side,rgba(229,52,46,.5),transparent);filter:blur(40px);z-index:-1}
+.hero-img img{width:auto;height:auto;max-width:100%;max-height:min(86svh,860px);filter:drop-shadow(0 30px 60px rgba(0,0,0,.55));will-change:transform;transition:transform .25s ease-out}
+.stats{position:relative;z-index:4;border-top:1px solid var(--line);background:rgba(10,10,11,.6);backdrop-filter:blur(14px)}
+.stats .wrap{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));max-width:1500px}
+.st{padding:22px 24px;border-left:1px solid var(--line);display:flex;align-items:baseline;gap:14px}
+.st:first-child{border-left:0;padding-left:0}
+.st b{font-family:var(--fh);font-weight:800;font-size:clamp(22px,2.6vw,36px);color:#fff;line-height:1}
+.st b i{font-style:normal;color:var(--red)}
+.st span{font-size:15px;color:var(--muted);line-height:1.3}
+
+/* ===== GOALS (portrait photo + cards) ===== */
+.goals-body h2{margin-bottom:clamp(24px,3vw,40px)}
+.goals-grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(28px,4.5vw,72px);align-items:start}
+.goals-pic{position:sticky;top:96px;margin:0;border-radius:26px;overflow:hidden;border:1px solid var(--line);box-shadow:0 50px 100px -40px rgba(229,52,46,.5)}
+.goals-pic img{width:100%;height:auto;aspect-ratio:4/5;max-height:calc(100svh - 128px);object-fit:cover;object-position:50% 32%}
+.goals-pic:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 60%,rgba(10,10,11,.45));pointer-events:none}
+.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;position:relative}
+.card{--mx:50%;--my:0%;position:relative;border:1px solid var(--line);border-radius:var(--r);padding:30px 28px 32px;background:linear-gradient(180deg,rgba(24,24,29,.9),rgba(16,16,20,.92));backdrop-filter:blur(14px);overflow:hidden;transition:border-color .3s,transform .4s cubic-bezier(.2,.7,.2,1)}
+.card:before{content:"";position:absolute;inset:0;background:radial-gradient(380px circle at var(--mx) var(--my),rgba(229,52,46,.22),transparent 60%);opacity:0;transition:opacity .3s;pointer-events:none}
+.card:hover{border-color:rgba(229,52,46,.6);transform:translateY(-4px)}
+.card:hover:before{opacity:1}
+.card .n{font-family:var(--fh);font-weight:900;font-size:clamp(30px,3vw,40px);line-height:1;color:var(--red2);margin-bottom:20px;display:block;letter-spacing:-.02em}
+.card h3{font-family:var(--fh);font-weight:700;font-size:clamp(16px,1.35vw,19px);line-height:1.25;margin-bottom:10px;position:relative}
+.card p{color:var(--muted);font-size:16px;position:relative}
+
+/* ===== FOR YOU (split, photo bleeds to edge) ===== */
+.split{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);padding:0;background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.split-img{position:relative}
+.split-img .stick{position:sticky;top:0;height:100svh;min-height:520px;overflow:hidden}
+.split-img img{width:100%;height:100%;transform-origin:0 100%;object-fit:cover;object-position:18% 100%;-webkit-mask-image:linear-gradient(90deg,#000 70%,transparent 100%);mask-image:linear-gradient(90deg,#000 70%,transparent 100%)}
+.split-img .stick:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(14,14,17,.2),rgba(14,14,17,.5)),radial-gradient(60% 50% at 20% 100%,rgba(229,52,46,.28),transparent 70%)}
+.split-body{padding:clamp(72px,10vw,140px) var(--pad) clamp(72px,10vw,140px) clamp(8px,3vw,48px);max-width:820px}
+.rows{display:grid}
+.row{display:grid;grid-template-columns:auto 1fr;gap:22px;padding:24px 0;border-top:1px solid var(--line);transition:padding-left .35s,border-color .3s}
+.row:last-child{border-bottom:1px solid var(--line)}
+.row:hover{padding-left:12px;border-top-color:rgba(229,52,46,.6)}
+.row .n{font-family:var(--fm);font-weight:700;font-size:15px;color:var(--red2);padding-top:5px;min-width:28px}
+.row p{font-size:clamp(17px,1.5vw,20px);line-height:1.45;color:#e7e7ea}
+
+/* ===== PROGRAM ===== */
+.prog{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(28px,5vw,80px);align-items:start}
+.prog-side{position:sticky;top:104px}
+.prog-side h2{font-size:clamp(26px,3.5vw,52px)}
+.prog-side p{color:var(--muted);max-width:380px;margin-bottom:30px}
+.acc{--nsz:clamp(40px,5.4vw,78px);display:grid;border-top:1px solid var(--line)}
+.mod{border-bottom:1px solid var(--line);position:relative;transition:background .4s}
+.mod:before{content:"";position:absolute;left:0;top:-1px;height:2px;width:0;background:var(--red);transition:width .6s cubic-bezier(.2,.7,.2,1)}
+.mod.open:before{width:100%}
+.mod.open{background:linear-gradient(180deg,rgba(229,52,46,.07),transparent 60%)}
+.mod-h{width:100%;display:grid;grid-template-columns:auto 1fr auto;gap:clamp(14px,2.4vw,32px);align-items:center;padding:clamp(22px,3vw,34px) clamp(4px,1vw,14px)}
+.mod-n{font-family:var(--fh);font-weight:900;font-size:var(--nsz);width:calc(var(--nsz)*2.05);line-height:1;color:rgba(255,255,255,.16);transition:color .3s}
+.mod.open .mod-n,.mod-h:hover .mod-n{color:var(--red)}
+.mod-t{font-family:var(--fh);font-weight:700;font-size:clamp(15px,1.7vw,22px);line-height:1.25}
+.mod-t small{display:block;font-family:var(--fb);font-weight:400;font-size:15px;color:var(--muted);margin-top:8px;line-height:1.4}
+.plus{width:44px;height:44px;border-radius:50%;border:1px solid var(--line);position:relative;flex:none;transition:background .3s,border-color .3s,transform .4s}
+.plus:before,.plus:after{content:"";position:absolute;left:50%;top:50%;width:14px;height:2px;background:#fff;transform:translate(-50%,-50%);transition:transform .3s}
+.plus:after{transform:translate(-50%,-50%) rotate(90deg)}
+.mod.open .plus{background:var(--red);border-color:var(--red)}
+.mod.open .plus:after{transform:translate(-50%,-50%) rotate(0)}
+.mod-w{display:grid;grid-template-rows:0fr;transition:grid-template-rows .5s cubic-bezier(.2,.7,.2,1)}
+.mod.open .mod-w{grid-template-rows:1fr}
+.mod-c{overflow:hidden;min-height:0}
+.mod-b{padding:4px clamp(4px,1vw,14px) 34px calc(var(--nsz)*2.05 + clamp(14px,2.4vw,32px) + clamp(4px,1vw,14px));display:grid;gap:26px}
+.mod-b h4{font-family:var(--fm);font-size:14px;letter-spacing:.16em;text-transform:uppercase;color:var(--red2);margin-bottom:12px;font-weight:700}
+.mod-b ul{list-style:none;display:grid;gap:11px}
+.mod-b li{position:relative;padding-left:24px;color:#dcdce0}
+.mod-b li:before{content:"";position:absolute;left:0;top:.62em;width:8px;height:8px;border-radius:2px;background:var(--red);transform:rotate(45deg)}
+.hw{display:inline-flex;flex-wrap:wrap;gap:8px 12px;align-items:center;font-size:15px;color:var(--muted);border-top:1px dashed var(--line);padding-top:18px}
+.hw b{color:#fff;font-weight:600}
+
+/* ===== RESULT ===== */
+.result{background:radial-gradient(70% 50% at 50% 0%,rgba(229,52,46,.16),transparent 70%),var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.res-head{text-align:center;max-width:980px;margin:0 auto clamp(24px,4vw,48px)}
+.res-head .eyebrow{justify-content:center}
+.res-head .eyebrow:before{display:none}
+.res-head h2{margin-bottom:0}
+.res-pic{display:flex;justify-content:center;position:relative;margin:0 auto clamp(28px,5vw,64px)}
+.res-pic:before{content:"";position:absolute;inset:10% 20%;background:radial-gradient(closest-side,rgba(229,52,46,.45),transparent);filter:blur(50px)}
+.res-pic img{position:relative;width:auto;height:auto;max-width:100%;max-height:min(52vh,520px)}
+.tiles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.tile{--mx:50%;--my:0%;position:relative;padding:30px 28px 32px;border-radius:var(--r);border:1px solid var(--line);background:linear-gradient(160deg,rgba(229,52,46,.1),rgba(255,255,255,.02) 60%);overflow:hidden;transition:border-color .3s,transform .4s cubic-bezier(.2,.7,.2,1)}
+.tile:before{content:"";position:absolute;inset:0;background:radial-gradient(380px circle at var(--mx) var(--my),rgba(229,52,46,.24),transparent 60%);opacity:0;transition:opacity .3s;pointer-events:none}
+.tile:hover{border-color:rgba(229,52,46,.6);transform:translateY(-4px)}
+.tile:hover:before{opacity:1}
+.tile .ck{width:38px;height:38px;border-radius:50%;background:var(--red);display:grid;place-items:center;margin-bottom:22px;box-shadow:0 8px 26px -6px rgba(229,52,46,.8);position:relative}
+.tile .ck svg{width:18px;height:18px}
+.tile h3{font-family:var(--fh);font-weight:700;font-size:clamp(16px,1.35vw,19px);line-height:1.25;margin-bottom:10px;position:relative}
+.tile p{color:#c4c4cb;font-size:16px;position:relative}
+
+/* ===== FORMAT (bento) ===== */
+.bento{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));grid-auto-rows:minmax(190px,auto);gap:16px}
+.bx{border:1px solid var(--line);border-radius:var(--r);padding:30px 28px;background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.012));display:flex;flex-direction:column;justify-content:space-between;gap:18px;transition:border-color .3s,transform .4s cubic-bezier(.2,.7,.2,1)}
+.bx:hover{border-color:rgba(229,52,46,.55);transform:translateY(-4px)}
+.bx.big{grid-column:span 2;grid-row:span 2;background:radial-gradient(90% 80% at 0% 100%,rgba(229,52,46,.55),transparent 70%),linear-gradient(180deg,#1a1215,#120d0f);border-color:rgba(229,52,46,.35)}
+.bx.wide{grid-column:span 2}
+.bx .big-n{font-family:var(--fh);font-weight:900;font-size:clamp(90px,13vw,200px);line-height:.85;letter-spacing:-.05em;color:#fff}
+.bx .tag{font-family:var(--fm);font-size:14px;letter-spacing:.18em;text-transform:uppercase;color:var(--red2)}
+.bx h3{font-family:var(--fh);font-weight:700;font-size:clamp(17px,1.6vw,22px);line-height:1.2;margin-bottom:8px}
+.bx p{color:var(--muted);font-size:16px}
+.bx.big p{color:#e3d6d4;max-width:420px}
+.bx .ic{width:46px;height:46px;border-radius:12px;border:1px solid var(--line);display:grid;place-items:center;color:var(--red2)}
+.bx .ic svg{width:22px;height:22px}
+
+/* ===== TRAINER ===== */
+.trainer{padding-bottom:0;overflow:hidden;background:var(--bg2);border-top:1px solid var(--line)}
+.bgname{position:absolute;left:-1vw;top:50%;transform:translateY(-50%);font-family:var(--fh);font-weight:900;font-size:clamp(70px,14vw,230px);line-height:1;letter-spacing:-.04em;text-transform:uppercase;white-space:nowrap;color:rgba(255,255,255,.028);pointer-events:none;user-select:none}
+.tr-grid{position:relative;display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:clamp(24px,4vw,64px);align-items:end}
+.tr-text{padding-bottom:clamp(72px,10vw,140px)}
+.tr-text h2{margin-bottom:14px}
+.role{font-family:var(--fm);font-size:15px;letter-spacing:.14em;text-transform:uppercase;color:var(--red2);margin-bottom:28px}
+.facts{display:grid;gap:14px;margin-bottom:36px;list-style:none;max-width:640px}
+.facts li{display:grid;grid-template-columns:auto 1fr;gap:16px;color:#e1e1e5;font-size:18px}
+.facts li:before{content:"";width:9px;height:9px;margin-top:.6em;border-radius:50%;background:var(--red);box-shadow:0 0 12px var(--red)}
+.nums{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;border-top:1px solid var(--line);max-width:640px}
+.num{padding:22px 18px 0 0}
+.num+.num{padding-left:18px;border-left:1px solid var(--line)}
+.num b{display:block;font-family:var(--fh);font-weight:800;font-size:clamp(24px,3vw,40px);line-height:1;color:#fff;margin-bottom:8px}
+.num span{font-size:15px;color:var(--muted);line-height:1.3;display:block}
+.tr-img{position:relative;align-self:end;display:flex;justify-content:center}
+.tr-img:before{content:"";position:absolute;left:10%;right:10%;bottom:0;height:75%;background:radial-gradient(closest-side,rgba(229,52,46,.4),transparent);filter:blur(40px)}
+.tr-img img{position:relative;width:auto;height:auto;max-width:100%;max-height:min(80svh,760px);-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 10%,#000 90%,transparent 100%);mask-image:linear-gradient(90deg,transparent 0,#000 10%,#000 90%,transparent 100%)}
+
+/* ===== CTA ===== */
+.cta{overflow:hidden}
+.cta-box{position:relative;display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:clamp(28px,5vw,72px);align-items:center;border:1px solid rgba(229,52,46,.4);border-radius:28px;padding:clamp(28px,5vw,72px);background:radial-gradient(80% 120% at 0% 0%,rgba(229,52,46,.5),transparent 65%),radial-gradient(60% 80% at 100% 100%,rgba(229,52,46,.25),transparent 70%),#110c0d;overflow:hidden}
+.cta-box h2{margin-bottom:18px;font-size:clamp(30px,5.2vw,70px)}
+.cta-box p.t{color:#e0d2d0;max-width:460px;font-size:18px}
+form{display:grid;gap:14px;background:rgba(10,10,11,.55);border:1px solid var(--line);border-radius:20px;padding:clamp(20px,3vw,32px);backdrop-filter:blur(10px)}
+.mbox form{background:none;border:0;padding:0}
+.fld{display:grid;gap:8px}
+.fld label{font-size:15px;color:var(--muted)}
+.fld input{width:100%;background:#0c0c0f;border:1px solid var(--line);border-radius:12px;color:#fff;font:inherit;font-size:16px;padding:17px 18px;outline:none;transition:border-color .2s,box-shadow .2s}
+.fld input:focus{border-color:var(--red);box-shadow:0 0 0 4px rgba(229,52,46,.18)}
+.fld.err input{border-color:#ff4b43}
+.fld small{display:none;color:#ff6a62;font-size:15px}
+.fld.err small{display:block}
+.agree{font-size:15px;color:var(--muted);line-height:1.45}
+.agree a{text-decoration:underline;cursor:pointer}
+form .btn{width:100%}
+.ok{display:none;text-align:center;padding:18px 0}
+.ok h3{font-family:var(--fh);font-size:22px;margin-bottom:12px}
+.ok p{margin:0 auto 22px;color:var(--muted)}
+.hp{position:absolute;left:-9999px;opacity:0;height:0;overflow:hidden}
+.ferr{color:#ff7a74;font-size:15px;min-height:0}
+.ferr:empty{display:none}
+.done form{display:none}.done .ok{display:block}
+
+/* ===== footer ===== */
+footer{padding:72px 0 40px;border-top:1px solid var(--line)}
+.ft{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:32px;margin-bottom:48px}
+.ft h5{font-family:var(--fm);font-size:14px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:14px;font-weight:500}
+.ft a,.ft p{display:block;margin-bottom:8px;color:#e6e6ea}
+.ft a:hover{color:var(--red2)}
+.cp{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;color:var(--muted);font-size:15px;border-top:1px solid var(--line);padding-top:24px}
+
+/* ===== modal ===== */
+.modal{position:fixed;inset:0;z-index:400;display:none;align-items:center;justify-content:center;padding:16px;background:rgba(0,0,0,.74);backdrop-filter:blur(8px)}
+.modal.open{display:flex}
+.mbox{position:relative;width:100%;max-width:480px;background:var(--card);border:1px solid var(--line);border-radius:24px;padding:36px 28px 28px;max-height:92vh;overflow:auto}
+.mbox h3.mt{font-family:var(--fh);font-weight:800;font-size:22px;text-transform:uppercase;margin-bottom:8px;line-height:1.15;padding-right:36px}
+.mbox .sub{color:var(--muted);font-size:15px;margin-bottom:22px}
+.x{position:absolute;right:14px;top:14px;width:40px;height:40px;border-radius:50%;border:1px solid var(--line);font-size:22px;line-height:1;text-align:center}
+.x:hover{border-color:var(--red)}
+.policy{max-width:760px}
+.policy h4{font-family:var(--fh);font-size:15px;margin:18px 0 8px}
+.policy p{font-size:15px;color:#cfcfd5;margin-bottom:8px}
+
+/* ===== tablet ===== */
+@media(max-width:1100px){
+  .tiles{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .bento{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .bx.big{grid-column:span 2;grid-row:auto}
+  .bx.wide{grid-column:span 2}
+}
+@media(max-width:980px){
+  .hero-main{display:flex;flex-direction:column;align-items:flex-start}
+  .hero-text{display:contents}
+  .badge{order:1;margin:clamp(18px,3vh,28px) 0 18px}
+  .hero h1{order:2;font-size:clamp(28px,8.4vw,76px);margin-bottom:14px}
+  .lead{order:3;margin-bottom:8px}
+  .hero-img{order:4;align-self:center;width:100%;justify-content:center;margin:0}
+  .hero-img img{max-height:60svh}
+  .hero-cta{order:5;width:100%;padding:12px 0 44px}
+  .stats .wrap{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .st{padding:16px 16px;border-top:1px solid var(--line)}
+  .st:nth-child(-n+2){border-top:0}
+  .st:nth-child(odd){border-left:0;padding-left:0}
+        .split{grid-template-columns:1fr}
+  .split-img .stick{position:relative;height:auto;min-height:0}
+  .split-img img{position:relative;inset:auto;height:auto;-webkit-mask-image:linear-gradient(180deg,#000 55%,transparent 100%);mask-image:linear-gradient(180deg,#000 55%,transparent 100%)}
+  .split-body{padding:8px var(--pad) 72px;max-width:none}
+  .prog{grid-template-columns:1fr}
+  .prog-side{position:relative;top:0}
+  .tr-grid{grid-template-columns:1fr}
+  .goals-grid{grid-template-columns:1fr}
+  .goals-pic{position:relative;top:0;max-width:480px;margin:0 auto}
+  .goals-pic img{aspect-ratio:4/5;max-height:none;object-position:50% 50%}
+  .tr-text{padding-bottom:12px}
+  .tr-img img{max-height:62svh}
+  .cta-box{grid-template-columns:1fr}
+  .ft{grid-template-columns:1fr 1fr}
+}
+@media(max-width:620px){
+  body{font-size:16px}
+  .cards,.tiles,.bento{grid-template-columns:1fr}
+  .bx.big,.bx.wide{grid-column:auto}
+  .card,.tile{padding:24px 20px 26px}
+  .acc{--nsz:30px}
+  .mod-b{padding:4px 4px 28px}
+  .mod-h{grid-template-columns:auto 1fr auto;gap:12px}
+  .plus{width:38px;height:38px}
+  .hero-cta .btn{width:100%}
+  .badge{font-size:15px;padding:9px 16px;gap:10px}
+  .ft{grid-template-columns:1fr}
+  .nums{grid-template-columns:1fr 1fr 1fr}
+  .num{padding-right:10px}
+  .num+.num{padding-left:12px}
+  .row{gap:14px}
+  .bgname{font-size:21vw}
+}
+@media(prefers-reduced-motion:reduce){
+  *{transition:none!important;scroll-behavior:auto!important}
+  .rv{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+<div id="bar"></div>
+
+
+<!-- ===== HERO ===== -->
+<section class="hero" id="top" style="padding-bottom:0">
+  <div class="topbar"><a href="#top" class="logo">МЦП<span>иР</span></a></div>
+  <div class="hero-main">
+    <div class="hero-text">
+      <div class="badge rv"><span>Практический курс</span><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13 5l7 7-7 7v-5H4v-4h9V5z"/></svg><b>Старт 17 ноября</b></div>
+      <h1 class="rv" style="--i:1"><span class="l1">Женские</span><span class="l2">манипуляции</span></h1>
+      <p class="lead rv" style="--i:2">как перестать быть ресурсом и начать играть по своим правилам</p>
+      <div class="hero-cta rv" style="--i:3">
+        <button class="btn" data-open>Оставить заявку <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+        <a class="btn ghost" href="#program">Смотреть программу</a>
+      </div>
+    </div>
+    <div class="hero-img" id="heroImg">
+      <picture>
+        <img src="assets/hero-2026-11-05.webp" width="1160" height="1068" alt="Женские манипуляции — практический курс" fetchpriority="high">
+      </picture>
+    </div>
+  </div>
+  <div class="stats">
+    <div class="wrap">
+      <div class="st"><b>4</b><span>модуля от диагностики до контр-игры</span></div>
+      <div class="st"><b>26</b><span>техник НЛП в разборе</span></div>
+      <div class="st"><b>75</b><span>вау-скриптов</span></div>
+      <div class="st"><b>7</b><span>фраз-якорей для сильной позиции</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ЦЕЛИ ===== -->
+<section id="goals">
+  <div class="wrap goals-grid">
+    <figure class="goals-pic rv"><picture><img src="assets/goals-2026-11-05.webp" width="960" height="1200" alt="" loading="lazy"></picture></figure>
+    <div class="goals-body">
+      <div class="eyebrow rv">Курс про</div>
+      <h2 class="rv" style="--i:1">Цели <em>курса</em></h2>
+      <div class="cards stagger">
+        <div class="card rv"><span class="n">01</span><h3>Распознавать манипуляции</h3><p>Научишься видеть скрытое давление в переписке, разговорах и поведении женщин.</p></div>
+        <div class="card rv"><span class="n">02</span><h3>Перестать поддаваться на провокации</h3><p>Узнаешь, как противостоять чувству вины, эмоциональным качелям и психологическим уловкам.</p></div>
+        <div class="card rv"><span class="n">03</span><h3>Защитить свои ресурсы</h3><p>Перестанешь быть «спонсором» и «жилеткой», научишься отстаивать свои интересы.</p></div>
+        <div class="card rv"><span class="n">04</span><h3>Сохранять сильную позицию</h3><p>Научишься уверенно реагировать на манипуляции и устанавливать личные границы.</p></div>
+        <div class="card rv"><span class="n">05</span><h3>Освоить приёмы контригры</h3><p>Разберёшь женские сценарии воздействия и научишься использовать их приёмы для защиты.</p></div>
+        <div class="card rv"><span class="n">06</span><h3>Перейти от теории к практике</h3><p>Отработаешь реальные ситуации, готовые ответы и стратегии поведения на практических занятиях.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ДЛЯ ТЕБЯ ===== -->
+<section id="foryou" class="split">
+  <div class="split-img"><div class="stick"><img src="assets/hero-2026-11-05.webp" alt="" loading="lazy" style="--op:50% 20%"></div></div>
+  <div class="split-body">
+    <div class="eyebrow rv">Узнаёшь себя?</div>
+    <h2 class="rv" style="--i:1">Курс для тебя, <em>если</em></h2>
+    <div class="rows stagger">
+      <div class="row rv"><span class="n">01</span><p>Ты не раз оказывался в отношениях, где чувствовал себя выжатым лимоном, но не мог объяснить, что не так.</p></div>
+      <div class="row rv"><span class="n">02</span><p>Ты замечаешь, что её слова расходятся с делами, но списываешь это на «сложный характер».</p></div>
+      <div class="row rv"><span class="n">03</span><p>Ты хочешь понимать, как выглядит искренняя девушка, и иметь чёткие критерии уже с первого свидания.</p></div>
+      <div class="row rv"><span class="n">04</span><p>Ты устал от эмоциональных качелей и хочешь стабильности и предсказуемости.</p></div>
+      <div class="row rv"><span class="n">05</span><p>Ты боишься снова ошибиться, потерять деньги, время и веру в людей.</p></div>
+      <div class="row rv"><span class="n">06</span><p>Ты готов освоить инструменты спокойного контроля: видеть игру и выходить из неё победителем.</p></div>
+      <div class="row rv"><span class="n">07</span><p>Тебе надоело оправдываться, быть виноватым и что-то доказывать.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ПРОГРАММА ===== -->
+<section id="program">
+  <div class="wrap prog">
+    <div class="prog-side">
+      <div class="eyebrow rv">4 модуля</div>
+      <h2 class="rv" style="--i:1">Программа <em>курса</em></h2>
+      <p class="rv" style="--i:2">В каждом модуле: разбор живых кейсов, готовые скрипты ответов, домашнее задание с обратной связью и отработка в мини-группах.</p>
+      <div class="rv" style="--i:3"><button class="btn" data-open>Оставить заявку <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button></div>
+    </div>
+
+    <div class="acc rv">
+
+      <article class="mod open">
+        <button class="mod-h" aria-expanded="true"><span class="mod-n">01</span><span class="mod-t">Анатомия манипуляции: как тебя «программируют», а потом управляют<small>Изменение убеждений: снимаем розовые очки</small></span><span class="plus"></span></button>
+        <div class="mod-w"><div class="mod-c"><div class="mod-b">
+          <div><h4>Изменение убеждений</h4><ul>
+            <li>Почему «хороший парень» проигрывает в долгосрочной игре.</li>
+            <li>Как перестать чувствовать вину и стыд, на которых тобой манипулируют.</li>
+            <li>Как отличить искренний интерес от «прикорма» к манипуляции.</li></ul></div>
+          <div><h4>Типажи и техники</h4><ul>
+            <li>Типажи женщин-манипуляторов: «жрица любви», «русалка», «стерва», «спасательница» и др.</li>
+            <li>«Теневая модель влюбления». Вскрытие 26 техник НЛП: «стирание времени», «синдром спасателя», «намеренное несогласие» и других. Ты узнаешь, как они звучат в реальной жизни — в переписке, в разговоре на кухне, в постели.</li></ul></div>
+          <div><h4>Эмоциональный иммунитет</h4><ul>
+            <li>Как нейтрализовать триггеры вины, жалости и страха потери.</li>
+            <li>Конкретные внутренние алгоритмы: что делать в моменте, когда звучит «ты меня не любишь», «я для тебя ничего не значу», «настоящий мужчина бы…».</li></ul></div>
+          <div><h4>Практикум</h4><ul>
+            <li>Разбор реальных кейсов: где ты теряешь контроль и как это исправить.</li>
+            <li>Скрипты ответов на манипуляции: что говорить, когда тебя «прожимают».</li></ul></div>
+          <div class="hw"><b>Домашнее задание</b> с обратной связью · отработки в мини-группах</div>
+        </div></div></div>
+      </article>
+
+      <article class="mod">
+        <button class="mod-h" aria-expanded="false"><span class="mod-n">02</span><span class="mod-t">Финансовая броня: защита ресурсов<small>«9 схем просьб» и «75 вау-скриптов»</small></span><span class="plus"></span></button>
+        <div class="mod-w"><div class="mod-c"><div class="mod-b">
+          <div><h4>Анатомия манипуляций</h4><ul>
+            <li>«9 схем просьб» и «75 вау-скриптов». Якоря, подстройка, ведение, разрыв шаблона — как это работает в переписке.</li>
+            <li>Как именно формулируются требования, чтобы бить не в логику, а в чувство вины.</li></ul></div>
+          <div><h4>«Товарно-денежные отношения»</h4><ul>
+            <li>Разбор женской методики «Повышения ценника». Как тебя превращают из партнёра в «покупателя».</li></ul></div>
+          <div><h4>Алгоритм экологичного, но твёрдого отказа</h4><ul>
+            <li>Фразы-щиты, которые вежливо, но намертво закрывают кошелёк от манипуляций — без скандалов и обид, и без потери отношений.</li></ul></div>
+          <div><h4>Практикум</h4><ul>
+            <li>Тренируем навык говорить «нет» на провокации: «ты жмот», «ты меня не любишь», «у подруги муж подарил».</li></ul></div>
+          <div class="hw"><b>Домашнее задание</b> с обратной связью · отработки в мини-группах</div>
+        </div></div></div>
+      </article>
+
+      <article class="mod">
+        <button class="mod-h" aria-expanded="false"><span class="mod-n">03</span><span class="mod-t">Эмоциональные качели и секс-шантаж<small>Как вернуть ясность и здоровую динамику</small></span><span class="plus"></span></button>
+        <div class="mod-w"><div class="mod-c"><div class="mod-b">
+          <div><h4>Механика эмоциональных крючков</h4><ul>
+            <li>Как используются жалость, гнев и страх потери, чтобы ты бегал на цыпочках.</li></ul></div>
+          <div><h4>Секс как диалог, а не инструмент шантажа</h4><ul>
+            <li>Разбор ловушек «первой ночи» и «цены секса».</li>
+            <li>Как выстроить динамику, где секс и деньги — выражение взаимного желания, а не рычаги давления.</li>
+            <li>Как вернуть интим в здоровое русло и перестать быть «вибратором» или «кошельком».</li></ul></div>
+          <div><h4>Техника «Заземления»</h4><ul>
+            <li>Как за 30 секунд вернуть ясность мышления в любой эмоциональной или манипулятивной атаке.</li></ul></div>
+          <div><h4>Практикум</h4><ul>
+            <li>Разбор реальных кейсов: где ты теряешь контроль и как это исправить.</li>
+            <li>Скрипты ответов на манипуляции сексом.</li></ul></div>
+          <div class="hw"><b>Домашнее задание</b> с обратной связью · отработки в мини-группах</div>
+        </div></div></div>
+      </article>
+
+      <article class="mod">
+        <button class="mod-h" aria-expanded="false"><span class="mod-n">04</span><span class="mod-t">Контр-игра: возвращение сильного мужского фрейма и здоровых границ<small>Из позиции «жертвы» в позицию «Игрока»</small></span><span class="plus"></span></button>
+        <div class="mod-w"><div class="mod-c"><div class="mod-b">
+          <div><h4>Из «жертвы» в «Игрока»</h4><ul>
+            <li>Как использовать их же приёмы (экологично) для выстраивания жёстких границ.</li>
+            <li>Техники «намеренного несогласия» и удержания фрейма. Как стать мужчиной, которого уважают, а не «дрессируют».</li></ul></div>
+          <div><h4>Тотальный фрейм-контроль</h4><ul>
+            <li>«Высокая мужская планка»: что это и как её удерживать без агрессии.</li>
+            <li>7 фраз-якорей, которые держат твою позицию и вызывают искреннее уважение, а не жалость.</li></ul></div>
+          <div><h4>Интеграция навыков</h4><ul>
+            <li>Финальные спарринги с «разбором полётов».</li>
+            <li>Создание твоего личного алгоритма поведения.</li></ul></div>
+          <div class="hw"><b>Домашнее задание</b> с обратной связью · отработки в мини-группах</div>
+        </div></div></div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== ЧТО ПОЛУЧИШЬ ===== -->
+<section id="result" class="result">
+  <div class="wrap">
+    <div class="res-head">
+      <div class="eyebrow rv">После курса</div>
+      <h2 class="rv" style="--i:1">Что ты получишь <em>по итогу</em></h2>
+    </div>
+    <div class="res-pic rv"><img src="https://static.tildacdn.com/tild6461-3461-4430-b238-393064666163/magnific_ovtAoTw829_.png" alt="" loading="lazy"></div>
+    <div class="tiles stagger">
+      <div class="tile rv"><div class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg></div><h3>Иммунитет от манипуляций</h3><p>Твой «рентген»: ты видишь «крючок» до того, как он вонзился. Фразы вроде «ты меня не понимаешь» больше не вызывают чувство вины.</p></div>
+      <div class="tile rv"><div class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg></div><h3>Сохранность ресурсов</h3><p>Деньги и время идут только на то, что ты сам считаешь важным. Чёткие критерии: когда ты даёшь по желанию, а когда тобой управляют.</p></div>
+      <div class="tile rv"><div class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg></div><h3>Контроль над фреймом</h3><p>Парадокс: именно чёткие, непробиваемые границы делают мужчину по-настоящему сильным в глазах женщины и вызывают глубокое уважение.</p></div>
+      <div class="tile rv"><div class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg></div><h3>Словарь анти-скриптов</h3><p>Готовые речевые модули на женские проверки и попытки прогнуть. Конкретные ответы на 90% типичных манипулятивных скриптов.</p></div>
+      <div class="tile rv"><div class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg></div><h3>Спокойствие и уверенность</h3><p>Ты слезаешь с эмоциональных качелей и понимаешь, что реально происходит на каждом этапе отношений — вне зависимости от фазы цикла и настроения.</p></div>
+      <div class="tile rv"><div class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg></div><h3>Отношения, где тебя ценят</h3><p>Способность строить отношения, где тебя ценят, а не используют.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ФОРМАТ ===== -->
+<section id="format">
+  <div class="wrap">
+    <div class="eyebrow rv">Как проходит обучение</div>
+    <h2 class="rv" style="--i:1">Формат <em>курса</em></h2>
+    <div class="bento stagger">
+      <div class="bx big rv"><span class="tag">Структура</span><div class="big-n">4</div><div><h3>модуля — от диагностики до контр-игры</h3><p>Сначала учишься видеть приёмы, потом защищать ресурсы, снимать эмоциональное давление и удерживать сильную позицию.</p></div></div>
+      <div class="bx wide rv"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16M4 12h16M4 18h10"/></svg></div><div><h3>Практикум в каждом модуле</h3><p>Разбор реальных кейсов и готовые скрипты ответов: что говорить, когда тебя «прожимают».</p></div></div>
+      <div class="bx rv"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v11H8l-4 4V5z"/></svg></div><div><h3>Домашка</h3><p>С обратной связью после каждого модуля.</p></div></div>
+      <div class="bx rv"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6M15 14.5c3 0 6 1.5 6 5.5"/></svg></div><div><h3>Мини-группы</h3><p>Отработка навыков и финальные спарринги.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ВЕДУЩИЙ ===== -->
+<section id="trainer" class="trainer">
+  <div class="bgname" aria-hidden="true">Кулицкий</div>
+  <div class="wrap tr-grid">
+    <div class="tr-text">
+      <div class="eyebrow rv">Ведущий курса</div>
+      <h2 class="rv" style="--i:1">Александр <em>Кулицкий</em></h2>
+      <p class="role rv" style="--i:2">Тренер-практик · Мужская территория</p>
+      <ul class="facts stagger">
+        <li class="rv">Сертифицированный профессиональный психолог и коуч ICU.</li>
+        <li class="rv">Высшее психологическое образование, магистр технических наук.</li>
+        <li class="rv">Практикующий психолог с 2011 года, практикующий коуч с 2013.</li>
+        <li class="rv">Автор десятков мастер-классов и тренингов РМЭС и МЦПиР.</li>
+      </ul>
+      <div class="nums rv">
+        <div class="num"><b>2000+</b><span>часов коуч-сессий</span></div>
+        <div class="num"><b>10+</b><span>лет публичных выступлений</span></div>
+        <div class="num"><b>500+</b><span>тренинговых мероприятий</span></div>
+      </div>
+    </div>
+    <div class="tr-img rv"><img src="https://static.tildacdn.com/tild3433-3435-4330-a665-666638316262/image_2139-2.png" alt="Александр Кулицкий" loading="lazy"></div>
+  </div>
+</section>
+
+<!-- ===== CTA ===== -->
+<section class="cta" id="apply">
+  <div class="wrap">
+    <div class="cta-box rv">
+      <div>
+        <div class="eyebrow">Старт 17 ноября</div>
+        <h2>Хватит быть <em>ресурсом</em></h2>
+        <p class="t">Оставь контакты — организатор свяжется, расскажет о формате и условиях участия и ответит на вопросы.</p>
+      </div>
+      <div id="inlineForm"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CONTACTS ===== -->
+<footer id="contacts">
+  <div class="wrap">
+    <div class="ft">
+      <div><a href="#top" class="logo" style="margin-bottom:14px;display:inline-block">МЦП<span>иР</span></a><p style="color:var(--muted)">Мужской центр</p></div>
+      <div><h5>Наши контакты</h5><a href="tel:+375293203060">+375 29 320-30-60</a><a href="https://t.me/+QYUZw52K9Mk1Yjli" target="_blank" rel="noopener">Telegram МЦПИР Минск</a></div>
+      <div><h5>Адрес</h5><a href="https://yandex.by/maps/-/CCU6ePSV1B" target="_blank" rel="noopener">Минск, ул. Кульман, 9</a></div>
+    </div>
+    <div class="cp"><a href="https://rmes-online.ru/" target="_blank" rel="noopener">© 2026 rmes-online.ru</a><a href="#" data-policy>Политика конфиденциальности</a></div>
+  </div>
+</footer>
+
+<!-- ===== MODALS ===== -->
+<div class="modal" id="mApply" role="dialog" aria-modal="true">
+  <div class="mbox"><button class="x" data-close aria-label="Закрыть">×</button>
+    <h3 class="mt">Оставить заявку</h3><p class="sub">Курс «Женские манипуляции». Старт 17 ноября.</p>
+    <div id="modalForm"></div>
+  </div>
+</div>
+<div class="modal" id="mPolicy" role="dialog" aria-modal="true">
+  <div class="mbox policy"><button class="x" data-close aria-label="Закрыть">×</button>
+    <h3 class="mt">Политика конфиденциальности</h3>
+    <h4>Соглашение об обработке персональных данных</h4>
+    <p>Тренинг-центр «МЦПиР» (далее Тренинг-центр) серьёзно относится к защите Ваших персональных данных. Сбор личных данных на веб-сайтах Тренинг-центра происходит только в объёме, необходимом для их технической обработки. Продажа собранных данных или их передача третьим лицам исключена.</p>
+    <h4>Персональные данные</h4>
+    <p>Персональными данными является личная информация, которую Вы указали о себе: имя, эл. адрес, номер телефона. Информация, не указывающая на Вашу личность (ссылки, внутренняя статистика сайта), личными данными не является. Личные данные запрашиваются, только если Вы подписываетесь на рассылки или заказываете продукт. Все данные хранятся на серверах Тренинг-центра и компаний, оказывающих информационно-технические услуги. Автоматически сохраняется обезличенная информация (время доступа, регион, дата), которая может использоваться для статистики.</p>
+    <h4>Передача персональных данных третьей стороне</h4>
+    <p>Личные данные используются только если Вы подписались на рассылки или заказали продукт. Они не передаются третьим лицам без Вашего явного согласия, за исключением случаев, предусмотренных судебным решением или законом. Поставщики услуг соблюдают Политику конфиденциальности Тренинг-центра.</p>
+    <h4>Файлы Cookies</h4>
+    <p>Для идентификации пользователей применяются файлы cookies. Они делают посещение сайтов удобнее, помогают оптимизировать услуги и повышают безопасность. Cookies не наносят вреда компьютеру и не содержат вирусов.</p>
+    <h4>Информационные рассылки</h4>
+    <p>Получение рассылок добровольно. Отказаться можно в любой момент по ссылке «Отписаться» в нижней части письма или через службу поддержки.</p>
+    <h4>Дети и подростки</h4>
+    <p>Лицам, не достигшим 18 лет, не рекомендуется посещать данную страницу и сообщать нам личные данные без согласия родителей или опекунов. С уважением, Международный центр психологии и развития.</p>
+  </div>
+</div>
+
+<template id="formTpl">
+  <div class="fwrap">
+    <form novalidate>
+      <div class="fld"><label>Имя</label><input name="name" type="text" autocomplete="name" placeholder="Как тебя зовут"><small>Введи имя</small></div>
+      <div class="fld"><label>Телефон</label><input name="phone" type="tel" autocomplete="tel" placeholder="+375 29 000-00-00"><small>Введи корректный номер телефона</small></div>
+      <div class="hp" aria-hidden="true"><input type="text" name="website" tabindex="-1" autocomplete="off"></div>
+      <div class="ferr" role="alert"></div>
+      <button class="btn" type="submit">Оставить заявку</button>
+      <p class="agree">Нажимая кнопку, ты соглашаешься на обработку персональных данных. <a data-policy>Политика конфиденциальности</a></p>
+    </form>
+    <div class="ok"><h3>Заявка принята</h3><p>Сейчас перенаправим тебя в Телеграм. Если не открылось — нажми кнопку.</p><a class="btn" href="https://t.me/+QYUZw52K9Mk1Yjli">Перейти в Телеграм</a></div>
+  </div>
+</template>
+
+<script>
+(function(){
+  /* ===== CONFIG ===== */
+  var CONFIG = {
+    amoEndpoint: 'https://mute-limit-6032.ravenby.workers.dev/submit',
+    siteId: 'mcpir-web',
+    productName: 'Практический курс «Женские манипуляции»',
+    formName: 'Заявка на практический курс',
+    redirectUrl: 'https://t.me/+QYUZw52K9Mk1Yjli'
+  };
+
+  var $=function(s,c){return (c||document).querySelector(s)}, $$=function(s,c){return [].slice.call((c||document).querySelectorAll(s))};
+  var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* progress */
+  var bar=$('#bar');
+  function onScroll(){
+    var h=document.documentElement.scrollHeight-innerHeight;
+    bar.style.width=(h>0?Math.min(100,scrollY/h*100):0)+'%';
+  }
+  onScroll();addEventListener('scroll',onScroll,{passive:true});
+
+  /* reveal with stagger */
+  $$('.stagger').forEach(function(c){[].slice.call(c.children).forEach(function(el,i){el.style.setProperty('--i',i)})});
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.1,rootMargin:'0px 0px -40px 0px'});
+    $$('.rv').forEach(function(el){io.observe(el)});
+  } else document.documentElement.classList.add('noanim');
+
+  /* accordion (one open at a time) */
+  $$('.mod-h').forEach(function(b){
+    b.addEventListener('click',function(){
+      var m=b.parentNode, open=m.classList.contains('open');
+      $$('.mod').forEach(function(x){x.classList.remove('open');$('.mod-h',x).setAttribute('aria-expanded','false')});
+      if(!open){m.classList.add('open');b.setAttribute('aria-expanded','true')}
+    });
+  });
+
+  /* cursor glow on cards */
+  $$('.card,.tile').forEach(function(c){
+    c.addEventListener('pointermove',function(e){
+      var r=c.getBoundingClientRect();
+      c.style.setProperty('--mx',(e.clientX-r.left)+'px');
+      c.style.setProperty('--my',(e.clientY-r.top)+'px');
+    });
+  });
+
+  /* hero parallax (desktop pointer only) */
+  var hi=$('#heroImg img');
+  if(hi && !reduce && matchMedia('(hover:hover) and (min-width:981px)').matches){
+    $('.hero').addEventListener('pointermove',function(e){
+      var x=(e.clientX/innerWidth-.5), y=(e.clientY/innerHeight-.5);
+      hi.style.transform='translate3d('+(x*-14).toFixed(1)+'px,'+(y*-8).toFixed(1)+'px,0)';
+    });
+  }
+
+  /* modals */
+  function openM(id){$(id).classList.add('open');document.body.style.overflow='hidden'}
+  function closeM(){$$('.modal.open').forEach(function(m){m.classList.remove('open')});document.body.style.overflow=''}
+  document.addEventListener('click',function(e){
+    var t=e.target;
+    if(t.closest('[data-open]')){e.preventDefault();closeM();openM('#mApply');return}
+    if(t.closest('[data-policy]')){e.preventDefault();$$('.modal.open').forEach(function(m){m.classList.remove('open')});openM('#mPolicy');return}
+    if(t.closest('[data-close]')||t.classList.contains('modal')){closeM()}
+  });
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')closeM()});
+
+  /* UTM / атрибуция (как в рабочем лендинге) */
+  var ATTR_KEYS=['utm_source','utm_medium','utm_campaign','utm_content','utm_term','gclid','yclid'];
+  var ATTR_STORAGE_KEY='manipulation_attribution';
+  function getAttribution(){
+    var q=new URLSearchParams(location.search), saved={};
+    try{saved=JSON.parse(localStorage.getItem(ATTR_STORAGE_KEY)||'{}')}catch(e){}
+    ATTR_KEYS.forEach(function(k){var v=q.get(k);if(v&&!saved[k])saved[k]=v});
+    if(!saved.landing_page)saved.landing_page=location.href.split('#')[0];
+    if(!saved.referrer&&document.referrer)saved.referrer=document.referrer;
+    try{localStorage.setItem(ATTR_STORAGE_KEY,JSON.stringify(saved))}catch(e){}
+    return saved;
+  }
+  getAttribution();
+
+  /* forms */
+  var tpl=$('#formTpl');
+  ['#inlineForm','#modalForm'].forEach(function(id){$(id).appendChild(tpl.content.cloneNode(true))});
+
+  function done(){
+    $$('.fwrap').forEach(function(x){x.classList.add('done')});
+    if(CONFIG.redirectUrl){setTimeout(function(){location.href=CONFIG.redirectUrl},1200)}
+  }
+
+  $$('.fwrap').forEach(function(w){
+    var f=$('form',w), ferr=$('.ferr',w), btn=$('button[type=submit]',f);
+    f.addEventListener('submit',function(e){
+      e.preventDefault();
+      if(f.getAttribute('data-submitting')==='1')return;
+      ferr.textContent='';
+      if(f.elements.website.value)return; // honeypot
+      var nameEl=f.elements.name, phoneEl=f.elements.phone;
+      var name=nameEl.value.trim(), phone=phoneEl.value.trim();
+      var okN=name.length>=2, okP=phone.replace(/\D/g,'').length>=9;
+      nameEl.parentNode.classList.toggle('err',!okN);
+      phoneEl.parentNode.classList.toggle('err',!okP);
+      if(!okN||!okP)return;
+      f.setAttribute('data-submitting','1');btn.disabled=true;btn.textContent='Отправляем…';
+
+      var data={name:name,phone:phone,site_id:CONFIG.siteId,product_name:CONFIG.productName,
+        form_name:CONFIG.formName,page_url:location.href.split('#')[0]};
+      var attribution=getAttribution();
+      ATTR_KEYS.concat(['landing_page','referrer']).forEach(function(k){if(attribution[k])data[k]=attribution[k]});
+
+      fetch(CONFIG.amoEndpoint,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)})
+      .then(function(response){
+        return response.text().then(function(text){
+          var result;
+          try{result=JSON.parse(text)}catch(e){throw new Error('Сервер вернул не JSON (HTTP '+response.status+')')}
+          if(!response.ok)throw new Error(result.error||result.message||('HTTP '+response.status));
+          if(!result||result.ok!==true)throw new Error(result&&(result.error||result.message)||'Сервер не подтвердил приём заявки');
+          return result;
+        });
+      })
+      .then(done)
+      .catch(function(error){
+        console.error('Ошибка отправки заявки:',error);
+        f.removeAttribute('data-submitting');btn.disabled=false;btn.textContent='Оставить заявку';
+        ferr.textContent=(error&&error.message?error.message+' — ':'')+'Не получилось отправить. Попробуй ещё раз или позвони: +375 29 320-30-60';
+      });
+    });
+    $$('input',f).forEach(function(i){i.addEventListener('input',function(){i.parentNode.classList.remove('err')})});
+  });
+})();
+</script>
+</body>
+</html>
