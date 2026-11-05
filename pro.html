@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>Профайлинг: Как за 2 минуты читать человека как открытую книгу</title>
-<meta name="description" content="Профайлинг: как за 2 минуты читать человека как открытую книгу. Бесплатный вебинар 5 ноября, 20:00 МСК.">
+<title>Профайлинг - как за 2 минуты читать человека как открытую книгу | Александр Копытько</title>
+<meta name="description" content="Профайлинг: как за 2 минуты читать человека как открытую книгу. Бесплатный вебинар Александра Копытько о профайлинге, переговорах и распознавании манипуляций.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;900&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -28,7 +28,7 @@
     --wrap:1160px;
   }
   *{margin:0;padding:0;box-sizing:border-box;}
-  html{-webkit-text-size-adjust:100%; scroll-behavior:smooth; scroll-padding-top:88px;}
+  html{-webkit-text-size-adjust:100%; scroll-behavior:smooth; scroll-padding-top:24px;}
   body{
     background:var(--bg); color:var(--text); font-family:var(--body);
     font-size:17px; line-height:1.6; -webkit-font-smoothing:antialiased;
@@ -42,7 +42,6 @@
   ::selection{background:var(--accent); color:#fff;}
   :focus-visible{outline:2px solid var(--accent-2); outline-offset:3px;}
 
-
   .btn{
     display:inline-flex; align-items:center; justify-content:center; gap:8px;
     font-family:var(--body); font-weight:700; font-size:15px;
@@ -53,23 +52,21 @@
   }
   .btn:hover{background:var(--accent-2); transform:translateY(-1px);}
   .btn:active{transform:translateY(0);}
-  .btn.small{padding:11px 20px; font-size:14px;}
   .btn.ghost{
     background:transparent; border:1px solid var(--line-strong); color:var(--text);
   }
   .btn.ghost:hover{background:rgba(255,255,255,0.06); border-color:var(--muted);}
   .btn.block{width:100%;}
 
-
   /* ---------- Hero ---------- */
   .hero{
-    padding:150px 0 80px;
+    padding:90px 0 80px;
     background:
       radial-gradient(ellipse 900px 500px at 78% -10%, rgba(229,52,46,0.16), transparent 60%),
       radial-gradient(ellipse 700px 500px at -10% 30%, rgba(229,52,46,0.06), transparent 60%);
   }
   .hero-grid{
-    display:grid; grid-template-columns:1.15fr 0.85fr; gap:56px; align-items:center;
+    display:grid; grid-template-columns:1.05fr 0.95fr; gap:48px; align-items:center;
   }
   .kicker{
     display:inline-flex; align-items:center; gap:10px;
@@ -79,15 +76,16 @@
   }
   .kicker::before{content:''; width:6px; height:6px; border-radius:50%; background:var(--accent-2); flex:none;}
   h1.hero-title{
-    font-size:clamp(28px, 3.4vw, 46px); line-height:1.12; font-weight:700;
-    margin-bottom:22px; max-width:15ch;
+    font-size:clamp(28px, 3vw, 42px); line-height:1.14; font-weight:700;
+    margin-bottom:20px; max-width:100%;
   }
+  .hero-title-label{
+    display:block; color:var(--accent-2); font-size:.62em; line-height:1.2;
+    letter-spacing:.035em; margin-bottom:12px;
+  }
+  .hero-title-main{display:block;}
   h1.hero-title em{
     font-style:normal; color:var(--accent-2);
-  }
-  .hero-lead{
-    font-size:clamp(17px, 1.7vw, 20px); color:var(--muted); max-width:52ch;
-    margin-bottom:34px; line-height:1.55;
   }
   .hero-meta{
     display:flex; flex-wrap:wrap; gap:10px 26px; margin-bottom:34px;
@@ -95,7 +93,7 @@
   }
   .hero-meta span{display:flex; align-items:center; gap:8px;}
   .hero-meta span::before{content:''; width:4px; height:4px; background:var(--accent-2); border-radius:50%;}
-  .hero-actions{display:flex; align-items:center; gap:18px; flex-wrap:wrap; margin-bottom:24px;}
+  .hero-actions{display:flex; align-items:center; gap:18px; flex-wrap:wrap; margin-bottom:16px;}
   .hero-note{font-size:14px; color:var(--muted-2);}
   .hero-media{position:relative;}
   .hero-media-frame{
@@ -301,8 +299,11 @@
 
   /* ---------- Responsive ---------- */
   @media (max-width:920px){
-    .hero-grid{grid-template-columns:1fr; gap:40px;}
-    .hero-media{order:-1; max-width:300px; margin:0 auto;}
+    .hero-grid{grid-template-columns:1fr; gap:30px;}
+    .hero-copy{text-align:center;}
+    .hero-media{order:-1; width:100%; max-width:390px; margin:0 auto;}
+    .hero-actions{justify-content:center;}
+    .hero-stats{max-width:620px; margin-left:auto; margin-right:auto;}
     .pains-grid,.audience-grid{grid-template-columns:1fr;}
     .break-inner{grid-template-columns:1fr;}
     .break-img{min-height:240px;}
@@ -319,22 +320,25 @@
     .stat-row{grid-template-columns:1fr 1fr; row-gap:28px;}
     .reg-grid{grid-template-columns:1fr; gap:40px;}
     .achv-strip{grid-template-columns:1fr 1fr;}
-    .header-date{display:none !important;}
-    header{position:static; background:var(--bg-panel); backdrop-filter:none; -webkit-backdrop-filter:none; border-bottom:1px solid var(--line);}
-    .hero{padding-top:48px;}
+    .hero{padding-top:56px;}
   }
   @media (max-width:600px){
     body{font-size:16px;}
     .section{padding:64px 0;}
-    .hero{padding-top:32px; padding-bottom:56px;}
-    h1.hero-title{font-size:clamp(29px, 8.2vw, 40px); line-height:1.16; max-width:19ch; margin-bottom:26px;}
-    .hero-grid{gap:28px;}
-    .hero-media{max-width:230px;}
-    .kicker{font-size:10.5px; padding:7px 11px; margin-bottom:20px;}
-    .hero-actions{margin-bottom:20px;}
+    .hero{padding:26px 0 52px;}
+    .wrap{padding-left:18px; padding-right:18px;}
+    .hero-grid{gap:22px;}
+    .hero-media{max-width:360px; width:100%;}
+    .hero-media-frame{aspect-ratio:4/4.5; border-radius:18px;}
+    .kicker{display:flex; width:max-content; max-width:100%; margin:0 auto 18px; padding:6px 10px; font-size:10px;}
+    h1.hero-title{font-size:clamp(20px, 5.5vw, 25px); line-height:1.18; letter-spacing:-.04em; margin:0 auto 18px;}
+    .hero-title-label{margin-bottom:9px;}
+    .hero-actions{justify-content:center; margin-bottom:14px;}
+    .hero-stats{margin-top:18px;}
+    .hero-stat{padding:13px 8px; min-width:33.333%;}
+    .hero-stat b{font-size:17px;}
+    .hero-stat span{font-size:10px;}
     .foot-grid{grid-template-columns:1fr; gap:26px;}
-    .hero-stats{flex-wrap:wrap;}
-    .hero-stat{min-width:33%; border-bottom:1px solid var(--line);}
     .countdown{gap:8px;}
     .form-card{padding:28px 22px;}
     .stat-row{grid-template-columns:1fr 1fr;}
@@ -352,9 +356,12 @@
   <!-- HERO -->
   <section class="hero" id="top">
     <div class="wrap hero-grid">
-      <div>
+      <div class="hero-copy">
         <span class="kicker">Бесплатный вебинар · 5 ноября · 20:00 МСК</span>
-        <h1 class="hero-title">Профайлинг: Как за <em>2 минуты</em> читать человека как открытую книгу</h1>
+        <h1 class="hero-title">
+          <span class="hero-title-label">ПРОФАЙЛИНГ</span>
+          <span class="hero-title-main">КАК ЗА 2 МИНУТЫ<br>ЧИТАТЬ ЧЕЛОВЕКА<br>КАК ОТКРЫТУЮ КНИГУ</span>
+        </h1>
         <div class="hero-actions">
           <a href="#reg" class="btn">Записаться бесплатно</a>
         </div>
@@ -613,7 +620,7 @@
 
 <script>
 (function(){
-// policy modal
+  // policy modal
   var modal = document.getElementById('policy-modal');
   function openModal(e){ if(e) e.preventDefault(); modal.classList.add('show'); }
   function closeModal(){ modal.classList.remove('show'); }
@@ -622,7 +629,7 @@
   document.getElementById('close-policy').addEventListener('click', closeModal);
   modal.addEventListener('click', function(e){ if(e.target === modal) closeModal(); });
 
-  // countdown to 8 октября 2026, 20:00 MSK (UTC+3)
+  // countdown to 5 ноября 2026, 20:00 MSK (UTC+3)
   var target = new Date('2026-11-05T20:00:00+03:00').getTime();
   function tick(){
     var now = Date.now();
