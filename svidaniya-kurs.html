@@ -62,7 +62,8 @@
     .container { width: 100%; max-width: 1240px; margin: 0 auto; padding: 0 24px; }
 
     /* HEADER */
-    .header-wrap { position: fixed; top: 16px; left: 0; right: 0; z-index: 100; padding: 0 16px; pointer-events: none; }
+    .header-wrap { position: fixed; top: 16px; left: 0; right: 0; z-index: 100; padding: 0 16px; pointer-events: none; transform: translateY(-140%); opacity: 0; visibility: hidden; transition: transform 0.35s ease, opacity 0.35s ease, visibility 0s linear 0.35s; }
+    .header-wrap.is-shown { transform: translateY(0); opacity: 1; visibility: visible; transition: transform 0.35s ease, opacity 0.35s ease, visibility 0s; }
     .nav-pill { pointer-events: auto; max-width: 1120px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 10px 12px 10px 22px; background: rgba(255, 255, 255, 0.86); backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px); border: 1px solid rgba(255, 255, 255, 0.75); border-radius: var(--radius-pill); box-shadow: 0 12px 40px -10px rgba(10, 14, 23, 0.16); }
     .nav-brand { display: flex; align-items: center; gap: 10px; font-family: var(--font-display); font-weight: 700; font-size: 13px; letter-spacing: 0.02em; white-space: nowrap; }
     .nav-brand-dot { width: 9px; height: 9px; border-radius: 50%; background: var(--accent-blue); box-shadow: 0 0 0 4px rgba(0, 140, 255, 0.18); }
@@ -71,12 +72,6 @@
     .nav-links a:hover { color: var(--text-main); }
     .nav-cta { display: inline-flex; align-items: center; justify-content: center; padding: 11px 22px; border-radius: var(--radius-pill); background: var(--accent-blue); color: #fff; font-size: 13.5px; font-weight: 600; white-space: nowrap; transition: background-color 0.2s, transform 0.2s; }
     .nav-cta:hover { background: var(--accent-blue-dark); transform: translateY(-1px); }
-    .burger-btn { display: none; width: 38px; height: 38px; border-radius: 50%; background: rgba(15, 23, 42, 0.06); align-items: center; justify-content: center; flex-direction: column; gap: 4px; }
-    .burger-btn span { display: block; width: 16px; height: 2px; background: var(--text-main); border-radius: 2px; }
-    .mobile-menu { position: fixed; inset: 0; background: rgba(10, 14, 23, 0.96); backdrop-filter: blur(14px); z-index: 150; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 28px; opacity: 0; pointer-events: none; transition: opacity 0.25s; }
-    .mobile-menu.is-open { opacity: 1; pointer-events: auto; }
-    .mobile-menu a { font-family: var(--font-display); font-size: 22px; font-weight: 600; color: #fff; }
-    .mobile-close { position: absolute; top: 24px; right: 24px; width: 44px; height: 44px; border-radius: 50%; background: rgba(255, 255, 255, 0.1); color: #fff; font-size: 24px; display: grid; place-items: center; }
 
     /* HERO */
     .hero { position: relative; min-height: 700px; padding: 112px 0 0; background-color: #2A79D2; background-image: linear-gradient(105deg, rgba(16, 70, 145, 0.42) 0%, rgba(16, 70, 145, 0.08) 55%, rgba(0, 0, 0, 0) 100%), url('https://static.tildacdn.com/tila3763-3634-4265-b763-363935613931/__.jpg'); background-size: cover; background-position: center; overflow: hidden; display: flex; align-items: flex-end; }
@@ -319,8 +314,7 @@
     }
 
     @media (max-width: 768px) {
-      .nav-links, .nav-cta { display: none; }
-      .burger-btn { display: flex; }
+      .header-wrap { display: none; }
       .section { padding: 64px 0; }
       .video-section { margin: 0 10px; padding: 48px 0; border-radius: 24px; }
       .bento-grid, .program-grid, .thanks-steps { grid-template-columns: 1fr; }
@@ -351,21 +345,8 @@
         <li><a href="#reviews">Отзывы</a></li>
       </ul>
       <button type="button" class="nav-cta" data-open-modal="reg">Участие бесплатно</button>
-      <button type="button" class="burger-btn" id="burgerBtn" aria-label="Открыть меню">
-        <span></span><span></span>
-      </button>
     </nav>
   </header>
-
-  <div class="mobile-menu" id="mobileMenu">
-    <button type="button" class="mobile-close" id="mobileClose" aria-label="Закрыть меню">&times;</button>
-    <a href="#results" class="mobile-nav-link">Результаты</a>
-    <a href="#program" class="mobile-nav-link">Программа</a>
-    <a href="#format" class="mobile-nav-link">Формат</a>
-    <a href="#trainer" class="mobile-nav-link">Тренер</a>
-    <a href="#reviews" class="mobile-nav-link">Отзывы</a>
-    <button type="button" class="btn-lime" data-open-modal="reg">Участие бесплатно</button>
-  </div>
 
   <!-- HERO -->
   <section class="hero" id="top">
@@ -878,13 +859,17 @@
         reveals.forEach(el => el.classList.add('is-visible'));
       }
 
-      const burgerBtn = document.getElementById('burgerBtn');
-      const mobileMenu = document.getElementById('mobileMenu');
-      const mobileClose = document.getElementById('mobileClose');
-      const closeMobileMenu = () => mobileMenu.classList.remove('is-open');
-      burgerBtn?.addEventListener('click', () => mobileMenu.classList.add('is-open'));
-      mobileClose?.addEventListener('click', closeMobileMenu);
-      document.querySelectorAll('.mobile-nav-link').forEach(link => link.addEventListener('click', closeMobileMenu));
+      const siteHeader = document.querySelector('.header-wrap');
+      const heroEl = document.getElementById('top');
+      if (siteHeader && heroEl) {
+        const toggleHeader = () => {
+          const passed = heroEl.getBoundingClientRect().bottom <= 80;
+          siteHeader.classList.toggle('is-shown', passed);
+        };
+        toggleHeader();
+        window.addEventListener('scroll', toggleHeader, { passive: true });
+        window.addEventListener('resize', toggleHeader);
+      }
 
       const stageTabs = document.querySelectorAll('.stage-tab');
       const moduleCards = document.querySelectorAll('.module-card');
@@ -925,7 +910,6 @@
 
       function openModal(modal) {
         allModals.forEach(m => m.classList.remove('is-open'));
-        closeMobileMenu();
         modal.classList.add('is-open');
         document.body.classList.add('is-locked');
         if (modal === modalReg) setTimeout(() => modal.querySelector('input[name="name"]')?.focus(), 50);
@@ -938,7 +922,6 @@
 
       function openThanksPage() {
         closeAllModals();
-        closeMobileMenu();
         thanksPage.classList.add('is-open');
         thanksPage.setAttribute('aria-hidden', 'false');
         document.body.classList.add('is-locked');
