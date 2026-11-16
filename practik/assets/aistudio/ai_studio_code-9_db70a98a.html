@@ -1,0 +1,1004 @@
+<!DOCTYPE html>
+<html lang="ru" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Мужчина, которого хотят — Живой практикум в Минске | Александр Кулицкий × Марина Дроздова</title>
+  <meta name="description" content="Живой практический мастер-класс для мужчин 24–45 лет в Минске. Биомеханика мужской силы, высокий тестостерон и прикладная сексология в постель." />
+
+  <!-- Премиальная типографика: Manrope (геометрический гротеск) + Cormorant Garamond (редакционный акцент) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600;1,700&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            alabaster: '#F7F5F0',
+            stonewarm: '#ECE7DC',
+            ink: '#111113',
+            inksoft: '#55545B',
+            flame: '#E63E1C',
+            flamebright: '#FF5E2B',
+          },
+          fontFamily: {
+            sans: ['Manrope', 'system-ui', 'sans-serif'],
+            serif: ['Cormorant Garamond', 'Georgia', 'serif'],
+          },
+          transitionTimingFunction: {
+            expo: 'cubic-bezier(0.16, 1, 0.3, 1)',
+          },
+        },
+      },
+    };
+  </script>
+
+  <style>
+    html, body {
+      background-color: #F7F5F0;
+      color: #111113;
+      font-family: 'Manrope', sans-serif;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Тактильное зерно бумаги поверх светлого фона */
+    .editorial-grain {
+      position: fixed;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 9999;
+      opacity: 0.028;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    }
+
+    /* Сквозные яркие световые переходы на едином светлом полотне */
+    .ambient-orb {
+      position: absolute;
+      border-radius: 9999px;
+      pointer-events: none;
+      filter: blur(110px);
+      z-index: 0;
+    }
+
+    /* Растворение нижней кромки портретов в цвет фона #F7F5F0 */
+    .fade-to-alabaster {
+      -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 66%, rgba(0, 0, 0, 0) 100%);
+      mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 66%, rgba(0, 0, 0, 0) 100%);
+    }
+
+    /* Анимация заголовка при старте */
+    .clip-line {
+      overflow: hidden;
+      display: block;
+    }
+    .clip-line > span {
+      display: inline-block;
+      transform: translateY(108%);
+      animation: revealLine 0.95s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+    .clip-d1 > span { animation-delay: 0.08s; }
+    .clip-d2 > span { animation-delay: 0.18s; }
+    @keyframes revealLine {
+      to { transform: translateY(0); }
+    }
+
+    /* Scroll reveal: scale 0.96 -> 1 + fade-up */
+    .reveal-item {
+      opacity: 0;
+      transform: translateY(28px) scale(0.965);
+      transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .reveal-item.is-visible {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+
+    /* Кнопка с огненным градиентом и мягким заполнением */
+    .btn-magnetic {
+      background: linear-gradient(135deg, #FF5E2B 0%, #E63E1C 100%);
+      box-shadow: 0 16px 36px -10px rgba(230, 62, 28, 0.42);
+      transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.45s cubic-bezier(0.16, 1, 0.3, 1), filter 0.3s ease;
+    }
+    .btn-magnetic:hover {
+      box-shadow: 0 22px 46px -8px rgba(230, 62, 28, 0.62);
+      filter: brightness(1.05);
+    }
+
+    /* Табы программы */
+    .prog-panel { display: none; }
+    .prog-panel.active {
+      display: grid;
+      animation: panelFade 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    @keyframes panelFade {
+      from { opacity: 0; transform: translateY(12px) scale(0.985); }
+      to { opacity: 1; transform: translateY(0) scale(1); }
+    }
+
+    /* Бегущая строка */
+    .marquee-row {
+      display: inline-flex;
+      white-space: nowrap;
+      animation: ticker 30s linear infinite;
+    }
+    .marquee-row:hover { animation-play-state: paused; }
+    @keyframes ticker {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+
+    /* Инпуты без тяжелых рамок */
+    .line-input {
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid rgba(17, 17, 19, 0.22);
+      border-radius: 0;
+      padding: 14px 0;
+      width: 100%;
+      font-size: 16px;
+      font-weight: 500;
+      color: #111113;
+      outline: none;
+      transition: border-color 0.3s ease;
+    }
+    .line-input:focus {
+      border-bottom-color: #E63E1C;
+    }
+  </style>
+</head>
+<body class="selection:bg-flame selection:text-white">
+
+  <div class="editorial-grain" aria-hidden="true"></div>
+
+  <!-- СТЕКЛЯННАЯ ШАПКА НА ЕДИНОМ СВЕТЛОМ ФОНЕ -->
+  <header class="fixed top-0 inset-x-0 z-50 bg-alabaster/80 backdrop-blur-md border-b border-black/10">
+    <div class="max-w-[1920px] mx-auto px-6 md:px-12 lg:px-20 h-[76px] flex items-center justify-between gap-4">
+      <a href="#" class="flex items-center gap-3 text-xs font-extrabold uppercase tracking-[0.14em]">
+        <span class="px-2.5 py-1 rounded-full bg-flame text-white text-[10px] font-extrabold tracking-widest">МЦПиР</span>
+        <span class="hidden sm:inline">Мужская Харизма</span>
+      </a>
+
+      <nav class="hidden lg:flex items-center gap-10 text-[13px] font-semibold uppercase tracking-[0.08em] text-inksoft">
+        <a href="#practice-video" class="hover:text-ink transition-colors duration-300">Видео практики</a>
+        <a href="#upgrades" class="hover:text-ink transition-colors duration-300">Результат</a>
+        <a href="#invite" class="hover:text-ink transition-colors duration-300">Зачем идти</a>
+        <a href="#program" class="hover:text-ink transition-colors duration-300">Программа</a>
+        <a href="#speakers" class="hover:text-ink transition-colors duration-300">Спикеры</a>
+      </nav>
+
+      <div class="flex items-center gap-6">
+        <span class="hidden xl:inline-block text-xs font-semibold uppercase tracking-[0.12em] text-inksoft">
+          Минск <span class="text-flame">&bull;</span> Кульман, 9
+        </span>
+        <a href="tel:+375293203060" class="hidden sm:inline-block text-[13.5px] font-bold hover:text-flame transition-colors">
+          +375 (29) 320-30-60
+        </a>
+        <a href="#register" class="btn-magnetic magnetic-target px-6 py-2.5 rounded-full text-xs font-bold uppercase tracking-[0.08em] text-white">
+          Записаться
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="relative">
+
+    <!-- 1. HERO: СВЕТЛЫЙ ВОЗДУШНЫЙ МАСШТАБ + КРУПНЫЙ ПЛАН ОБОИХ СПИКЕРОВ -->
+    <section class="relative pt-28 pb-12 lg:pt-32 lg:pb-0 overflow-hidden">
+      <!-- Яркие теплые световые акценты (без темных пятен!) -->
+      <div class="ambient-orb w-[620px] h-[620px] bg-flamebright/20 -top-24 right-[2%]"></div>
+      <div class="ambient-orb w-[460px] h-[460px] bg-amber-400/20 top-32 right-[18%]"></div>
+      <div class="ambient-orb w-[420px] h-[420px] bg-flame/10 bottom-0 left-[-100px]"></div>
+
+      <div class="max-w-[1920px] mx-auto px-6 md:px-12 lg:px-20 relative z-10">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-end">
+
+          <!-- ЛЕВАЯ ЧАСТЬ: СМЕЛАЯ ТИПОГРАФИКА И ВОЗДУХ -->
+          <div class="lg:col-span-7 pb-6 lg:pb-24 pt-4 self-center">
+            <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-white/80 backdrop-blur-md border border-black/10 text-[11px] font-bold uppercase tracking-[0.14em] text-ink mb-8">
+              <span class="w-2 h-2 rounded-full bg-flame animate-pulse"></span>
+              Живой практикум в Минске &bull; Мужчины 24–45 лет
+            </div>
+
+            <h1 class="text-[clamp(3.1rem,6.4vw,6.2rem)] font-extrabold uppercase leading-[0.94] tracking-[-0.04em] mb-7">
+              <span class="clip-line"><span>Мужчина,</span></span>
+              <span class="clip-line clip-d1"><span>которого</span></span>
+              <span class="clip-line clip-d2">
+                <span class="font-serif italic lowercase font-semibold text-flame text-[1.14em] tracking-[-0.02em] pr-2">хотят</span>
+              </span>
+            </h1>
+
+            <p class="text-lg sm:text-2xl font-light leading-[1.45] text-ink max-w-[600px] mb-10">
+              <strong class="font-bold">Включаем тело, тазовый кровоток и сексуальную ментальность.</strong>
+              <span class="text-inksoft"> Биомеханика силы и прикладная сексология за один живой вечер.</span>
+            </p>
+
+            <div class="flex flex-wrap items-center gap-4 mb-14">
+              <a href="#register" class="btn-magnetic magnetic-target group inline-flex items-center gap-3 px-8 py-4 rounded-full text-white text-sm font-bold uppercase tracking-[0.06em]">
+                Записаться на практикум
+                <svg class="w-4 h-4 transition-transform duration-500 ease-expo group-hover:translate-x-1 group-hover:-translate-y-0.5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H8M17 7V16"/></svg>
+              </a>
+              <a href="#practice-video" class="group inline-flex items-center gap-3 px-7 py-4 rounded-full bg-white/75 backdrop-blur-md border border-black/10 hover:border-black/35 text-sm font-bold uppercase tracking-[0.06em] transition-all duration-500 ease-expo">
+                <span>Смотреть практику</span>
+                <svg class="w-4 h-4 text-flame transition-transform duration-500 ease-expo group-hover:scale-110" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+              </a>
+            </div>
+
+            <!-- 3 чистые опоры без рамок -->
+            <div class="grid grid-cols-3 gap-6 pt-8 border-t border-black/10 max-w-[540px]">
+              <div>
+                <span class="block font-serif italic text-2xl sm:text-3xl font-semibold text-flame leading-none mb-1.5">01</span>
+                <p class="text-xs sm:text-sm font-bold text-ink">Таз и либидо</p>
+              </div>
+              <div>
+                <span class="block font-serif italic text-2xl sm:text-3xl font-semibold text-flame leading-none mb-1.5">02</span>
+                <p class="text-xs sm:text-sm font-bold text-ink">Женский радар</p>
+              </div>
+              <div>
+                <span class="block font-serif italic text-2xl sm:text-3xl font-semibold text-flame leading-none mb-1.5">03</span>
+                <p class="text-xs sm:text-sm font-bold text-ink">Техники в постель</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- ПРАВАЯ ЧАСТЬ: УВЕЛИЧЕННЫЙ КРУПНЫЙ ПЛАН ДУЭТА СПИКЕРОВ НА ЯРКОМ СВЕТЛОМ СВЕЧЕНИИ -->
+          <div class="lg:col-span-5 relative flex justify-center lg:justify-end">
+            <div class="relative w-full max-w-[560px] h-[440px] sm:h-[550px] lg:h-[680px] flex items-end justify-center overflow-hidden">
+              <!-- Архитектурная арка из теплого камня за спикерами -->
+              <div aria-hidden="true" class="absolute inset-x-4 bottom-0 top-8 rounded-t-[260px] bg-gradient-to-b from-white/75 via-stonewarm/70 to-transparent border-t border-x border-black/10 z-0 flex items-center justify-center overflow-hidden">
+                <span class="font-serif italic font-bold text-[150px] sm:text-[210px] leading-none text-flame/[0.08] select-none -translate-y-12">
+                  2026
+                </span>
+              </div>
+
+              <!-- Увеличенный силуэт: скрыты ноги и низ, лица и плечи максимально близко -->
+              <!-- Если вместо чистого дуэта отобразится оранжевая афиша «Голая правда» — замените ____-2.png на ___.png -->
+              <img
+                src="https://static.tildacdn.com/tild3038-3766-4866-b531-363663333436/____-2.png"
+                alt="Марина Дроздова и Александр Кулицкий — ведущие практикума"
+                class="relative z-10 w-full h-full object-cover object-[50%_3%] fade-to-alabaster select-none drop-shadow-[0_24px_38px_rgba(17,17,19,0.12)]"
+                fetchpriority="high"
+              />
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- КИНЕТИЧЕСКАЯ БЕГУЩАЯ СТРОКА С ХАЙРЛАЙН-ГРАНИЦАМИ -->
+    <div class="border-y border-black/10 py-5 overflow-hidden bg-white/40 backdrop-blur-sm" aria-hidden="true">
+      <div class="marquee-row items-center gap-12">
+        <span class="text-xs font-bold uppercase tracking-[0.16em] text-inksoft">Анатомия мужской силы</span>
+        <span class="font-serif italic text-2xl text-flame font-semibold">Энергия без слов</span>
+        <span class="text-xs font-bold uppercase tracking-[0.16em] text-inksoft">Биомеханика таза</span>
+        <span class="font-serif italic text-2xl text-flame font-semibold">Практики в постель</span>
+        <span class="text-xs font-bold uppercase tracking-[0.16em] text-inksoft">Сексуальное долголетие</span>
+        <span class="font-serif italic text-2xl text-flame font-semibold">Женский радар</span>
+        <span class="text-xs font-bold uppercase tracking-[0.16em] text-inksoft">Анатомия мужской силы</span>
+        <span class="font-serif italic text-2xl text-flame font-semibold">Энергия без слов</span>
+        <span class="text-xs font-bold uppercase tracking-[0.16em] text-inksoft">Биомеханика таза</span>
+        <span class="font-serif italic text-2xl text-flame font-semibold">Практики в постель</span>
+        <span class="text-xs font-bold uppercase tracking-[0.16em] text-inksoft">Сексуальное долголетие</span>
+        <span class="font-serif italic text-2xl text-flame font-semibold">Женский радар</span>
+      </div>
+    </div>
+
+    <!-- 2. ВТОРОЙ ЭКРАН: ПЕРВОЕ ВИДЕО С ПРАКТИКОЙ + СУТЬ И ЦИТАТА -->
+    <section id="practice-video" class="relative py-24 md:py-36 lg:py-44">
+      <div class="ambient-orb w-[480px] h-[480px] bg-flame/10 top-20 left-[-120px]"></div>
+
+      <div class="max-w-[1920px] mx-auto px-6 md:px-12 lg:px-20 relative z-10 reveal-item">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+
+          <!-- Левая часть (5 cols): Первое вертикальное видео с практикой -->
+          <div class="lg:col-span-5 flex justify-center lg:justify-start">
+            <div class="relative w-full max-w-[380px]">
+              <div class="p-2.5 rounded-[28px] bg-white/80 backdrop-blur-md border border-black/10 shadow-[0_30px_70px_-20px_rgba(17,17,19,0.14)]">
+                <div class="aspect-[9/16] rounded-[20px] overflow-hidden bg-stonewarm relative">
+                  <!-- ПЕРВОЕ ВИДЕО С ПРАКТИКОЙ МАРИНЫ -->
+                  <video
+                    controls
+                    autoplay
+                    muted
+                    loop
+                    playsinline
+                    preload="metadata"
+                    class="w-full h-full object-cover"
+                    poster="https://images.unsplash.com/photo-1785781048518-9b2d82c2c41c?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D"
+                  >
+                    <source src="promo-practice.mp4" type="video/mp4" />
+                  </video>
+
+                  <div class="pointer-events-none absolute top-4 left-4 px-3.5 py-1.5 rounded-full bg-white/85 backdrop-blur-md border border-black/10 text-[10.5px] font-bold uppercase tracking-[0.12em] text-ink">
+                    <span class="text-flame mr-1">&bull;</span> Смотри практику в зале
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Правая часть (7 cols): Контраст веса шрифта + цитата Марины -->
+          <div class="lg:col-span-7">
+            <span class="inline-block text-[11px] font-bold uppercase tracking-[0.18em] text-flame mb-5">
+              01 / Почему знания о свиданиях — только половина успеха
+            </span>
+
+            <h2 class="text-[clamp(2.2rem,4.5vw,4.5rem)] font-extrabold uppercase leading-[0.98] tracking-[-0.035em] mb-9">
+              Теорию знают сотни.<br />
+              <span class="font-serif italic lowercase font-semibold text-flame text-[1.12em]">Физику</span> — единицы.
+            </h2>
+
+            <blockquote class="p-7 sm:p-9 rounded-3xl bg-white/75 backdrop-blur-md border border-black/10 border-l-4 border-l-flame mb-8 max-w-[680px]">
+              <p class="font-serif italic text-2xl sm:text-[32px] leading-[1.24] text-ink mb-4">
+                «Невозможно устоять, когда пахнет действительно МУЖЧИНОЙ! Это считывается на уровне энергии и тела. Без слов».
+              </p>
+              <cite class="not-italic text-[11px] font-bold uppercase tracking-[0.16em] text-inksoft">
+                Марина Дроздова &bull; эксперт по биомеханике тела
+              </cite>
+            </blockquote>
+
+            <p class="text-base sm:text-lg font-light text-inksoft leading-relaxed max-w-[600px] mb-8">
+              Тренажерка качает силу в одной плоскости, не включая кровоток малого таза. А сексологи редко ставят реальную телесную биомеханику. <strong class="font-bold text-ink">Мы объединили оба мира,</strong> чтобы ты за один вечер включил физику на максимум — и сразу перенес это в постель.
+            </p>
+
+            <a href="#register" class="btn-magnetic magnetic-target group inline-flex items-center gap-3 px-8 py-4 rounded-full text-white text-sm font-bold uppercase tracking-[0.06em]">
+              Включить тело и энергию
+              <svg class="w-4 h-4 transition-transform duration-500 ease-expo group-hover:translate-x-1" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. АСИММЕТРИЧНАЯ BENTO-СЕТКА: ЧЕГО ТЫ ДОБЬЕШЬСЯ ЗА ВЕЧЕР -->
+    <section id="upgrades" class="relative py-24 md:py-36 lg:py-44 border-t border-black/10">
+      <div class="ambient-orb w-[520px] h-[520px] bg-amber-300/20 top-12 right-[-100px]"></div>
+
+      <div class="max-w-[1920px] mx-auto px-6 md:px-12 lg:px-20 relative z-10 reveal-item">
+
+        <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-14 lg:mb-20">
+          <div>
+            <span class="inline-block text-[11px] font-bold uppercase tracking-[0.18em] text-flame mb-4">
+              02 / Результаты практикума
+            </span>
+            <h2 class="text-[clamp(2.2rem,4.8vw,4.8rem)] font-extrabold uppercase leading-[0.96] tracking-[-0.035em]">
+              Чего ты <span class="font-serif italic lowercase font-semibold text-flame text-[1.14em]">добьешься</span> за вечер
+            </h2>
+          </div>
+          <p class="text-inksoft font-light text-base sm:text-lg max-w-[400px]">
+            Чистая анатомия, кровоток и прикладная сексология — никакой эзотерики и стимуляторов.
+          </p>
+        </div>
+
+        <!-- Асимметричная Bento Grid (5+7, 8+4) -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+
+          <!-- Bento 1 (5 cols): Таз, кровоток и либидо -->
+          <article class="lg:col-span-5 group relative rounded-[28px] overflow-hidden min-h-[440px] sm:min-h-[500px] border border-black/10 bg-stonewarm">
+            <img
+              src="https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Zml0bmVzc3xlbnwwfDF8MHx8fDA%3D"
+              alt="Таз, кровоток и мужская выносливость"
+              class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-expo group-hover:scale-105"
+              loading="lazy"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-ink/90 via-ink/25 to-transparent"></div>
+            <div class="relative z-10 h-full p-8 sm:p-10 flex flex-col justify-between text-white">
+              <span class="w-fit px-3.5 py-1.5 rounded-full bg-white/15 backdrop-blur-md border border-white/20 text-[10.5px] font-bold uppercase tracking-[0.14em]">
+                01 / Анатомия силы
+              </span>
+              <div>
+                <h3 class="text-2xl sm:text-3xl font-extrabold uppercase tracking-tight mb-2.5">
+                  Таз, кровоток и либидо
+                </h3>
+                <p class="text-white/85 text-sm sm:text-[15px] font-light leading-relaxed max-w-[420px]">
+                  Включаем глубокие мышцы таза и поясницы. Высокий тестостерон, каменная эрекция и долгий секс в любом возрасте.
+                </p>
+              </div>
+            </div>
+          </article>
+
+          <!-- Bento 2 (7 cols — ГЛАВНЫЙ ЭМОЦИОНАЛЬНЫЙ АКЦЕНТ): ОТ КОНТРОЛЯ К КАЙФУ с горячей фоткой -->
+          <article class="lg:col-span-7 group relative rounded-[28px] overflow-hidden min-h-[440px] sm:min-h-[500px] border border-flame/40 bg-stonewarm shadow-[0_24px_60px_-20px_rgba(230,62,28,0.22)]">
+            <img
+              src="https://images.unsplash.com/photo-1711581774605-b0b3292aa393?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D"
+              alt="Свобода, желание и кайф без зажимов"
+              class="absolute inset-0 w-full h-full object-cover object-top transition-transform duration-700 ease-expo group-hover:scale-105"
+              loading="lazy"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-ink/90 via-ink/30 to-transparent"></div>
+            <div class="relative z-10 h-full p-8 sm:p-10 flex flex-col justify-between text-white">
+              <span class="w-fit px-4 py-1.5 rounded-full bg-flame text-white text-[10.5px] font-bold uppercase tracking-[0.14em] shadow-lg">
+                02 / Чистое желание
+              </span>
+              <div>
+                <h3 class="text-3xl sm:text-4xl font-extrabold uppercase tracking-tight mb-3">
+                  От контроля к <span class="font-serif italic lowercase font-semibold text-flamebright text-[1.15em]">кайфу</span>
+                </h3>
+                <p class="text-white/90 text-sm sm:text-base font-light leading-relaxed max-w-[520px]">
+                  Снимаем телесные зажимы и лишние тормоза в голове. Чувствительность взлетает на максимум, а девушка считывает от тебя животное притяжение без лишних слов.
+                </p>
+              </div>
+            </div>
+          </article>
+
+          <!-- Bento 3 (8 cols): ДВИГАТЕЛЬНАЯ МАТРИЦА (ВОЗВРАЩЕНА ТА САМАЯ ФОТКА!) -->
+          <article class="lg:col-span-8 group relative rounded-[28px] overflow-hidden min-h-[380px] sm:min-h-[420px] border border-black/10 bg-stonewarm">
+            <img
+              src="https://images.unsplash.com/photo-1680543254008-7033f4612451?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D"
+              alt="Двигательная матрица и групповая практика мобильности"
+              class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-expo group-hover:scale-105"
+              loading="lazy"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-ink/90 via-ink/25 to-transparent"></div>
+            <div class="relative z-10 h-full p-8 sm:p-10 flex flex-col justify-between text-white">
+              <span class="w-fit px-3.5 py-1.5 rounded-full bg-white/15 backdrop-blur-md border border-white/20 text-[10.5px] font-bold uppercase tracking-[0.14em]">
+                03 / Фундамент тела
+              </span>
+              <div>
+                <h3 class="text-2xl sm:text-3xl font-extrabold uppercase tracking-tight mb-2.5">
+                  Двигательная матрица
+                </h3>
+                <p class="text-white/85 text-sm sm:text-[15px] font-light leading-relaxed max-w-[560px]">
+                  Многоплоскостная мобильность и суставная гимнастика: защищает спину в тренажерке, убирает скованность и дает свободу движений в любой позе.
+                </p>
+              </div>
+            </div>
+          </article>
+
+          <!-- Bento 4 (4 cols): Яркая информационная Bento-плитка формата -->
+          <div class="lg:col-span-4 rounded-[28px] bg-white/85 backdrop-blur-md border border-black/10 p-8 sm:p-10 flex flex-col justify-between">
+            <div>
+              <span class="inline-block text-[11px] font-bold uppercase tracking-[0.16em] text-flame mb-4">
+                Формат «без глянца»
+              </span>
+              <h3 class="text-2xl sm:text-3xl font-extrabold uppercase tracking-tight leading-tight mb-4">
+                3+ часа практики и четкий чек-лист
+              </h3>
+              <p class="text-sm sm:text-[15px] font-light text-inksoft leading-relaxed">
+                Придется попотеть в зале — зато вы сразу почувствуете разницу в теле и заберете готовую систему действий для дома и постели.
+              </p>
+            </div>
+            <div class="pt-8 mt-8 border-t border-black/10">
+              <a href="#register" class="group inline-flex items-center justify-between w-full text-sm font-bold uppercase tracking-[0.08em] text-ink hover:text-flame transition-colors">
+                <span>Занять место в зале</span>
+                <span class="w-10 h-10 rounded-full bg-flame text-white flex items-center justify-center transition-transform duration-500 ease-expo group-hover:translate-x-1">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 6l6 6-6 6"/></svg>
+                </span>
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. ОДНО ВИДЕО ПРИГЛАШЕНИЕ + 6 ЛУЧШИХ БУЛЛЕТОВ РЯДОМ -->
+    <section id="invite" class="relative py-24 md:py-36 lg:py-44 border-t border-black/10">
+      <div class="ambient-orb w-[500px] h-[500px] bg-flamebright/12 top-24 right-[-120px]"></div>
+
+      <div class="max-w-[1920px] mx-auto px-6 md:px-12 lg:px-20 relative z-10 reveal-item">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+
+          <!-- Левая часть (5 cols): ВЕРТИКАЛЬНОЕ ВИДЕО ПРИГЛАШЕНИЕ -->
+          <div class="lg:col-span-5 flex justify-center lg:justify-start">
+            <div class="relative w-full max-w-[380px]">
+              <div class="p-2.5 rounded-[28px] bg-white/80 backdrop-blur-md border border-black/10 shadow-[0_30px_70px_-20px_rgba(17,17,19,0.14)]">
+                <div class="aspect-[9/16] rounded-[20px] overflow-hidden bg-stonewarm relative">
+                  <!-- ВИДЕО-ПРИГЛАШЕНИЕ ОТ АЛЕКСАНДРА И МАРИНЫ -->
+                  <video
+                    controls
+                    playsinline
+                    preload="metadata"
+                    class="w-full h-full object-cover"
+                    poster="https://images.unsplash.com/photo-1657994103879-6b8cd88e3897?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D"
+                  >
+                    <source src="invite-video.mp4" type="video/mp4" />
+                  </video>
+                </div>
+                <div class="px-3 pt-3.5 pb-1.5 flex items-center justify-between text-xs">
+                  <span class="font-bold text-ink">Личное приглашение</span>
+                  <span class="font-bold uppercase tracking-wider text-flame">Александр &times; Марина</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Правая часть (7 cols): 6 ЛУЧШИХ БУЛЛЕТОВ ПОЧЕМУ СТОИТ ПРОЙТИ -->
+          <div class="lg:col-span-7">
+            <span class="inline-block text-[11px] font-bold uppercase tracking-[0.18em] text-flame mb-4">
+              03 / Зачем быть в зале
+            </span>
+            <h2 class="text-[clamp(2.2rem,4.5vw,4.4rem)] font-extrabold uppercase leading-[0.98] tracking-[-0.035em] mb-10">
+              6 причин <span class="font-serif italic lowercase font-semibold text-flame text-[1.12em]">пройти</span> практикум
+            </h2>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
+              <div class="p-6 rounded-2xl bg-white/75 backdrop-blur-md border border-black/10 hover:border-flame/50 transition-all duration-500 ease-expo">
+                <span class="font-serif italic text-2xl font-bold text-flame block mb-2">01</span>
+                <h3 class="font-bold text-base mb-1.5">Мощный прилив мужского топлива</h3>
+                <p class="text-sm font-light text-inksoft leading-relaxed">Разгонишь кровоток в малом тазу и забудешь про спад энергии в постели.</p>
+              </div>
+
+              <div class="p-6 rounded-2xl bg-white/75 backdrop-blur-md border border-black/10 hover:border-flame/50 transition-all duration-500 ease-expo">
+                <span class="font-serif italic text-2xl font-bold text-flame block mb-2">02</span>
+                <h3 class="font-bold text-base mb-1.5">Практики прямо в спальню</h3>
+                <p class="text-sm font-light text-inksoft leading-relaxed">Сексолог даст приемы и сценарии близости, которые работают с первой ночи.</p>
+              </div>
+
+              <div class="p-6 rounded-2xl bg-white/75 backdrop-blur-md border border-black/10 hover:border-flame/50 transition-all duration-500 ease-expo">
+                <span class="font-serif italic text-2xl font-bold text-flame block mb-2">03</span>
+                <h3 class="font-bold text-base mb-1.5">Сексуальная ментальность</h3>
+                <p class="text-sm font-light text-inksoft leading-relaxed">Уберешь лишний контроль и переключишься в режим чистого удовольствия.</p>
+              </div>
+
+              <div class="p-6 rounded-2xl bg-white/75 backdrop-blur-md border border-black/10 hover:border-flame/50 transition-all duration-500 ease-expo">
+                <span class="font-serif italic text-2xl font-bold text-flame block mb-2">04</span>
+                <h3 class="font-bold text-base mb-1.5">Откровенный женский радар</h3>
+                <p class="text-sm font-light text-inksoft leading-relaxed">Марина подсветит слепые зоны тела, на которые женщины реагируют мгновенно.</p>
+              </div>
+
+              <div class="p-6 rounded-2xl bg-white/75 backdrop-blur-md border border-black/10 hover:border-flame/50 transition-all duration-500 ease-expo">
+                <span class="font-serif italic text-2xl font-bold text-flame block mb-2">05</span>
+                <h3 class="font-bold text-base mb-1.5">База под зал и спину</h3>
+                <p class="text-sm font-light text-inksoft leading-relaxed">Освоишь суставную матрицу: защитишь поясницу от травм и уберешь зажимы.</p>
+              </div>
+
+              <div class="p-6 rounded-2xl bg-white/75 backdrop-blur-md border border-black/10 hover:border-flame/50 transition-all duration-500 ease-expo">
+                <span class="font-serif italic text-2xl font-bold text-flame block mb-2">06</span>
+                <h3 class="font-bold text-base mb-1.5">Готовый чек-лист с собой</h3>
+                <p class="text-sm font-light text-inksoft leading-relaxed">Уйдешь с 15-минутным протоколом для тела и шпаргалкой техник для постели.</p>
+              </div>
+            </div>
+
+            <a href="#register" class="btn-magnetic magnetic-target group inline-flex items-center gap-3 px-8 py-4 rounded-full text-white text-sm font-bold uppercase tracking-[0.06em]">
+              Забрать место сейчас
+              <svg class="w-4 h-4 transition-transform duration-500 ease-expo group-hover:translate-x-1" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. ПРОГРАММА ПРАКТИКУМА -->
+    <section id="program" class="relative py-24 md:py-36 lg:py-44 border-t border-black/10">
+      <div class="max-w-[1920px] mx-auto px-6 md:px-12 lg:px-20 relative z-10 reveal-item">
+
+        <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-14">
+          <div>
+            <span class="inline-block text-[11px] font-bold uppercase tracking-[0.18em] text-flame mb-4">
+              04 / Как пройдет вечер
+            </span>
+            <h2 class="text-[clamp(2.2rem,4.8vw,4.8rem)] font-extrabold uppercase leading-[0.96] tracking-[-0.035em]">
+              Программа <span class="font-serif italic lowercase font-semibold text-flame text-[1.14em]">практикума</span>
+            </h2>
+          </div>
+
+          <div class="flex flex-wrap gap-2.5" role="tablist">
+            <button class="prog-tab px-6 py-3 rounded-full text-xs sm:text-sm font-bold uppercase tracking-[0.06em] bg-ink text-white transition-all duration-300" data-tab="body" type="button">
+              01 &bull; Тело и биомеханика
+            </button>
+            <button class="prog-tab px-6 py-3 rounded-full text-xs sm:text-sm font-bold uppercase tracking-[0.06em] bg-white/70 border border-black/10 text-inksoft hover:text-ink transition-all duration-300" data-tab="sexology" type="button">
+              02 &bull; Сексология и постель
+            </button>
+            <button class="prog-tab px-6 py-3 rounded-full text-xs sm:text-sm font-bold uppercase tracking-[0.06em] bg-white/70 border border-black/10 text-inksoft hover:text-ink transition-all duration-300" data-tab="checklist" type="button">
+              03 &bull; Чек-лист и разбор
+            </button>
+          </div>
+        </div>
+
+        <!-- Панель 1 -->
+        <div class="prog-panel active grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center p-7 sm:p-12 rounded-[32px] bg-white/80 backdrop-blur-md border border-black/10" id="panel-body">
+          <div class="lg:col-span-5">
+            <div class="rounded-[22px] overflow-hidden aspect-[4/3] bg-stonewarm">
+              <img
+                src="https://images.unsplash.com/photo-1785781048518-9b2d82c2c41c?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D"
+                alt="Биомеханика таза и сила"
+                class="w-full h-full object-cover"
+                loading="lazy"
+              />
+            </div>
+          </div>
+          <div class="lg:col-span-7 space-y-6">
+            <span class="inline-block text-[11px] font-bold uppercase tracking-[0.16em] text-flame">Часть 1 &bull; с Мариной Дроздовой</span>
+            <h3 class="text-2xl sm:text-4xl font-extrabold uppercase tracking-tight">Анатомия мужской сексуальности и силы</h3>
+            <div class="divide-y divide-black/10">
+              <div class="py-4">
+                <h4 class="font-bold text-base sm:text-lg mb-1">Перезапуск малого таза</h4>
+                <p class="text-sm sm:text-[15px] font-light text-inksoft">Живая тренировка (придется попотеть!), разгоняющая кровоток в глубоких мышцах и пояснице.</p>
+              </div>
+              <div class="py-4">
+                <h4 class="font-bold text-base sm:text-lg mb-1">Двигательная матрица</h4>
+                <p class="text-sm sm:text-[15px] font-light text-inksoft">Суставная база и многоплоскостные движения под любой спорт и секс без травм.</p>
+              </div>
+              <div class="py-4">
+                <h4 class="font-bold text-base sm:text-lg mb-1">Женский радар</h4>
+                <p class="text-sm sm:text-[15px] font-light text-inksoft">Какие микросигналы тела включают влечение у женщин без слов.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Панель 2 -->
+        <div class="prog-panel grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center p-7 sm:p-12 rounded-[32px] bg-white/80 backdrop-blur-md border border-black/10" id="panel-sexology">
+          <div class="lg:col-span-5">
+            <div class="rounded-[22px] overflow-hidden aspect-[4/3] bg-stonewarm">
+              <img
+                src="https://images.unsplash.com/photo-1788882337146-5a89dd39196a?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D"
+                alt="Притяжение и мастерство в спальне"
+                class="w-full h-full object-cover object-top"
+                loading="lazy"
+              />
+            </div>
+          </div>
+          <div class="lg:col-span-7 space-y-6">
+            <span class="inline-block text-[11px] font-bold uppercase tracking-[0.16em] text-flame">Часть 2 &bull; с Александром Кулицким</span>
+            <h3 class="text-2xl sm:text-4xl font-extrabold uppercase tracking-tight">Сексология, ментальность и практики в постель</h3>
+            <div class="divide-y divide-black/10">
+              <div class="py-4">
+                <h4 class="font-bold text-base sm:text-lg mb-1">Сексуальное раскрепощение</h4>
+                <p class="text-sm sm:text-[15px] font-light text-inksoft">Как выключать лишний контроль и оставаться в уверенной мужской позиции.</p>
+              </div>
+              <div class="py-4">
+                <h4 class="font-bold text-base sm:text-lg mb-1">Ментальность сексуальности</h4>
+                <p class="text-sm sm:text-[15px] font-light text-inksoft">Как поддерживать высокий градус желания независимо от усталости и рутины.</p>
+              </div>
+              <div class="py-4">
+                <h4 class="font-bold text-base sm:text-lg mb-1">Внедрение в близость</h4>
+                <p class="text-sm sm:text-[15px] font-light text-inksoft">Пошаговые приемы, которые вы примените с девушкой прямо в постели.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Панель 3 -->
+        <div class="prog-panel grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center p-7 sm:p-12 rounded-[32px] bg-white/80 backdrop-blur-md border border-black/10" id="panel-checklist">
+          <div class="lg:col-span-5">
+            <div class="rounded-[22px] overflow-hidden aspect-[4/3] bg-stonewarm">
+              <img
+                src="https://images.unsplash.com/photo-1787647089799-e0c0a582e947?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D"
+                alt="Готовый чек-лист и разбор"
+                class="w-full h-full object-cover"
+                loading="lazy"
+              />
+            </div>
+          </div>
+          <div class="lg:col-span-7 space-y-6">
+            <span class="inline-block text-[11px] font-bold uppercase tracking-[0.16em] text-flame">Финал &bull; Твой арсенал</span>
+            <h3 class="text-2xl sm:text-4xl font-extrabold uppercase tracking-tight">Четкий чек-лист и ответы на вопросы</h3>
+            <div class="divide-y divide-black/10">
+              <div class="py-4">
+                <h4 class="font-bold text-base sm:text-lg mb-1">15-минутный протокол тела</h4>
+                <p class="text-sm sm:text-[15px] font-light text-inksoft">Конкретная связка движений для поддержания высокого либидо, осанки и силы.</p>
+              </div>
+              <div class="py-4">
+                <h4 class="font-bold text-base sm:text-lg mb-1">Шпаргалка для спальни</h4>
+                <p class="text-sm sm:text-[15px] font-light text-inksoft">Что делать до и во время секса, чтобы это было по-настоящему вкусно.</p>
+              </div>
+              <div class="py-4">
+                <h4 class="font-bold text-base sm:text-lg mb-1">Откровенный Q&amp;A</h4>
+                <p class="text-sm sm:text-[15px] font-light text-inksoft">Живой разбор любых мужских вопросов сразу от сексолога и женщины-эксперта.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 6. ВЕДУЩИЕ (КРУПНЫЙ ПЛАН НА СВЕТЛЫХ ЖУРНАЛЬНЫХ ПЬЕДЕСТАЛАХ) -->
+    <section id="speakers" class="relative py-24 md:py-36 lg:py-44 border-t border-black/10">
+      <div class="ambient-orb w-[500px] h-[500px] bg-flame/10 top-20 left-1/2 -translate-x-1/2"></div>
+
+      <div class="max-w-[1920px] mx-auto px-6 md:px-12 lg:px-20 relative z-10 reveal-item">
+        <div class="mb-14 lg:mb-20">
+          <span class="inline-block text-[11px] font-bold uppercase tracking-[0.18em] text-flame mb-4">
+            05 / Ведущие практикума
+          </span>
+          <h2 class="text-[clamp(2.2rem,4.8vw,4.8rem)] font-extrabold uppercase leading-[0.96] tracking-[-0.035em]">
+            Два практика. <span class="font-serif italic lowercase font-semibold text-flame text-[1.14em]">Без воды.</span>
+          </h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-16">
+
+          <!-- АЛЕКСАНДР КУЛИЦКИЙ -->
+          <article class="group rounded-[32px] bg-white/80 backdrop-blur-md border border-black/10 overflow-hidden">
+            <div class="relative h-[420px] sm:h-[460px] bg-gradient-to-b from-stonewarm/70 to-alabaster/30 overflow-hidden">
+              <span aria-hidden="true" class="font-serif italic font-bold text-[200px] leading-none text-ink/[0.045] select-none absolute top-4 left-6 z-0">АК</span>
+              <div aria-hidden="true" class="absolute top-12 left-1/2 -translate-x-1/2 w-64 h-64 rounded-full bg-flamebright/20 blur-3xl z-0"></div>
+              <img
+                src="https://static.tildacdn.com/tild3963-3030-4135-a163-313662313661/20230427_Aleksandr_2.png"
+                alt="Александр Кулицкий — психолог-сексолог"
+                class="relative z-10 w-full h-full object-cover object-[50%_7%] scale-[1.12] origin-top fade-to-alabaster transition-transform duration-700 ease-expo group-hover:scale-[1.15]"
+                loading="lazy"
+              />
+            </div>
+
+            <div class="p-8 sm:p-10 pt-4">
+              <span class="inline-block px-3.5 py-1 rounded-full bg-flame/10 text-flame text-[10.5px] font-bold uppercase tracking-[0.14em] mb-3">
+                Сексология &amp; Ментальность
+              </span>
+              <h3 class="text-2xl sm:text-3xl font-extrabold uppercase tracking-tight mb-2">Александр Кулицкий</h3>
+              <p class="text-sm font-semibold text-ink mb-6">
+                Дипломированный психолог, сертифицированный психолог-сексолог, гипнотерапевт и коуч ICU
+              </p>
+              <ul class="space-y-3 text-sm font-light text-inksoft">
+                <li class="flex gap-3"><svg class="w-4 h-4 text-flame shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg> Стаж психологической практики 15+ лет (с 2011 года).</li>
+                <li class="flex gap-3"><svg class="w-4 h-4 text-flame shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg> Более 4 000 часов терапии и 2 000+ часов коуч-сессий.</li>
+                <li class="flex gap-3"><svg class="w-4 h-4 text-flame shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg> Тренер проектов РМЭС и МЦПиР, провел 500+ живых мероприятий.</li>
+                <li class="flex gap-3"><svg class="w-4 h-4 text-flame shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg> Магистр технических наук и приглашенный эксперт СТВ, СБ ТВ и Onlíner.</li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- МАРИНА ДРОЗДОВА -->
+          <article class="group rounded-[32px] bg-white/80 backdrop-blur-md border border-black/10 overflow-hidden">
+            <div class="relative h-[420px] sm:h-[460px] bg-gradient-to-b from-stonewarm/70 to-alabaster/30 overflow-hidden">
+              <span aria-hidden="true" class="font-serif italic font-bold text-[200px] leading-none text-flame/[0.06] select-none absolute top-4 right-6 z-0">МД</span>
+              <div aria-hidden="true" class="absolute top-12 left-1/2 -translate-x-1/2 w-64 h-64 rounded-full bg-amber-300/25 blur-3xl z-0"></div>
+              <img
+                src="https://static.tildacdn.com/tild3230-6565-4033-a131-613564623239/photo.png"
+                alt="Марина Дроздова — эксперт по биомеханике тела"
+                class="relative z-10 w-full h-full object-cover object-[50%_5%] scale-[1.14] origin-top fade-to-alabaster transition-transform duration-700 ease-expo group-hover:scale-[1.17]"
+                loading="lazy"
+              />
+            </div>
+
+            <div class="p-8 sm:p-10 pt-4">
+              <span class="inline-block px-3.5 py-1 rounded-full bg-flame/10 text-flame text-[10.5px] font-bold uppercase tracking-[0.14em] mb-3">
+                Биомеханика &amp; Энергия тела
+              </span>
+              <h3 class="text-2xl sm:text-3xl font-extrabold uppercase tracking-tight mb-2">Марина Дроздова</h3>
+              <p class="text-sm font-semibold text-ink mb-6">
+                Эксперт по биомеханике тела, йогатерапевт и коррекционный тренер (опыт более 10 лет)
+              </p>
+              <ul class="space-y-3 text-sm font-light text-inksoft">
+                <li class="flex gap-3"><svg class="w-4 h-4 text-flame shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg> Выпускница БГУФК, официальный тренер Nike по йоге.</li>
+                <li class="flex gap-3"><svg class="w-4 h-4 text-flame shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg> Восстановила себя после операции на легких и проблем с позвоночником — знает предел тела изнутри.</li>
+                <li class="flex gap-3"><svg class="w-4 h-4 text-flame shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg> Изучила мужскую психологию в мирах от спорта и бизнеса до тантры и сексологии.</li>
+                <li class="flex gap-3"><svg class="w-4 h-4 text-flame shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg> Подсветит скрытые телесные нюансы, на которые мгновенно реагирует женщина.</li>
+              </ul>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. FAQ -->
+    <section id="faq" class="relative py-24 md:py-32 border-t border-black/10">
+      <div class="max-w-[1920px] mx-auto px-6 md:px-12 lg:px-20 grid grid-cols-1 lg:grid-cols-12 gap-12 relative z-10 reveal-item">
+        <div class="lg:col-span-5">
+          <span class="inline-block text-[11px] font-bold uppercase tracking-[0.18em] text-flame mb-4">06 / Вопросы до старта</span>
+          <h2 class="text-[clamp(2rem,4vw,3.6rem)] font-extrabold uppercase leading-[0.98] tracking-[-0.03em]">
+            Честные <span class="font-serif italic lowercase font-semibold text-flame text-[1.12em]">ответы</span>
+          </h2>
+        </div>
+
+        <div class="lg:col-span-7 border-t border-black/20 divide-y divide-black/10">
+          <div class="faq-item">
+            <button class="faq-btn w-full py-6 flex items-center justify-between gap-6 text-left text-base sm:text-lg font-bold" type="button">
+              <span>Я регулярно хожу в зал — что нового даст эта практика?</span>
+              <span class="faq-icon text-2xl font-light text-flame transition-transform duration-300">+</span>
+            </button>
+            <div class="faq-content hidden pb-6 text-[15px] font-light text-inksoft leading-relaxed max-w-[620px]">
+              Качалка развивает силу в одной плоскости, но почти не включает глубокие мышцы малого таза и мобильность суставов. Марина даст базовую двигательную матрицу, которая защитит спину в спорте и сделает тело пластичным в постели.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-btn w-full py-6 flex items-center justify-between gap-6 text-left text-base sm:text-lg font-bold" type="button">
+              <span>Мне 24–30 лет и с энергией всё отлично — стоит ли идти сейчас?</span>
+              <span class="faq-icon text-2xl font-light text-flame transition-transform duration-300">+</span>
+            </button>
+            <div class="faq-content hidden pb-6 text-[15px] font-light text-inksoft leading-relaxed max-w-[620px]">
+              Да. В этом возрасте ты переводишь природный запас в управляемое мастерство — получаешь контроль возбуждения, гибкость и конкретные приемы сексолога, которые сразу выделяют среди ровесников.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-btn w-full py-6 flex items-center justify-between gap-6 text-left text-base sm:text-lg font-bold" type="button">
+              <span>Будет ли здесь эзотерика и в чем приходить?</span>
+              <span class="faq-icon text-2xl font-light text-flame transition-transform duration-300">+</span>
+            </button>
+            <div class="faq-content hidden pb-6 text-[15px] font-light text-inksoft leading-relaxed max-w-[620px]">
+              Никакой эзотерики — только биомеханика, кровоток и прикладная сексология. Приходите в удобной спортивной или свободной одежде, в которой комфортно двигаться и немного попотеть.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. ФИНАЛЬНАЯ ДОБИВКА («ТОЛЬКО ОДИН РАЗ») + ФОРМА ЗАПИСИ -->
+    <section id="register" class="relative py-24 md:py-36 border-t border-black/10 overflow-hidden">
+      <div class="ambient-orb w-[560px] h-[560px] bg-flame/15 bottom-0 left-1/2 -translate-x-1/2"></div>
+
+      <div class="max-w-[1920px] mx-auto px-6 md:px-12 lg:px-20 relative z-10 reveal-item">
+        <div class="rounded-[36px] bg-white/85 backdrop-blur-xl border border-black/10 p-8 sm:p-12 lg:p-16 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center shadow-[0_32px_80px_-24px_rgba(17,17,19,0.12)]">
+
+          <!-- Левая часть: Добивка дефицитом и уникальностью -->
+          <div class="lg:col-span-6">
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-flame text-white text-[10.5px] font-bold uppercase tracking-[0.14em] mb-6">
+              Уникальный запуск &bull; Повтора не будет
+            </div>
+            <h2 class="text-[clamp(2.2rem,4.4vw,4.2rem)] font-extrabold uppercase leading-[0.98] tracking-[-0.035em] mb-6">
+              Проводим <span class="font-serif italic lowercase font-semibold text-flame text-[1.15em]">только один раз</span>
+            </h2>
+            <p class="text-base sm:text-lg font-light text-inksoft leading-relaxed max-w-[520px] mb-10">
+              Это разовая живая коллаборация Александра Кулицкого и Марины Дроздовой в Минске. Записи и повторного потока не будет — забирай место в зале, пока открыта регистрация.
+            </p>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-8 border-t border-black/10 max-w-[500px]">
+              <div>
+                <span class="block text-[11px] font-bold uppercase tracking-[0.14em] text-inksoft mb-1">Площадка</span>
+                <strong class="text-lg font-bold">г. Минск, ул. Кульман, 9</strong>
+              </div>
+              <div>
+                <span class="block text-[11px] font-bold uppercase tracking-[0.14em] text-inksoft mb-1">Дата и стоимость</span>
+                <strong class="text-lg font-bold text-flame">[Укажите дату и цену]</strong>
+              </div>
+            </div>
+          </div>
+
+          <!-- Правая часть: Минималистичная светлая форма -->
+          <div class="lg:col-span-6">
+            <form id="regForm" class="space-y-6">
+              <h3 class="text-xl sm:text-2xl font-extrabold uppercase tracking-tight">Забронировать место</h3>
+
+              <div>
+                <label for="name" class="block text-[10.5px] font-bold uppercase tracking-[0.14em] text-inksoft mb-1">Твоё имя</label>
+                <input id="name" type="text" name="name" placeholder="Дмитрий" required class="line-input" />
+              </div>
+
+              <div>
+                <label for="phone" class="block text-[10.5px] font-bold uppercase tracking-[0.14em] text-inksoft mb-1">Телефон</label>
+                <input id="phone" type="tel" name="phone" placeholder="+375 (29) 000-00-00" required class="line-input" />
+              </div>
+
+              <div>
+                <label for="tg" class="block text-[10.5px] font-bold uppercase tracking-[0.14em] text-inksoft mb-1">Telegram (по желанию)</label>
+                <input id="tg" type="text" name="telegram" placeholder="@username" class="line-input" />
+              </div>
+
+              <div class="pt-3 flex flex-col sm:flex-row gap-3.5" id="formBtns">
+                <button type="submit" class="btn-magnetic magnetic-target flex-1 py-4 px-6 rounded-full text-sm font-bold uppercase tracking-[0.06em] text-white">
+                  Записаться на практикум &rarr;
+                </button>
+                <a href="https://t.me/rmes_feedback_bot" target="_blank" rel="noopener" class="py-4 px-6 rounded-full border border-black/15 hover:border-black/45 text-center text-xs font-bold uppercase tracking-[0.06em] text-ink transition-all flex items-center justify-center">
+                  Написать в Telegram
+                </a>
+              </div>
+
+              <div id="formDone" class="hidden p-5 rounded-2xl bg-alabaster border border-black/15 text-ink text-sm text-center">
+                <strong>Заявка принята!</strong> Организатор свяжется с вами в ближайшее время и закрепит место.
+              </div>
+
+              <p class="text-[11px] text-inksoft/80 text-center">
+                Нажимая кнопку, вы соглашаетесь на обработку персональных данных. Полная конфиденциальность.
+              </p>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ПОДВАЛ НА ТОМ ЖЕ ЕДИНОМ СВЕТЛОМ ПОЛОТНЕ -->
+  <footer class="relative pt-16 pb-10 border-t border-black/10 overflow-hidden">
+    <div class="max-w-[1920px] mx-auto px-6 md:px-12 lg:px-20 relative z-10">
+      <div class="flex flex-wrap justify-between items-start gap-10 mb-14">
+        <div>
+          <div class="flex items-center gap-3 font-extrabold text-xs tracking-[0.14em] uppercase mb-3">
+            <span class="px-2.5 py-1 rounded-full bg-flame text-white text-[10px] font-extrabold tracking-widest">МЦПиР</span>
+            <span>Мужской центр психологии и развития</span>
+          </div>
+          <p class="text-sm font-light text-inksoft">г. Минск, ул. Кульман, 9</p>
+        </div>
+
+        <div class="flex flex-wrap gap-8 text-xs font-semibold uppercase tracking-[0.08em] text-inksoft">
+          <a href="#practice-video" class="hover:text-ink transition-colors">Видео практики</a>
+          <a href="#upgrades" class="hover:text-ink transition-colors">Результат</a>
+          <a href="#program" class="hover:text-ink transition-colors">Программа</a>
+          <a href="#speakers" class="hover:text-ink transition-colors">Спикеры</a>
+          <a href="#faq" class="hover:text-ink transition-colors">Вопросы</a>
+        </div>
+
+        <div class="text-left sm:text-right">
+          <a href="tel:+375293203060" class="block text-base font-bold text-ink hover:text-flame transition-colors mb-2">
+            +375 (29) 320-30-60
+          </a>
+          <a href="https://t.me/rmes_feedback_bot" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-flame hover:underline">
+            Telegram &rarr; @rmes_feedback_bot
+          </a>
+        </div>
+      </div>
+
+      <div aria-hidden="true" class="font-extrabold uppercase text-[9.5vw] leading-[0.84] tracking-[-0.04em] text-ink/[0.045] select-none text-center whitespace-nowrap">
+        МУЖЧИНА КОТОРОГО ХОТЯТ
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Плавный Scroll Reveal (fade-up + scale 0.96 -> 1)
+    const revealObs = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          revealObs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.reveal-item').forEach(el => revealObs.observe(el));
+
+    // Легкий магнитный эффект на кнопках для десктопа
+    if (window.matchMedia('(pointer: fine)').matches) {
+      document.querySelectorAll('.magnetic-target').forEach(btn => {
+        btn.addEventListener('mousemove', (e) => {
+          const rect = btn.getBoundingClientRect();
+          const x = (e.clientX - rect.left - rect.width / 2) * 0.16;
+          const y = (e.clientY - rect.top - rect.height / 2) * 0.22;
+          btn.style.transform = `translate3d(${x}px, ${y}px, 0)`;
+        });
+        btn.addEventListener('mouseleave', () => {
+          btn.style.transform = 'translate3d(0, 0, 0)';
+        });
+      });
+    }
+
+    // Табы программы
+    const tabs = document.querySelectorAll('.prog-tab');
+    const panels = document.querySelectorAll('.prog-panel');
+    tabs.forEach(btn => {
+      btn.addEventListener('click', () => {
+        tabs.forEach(b => {
+          b.classList.remove('bg-ink', 'text-white');
+          b.classList.add('bg-white/70', 'border', 'border-black/10', 'text-inksoft');
+        });
+        panels.forEach(p => p.classList.remove('active'));
+
+        btn.classList.add('bg-ink', 'text-white');
+        btn.classList.remove('bg-white/70', 'border', 'border-black/10', 'text-inksoft');
+        document.getElementById('panel-' + btn.dataset.tab).classList.add('active');
+      });
+    });
+
+    // Аккордеон FAQ
+    document.querySelectorAll('.faq-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.faq-item');
+        const content = item.querySelector('.faq-content');
+        const icon = item.querySelector('.faq-icon');
+        const isClosed = content.classList.contains('hidden');
+
+        document.querySelectorAll('.faq-content').forEach(el => el.classList.add('hidden'));
+        document.querySelectorAll('.faq-icon').forEach(ic => ic.style.transform = 'rotate(0deg)');
+
+        if (isClosed) {
+          content.classList.remove('hidden');
+          icon.style.transform = 'rotate(45deg)';
+        }
+      });
+    });
+
+    // Отправка формы
+    document.getElementById('regForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      document.getElementById('formBtns').classList.add('hidden');
+      document.getElementById('formDone').classList.remove('hidden');
+    });
+  </script>
+
+</body>
+</html>
