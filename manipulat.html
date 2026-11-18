@@ -241,6 +241,32 @@ footer{padding:72px 0 40px;border-top:1px solid var(--line)}
 .policy p{font-size:15px;color:#cfcfd5;margin-bottom:8px}
 
 /* ===== tablet ===== */
+/* ===== video ===== */
+.video{background:var(--bg);overflow:hidden}
+.vid-grid{display:grid;grid-template-columns:minmax(0,420px) minmax(0,1fr);gap:clamp(40px,7vw,110px);align-items:center;justify-content:center}
+.vid-frame{position:relative;width:100%;max-width:420px;aspect-ratio:9/16;border-radius:26px;overflow:hidden;border:1px solid rgba(229,52,46,.45);background:radial-gradient(120% 80% at 50% 0%,rgba(229,52,46,.35),#0e0e11 70%);box-shadow:0 40px 90px -30px rgba(229,52,46,.45),0 0 0 8px rgba(255,255,255,.03)}
+.vid-wrap{position:relative}
+.vid-wrap:before{content:"";position:absolute;inset:-14% -22%;background:radial-gradient(closest-side,rgba(229,52,46,.22),transparent);pointer-events:none}
+.vid-btn{position:absolute;inset:0;width:100%;height:100%;display:block;cursor:pointer}
+.vid-btn img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.vid-btn:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,10,11,.1),rgba(10,10,11,.55))}
+.vid-play{position:absolute;z-index:2;left:50%;top:50%;width:84px;height:84px;margin:-42px 0 0 -42px;border-radius:50%;background:var(--red);display:grid;place-items:center;box-shadow:0 0 0 10px rgba(229,52,46,.25),0 14px 40px rgba(229,52,46,.5);transition:transform .3s}
+.vid-btn:hover .vid-play{transform:scale(1.08)}
+.vid-play svg{width:30px;height:30px;margin-left:5px;fill:#fff}
+.vid-cap{position:absolute;z-index:2;left:0;right:0;bottom:0;padding:22px 22px 24px;font-family:var(--fm);font-size:14px;letter-spacing:.14em;text-transform:uppercase;color:#fff}
+.vid-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.vid-text h2{font-size:clamp(28px,3.8vw,56px)}
+.vid-text .row p b{display:block;color:#fff;font-weight:600;margin-bottom:2px}
+.vid-text .row p span{color:var(--muted);font-size:.9em}
+@media(max-width:980px){
+  .vid-grid{grid-template-columns:1fr;gap:28px;justify-items:center}
+  .vid-text{width:100%;order:-1}
+  .vid-text .rows{display:none}
+  .vid-text h2{margin-bottom:0}
+  .vid-wrap{width:100%;max-width:380px}
+  .vid-frame{max-width:none}
+  .video{padding:clamp(56px,12vw,80px) 0}
+}
 @media(max-width:1100px){
   .tiles{grid-template-columns:repeat(2,minmax(0,1fr))}
   .bento{grid-template-columns:repeat(2,minmax(0,1fr))}
@@ -511,6 +537,31 @@ footer{padding:72px 0 40px;border-top:1px solid var(--line)}
   </div>
 </section>
 
+<section id="video" class="video">
+  <div class="wrap vid-grid">
+    <div class="vid-wrap rv">
+      <div class="vid-frame">
+        <button class="vid-btn" type="button" data-yt="Wo2ryaK-OOg" aria-label="Смотреть видео о курсе">
+          <img src="https://i.ytimg.com/vi/Wo2ryaK-OOg/hqdefault.jpg" alt="" loading="lazy" onerror="this.remove()">
+          <span class="vid-play"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4.5v15a1 1 0 0 0 1.5.86l12.5-7.5a1 1 0 0 0 0-1.72L8.5 3.64A1 1 0 0 0 7 4.5z"/></svg></span>
+          <span class="vid-cap">Смотреть видео</span>
+        </button>
+      </div>
+    </div>
+    <div class="vid-text">
+      <div class="eyebrow rv">Коротко о курсе</div>
+      <h2 class="rv" style="--i:1">Что тебя <em>ждёт</em></h2>
+      <div class="rows stagger">
+        <div class="row rv"><span class="n">01</span><p><b>4 модуля</b><span>от диагностики манипуляций до контр-игры</span></p></div>
+        <div class="row rv"><span class="n">02</span><p><b>26 техник НЛП в разборе</b><span>как они работают и как их остановить</span></p></div>
+        <div class="row rv"><span class="n">03</span><p><b>75 вау-скриптов</b><span>готовые фразы-ответы на манипуляции</span></p></div>
+        <div class="row rv"><span class="n">04</span><p><b>Практика в мини-группах</b><span>домашние задания с обратной связью</span></p></div>
+        <div class="row rv"><span class="n">05</span><p><b>Ведёт Александр Кулицкий</b><span>тренер-практик, психолог и коуч</span></p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ===== CTA ===== -->
 <section class="cta" id="apply">
   <div class="wrap">
@@ -706,6 +757,17 @@ footer{padding:72px 0 40px;border-top:1px solid var(--line)}
     $$('input',f).forEach(function(i){i.addEventListener('input',function(){i.parentNode.classList.remove('err')})});
   });
 })();
+
+  /* video facade */
+  document.querySelectorAll('.vid-btn').forEach(function(b){
+    b.addEventListener('click',function(){
+      var f=document.createElement('iframe');
+      f.src='https://www.youtube-nocookie.com/embed/'+b.dataset.yt+'?autoplay=1&rel=0&playsinline=1&modestbranding=1';
+      f.allow='autoplay; encrypted-media; picture-in-picture; fullscreen';
+      f.allowFullscreen=true;f.title='Видео о курсе';
+      b.parentNode.replaceChild(f,b);
+    });
+  });
 </script>
 </body>
 </html>
